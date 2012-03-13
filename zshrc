@@ -44,8 +44,5 @@ alias gs='git status'
 alias gd='git diff'
 alias m='mate'
 
-# Tweak the robbyrussell theme prompt
-# PROMPT='%{$fg[red]%}%n@%m %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%# % %{$reset_color%}'
-
 # RVM Stuff
 [[ -s "/Users/ryan/.rvm/scripts/rvm" ]] && source "/Users/ryan/.rvm/scripts/rvm"  # This loads RVM into a shell session.

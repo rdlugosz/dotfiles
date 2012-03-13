@@ -9,3 +9,4 @@ export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 #make MacVim the default editor
 export EDITOR=mvim
+
