@@ -1,0 +1,5 @@
+color railscasts
+set transparency=0
+set guioptions=aAce
+set guifont=Menlo:h15
+
