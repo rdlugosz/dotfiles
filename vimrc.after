@@ -1,24 +1,16 @@
 color railscasts
 set columns=150
-let NERDChristmasTree=1
-let NERDTreeDirArrows=1
-
-" reset to vim-defaults
-if &compatible          " only if not set before:
-  set nocompatible      " use vim-defaults instead of vi-defaults (easier, more user friendly)
-endif
+"let NERDChristmasTree=1
+"let NERDTreeDirArrows=1
 
 set modelines=0
 set relativenumber
 
+" disable the arrow keys while we're in training... home row 4 life!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 nnoremap <leader>a :Ack 
 
