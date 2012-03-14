@@ -1,10 +1,13 @@
-color railscasts
+syntax enable
+set background=dark
+colorscheme solarized
+
 set columns=150
 "let NERDChristmasTree=1
 "let NERDTreeDirArrows=1
 
-set modelines=0
-set relativenumber
+"set modelines=0
+"set relativenumber
 
 " disable the arrow keys while we're in training... home row 4 life!
 nnoremap <up> <nop>
