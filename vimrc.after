@@ -9,6 +9,19 @@ set columns=150
 "set modelines=0
 "set relativenumber
 
+" show $ marker at the boundry of cw
+set cpoptions+=$
+
+" allow cursor to venture where no chars actually exist
+set virtualedit=all
+
+" allow modified buffers to be hidden
+set hidden
+
+" show line of autocomplete options
+set wildmenu
+
+
 " disable the arrow keys while we're in training... home row 4 life!
 nnoremap <up> <nop>
 nnoremap <down> <nop>
