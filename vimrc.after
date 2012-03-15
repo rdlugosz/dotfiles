@@ -2,12 +2,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-set columns=150
-"let NERDChristmasTree=1
-"let NERDTreeDirArrows=1
-
-"set modelines=0
-"set relativenumber
+set relativenumber
 
 " show $ marker at the boundry of cw
 set cpoptions+=$
@@ -27,6 +22,4 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-
-nnoremap <leader>a :Ack 
 
