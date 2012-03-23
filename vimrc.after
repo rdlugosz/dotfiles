@@ -8,7 +8,7 @@ set relativenumber
 set cpoptions+=$
 
 " allow cursor to venture where no chars actually exist
-set virtualedit=all
+"set virtualedit=all
 
 " allow modified buffers to be hidden
 set hidden
@@ -16,6 +16,8 @@ set hidden
 " show line of autocomplete options
 set wildmenu
 
+" MacVim and oh-my-zsh do not seem to get along very well...
+set shell=bash
 
 " disable the arrow keys while we're in training... home row 4 life!
 nnoremap <up> <nop>
