@@ -6,7 +6,7 @@ export PATH=$PATH:$HOME/bin
 
 # Add mysql lib path so that things which need it can find it..
 # http://goo.gl/tJnVN
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+#export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 #make MacVim the default editor
 export EDITOR='mvim'
