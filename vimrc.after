@@ -25,3 +25,11 @@ nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
 
+" some misc tips picked up from Gary Bernhardt
+
+" Clear the search buffer when hitting return
+:nnoremap <CR> :nohlsearch<cr>
+
+" Insert the Ruby hashrocket with <c-l>
+imap <c-l> <space>=><space>
+
