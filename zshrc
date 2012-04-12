@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler terminalapp)
+plugins=(git brew bundler terminalapp gem)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,6 +41,7 @@ cd() { builtin cd "$@"; ls}
 alias lt='ls -ltrah'
 alias la='l'
 alias gs='gss'
+alias gd='git diff'
 
-# RVM Stuff
-[[ -s "/Users/ryan/.rvm/scripts/rvm" ]] && source "/Users/ryan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# Init rbenv
+eval "$(rbenv init -)"
