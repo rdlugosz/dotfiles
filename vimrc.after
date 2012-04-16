@@ -5,8 +5,6 @@ colorscheme solarized
 " let us see cmds as they are typed, esp leader
 set showcmd
 
-set relativenumber
-
 " show $ marker at the boundry of cw
 set cpoptions+=$
 
@@ -22,78 +20,28 @@ set wildmenu
 " MacVim and oh-my-zsh do not seem to get along very well...
 set shell=bash
 
-" disable the arrow keys while we're in training... home row 4 life!
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-
 " load the less syntax file
 au BufRead,BufNewFile *.less set ft=less
 
-" some misc tips picked up from Gary Bernhardt
-
-" Clear the search buffer when hitting return
-":nnoremap <CR> :nohlsearch<cr>
 
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" RUNNING TESTS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RunTests(filename)
-    " Write the file and run tests for the given filename
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!script/test " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec " . a:filename
-        else
-            exec ":!rspec " . a:filename
-        end
-    end
+
+" Automatically call Tabularize when building a cucumber table with |
+" (vertical bars)
+" see: https://gist.github.com/287147
+
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
 endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number . " -b")
-endfunction
-
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
-map <leader>c :w\|:!script/features<cr>
-map <leader>w :w\|:!script/features --profile wip<cr>
 
