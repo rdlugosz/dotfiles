@@ -23,6 +23,9 @@ set shell=bash
 " load the less syntax file
 au BufRead,BufNewFile *.less set ft=less
 
+" treat all numbers as decimal, even those with leading zeros
+" that would otherwise be treated as octal...
+set nrformats=
 
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
