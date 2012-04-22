@@ -45,3 +45,7 @@ alias gd='git diff'
 
 # Init rbenv
 eval "$(rbenv init -)"
+
+# add this variable per the brew recipe for byobu...
+export BYOBU_PREFIX=`brew --prefix`
+
