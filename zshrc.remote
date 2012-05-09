@@ -40,3 +40,6 @@ alias la='l'
 alias gs='gss'
 alias gd='git diff'
 alias less='less -r'
+
+# Init rbenv
+eval "$(rbenv init -)"
