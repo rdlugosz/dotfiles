@@ -42,6 +42,8 @@ alias lt='ls -ltrah'
 alias la='l'
 alias gs='gss'
 alias gd='git diff'
+alias be='bundle exec'
+alias less='less -r'
 
 # Init rbenv
 eval "$(rbenv init -)"

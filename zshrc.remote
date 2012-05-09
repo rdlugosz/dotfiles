@@ -39,4 +39,4 @@ alias lt='ls -ltrah'
 alias la='l'
 alias gs='gss'
 alias gd='git diff'
-
+alias less='less -r'
