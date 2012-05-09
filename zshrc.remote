@@ -42,5 +42,5 @@ alias gd='git diff'
 alias less='less -r'
 
 # Init rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
