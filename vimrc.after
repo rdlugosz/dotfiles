@@ -1,6 +1,19 @@
 syntax enable
+set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme wombat
+
+set history=10000
+
+set rnu
+au BufEnter * :set rnu
+au BufLeave * :set nu
+au WinEnter * :set rnu
+au WinLeave * :set nu
+au InsertEnter * :set nu
+au InsertLeave * :set rnu
+au FocusLost * :set nu
+au FocusGained * :set rnu
 
 " let us see cmds as they are typed, esp leader
 set showcmd
