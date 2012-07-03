@@ -55,6 +55,9 @@ set nrformats=
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
 
+" delete trailing whitespace with F5
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Automatically call Tabularize when building a cucumber table with |
 " (vertical bars)
