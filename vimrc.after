@@ -1,10 +1,22 @@
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme wombat
+"colorscheme wombat
+
+"http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
+color codeschool
+set guifont=Monaco:h12
+"let g:NERDTreeWinPos = "right"
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set go-=L " Removes left hand scroll bar
+
+" http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
+set fileformats=unix,mac,dos
 
 set history=10000
 
+"https://gist.github.com/3012145
 set rnu
 au BufEnter * :set rnu
 au BufLeave * :set nu
