@@ -46,6 +46,9 @@ alias gd='git diff'
 alias be='bundle exec'
 alias less='less -r'
 
+# instant mashed potatos
+alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
+
 # Init rbenv
 eval "$(rbenv init -)"
 
