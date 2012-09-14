@@ -5,8 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="bira"
+ZSH_THEME="robbyrussell"
+#ZSH_THEME="bira"
 #ZSH_THEME="blinks"
 
 # Set to this to use case-sensitive completion
@@ -55,3 +55,14 @@ eval "$(rbenv init -)"
 # add this variable per the brew recipe for byobu...
 export BYOBU_PREFIX=`brew --prefix`
 
+# zsh vim mode
+bindkey -v
+
+# status line for zsh vim mode
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
