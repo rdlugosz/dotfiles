@@ -4,9 +4,9 @@ set background=dark
 "colorscheme wombat
 
 "http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
-if has("codeschool")
-  color codeschool
-end
+" the silent bit will quietly ignore errors if this scheme isn't found
+silent! color codeschool
+
 set guifont=Monaco:h12
 "let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
