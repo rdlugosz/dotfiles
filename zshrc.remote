@@ -34,6 +34,9 @@ source $ZSH/oh-my-zsh.sh
 # Pick up path, etc from .profile
 . ~/.profile
 
+#Tweak the robbyrussell theme prompt
+PROMPT='%{$fg[red]%}%n@%m %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%# % %{$reset_color%}'
+
 # custom aliases
 alias lt='ls -ltrah'
 alias la='l'
