@@ -4,7 +4,9 @@ set background=dark
 "colorscheme wombat
 
 "http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
-color codeschool
+if has("codeschool")
+  color codeschool
+end
 set guifont=Monaco:h12
 "let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
