@@ -7,7 +7,7 @@ set background=dark
 " the silent bit will quietly ignore errors if this scheme isn't found
 silent! color codeschool
 
-set guifont=Monaco:h12
+set guifont=Source\ Code\ Pro:h15
 "let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
