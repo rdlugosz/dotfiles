@@ -35,9 +35,6 @@ source $ZSH/oh-my-zsh.sh
 # Pick up path, etc from .profile
 . ~/.profile
 
-# shows me all files a folders when I change directories
-cd() { builtin cd "$@"; ls}
-
 # custom aliases
 alias lt='ls -ltrah'
 alias la='l'
