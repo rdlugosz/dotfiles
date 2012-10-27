@@ -9,6 +9,6 @@ export PATH=$PATH:$HOME/bin
 #export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 #make MacVim the default editor
-export EDITOR='mvim'
-export GIT_EDITOR='mvim -f'
+export EDITOR='mvimf.sh'
+export GIT_EDITOR='/usr/local/bin/mvim -f --nomru'
 

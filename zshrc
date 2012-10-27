@@ -46,15 +46,13 @@ alias less='less -r'
 # instant mashed potatos
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 
+alias mysql_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias mysql_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+
 # Init rbenv
 eval "$(rbenv init -)"
 
-# add this variable per the brew recipe for byobu...
-export BYOBU_PREFIX=`brew --prefix`
-
-# zsh vim mode
-bindkey -v
-
 #Tweak the robbyrussell theme prompt
 PROMPT='%{$fg[red]%}%n@%m %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%# % %{$reset_color%}'
-
