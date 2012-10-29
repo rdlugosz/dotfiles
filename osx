@@ -1,3 +1,6 @@
+# Reasonable defaults for OS X
+# Most come from here: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
 
