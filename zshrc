@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 # custom aliases
 alias lt='ls -ltrah'
 alias la='l'
-alias gs='gss'
+alias gs='git status -sb'
 alias gd='git diff'
 alias be='bundle exec'
 alias less='less -r'
