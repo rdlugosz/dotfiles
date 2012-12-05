@@ -39,4 +39,4 @@
   l = "!source ~/.githelpers && pretty_git_log"
   la = !git l --all
 [push]
-	default = simple
+	default = current
