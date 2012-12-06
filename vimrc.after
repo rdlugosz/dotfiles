@@ -5,7 +5,8 @@ set background=dark
 
 "http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
 " the silent bit will quietly ignore errors if this scheme isn't found
-silent! color codeschool
+"silent! color codeschool
+silent! color vividchalk
 
 set guifont=Source\ Code\ Pro:h15
 "let g:NERDTreeWinPos = "right"
