@@ -4,3 +4,8 @@ set guioptions=aAce "hide the toolbar
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set guioptions-=L " Removes left hand scroll bar
+
+" the silent bit will quietly ignore errors if this scheme isn't found
+silent! color vividchalk
+
+silent! set guifont=Source\ Code\ Pro:h15

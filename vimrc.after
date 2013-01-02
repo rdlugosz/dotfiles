@@ -2,11 +2,6 @@ syntax enable
 set t_Co=256
 set background=dark
 
-" the silent bit will quietly ignore errors if this scheme isn't found
-"silent! color codeschool
-silent! color vividchalk
-
-silent! set guifont=Source\ Code\ Pro:h15
 "let g:NERDTreeWinPos = "right"
 
 " http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
