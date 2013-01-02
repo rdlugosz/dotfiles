@@ -1,43 +1,24 @@
 syntax enable
 set t_Co=256
 set background=dark
-"colorscheme wombat
 
-"http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/
 " the silent bit will quietly ignore errors if this scheme isn't found
 "silent! color codeschool
 silent! color vividchalk
 
-set guifont=Source\ Code\ Pro:h15
+silent! set guifont=Source\ Code\ Pro:h15
 "let g:NERDTreeWinPos = "right"
-set guioptions-=T " Removes top toolbar
-set guioptions-=r " Removes right hand scroll bar
-set go-=L " Removes left hand scroll bar
 
 " http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
 set fileformats=unix,mac,dos
 
 set history=10000
 
-"https://gist.github.com/3012145
-"set rnu
-"au BufEnter * :set rnu
-"au BufLeave * :set nu
-"au WinEnter * :set rnu
-"au WinLeave * :set nu
-"au InsertEnter * :set nu
-"au InsertLeave * :set rnu
-"au FocusLost * :set nu
-"au FocusGained * :set rnu
-
 " let us see cmds as they are typed, esp leader
 set showcmd
 
 " show $ marker at the boundry of cw
 set cpoptions+=$
-
-" allow cursor to venture where no chars actually exist
-"set virtualedit=all
 
 " allow modified buffers to be hidden
 set hidden
@@ -47,9 +28,6 @@ set wildmenu
 
 " MacVim and oh-my-zsh do not seem to get along very well...
 set shell=bash
-
-" load the less syntax file
-au BufRead,BufNewFile *.less set ft=less
 
 " treat all numbers as decimal, even those with leading zeros
 " that would otherwise be treated as octal...
@@ -65,7 +43,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Automatically call Tabularize when building a cucumber table with |
 " (vertical bars)
 " see: https://gist.github.com/287147
-
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 function! s:align()

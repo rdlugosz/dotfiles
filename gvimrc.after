@@ -1,4 +1,6 @@
 set transparency=0
 set guioptions=aAce "hide the toolbar
-set guifont=Menlo:h15
 
+set guioptions-=T " Removes top toolbar
+set guioptions-=r " Removes right hand scroll bar
+set guioptions-=L " Removes left hand scroll bar
