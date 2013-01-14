@@ -16,12 +16,16 @@ set showcmd
 " show $ marker at the boundry of cw
 set cpoptions+=$
 
+" change the cursor shape depending on mode
+" see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " allow modified buffers to be hidden
 set hidden
 
 " show line of autocomplete options
 set wildmenu
-
 set wildignore+=*/tmp/*
 
 " MacVim and oh-my-zsh do not seem to get along very well...
