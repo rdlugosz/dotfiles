@@ -10,5 +10,5 @@ export PATH=$PATH:$HOME/bin
 
 #make MacVim the default editor
 export EDITOR='mvimf.sh'
-export GIT_EDITOR='/usr/local/bin/mvim -f --nomru'
+export GIT_EDITOR='/usr/local/bin/vim -f --nomru'
 

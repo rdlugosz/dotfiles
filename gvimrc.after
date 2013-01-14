@@ -9,4 +9,4 @@ set guioptions-=L " Removes left hand scroll bar
 "silent! color vividchalk
 silent! color solarized
 
-silent! set guifont=Source\ Code\ Pro:h15
+silent! set guifont=Source\ Code\ Pro:h18
