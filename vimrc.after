@@ -28,8 +28,8 @@ set hidden
 set wildmenu
 set wildignore+=*/tmp/*
 
-" MacVim and oh-my-zsh do not seem to get along very well...
-set shell=bash
+" mouse works in most terminal software we use...
+set mouse=a
 
 " treat all numbers as decimal, even those with leading zeros
 " that would otherwise be treated as octal...

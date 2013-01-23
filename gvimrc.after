@@ -10,3 +10,6 @@ set guioptions-=L " Removes left hand scroll bar
 silent! color solarized
 
 silent! set guifont=Source\ Code\ Pro:h18
+
+" MacVim and oh-my-zsh do not seem to get along very well...
+set shell=bash
