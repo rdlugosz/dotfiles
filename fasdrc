@@ -1,0 +1,11 @@
+# add current directory search function
+# see: https://github.com/clvv/fasd/issues/16
+
+current() {
+  for path in *; do
+    printf "$PWD/%s|1\\n" "$path"
+  done
+}
+
+# If you want to have this behavior for all fasd queries
+_FASD_BACKENDS="native current"

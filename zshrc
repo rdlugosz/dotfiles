@@ -59,3 +59,8 @@ PROMPT='%{$fg[red]%}%n@%m %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# setup fasd
+# https://github.com/clvv/fasd
+eval "$(fasd --init auto)"
+alias v='f -t -e vim -b viminfo'
