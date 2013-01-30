@@ -36,3 +36,5 @@
   la = !git l --all
 [push]
 	default = current
+[core]
+	excludesfile = /Users/ryan/.gitignore_global
