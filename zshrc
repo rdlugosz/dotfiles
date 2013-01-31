@@ -43,6 +43,10 @@ alias gd='git diff'
 alias be='bundle exec'
 alias less='less -r'
 
+# Get the expected md5sum output from the OS X tool...
+alias md5='md5 -r'
+alias md5sum='md5 -r'
+
 # instant mashed potatos
 alias server='open http://localhost:8000 && python -m SimpleHTTPServer'
 
