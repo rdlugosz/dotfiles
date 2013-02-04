@@ -2,6 +2,8 @@
 
 [[ -s /usr/bin/dircolors ]] && eval `dircolors ~/.dircolors-solarized/dircolors.ansi-universal`
 
+alias ls='ls --color -F'
+
 # Init rbenv
 if [[ -f ~/.rbenv/bin/rbenv ]]
 then
