@@ -1,3 +1,6 @@
 [submodule "garybernhardt"]
 	path = garybernhardt
 	url = git://github.com/garybernhardt/dotfiles.git
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
+	url = git://github.com/huyz/dircolors-solarized.git
