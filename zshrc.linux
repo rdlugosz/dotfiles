@@ -1,0 +1,11 @@
+# Stuff we only want to run on Linux
+
+[[ -s /usr/bin/dircolors ]] && eval `dircolors ~/.dircolors-solarized/dircolors.ansi-universal`
+
+# Init rbenv
+if [[ -f ~/.rbenv/bin/rbenv ]]
+then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+fi

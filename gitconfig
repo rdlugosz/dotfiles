@@ -1,5 +1,5 @@
 [user]
-	name = Ryan Dlugosz
+  name = Ryan Dlugosz
   email = ryan@dlugosz.net
 [color]
   status = true
@@ -35,6 +35,6 @@
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
 [push]
-	default = current
+  default = current
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
