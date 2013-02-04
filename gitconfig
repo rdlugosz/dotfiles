@@ -37,4 +37,4 @@
 [push]
 	default = current
 [core]
-	excludesfile = /Users/ryan/.gitignore_global
+	excludesfile = ~/.gitignore_global
