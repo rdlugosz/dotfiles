@@ -19,3 +19,7 @@ fi
 #make Vim the default editor
 export EDITOR='vim'
 
+if [ -d "$HOME/.rbenv/bin" ] ; then
+  PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
