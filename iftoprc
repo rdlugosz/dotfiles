@@ -1,0 +1,5 @@
+port-resolution: yes
+port-display: on
+hide-source: yes
+sort: 40s
+line-display: one-line-both
