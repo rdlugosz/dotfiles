@@ -1,0 +1,16 @@
+{
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+	"font_face": "Source Code Pro",
+	"font_size": 18.0,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+	"use_simple_full_screen": true,
+	"vintage_ctrl_keys": true,
+	"vintage_start_in_command_mode": true
+}
