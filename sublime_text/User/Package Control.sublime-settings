@@ -2,13 +2,17 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Alignment",
+		"CoffeeScript",
 		"Emmet",
+		"Git",
 		"GitGutter",
 		"Marked.app Menu",
 		"Nettuts+ Fetch",
 		"Package Control",
 		"RSpec",
 		"RubyTest",
+		"Sass",
 		"SideBarEnhancements",
 		"Solarized Color Scheme",
 		"SublimeBlockCursor",

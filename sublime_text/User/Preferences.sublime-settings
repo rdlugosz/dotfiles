@@ -1,7 +1,58 @@
 {
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
 	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"tmp",
+		".sass-cache"
+	],
 	"font_face": "Source Code Pro",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
 	"font_size": 18.0,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -9,17 +60,9 @@
 	],
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
+	"use_simple_full_screen": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
 	"vintage_ctrl_keys": true,
-	"vintage_start_in_command_mode": true,
-
-	// folder_exclude_patterns and file_exclude_patterns control which files
-	// are listed in folders on the side bar. These can also be set on a per-
-	// project basis.
-	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "tmp", ".sass-cache"],
-	"file_exclude_patterns": ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db"],
-	// These files will still show up in the side bar, but won't be included in
-	// Goto Anything or Find in Files
-	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip"]
+	"vintage_start_in_command_mode": true
 }

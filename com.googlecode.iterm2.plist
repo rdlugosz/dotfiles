@@ -535,9 +535,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2048 94 445 270 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>370 415 605 485 0 0 1680 1028 </string>
+	<string>370 415 924 485 0 0 1680 1028 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>80 36 1506 992 0 0 1680 1028 </string>
+	<string>79 305 1671 992 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>407 80 1330 946 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2053,7 +2053,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-04-20T02:16:38Z</date>
+	<date>2013-05-18T15:56:14Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2065,7 +2065,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.31123799085617065</real>
+	<real>0.22343499958515167</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
