@@ -1,23 +1,16 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-if [[ -d $ZSH ]]
-then
-  ZSH_THEME="robbyrussell"
-  plugins=(git bundler gem heroku rails3 rvm tmux)
-
-  [[ `uname` = 'Darwin' ]] && plugins+=(osx brew)
-
-  source $ZSH/oh-my-zsh.sh
-
-  #Tweak the robbyrussell theme prompt
-  PROMPT='%{$fg[red]%}%n@%m %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}%# % %{$reset_color%}'
-else
-  echo 'PLEASE INSTALL OH MY ZSH (git clone git@github.com:robbyrussell/oh-my-zsh ~/.oh-my-zsh)'
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Pick up path, etc from .profile
-[[ -s ~/.profile ]] && . ~/.profile
+# Customize to your needs...
 
 # Pull in the OS X stuff if we're on that platform
 [[ `uname` = 'Darwin' ]] && . ~/.zshrc.osx
@@ -29,4 +22,6 @@ fi
 alias lt='ls -ltrah'
 alias la='l'
 alias be='bundle exec'
-alias less='less -r'
+
+# override alias in the git module (old habits die hard)
+alias gs='git status'

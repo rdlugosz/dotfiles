@@ -4,7 +4,7 @@
 # do this stuff only if we have the GNU coreutils installed
 if [[ -s /usr/local/bin/gls ]]
 then
-  alias ls='gls --color -F'
+  alias ls='/usr/local/bin/gls --color -F'
 fi
 
 # Get the expected md5sum output from the OS X tool...
@@ -25,7 +25,4 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# setup fasd
-# https://github.com/clvv/fasd
-eval "$(fasd --init auto)"
 alias v='f -t -e vim -b viminfo'
