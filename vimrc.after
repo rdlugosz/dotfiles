@@ -1,7 +1,7 @@
 syntax enable
 set t_Co=256
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 " http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
 set fileformats=unix,mac,dos
