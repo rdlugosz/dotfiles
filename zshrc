@@ -25,3 +25,4 @@ alias be='bundle exec'
 
 # override alias in the git module (old habits die hard)
 alias gs='git status'
+alias gd='git diff'
