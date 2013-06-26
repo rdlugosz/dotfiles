@@ -45,6 +45,7 @@ path=(
   $HOME/bin
   /usr/local/{bin,sbin}
   $path
+  /usr/local/opt/coreutils/libexec/gnubin
 )
 
 #
