@@ -4,7 +4,7 @@ Ryan's Dotfiles
 use at your own risk...
 
 
-#setup notes#
+## Setup Notes
 
 1. clone the dotfiles repo into a reasonable location on the new host,
 e.g., ```~/workspace/dotfiles```
@@ -18,3 +18,12 @@ e.g., ```~/workspace/dotfiles```
 
 
 3. install the links to files in the home directory: ```./install.sh``` 
+
+### OS X Extra Steps
+* Set some reasonable defaults: ```sh ./osx```
+* Be sure homebrew is installed
+
+## Helpful Links
+
+[http://dotfiles.github.io/](http://dotfiles.github.io/)
+
