@@ -1,4 +1,4 @@
-# Reasonable defaults for OS X
+# Reasonable defaults for OS X](http://dotfiles.github.io/)
 # Most come from here: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
 # Don’t show Dashboard as a Space
@@ -57,3 +57,12 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+
+# Enable the Develop menu and the Web Inspector in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+# Set Safari’s home page to `about:blank` for faster loading
+defaults write com.apple.Safari HomePage -string "about:blank"
+
