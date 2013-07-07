@@ -16,6 +16,8 @@ e.g., ```~/workspace/dotfiles```
 
     ```git submodule update --recursive```
 
+    note: may need to repeat this within the `zprezto.symlink` area
+
 
 3. install the links to files in the home directory: ```./install.sh``` 
 
