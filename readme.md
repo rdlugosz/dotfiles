@@ -19,7 +19,8 @@ e.g., ```~/workspace/dotfiles```
     note: may need to repeat this within the `zprezto.symlink` area
 
 
-3. install the links to files in the home directory: ```./install.sh``` 
+3. install the links to files in the home directory: `./install.sh` 
+Note that it is safe to re-run this when new `.symlink` files are added.
 
 ### OS X Extra Steps
 * Set some reasonable defaults: ```sh ./osx```
