@@ -129,6 +129,9 @@ imap <c-l> <space>=><space>
 nmap j gj
 nmap k gk
 
+" make Y behave similarly to D and C
+nnoremap Y y$
+
 " delete trailing whitespace with F5
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
@@ -163,6 +166,11 @@ command! Qall qall
 autocmd vimenter * if !argc() | NERDTree | endif
 map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q
+
+" Fugitive mappings
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gp :Git push<cr>
 
 " Automatically call Tabularize when building a cucumber table with |
 " (vertical bars)
