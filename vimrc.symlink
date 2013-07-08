@@ -53,6 +53,7 @@ if exists(':Bundle')
   " Language support
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'scrooloose/syntastic'
+  Bundle 'scrooloose/nerdcommenter'
   Bundle 'kchmck/vim-coffee-script'
 
   " Lols
