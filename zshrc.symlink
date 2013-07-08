@@ -25,6 +25,9 @@ alias lt='ls -ltrah'
 alias la='l'
 alias be='bundle exec'
 
+# start a web server in current directory
+alias server='ruby -run -e httpd . -p5000'
+
 # override alias in the git module (old habits die hard)
 alias gs='git status'
 alias gd='git diff'
