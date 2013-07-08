@@ -1,0 +1,245 @@
+set nocompatible               " be iMproved
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETUP VUNDLE PACKAGE MANAGER
+"
+" if Vundle is not installed, see: https://github.com/gmarik/vundle
+" or just: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+if exists(':Bundle')
+  " let Vundle manage Vundle
+  " required!
+  Bundle 'gmarik/vundle'
+
+  " The Tim Pope all-star collection
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-sensible'
+  Bundle 'tpope/vim-speeddating'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-unimpaired'
+
+  " Interface enhancements
+  Bundle 'jeetsukumaran/vim-buffergator'
+  Bundle 'kien/ctrlp.vim'
+  Bundle 'Lokaltog/vim-easymotion'
+  Bundle 'airblade/vim-gitgutter'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'ervandew/supertab'
+  Bundle 'godlygeek/tabular'
+  Bundle 'nelstrom/vim-visual-star-search'
+  Bundle 'vim-scripts/ZoomWin'
+
+  " Colorschemes
+  Bundle 'altercation/vim-colors-solarized.git'
+
+  " Language support
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'kchmck/vim-coffee-script'
+
+  " Lols
+  Bundle 'koron/nyancat-vim'
+
+  filetype plugin indent on     " required!
+endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" END VUNDLE CONFIG
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS
+"
+" Note: most typical defaults handled by tpope/vim-sensible
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set backupdir=~/tmp
+set undodir=~/tmp
+set directory=~/tmp
+
+set relativenumber
+
+set nowrap       " don't wrap lines
+set tabstop=2    " a tab is two spaces
+set shiftwidth=2 " an autoindent (with <<) is two spaces
+set expandtab    " use spaces, not tabs
+set list         " Show invisible characters
+
+set hlsearch     " highlight matches
+set incsearch    " incremental searching
+set ignorecase   " searches are case insensitive...
+set smartcase    " ... unless they contain at least one capital letter
+
+" show $ marker at the boundry of cw
+set cpoptions+=$
+
+" allow modified buffers to be hidden
+set hidden
+
+" exclusions from the autocomplete menu
+set wildignore+=*/tmp/*
+
+" mouse works in most terminal software we use...
+set mouse=a
+
+" change the cursor shape depending on mode
+" see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <c-t> <esc>:tabnew<CR>
+
+" Toggle paste mode
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+nmap <silent> <F6> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+imap <silent> <F6> <ESC>:set invpaste<CR>:set paste?<CR>
+
+" upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
+
+" upper/lower first char of word
+nmap <leader>U mQgewvU`Q
+nmap <leader>L mQgewvu`Q
+
+" Insert the Ruby hashrocket with <c-l>
+imap <c-l> <space>=><space>
+
+" map j to gj and k to gk, so line navigation ignores line wrap
+nmap j gj
+nmap k gk
+
+" make Y behave similarly to D and C
+nnoremap Y y$
+
+" delete trailing whitespace with F5
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Expand %% into the directory of the current file
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Emacs-like beginning and end of line.
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
+
+" Code folding options
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+
+" Shortcut to fold tags with leader
+nnoremap <leader>ft Vatzf
+
+command! Q q " Bind :Q to :q
+command! W w " Bind :W to :w
+command! Qall qall
+
+" NERDTree stuff
+autocmd vimenter * if !argc() | NERDTree | endif
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q
+
+" Fugitive mappings
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gp :Git push<cr>
+
+" Automatically call Tabularize when building a cucumber table with |
+" (vertical bars)
+" see: https://gist.github.com/287147
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+" Use Marked.app to preview Markdown files...
+" http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
+function! s:setupMarkup()
+  nnoremap <leader>p :silent !open -a Marked.app '%:p'<cr>
+endfunction
+
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FILE TYPES
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some file types should wrap their text
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
+
+" Make sure all mardown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+au FileType markdown call s:setupWrapping()
+
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead *.json set ft=javascript
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
+" see: :help 'statusline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=         "reset
+set statusline+=%#todo# "set color
+set statusline+=[       "open bracket char
+set statusline+=%n      "buffer number
+set statusline+=%M      "modifiable/modified flag
+set statusline+=%R      "Readonly flag
+set statusline+=%W      "Preview window flag
+set statusline+=]%*     "close bracket & reset color
+set statusline+=%<      "cut from here if line is too long
+set statusline+=./%f    "relative path of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
+set statusline+=%{&ff}\| "file format
+set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
+set statusline+=%=      "left/right separator
+"set statusline+=%{fugitive#statusline()}\  "git branch
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ (%P)  "escaped space, percent through file
+
