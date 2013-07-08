@@ -171,6 +171,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
+nmap <leader>gd :Gdiff<cr>
 nmap <leader>gp :Git push<cr>
 
 " Automatically call Tabularize when building a cucumber table with |
