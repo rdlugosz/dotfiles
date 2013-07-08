@@ -99,7 +99,30 @@ install_dotfiles () {
   done
 }
 
+install_vundle () {
+  echo ""
+  info "checking for Vundle installation..."
+  if [ -e ~/.vim/bundle/vundle ]
+  then
+    success "looks like Vundle is installed!"
+  else
+    user "Vundle seems to be missing... Install it? [y/n]"
+    read -n 1 action
+
+    case "$action" in
+      y )
+        echo ""
+        info "Installing Vundle. Be sure to run :BundleInstall next time you run Vim."
+        echo ""
+        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;;
+      * )
+        ;;
+    esac
+  fi
+}
+
 install_dotfiles
+install_vundle
 
 echo ''
 echo '  All installed!'
