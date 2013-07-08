@@ -65,6 +65,7 @@ if exists(':Bundle')
   Bundle 'ajf/puppet-vim'
   Bundle 'tpope/vim-rails'
   Bundle 'skwp/vim-rspec'
+  Bundle 'skalnik/vim-vroom'
   Bundle 'vim-ruby/vim-ruby'
   Bundle 'rosstimson/scala-vim-support'
   Bundle 'cakebaker/scss-syntax.vim'
