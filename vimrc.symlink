@@ -50,6 +50,7 @@ if exists(':Bundle')
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'tpope/vim-vividchalk'
+  Bundle 'vim-scripts/Zenburn'
 
   " Language support
   Bundle 'kchmck/vim-coffee-script'
