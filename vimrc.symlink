@@ -45,6 +45,7 @@ if exists(':Bundle')
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
   Bundle 'nelstrom/vim-visual-star-search'
+  Bundle 'vim-scripts/ZoomWin'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
