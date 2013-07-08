@@ -34,6 +34,7 @@ if exists(':Bundle')
   Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-sensible'
+  Bundle 'tpope/vim-speeddating'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'vim-ruby/vim-ruby'
@@ -43,6 +44,9 @@ if exists(':Bundle')
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'scrooloose/nerdtree'
   Bundle 'godlygeek/tabular'
+  Bundle 'altercation/vim-colors-solarized.git'
+  Bundle 'airblade/vim-gitgutter'
+  Bundle 'nelstrom/vim-visual-star-search'
 
   filetype plugin indent on     " required!
 endif
@@ -59,7 +63,18 @@ set backupdir=~/tmp
 set undodir=~/tmp
 set directory=~/tmp
 
-set relativenumber 
+set relativenumber
+
+set nowrap       " don't wrap lines
+set tabstop=2    " a tab is two spaces
+set shiftwidth=2 " an autoindent (with <<) is two spaces
+set expandtab    " use spaces, not tabs
+set list         " Show invisible characters
+
+set hlsearch     " highlight matches
+set incsearch    " incremental searching
+set ignorecase   " searches are case insensitive...
+set smartcase    " ... unless they contain at least one capital letter
 
 " show $ marker at the boundry of cw
 set cpoptions+=$
@@ -82,11 +97,14 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 map <c-t> <esc>:tabnew<CR>
 
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
+
+" map j to gj and k to gk, so line navigation ignores line wrap
+nmap j gj
+nmap k gk
 
 " delete trailing whitespace with F5
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
@@ -94,9 +112,6 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Expand %% into the directory of the current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Yank from the cursor to the end of the line, to be consistent with C and D.
-nnoremap Y y$
 
 " Emacs-like beginning and end of line.
 imap <c-e> <c-o>$
@@ -114,7 +129,7 @@ nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
 
-"Shortcut to fold tags with leader (usually \) + ft
+" Shortcut to fold tags with leader
 nnoremap <leader>ft Vatzf
 
 command! Q q " Bind :Q to :q
