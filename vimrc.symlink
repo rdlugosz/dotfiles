@@ -6,46 +6,66 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+if exists(':Bundle')
+  " let Vundle manage Vundle
+  " required!
+  Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" vim-scripts repos
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (ie. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
+  " My Bundles here:
+  Bundle 'ervandew/supertab'
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-endwise'
+  Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-surround'
+  Bundle 'tpope/vim-unimpaired'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'wincent/Command-T'
+  Bundle 'koron/nyancat-vim'
+  Bundle 'Lokaltog/vim-easymotion'
+  Bundle 'kchmck/vim-coffee-script'
+  Bundle 'scrooloose/nerdtree'
 
-filetype plugin indent on     " required!
+  "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+  " vim-scripts repos
+  "Bundle 'L9'
+  "Bundle 'FuzzyFinder'
+  " non github repos
+  "Bundle 'git://git.wincent.com/command-t.git'
+  " git repos on your local machine (ie. when working on your own plugin)
+  "Bundle 'file:///Users/gmarik/path/to/plugin'
 
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+  filetype plugin indent on     " required!
+
+  "
+  " Brief help
+  " :BundleList          - list configured bundles
+  " :BundleInstall(!)    - install(update) bundles
+  " :BundleSearch(!) foo - search(or refresh cache first) for foo
+  " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+  "
+  " see :h vundle for more details or wiki for FAQ
+  " NOTE: comments after Bundle command are not allowed..
+endif
 
 syntax enable
 set t_Co=256
 "set background=dark
 "colorscheme solarized
 
+" Don't clutter my dirs up with swp and tmp files
+set backupdir=~/tmp
+set directory=~/tmp
+
 " http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
 set fileformats=unix,mac,dos
 
-set history=10000
+set history=1000
+set viminfo+=! " make sure vim history works
+set ruler " show the cursor position all the time
+set laststatus=2 " Always show status line
+set relativenumber 
 
 " let us see cmds as they are typed, esp leader
 set showcmd
@@ -85,6 +105,10 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Yank from the cursor to the end of the line, to be consistent with C and D.
 nnoremap Y y$
 
+" Emacs-like beginning and end of line.
+imap <c-e> <c-o>$
+imap <c-a> <c-o>^
+
 " Code folding options
 nmap <leader>f0 :set foldlevel=0<CR>
 nmap <leader>f1 :set foldlevel=1<CR>
@@ -99,6 +123,14 @@ nmap <leader>f9 :set foldlevel=9<CR>
 
 "Shortcut to fold tags with leader (usually \) + ft
 nnoremap <leader>ft Vatzf
+
+command! Q q " Bind :Q to :q
+command! Qall qall
+
+" NERDTree stuff
+autocmd vimenter * if !argc() | NERDTree | endif
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q
 
 " Automatically call Tabularize when building a cucumber table with |
 " (vertical bars)
