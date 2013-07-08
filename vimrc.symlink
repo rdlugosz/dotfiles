@@ -28,8 +28,6 @@ if exists(':Bundle')
   Bundle 'tpope/vim-cucumber'
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-markdown'
-  Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-sensible'
   Bundle 'tpope/vim-speeddating'
@@ -41,6 +39,7 @@ if exists(':Bundle')
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'airblade/vim-gitgutter'
+  Bundle 'scrooloose/nerdcommenter'
   Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
@@ -50,12 +49,29 @@ if exists(':Bundle')
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
+  Bundle 'tpope/vim-vividchalk'
 
   " Language support
-  Bundle 'vim-ruby/vim-ruby'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'scrooloose/nerdcommenter'
   Bundle 'kchmck/vim-coffee-script'
+  Bundle 'guns/vim-clojure-static'
+  Bundle 'elixir-lang/vim-elixir'
+  Bundle 'tpope/vim-git'
+  Bundle 'jnwhiteh/vim-golang'
+  Bundle 'tpope/vim-haml'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'groenewege/vim-less'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'mmalecki/vim-node.js'
+  Bundle 'ajf/puppet-vim'
+  Bundle 'tpope/vim-rails'
+  Bundle 'skwp/vim-rspec'
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'rosstimson/scala-vim-support'
+  Bundle 'cakebaker/scss-syntax.vim'
+  Bundle 'scrooloose/syntastic'
+
+  " Snippets are kind of languagey, but in own section
+  " to make it clear snipmate depends on tlib and mw-utils.
   Bundle "MarcWeber/vim-addon-mw-utils"
   Bundle "tomtom/tlib_vim"
   Bundle 'garbas/vim-snipmate'
