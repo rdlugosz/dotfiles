@@ -1,8 +1,21 @@
 set nocompatible               " be iMproved
-filetype off                   " required!
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETUP VUNDLE PACKAGE MANAGER
+"
 " if Vundle is not installed, see: https://github.com/gmarik/vundle
 " or just: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off                   " required!
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -16,8 +29,11 @@ if exists(':Bundle')
   Bundle 'tpope/vim-cucumber'
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-fugitive'
+  Bundle 'tpope/vim-markdown'
+  Bundle 'tpope/vim-markdown'
   Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-sensible'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'vim-ruby/vim-ruby'
@@ -26,71 +42,48 @@ if exists(':Bundle')
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'scrooloose/nerdtree'
-
-  "Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-  " vim-scripts repos
-  "Bundle 'L9'
-  "Bundle 'FuzzyFinder'
-  " non github repos
-  "Bundle 'git://git.wincent.com/command-t.git'
-  " git repos on your local machine (ie. when working on your own plugin)
-  "Bundle 'file:///Users/gmarik/path/to/plugin'
+  Bundle 'godlygeek/tabular'
 
   filetype plugin indent on     " required!
-
-  "
-  " Brief help
-  " :BundleList          - list configured bundles
-  " :BundleInstall(!)    - install(update) bundles
-  " :BundleSearch(!) foo - search(or refresh cache first) for foo
-  " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-  "
-  " see :h vundle for more details or wiki for FAQ
-  " NOTE: comments after Bundle command are not allowed..
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" END VUNDLE CONFIG
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-syntax enable
-set t_Co=256
-"set background=dark
-"colorscheme solarized
-
-" Don't clutter my dirs up with swp and tmp files
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS
+"
+" Note: most typical defaults handled by tpope/vim-sensible
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupdir=~/tmp
+set undodir=~/tmp
 set directory=~/tmp
 
-" http://stackoverflow.com/questions/4633564/vim-mac-vs-linux-m-problem
-set fileformats=unix,mac,dos
-
-set history=1000
-set viminfo+=! " make sure vim history works
-set ruler " show the cursor position all the time
-set laststatus=2 " Always show status line
 set relativenumber 
-
-" let us see cmds as they are typed, esp leader
-set showcmd
 
 " show $ marker at the boundry of cw
 set cpoptions+=$
+
+" allow modified buffers to be hidden
+set hidden
+
+" exclusions from the autocomplete menu
+set wildignore+=*/tmp/*
+
+" mouse works in most terminal software we use...
+set mouse=a
 
 " change the cursor shape depending on mode
 " see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" allow modified buffers to be hidden
-set hidden
 
-" show line of autocomplete options
-set wildmenu
-set wildignore+=*/tmp/*
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" mouse works in most terminal software we use...
-set mouse=a
-
-" treat all numbers as decimal, even those with leading zeros
-" that would otherwise be treated as octal...
-set nrformats=
+map <c-t> <esc>:tabnew<CR>
 
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
@@ -125,6 +118,7 @@ nmap <leader>f9 :set foldlevel=9<CR>
 nnoremap <leader>ft Vatzf
 
 command! Q q " Bind :Q to :q
+command! W w " Bind :W to :w
 command! Qall qall
 
 " NERDTree stuff
@@ -156,8 +150,11 @@ endfunction
 
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set up our custom statusline
 " see: :help 'statusline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=         "reset
 set statusline+=%#todo# "set color
 set statusline+=[       "open bracket char
@@ -176,3 +173,4 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ (%P)  "escaped space, percent through file
+
