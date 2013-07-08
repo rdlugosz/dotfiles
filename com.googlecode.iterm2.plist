@@ -2219,7 +2219,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1065 966 384 129 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>407 80 1330 946 0 0 2560 1418 </string>
+	<string>983 77 1330 946 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>407 80 1330 946 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -4094,7 +4094,7 @@
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Flashing Bell</key>
-			<true/>
+			<false/>
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
