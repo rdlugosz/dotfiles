@@ -7,29 +7,25 @@ use at your own risk...
 ## Setup Notes
 
 1. clone the dotfiles repo into a reasonable location on the new host,
-e.g., ```~/workspace/dotfiles```
+e.g., `~/workspace/dotfiles`
 
 
 2. pull in the submodules:
 
-    ```git submodule init```
+    `git submodule init`
 
-    ```git submodule update --recursive```
+    `git submodule update --recursive`
 
     note: may need to repeat this within the `zprezto.symlink` area
 
 
-3. install the links to files in the home directory: `./install.sh` 
+3. install the links to files in the home directory: `./install.sh`.
+   This command will also check to see if `Vundle` is installed.
 Note that it is safe to re-run this when new `.symlink` files are added.
-
-4. install Vundle (the `vim` package manager):
-    `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
-
-    run: `:BundleInstall` inside vim.
 
 
 ### OS X Extra Steps
-* Set some reasonable defaults: ```sh ./osx```
+* Set some reasonable defaults: `sh ./osx`
 * Be sure homebrew is installed
 
 ## Helpful Links

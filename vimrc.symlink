@@ -55,6 +55,10 @@ if exists(':Bundle')
   Bundle 'scrooloose/syntastic'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'kchmck/vim-coffee-script'
+  Bundle "MarcWeber/vim-addon-mw-utils"
+  Bundle "tomtom/tlib_vim"
+  Bundle 'garbas/vim-snipmate'
+  Bundle 'honza/vim-snippets'
 
   " Lols
   Bundle 'koron/nyancat-vim'
@@ -71,7 +75,7 @@ endif
 " Note: most typical defaults handled by tpope/vim-sensible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set backupdir=~/tmp
-set undodir=~/tmp
+set undodir=~/tmk
 set directory=~/tmp
 
 set relativenumber
