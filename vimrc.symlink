@@ -38,7 +38,7 @@ if exists(':Bundle')
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'vim-ruby/vim-ruby'
-  Bundle 'wincent/Command-T'
+  Bundle 'kien/ctrlp.vim'
   Bundle 'koron/nyancat-vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'kchmck/vim-coffee-script'
@@ -98,6 +98,20 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <c-t> <esc>:tabnew<CR>
+
+" Toggle paste mode
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+nmap <silent> <F6> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+imap <silent> <F6> <ESC>:set invpaste<CR>:set paste?<CR>
+
+" upper/lower word
+nmap <leader>u mQviwU`Q
+nmap <leader>l mQviwu`Q
+
+" upper/lower first char of word
+nmap <leader>U mQgewvU`Q
+nmap <leader>L mQgewvu`Q
 
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
@@ -165,9 +179,31 @@ endfunction
 
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set up our custom statusline
+" FILE TYPES
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Some file types should wrap their text
+function! s:setupWrapping()
+  set wrap
+  set linebreak
+  set textwidth=72
+  set nolist
+endfunction
+
+" Make sure all mardown files have the correct filetype set and setup wrapping
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+au FileType markdown call s:setupWrapping()
+
+" Treat JSON files like JavaScript
+au BufNewFile,BufRead *.json set ft=javascript
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
 " see: :help 'statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=         "reset
