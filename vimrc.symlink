@@ -24,12 +24,10 @@ if exists(':Bundle')
   " required!
   Bundle 'gmarik/vundle'
 
-  " My Bundles here:
-  Bundle 'ervandew/supertab'
+  " The Tim Pope all-star collection
   Bundle 'tpope/vim-cucumber'
   Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-markdown'
   Bundle 'tpope/vim-markdown'
   Bundle 'tpope/vim-rails'
   Bundle 'tpope/vim-repeat'
@@ -37,16 +35,27 @@ if exists(':Bundle')
   Bundle 'tpope/vim-speeddating'
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
-  Bundle 'vim-ruby/vim-ruby'
+
+  " Interface enhancements
+  Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'koron/nyancat-vim'
   Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'godlygeek/tabular'
-  Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'airblade/vim-gitgutter'
+  Bundle 'scrooloose/nerdtree'
+  Bundle 'ervandew/supertab'
+  Bundle 'godlygeek/tabular'
   Bundle 'nelstrom/vim-visual-star-search'
+
+  " Colorschemes
+  Bundle 'altercation/vim-colors-solarized.git'
+
+  " Language support
+  Bundle 'vim-ruby/vim-ruby'
+  Bundle 'scrooloose/syntastic'
+  Bundle 'kchmck/vim-coffee-script'
+
+  " Lols
+  Bundle 'koron/nyancat-vim'
 
   filetype plugin indent on     " required!
 endif
