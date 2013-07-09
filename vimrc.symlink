@@ -92,10 +92,13 @@ endif
 " SETTINGS
 "
 " Note: most typical defaults handled by tpope/vim-sensible
+" see https://github.com/tpope/vim-sensible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-set backupdir=~/tmp
-set undodir=~/tmk
-set directory=~/tmp
+set swapfile
+set backup
+set backupdir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
+set undodir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
+set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 
 set relativenumber
 
