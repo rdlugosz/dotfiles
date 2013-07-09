@@ -56,6 +56,7 @@ if exists(':Bundle')
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'guns/vim-clojure-static'
   Bundle 'elixir-lang/vim-elixir'
+  Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-git'
   Bundle 'jnwhiteh/vim-golang'
   Bundle 'tpope/vim-haml'
