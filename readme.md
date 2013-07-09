@@ -6,22 +6,14 @@ use at your own risk...
 
 ## Setup Notes
 
-1. clone the dotfiles repo into a reasonable location on the new host,
+1. Clone the dotfiles repo into a reasonable location on the new host,
 e.g., `~/workspace/dotfiles`
 
+2. Pull in the submodules: `./update_submodules.sh`
 
-2. pull in the submodules:
-
-    `git submodule init`
-
-    `git submodule update --recursive`
-
-    note: may need to repeat this within the `zprezto.symlink` area
-
-
-3. install the links to files in the home directory: `./install.sh`.
-   This command will also check to see if `Vundle` is installed.
-Note that it is safe to re-run this when new `.symlink` files are added.
+3. Install the links to files in the home directory: `./install.sh`.
+   This command will also check to see if `Vundle` is installed. Note
+   that it is safe to re-run this when new `.symlink` files are added.  
 
 
 ### OS X Extra Steps
