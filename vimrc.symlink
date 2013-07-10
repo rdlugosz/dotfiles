@@ -66,6 +66,7 @@ if exists(':Bundle')
   Bundle 'mmalecki/vim-node.js'
   Bundle 'ajf/puppet-vim'
   Bundle 'tpope/vim-rails'
+  Bundle 'tpope/vim-rake'
   Bundle 'skwp/vim-rspec'
   Bundle 'skalnik/vim-vroom'
   Bundle 'vim-ruby/vim-ruby'
