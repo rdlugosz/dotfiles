@@ -136,7 +136,8 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <c-t> <esc>:tabnew<CR>
+" Quick ESC
+imap jj <ESC>
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
