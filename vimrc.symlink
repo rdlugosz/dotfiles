@@ -196,7 +196,6 @@ command! Qall qall
 " NERDTree stuff
 autocmd vimenter * if !argc() | NERDTree | endif
 map <leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q
 
 " Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
