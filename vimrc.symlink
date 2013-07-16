@@ -26,7 +26,6 @@ if exists(':Bundle')
 
   " The Tim Pope all-star collection
   Bundle 'tpope/vim-cucumber'
-  Bundle 'tpope/vim-endwise'
   Bundle 'tpope/vim-fugitive'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-sensible'
@@ -34,7 +33,7 @@ if exists(':Bundle')
   Bundle 'tpope/vim-surround'
   Bundle 'tpope/vim-unimpaired'
 
-  " Interface enhancements
+  "" Interface enhancements
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
@@ -51,6 +50,7 @@ if exists(':Bundle')
   Bundle 'altercation/vim-colors-solarized.git'
   Bundle 'tpope/vim-vividchalk'
   Bundle 'vim-scripts/Zenburn'
+  Bundle 'chriskempson/base16-vim'
 
   " Language support
   Bundle 'kchmck/vim-coffee-script'
