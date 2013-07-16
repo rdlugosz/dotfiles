@@ -35,6 +35,7 @@ if exists(':Bundle')
 
   "" Interface enhancements
   Bundle 'jeetsukumaran/vim-buffergator'
+  Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'airblade/vim-gitgutter'
