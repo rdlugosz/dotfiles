@@ -197,7 +197,6 @@ command! W w " Bind :W to :w
 command! Qall qall
 
 " NERDTree stuff
-autocmd vimenter * if !argc() | NERDTree | endif
 map <leader>n :NERDTreeToggle<CR>
 
 " Fugitive mappings
