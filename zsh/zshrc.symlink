@@ -32,6 +32,8 @@ alias server='ruby -run -e httpd . -p5000'
 alias gs='git status'
 alias gd='git diff'
 
+alias lol='lolcat'
+
 # execute local rc if it exists
 if [[ -e $HOME/.zshrc.local ]]; then
   source $HOME/.zshrc.local
