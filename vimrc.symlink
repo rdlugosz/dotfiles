@@ -178,20 +178,14 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
-" Code folding options
-nmap <leader>f0 :set foldlevel=0<CR>
-nmap <leader>f1 :set foldlevel=1<CR>
-nmap <leader>f2 :set foldlevel=2<CR>
-nmap <leader>f3 :set foldlevel=3<CR>
-nmap <leader>f4 :set foldlevel=4<CR>
-nmap <leader>f5 :set foldlevel=5<CR>
-nmap <leader>f6 :set foldlevel=6<CR>
-nmap <leader>f7 :set foldlevel=7<CR>
-nmap <leader>f8 :set foldlevel=8<CR>
-nmap <leader>f9 :set foldlevel=9<CR>
+" Navigate splits more easily
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <c-k> <C-w>k
+map <C-l> <C-w>l
 
-" Shortcut to fold tags with leader
-nnoremap <leader>ft Vatzf
+" Disable match highlight
+map <leader>l :nohlsearch<CR>
 
 command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
