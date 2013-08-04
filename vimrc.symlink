@@ -46,6 +46,7 @@ if exists(':Bundle')
   Bundle 'nelstrom/vim-visual-star-search'
   Bundle 'vim-scripts/ZoomWin'
   Bundle 'mileszs/ack.vim'
+  Bundle 'michaeljsmith/vim-indent-object'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
