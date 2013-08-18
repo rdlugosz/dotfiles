@@ -2,7 +2,7 @@ set nocompatible               " be iMproved
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETUP VUNDLE PACKAGE MANAGER
-"
+" # !> possibly useless use of a literal in void context
 " if Vundle is not installed, see: https://github.com/gmarik/vundle
 " or just: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
@@ -75,6 +75,8 @@ if exists(':Bundle')
   Bundle 'rosstimson/scala-vim-support'
   Bundle 'cakebaker/scss-syntax.vim'
   Bundle 'scrooloose/syntastic'
+  Bundle 'tpope/vim-rbenv'
+  Bundle 't9md/vim-ruby-xmpfilter'
 
   " Snippets are kind of languagey, but in own section
   " to make it clear snipmate depends on tlib and mw-utils.
@@ -213,6 +215,14 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Mappings for vim-ruby-xmpfilter
+nmap <leader>m <Plug>(xmpfilter-mark)
+imap <leader>m <Plug>(xmpfilter-mark)
+nmap <leader>x <Plug>(xmpfilter-run)
+imap <leader>x <Plug>(xmpfilter-run)
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPES
