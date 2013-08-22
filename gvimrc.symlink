@@ -3,7 +3,7 @@ set guioptions=aAce "hide the toolbar
 
 silent! colorscheme base16-railscasts
 
-silent! set guifont=Source\ Code\ Pro:h18
+silent! set guifont=Source\ Code\ Pro:h16
 
 " Automatically resize splits
 " when resizing MacVim window

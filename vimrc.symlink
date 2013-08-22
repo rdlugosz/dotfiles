@@ -2,7 +2,7 @@ set nocompatible               " be iMproved
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETUP VUNDLE PACKAGE MANAGER
-"
+" # !> possibly useless use of a literal in void context
 " if Vundle is not installed, see: https://github.com/gmarik/vundle
 " or just: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
@@ -75,6 +75,8 @@ if exists(':Bundle')
   Bundle 'rosstimson/scala-vim-support'
   Bundle 'cakebaker/scss-syntax.vim'
   Bundle 'scrooloose/syntastic'
+  Bundle 'tpope/vim-rbenv'
+  Bundle 't9md/vim-ruby-xmpfilter'
 
   " Snippets are kind of languagey, but in own section
   " to make it clear snipmate depends on tlib and mw-utils.
@@ -136,12 +138,14 @@ set mouse=a
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" Ensure the active split is at least 90 chars wide
+set winwidth=90
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick ESC
-imap jj <ESC>
+imap kj <ESC>
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -214,6 +218,16 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Mappings for vim-ruby-xmpfilter
+autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
+autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPES
