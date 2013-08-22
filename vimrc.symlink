@@ -191,6 +191,9 @@ command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
 command! Qall qall
 
+" Allow writing via sudo
+cnoremap w!! w !sudo tee > /dev/null %
+
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
 
