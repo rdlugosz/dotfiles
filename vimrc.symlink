@@ -47,6 +47,7 @@ if exists(':Bundle')
   Bundle 'vim-scripts/ZoomWin'
   Bundle 'mileszs/ack.vim'
   Bundle 'michaeljsmith/vim-indent-object'
+  Bundle 'bling/vim-airline'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
@@ -106,6 +107,10 @@ set backupdir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 set undodir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 
+set undofile
+set undolevels=1000
+set undoreload=10000
+
 set relativenumber
 
 set nowrap       " don't wrap lines
@@ -140,6 +145,10 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Ensure the active split is at least 90 chars wide
 set winwidth=90
+
+" vim-airline customizations
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -252,22 +261,22 @@ au BufNewFile,BufRead *.json set ft=javascript
 " STATUS LINE
 " see: :help 'statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=         "reset
-set statusline+=%#todo# "set color
-set statusline+=[       "open bracket char
-set statusline+=%n      "buffer number
-set statusline+=%M      "modifiable/modified flag
-set statusline+=%R      "Readonly flag
-set statusline+=%W      "Preview window flag
-set statusline+=]%*     "close bracket & reset color
-set statusline+=%<      "cut from here if line is too long
-set statusline+=./%f    "relative path of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
-set statusline+=%{&ff}\| "file format
-set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
-set statusline+=%=      "left/right separator
-"set statusline+=%{fugitive#statusline()}\  "git branch
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ (%P)  "escaped space, percent through file
+"set statusline=         "reset
+"set statusline+=%#todo# "set color
+"set statusline+=[       "open bracket char
+"set statusline+=%n      "buffer number
+"set statusline+=%M      "modifiable/modified flag
+"set statusline+=%R      "Readonly flag
+"set statusline+=%W      "Preview window flag
+"set statusline+=]%*     "close bracket & reset color
+"set statusline+=%<      "cut from here if line is too long
+"set statusline+=./%f    "relative path of the filename
+"set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
+"set statusline+=%{&ff}\| "file format
+"set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
+"set statusline+=%=      "left/right separator
+""set statusline+=%{fugitive#statusline()}\  "git branch
+"set statusline+=%c,     "cursor column
+"set statusline+=%l/%L   "cursor line/total lines
+"set statusline+=\ (%P)  "escaped space, percent through file
 
