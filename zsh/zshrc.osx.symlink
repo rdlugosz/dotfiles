@@ -23,3 +23,9 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 alias v='f -t -e vim -b viminfo'
+
+# Ruby GC tweaks to improve spec (and other) performance
+# http://labs.goclio.com/tuning-ruby-garbage-collection-for-rspec/
+export RUBY_GC_MALLOC_LIMIT=100000000
+export RUBY_HEAP_MIN_SLOTS=2000000
+export RUBY_HEAP_FREE_MIN=20000
