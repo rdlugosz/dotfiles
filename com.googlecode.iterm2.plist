@@ -2554,7 +2554,7 @@
 	<key>Default Arrangement Name</key>
 	<string>Rails Dev</string>
 	<key>Default Bookmark Guid</key>
-	<string>5E1CB228-31D9-4C46-A38D-66967919318B</string>
+	<string>6103C8EF-E4CA-4CD3-B477-E5E5CC0AC9D4</string>
 	<key>DimBackgroundWindows</key>
 	<true/>
 	<key>DimInactiveSplitPanes</key>
@@ -2639,7 +2639,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1065 966 384 129 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>12 4 1514 1020 0 0 1680 1028 </string>
+	<string>21 479 970 768 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>407 80 1330 946 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -5255,11 +5255,11 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.0</real>
 				<key>Green Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.0</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -5735,11 +5735,11 @@
 			<key>Name</key>
 			<string>Zenburn</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6546,11 +6546,11 @@
 			<key>Name</key>
 			<string>Base16</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6793,7 +6793,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-08-30T19:34:42Z</date>
+	<date>2013-10-02T18:25:54Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
