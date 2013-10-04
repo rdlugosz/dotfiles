@@ -2554,7 +2554,7 @@
 	<key>Default Arrangement Name</key>
 	<string>Rails Dev</string>
 	<key>Default Bookmark Guid</key>
-	<string>6103C8EF-E4CA-4CD3-B477-E5E5CC0AC9D4</string>
+	<string>5E1CB228-31D9-4C46-A38D-66967919318B</string>
 	<key>DimBackgroundWindows</key>
 	<true/>
 	<key>DimInactiveSplitPanes</key>
@@ -4917,7 +4917,7 @@
 			<key>Name</key>
 			<string>IdleToes Colors</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>SourceCodePro-Regular 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -6793,7 +6793,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-02T18:25:54Z</date>
+	<date>2013-10-03T18:25:53Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
