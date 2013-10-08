@@ -113,6 +113,7 @@ set undolevels=1000
 set undoreload=10000
 
 set relativenumber
+set number       " sets up 'hybrid' line numbering mode
 
 set nowrap       " don't wrap lines
 set tabstop=2    " a tab is two spaces
