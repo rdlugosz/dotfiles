@@ -79,6 +79,8 @@ if exists(':Bundle')
   Bundle 'scrooloose/syntastic'
   Bundle 'tpope/vim-rbenv'
   Bundle 't9md/vim-ruby-xmpfilter'
+  Bundle 'rizzatti/funcoo.vim'
+  Bundle 'rizzatti/dash.vim'
 
   " Snippets are kind of languagey, but in own section
   " to make it clear snipmate depends on tlib and mw-utils.
