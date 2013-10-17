@@ -1,7 +1,7 @@
 set transparency=0
 set guioptions=aAce "hide the toolbar
 
-silent! colorscheme jellybeans
+silent! colorscheme seoul256
 
 silent! set guifont=Source\ Code\ Pro:h16
 

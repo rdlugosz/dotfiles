@@ -55,6 +55,7 @@ if exists(':Bundle')
   Bundle 'vim-scripts/Zenburn'
   Bundle 'chriskempson/base16-vim'
   Bundle 'nanotech/jellybeans.vim'
+  Bundle 'junegunn/seoul256.vim'
 
   " Language support
   Bundle 'kchmck/vim-coffee-script'
