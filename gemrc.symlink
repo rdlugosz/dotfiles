@@ -4,3 +4,5 @@
 :bulk_threshold: 1000
 :backtrace: false
 :benchmark: false
+
+gem: --rdoc
