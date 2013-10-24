@@ -2639,7 +2639,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1065 966 384 129 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>21 479 970 768 0 0 2560 1418 </string>
+	<string>11 421 1514 997 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>407 80 1330 946 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -6793,7 +6793,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-03T18:25:53Z</date>
+	<date>2013-10-23T23:00:27Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
