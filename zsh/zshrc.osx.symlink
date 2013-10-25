@@ -17,7 +17,7 @@ alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.post
 alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
 # Init rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
