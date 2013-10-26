@@ -16,8 +16,9 @@ alias mysql_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mys
 alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
-# Init rbenv
-#eval "$(rbenv init -)"
+if [[ -e /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

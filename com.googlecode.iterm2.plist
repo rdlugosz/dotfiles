@@ -2605,10 +2605,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/workspace/dotfiles/base16-iterm2</string>
+	<string>~/workspace/dotfiles</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -2626,32 +2624,16 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>198</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>2048 94 445 270 0 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>710 933 924 485 0 0 2560 1418 </string>
-	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1065 966 384 129 0 0 2560 1418 </string>
+	<string>372 368 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>11 421 1514 997 0 0 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>407 80 1330 946 0 0 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>983 77 1330 946 0 0 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 3</key>
-	<string>1124 457 1330 946 0 0 2560 1418 </string>
-	<key>NSWindow Frame iTerm Window 4</key>
-	<string>524 282 970 746 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 5</key>
-	<string>545 282 970 746 0 0 1680 1028 </string>
-	<key>NSWindow Frame iTerm Window 6</key>
-	<string>566 282 970 746 0 0 1680 1028 </string>
+	<string>28 76 1214 796 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3292,11 +3274,11 @@
 			<key>Name</key>
 			<string>Solarized Dark</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>Monaco 10</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4917,11 +4899,11 @@
 			<key>Name</key>
 			<string>IdleToes Colors</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 10</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -5735,11 +5717,11 @@
 			<key>Name</key>
 			<string>Zenburn</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 10</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6793,7 +6775,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-23T23:00:27Z</date>
+	<date>2013-10-25T20:08:17Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -9925,6 +9907,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130624</string>
+	<string>1.0.0.20130622</string>
 </dict>
 </plist>
