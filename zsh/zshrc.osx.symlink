@@ -16,8 +16,13 @@ alias mysql_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mys
 alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
-if [[ -e /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
+if [[ -e /usr/local/opt/chruby/share/chruby ]]; then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
+
+  # will auto-switch if dir contains a .ruby-version file
+  # set a default ruby via .ruby-version file in $HOME
+  # see: https://github.com/postmodern/chruby
+  source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
 ### Added by the Heroku Toolbelt
