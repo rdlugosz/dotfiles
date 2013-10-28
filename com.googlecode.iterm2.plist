@@ -2631,9 +2631,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>372 368 924 485 0 0 1440 878 </string>
+	<string>372 393 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>28 76 1214 796 0 0 1440 878 </string>
+	<string>0 0 970 786 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3280,7 +3280,7 @@
 			<key>Normal Font</key>
 			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -4090,13 +4090,13 @@
 			<key>Name</key>
 			<string>Solarized Light</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>Monaco 10</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 18</string>
+			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -4905,7 +4905,7 @@
 			<key>Normal Font</key>
 			<string>Monaco 14</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -5723,7 +5723,7 @@
 			<key>Normal Font</key>
 			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -6528,13 +6528,13 @@
 			<key>Name</key>
 			<string>Base16</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 10</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>Monaco 10</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>2</integer>
 			<key>Right Option Key Sends</key>
@@ -6775,7 +6775,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-10-25T20:08:17Z</date>
+	<date>2013-10-28T17:52:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -9907,6 +9907,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20130622</string>
+	<string>1.0.0.20130624</string>
 </dict>
 </plist>
