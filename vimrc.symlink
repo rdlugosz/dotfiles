@@ -238,7 +238,8 @@ autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
 
-
+" enable spell checking on certain files
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPES
