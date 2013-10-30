@@ -1,6 +1,10 @@
 # Aliases and commands specific to OS X
 #[[ -s /usr/local/bin/gdircolors ]] && eval `gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`
 
+
+# NOTE: On OS X you need to set your paths in /etc/paths!!
+
+
 # do this stuff only if we have the GNU coreutils installed
 if [[ -s /usr/local/bin/gls ]]
 then
