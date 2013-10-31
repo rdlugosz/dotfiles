@@ -34,3 +34,6 @@ alias vi="vim"
 export RUBY_GC_MALLOC_LIMIT=100000000
 export RUBY_HEAP_MIN_SLOTS=2000000
 export RUBY_HEAP_FREE_MIN=20000
+
+# Set JAVA_HOME on OS X
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
