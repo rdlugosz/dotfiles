@@ -15,8 +15,8 @@ fi
 alias md5='md5 -r'
 alias md5sum='md5 -r'
 
-alias mysql_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias mysql_load="mysql.server start"
+alias mysql_unload="mysql.server stop"
 alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
