@@ -1,5 +1,8 @@
 # Reasonable defaults for OS X](http://dotfiles.github.io/)
 # Most come from here: https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+#
+# REALLY shouldn’t execute this as a script, rather, go through one by one and choose
+# what you want to use.
 
 # Don’t show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
@@ -63,6 +66,6 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-# Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# Don’t prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
