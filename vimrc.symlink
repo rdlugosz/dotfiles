@@ -115,6 +115,7 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+set spelllang=en
 set spellfile=$HOME/.dotfiles/vim_spell/en.utf-8.add
 set spell
 
