@@ -38,7 +38,7 @@ if exists(':Bundle')
   Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'airblade/vim-gitgutter'
+  "Bundle 'airblade/vim-gitgutter'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
@@ -47,7 +47,7 @@ if exists(':Bundle')
   Bundle 'vim-scripts/ZoomWin'
   Bundle 'mileszs/ack.vim'
   Bundle 'michaeljsmith/vim-indent-object'
-  Bundle 'bling/vim-airline'
+  "Bundle 'bling/vim-airline'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
@@ -135,7 +135,7 @@ set incsearch    " incremental searching
 set ignorecase   " searches are case insensitive...
 set smartcase    " ... unless they contain at least one capital letter
 
-" show $ marker at the boundry of cw
+" show $ marker at the boundary of cw
 set cpoptions+=$
 
 " allow modified buffers to be hidden
@@ -159,6 +159,19 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Set colorscheme
 silent! colorscheme seoul256
 
+" The Silver Searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor\ --column
+
+  " Use ag in CtrlP
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+
+  " Skip caching since ag is so fast
+  let g:ctrlp_use_caching = 0
+
+  " Expose Ag as a vim command
+  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -209,6 +222,9 @@ map <C-l> <C-w>l
 
 " Disable match highlight
 map <leader>l :nohlsearch<CR>
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
@@ -272,22 +288,22 @@ au BufNewFile,BufRead *.json set ft=javascript
 " STATUS LINE
 " see: :help 'statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set statusline=         "reset
-"set statusline+=%#todo# "set color
-"set statusline+=[       "open bracket char
-"set statusline+=%n      "buffer number
-"set statusline+=%M      "modifiable/modified flag
-"set statusline+=%R      "Readonly flag
-"set statusline+=%W      "Preview window flag
-"set statusline+=]%*     "close bracket & reset color
-"set statusline+=%<      "cut from here if line is too long
-"set statusline+=./%f    "relative path of the filename
-"set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
-"set statusline+=%{&ff}\| "file format
-"set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
-"set statusline+=%=      "left/right separator
-""set statusline+=%{fugitive#statusline()}\  "git branch
-"set statusline+=%c,     "cursor column
-"set statusline+=%l/%L   "cursor line/total lines
-"set statusline+=\ (%P)  "escaped space, percent through file
+set statusline=         "reset
+set statusline+=%#todo# "set color
+set statusline+=[       "open bracket char
+set statusline+=%n      "buffer number
+set statusline+=%M      "modifiable/modified flag
+set statusline+=%R      "Readonly flag
+set statusline+=%W      "Preview window flag
+set statusline+=]%*     "close bracket & reset color
+set statusline+=%<      "cut from here if line is too long
+set statusline+=./%f    "relative path of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
+set statusline+=%{&ff}\| "file format
+set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
+set statusline+=%=      "left/right separator
+set statusline+=%{fugitive#statusline()}\  "git branch
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ (%P)  "escaped space, percent through file
 
