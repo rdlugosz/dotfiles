@@ -128,7 +128,8 @@ set shiftwidth=2 " an autoindent (with <<) is two spaces
 set expandtab    " use spaces, not tabs
 
 set list         " Show invisible characters
-let &listchars = "tab:>\ ,trail:\u2591,extends:\u2192,precedes:\u2190,nbsp:\u00b7"
+let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
+set sidescroll=1
 
 set hlsearch     " highlight matches
 set incsearch    " incremental searching
