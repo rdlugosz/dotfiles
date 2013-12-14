@@ -1,3 +1,46 @@
+################################################################################
+# GLOBAL CONFIG
+################################################################################
+
+# Remember our roots: bind prefix to CTRL-a like GNU Screen
+set -g prefix C-a
+bind C-a send-prefix
+unbind C-b
+
+# Reduce tmux delay to avoid vim issues
+set -s escape-time 1
+
+# Start numbering windows and panes at 1 instead of 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+
+################################################################################
+# CUSTOM BINDINGS
+################################################################################
+
+# Reload tmux config
+bind r source-file ~/.tmux.conf \; display "tmux config reloaded!"
+
+# Intuitive window splitting keys
+# Note: to tmux, `-v` means 'create a new pane below this one"
+# and `-h` means 'create a new pane next to the existing one"
+bind | split-window -h
+bind - split-window -v
+
+# Vim-style movement between panes
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+# ...and windows
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+
+
+
 
 # http://robots.thoughtbot.com/post/55885045171/tmux-copy-paste-on-os-x-a-better-future
 # Use vim keybindings in copy mode
