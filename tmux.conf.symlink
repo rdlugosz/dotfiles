@@ -11,11 +11,14 @@ unbind C-b
 set -s escape-time 1
 
 # Increase the repeat-time a bit from 500ms
-set -g repeat-time 1000
+set -g repeat-time 1500
 
 # Start numbering windows and panes at 1 instead of 0
 set -g base-index 1
 setw -g pane-base-index 1
+
+# 256 color support
+set -g default-terminal "screen-256color"
 
 
 ################################################################################
@@ -47,13 +50,39 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
-# Mouse Miscellany
-setw -g mode-mouse on
+# Make pane layout switch repeatable
+bind -r Space next-layout
 
-set -g mouse-select-pane on
-set -g mouse-resize-pane on
-set -g mouse-select-window on
+# Mouse trap
+setw -g mode-mouse off
+set -g mouse-select-pane off
+set -g mouse-resize-pane off
+set -g mouse-select-window off
 
+
+################################################################################
+# COLORS
+################################################################################
+
+set -g status-fg white
+set -g status-bg black
+
+set -g window-status-fg cyan
+set -g window-status-bg default
+set -g window-status-attr dim
+
+set -g window-status-current-fg white
+set -g window-status-current-bg red
+set -g window-status-current-attr bright
+
+set -g pane-border-fg green
+set -g pane-border-bg black
+set -g pane-active-border-bg white
+set -g pane-active-border-bg yellow
+
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
 
 
 
