@@ -2847,7 +2847,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>372 393 924 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 13 1418 865 0 0 1440 878 </string>
+	<string>0 4 1434 874 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3481,11 +3481,11 @@
 			<key>Name</key>
 			<string>IdleToes Colors</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 10</string>
+			<string>Inconsolata 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 14</string>
+			<string>Inconsolata 15</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6153,7 +6153,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-11-26T18:52:39Z</date>
+	<date>2013-12-13T18:45:47Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -9285,6 +9285,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20131116</string>
+	<string>1.0.0.20131124</string>
 </dict>
 </plist>

@@ -10,6 +10,9 @@ unbind C-b
 # Reduce tmux delay to avoid vim issues
 set -s escape-time 1
 
+# Increase the repeat-time a bit from 500ms
+set -g repeat-time 1000
+
 # Start numbering windows and panes at 1 instead of 0
 set -g base-index 1
 setw -g pane-base-index 1
@@ -23,8 +26,8 @@ setw -g pane-base-index 1
 bind r source-file ~/.tmux.conf \; display "tmux config reloaded!"
 
 # Intuitive window splitting keys
-# Note: to tmux, `-v` means 'create a new pane below this one"
-# and `-h` means 'create a new pane next to the existing one"
+# Note: to tmux, `-v` means "create a new pane below this one"
+# and `-h` means "create a new pane next to the existing one"
 bind | split-window -h
 bind - split-window -v
 
@@ -34,10 +37,22 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# ...and windows
+# ...and windows (note: `-r` means "repeatable")
 bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
+# Pane resizing
+bind -r H resize-pane -L 5
+bind -r J resize-pane -D 5
+bind -r K resize-pane -U 5
+bind -r L resize-pane -R 5
+
+# Mouse Miscellany
+setw -g mode-mouse on
+
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+set -g mouse-select-window on
 
 
 
