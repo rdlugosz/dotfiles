@@ -98,8 +98,8 @@ set -g message-attr bright
 # Status line
 set -g status-utf8 on
 set -g status-left-length 40
-set -g status-left "#[fg=green]Session: #S #[fg=yellow]#I #[fg=cyan]#P"
-set -g status-right "#[fg=green]#h #[fg=cyan]%d%b%Y %R%p"
+set -g status-left "#[bg=black]#[fg=green]Session: #S #[fg=yellow]#I #[fg=cyan]#P"
+set -g status-right "#[bg=black]#[fg=red]#(~/.dotfiles/zelda-battery-tmux.sh) #[fg=green]#h #[fg=cyan]%d%b%Y %R%p"
 set -g status-justify centre
 set -g monitor-activity on
 set -g visual-activity on
