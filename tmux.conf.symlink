@@ -14,8 +14,8 @@ set -s escape-time 1
 set -g repeat-time 1500
 
 # Start numbering windows and panes at 1 instead of 0
-set -g base-index 1
-setw -g pane-base-index 1
+#set -g base-index 1
+#setw -g pane-base-index 1
 
 # 256 color support
 set -g default-terminal "screen-256color"
