@@ -160,7 +160,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Set colorscheme
 set t_Co=256
-silent! colorscheme seoul256
+set background=dark
+silent! colorscheme solarized
 
 " The Silver Searcher
 if executable('ag')
