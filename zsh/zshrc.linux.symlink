@@ -2,6 +2,9 @@
 
 alias ls='ls --color -F'
 
+# set up solarized dircolors (different command on OS X)
+eval `dircolors ~/.dircolors-solarized/dircolors.ansi-universal`
+
 # Init rbenv
 if [[ -f ~/.rbenv/bin/rbenv ]]
 then
