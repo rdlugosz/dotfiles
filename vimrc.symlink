@@ -48,6 +48,7 @@ if exists(':Bundle')
   Bundle 'mileszs/ack.vim'
   Bundle 'michaeljsmith/vim-indent-object'
   Bundle 'bling/vim-airline'
+  Bundle 'rdlugosz/vim-dragvisuals'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
@@ -175,6 +176,10 @@ if executable('ag')
   command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_full_redraws = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -267,6 +272,24 @@ autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
 " enable spell checking on certain files
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
 
+" Key mappings for vim-dragvisuals
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
+" ---------------
+" Tabular
+" ---------------
+nnoremap <Leader>t= :Tabularize assignment<CR>
+vnoremap <Leader>t= :Tabularize assignment<CR>
+nnoremap <Leader>t: :Tabularize symbol<CR>
+vnoremap <Leader>t: :Tabularize symbol<CR>
+nnoremap <Leader>t, :Tabularize comma<CR>
+vnoremap <Leader>t, :Tabularize comma<CR>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPES
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -318,8 +341,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 "=====[ Highlight matches when jumping to next ]=============
 
     " This rewires n and N to do the highlighing...
-    nnoremap <silent> n   n:call HLNext(0.4)<cr>
-    nnoremap <silent> N   N:call HLNext(0.4)<cr>
+    nnoremap <silent> n   n:call HLNext(0.2)<cr>
+    nnoremap <silent> N   N:call HLNext(0.2)<cr>
 
     function! HLNext (blinktime)
         highlight WhiteOnRed ctermfg=white ctermbg=red
