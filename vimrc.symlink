@@ -107,21 +107,26 @@ endif
 " see https://github.com/tpope/vim-sensible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set swapfile
-set backup
-set backupdir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
-set undodir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 
-set undofile
+set backup
+set backupdir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
+
+if has('persistent_undo')
+  set undodir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
+  set undofile
+  set undoreload=10000
+end
 set undolevels=1000
-set undoreload=10000
 
 set spelllang=en
 set spellfile=$HOME/.dotfiles/vim_spell/en.utf-8.add
 set spell
 
-set relativenumber
-set number       " sets up 'hybrid' line numbering mode
+if exists('+relativenumber')
+  set relativenumber
+end
+set number       " set after rnu creates 'hybrid' line numbering mode
 
 set nowrap       " don't wrap lines
 set tabstop=2    " a tab is two spaces
