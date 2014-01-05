@@ -20,6 +20,9 @@ set -g repeat-time 1500
 # 256 color support
 set -g default-terminal "screen-256color"
 
+# Up the pane history from 2000
+set -g history-limit 10000
+
 
 ################################################################################
 # CUSTOM BINDINGS
