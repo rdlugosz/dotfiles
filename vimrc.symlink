@@ -192,6 +192,9 @@ let g:syntastic_full_redraws = 1
 " Quick ESC
 imap kj <ESC>
 
+" Toggle spelling
+nmap <leader>s :set invspell<CR>:set spell?<CR>
+
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 nmap <silent> <F6> :set invpaste<CR>:set paste?<CR>
