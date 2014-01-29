@@ -49,6 +49,7 @@ if exists(':Bundle')
   Bundle 'michaeljsmith/vim-indent-object'
   Bundle 'bling/vim-airline'
   Bundle 'rdlugosz/vim-dragvisuals'
+  Bundle 'mbbill/undotree'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
@@ -251,6 +252,9 @@ cnoremap w!! w !sudo tee > /dev/null %
 
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
+
+" UndoTree
+nmap <leader>u :UndotreeToggle<CR>
 
 " Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
