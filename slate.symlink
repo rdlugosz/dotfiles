@@ -46,3 +46,9 @@ bind down:cmd;alt focus behind
 
 # Window Hints
 bind esc:cmd hint
+
+# window switcher
+bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
+
+# Divvy style grid
+bind g:cmd grid padding:5 0:6,2 1:8,3
