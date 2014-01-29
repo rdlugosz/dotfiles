@@ -166,7 +166,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " Set colorscheme
 set t_Co=256
 set background=dark
-silent! colorscheme solarized
+silent! colorscheme jellybeans
 
 " The Silver Searcher
 if executable('ag')
