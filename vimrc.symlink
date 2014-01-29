@@ -229,6 +229,9 @@ nmap <leader>L mQgewvu`Q
 " Insert the Ruby hashrocket with <c-l>
 imap <c-l> <space>=><space>
 
+" Reindent the entire file
+nmap <leader>= gg=G``:echo "reindent global"<CR>
+
 " map j to gj and k to gk, so line navigation ignores line wrap
 nmap j gj
 nmap k gk
