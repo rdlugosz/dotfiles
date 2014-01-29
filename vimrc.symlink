@@ -118,7 +118,7 @@ if has('persistent_undo')
   set undofile
   set undoreload=10000
 end
-set undolevels=1000
+set undolevels=10000
 
 set spelllang=en
 set spellfile=$HOME/.vim/en.utf-8.add
@@ -142,6 +142,8 @@ set nohlsearch   " don't highlight matches
 set incsearch    " incremental searching
 set ignorecase   " searches are case insensitive...
 set smartcase    " ... unless they contain at least one capital letter
+
+set showcmd      " show commands as they are typed
 
 " show $ marker at the boundary of cw
 set cpoptions+=$
@@ -192,6 +194,7 @@ let g:syntastic_full_redraws = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let spacebar double as our leader, for great justice
 map <space> <leader>
+map <space><space> <leader><leader>
 
 " Quick ESC
 imap kj <ESC>
@@ -199,14 +202,16 @@ imap kj <ESC>
 " Reload our config
 nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
 
+" Write file
+nmap <leader>w :w<cr>
+
 " Toggle spelling
 nmap <leader>s :set invspell<CR>:set spell?<CR>
 
 " Toggle paste mode
+nmap <leader>p :set invpaste<CR>:set paste?<CR>
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-nmap <silent> <F6> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
-imap <silent> <F6> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
