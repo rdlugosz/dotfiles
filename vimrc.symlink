@@ -138,7 +138,7 @@ set list         " Show invisible characters
 let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
 set sidescroll=1
 
-set hlsearch     " highlight matches
+set nohlsearch   " don't highlight matches
 set incsearch    " incremental searching
 set ignorecase   " searches are case insensitive...
 set smartcase    " ... unless they contain at least one capital letter
@@ -196,6 +196,9 @@ map <space> <leader>
 " Quick ESC
 imap kj <ESC>
 
+" Reload our config
+nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
+
 " Toggle spelling
 nmap <leader>s :set invspell<CR>:set spell?<CR>
 
@@ -240,7 +243,7 @@ map <C-j> <C-w>j
 map <c-k> <C-w>k
 map <C-l> <C-w>l
 
-" Disable match highlight
+" Toggle match highlight
 map <leader>l :set invhlsearch<CR>
 
 " bind K to grep word under cursor
