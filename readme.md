@@ -1,7 +1,9 @@
 Ryan's Dotfiles
 ===============
 
-use at your own risk...
+Use at your own risk...
+
+Questions? [@lbwski](http://twitter.com/lbwski)
 
 
 ## Setup Notes

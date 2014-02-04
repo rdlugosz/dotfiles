@@ -288,7 +288,7 @@ nmap <leader>gp :Git push<cr>
 " Use Marked.app to preview Markdown files...
 " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
 function! s:setupMarkup()
-  nnoremap <leader>p :silent !open -a Marked.app '%:p'<cr>
+  nnoremap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
 endfunction
 
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
