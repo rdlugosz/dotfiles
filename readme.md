@@ -24,3 +24,9 @@ e.g., `~/workspace/dotfiles`
 
 [http://dotfiles.github.io/](http://dotfiles.github.io/)
 
+## Attribution
+
+I try to leave a comment where it isn't obvious where something came
+from originally, but there are some significant areas where I have been
+remiss. In general what you're seeing here is years and years of tweaks
+and tips picked up along the way from others.
