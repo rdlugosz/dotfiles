@@ -34,6 +34,7 @@ if exists(':Bundle')
   Bundle 'tpope/vim-unimpaired'
 
   "" Interface enhancements
+  Bundle 'tpope/vinegar.vim'
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
