@@ -34,14 +34,14 @@ if exists(':Bundle')
   Bundle 'tpope/vim-unimpaired'
 
   "" Interface enhancements
-  Bundle 'tpope/vinegar.vim'
+  Bundle 'tpope/vim-vinegar'
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'airblade/vim-gitgutter'
   Bundle 'scrooloose/nerdcommenter'
-  Bundle 'scrooloose/nerdtree'
+  "Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
   Bundle 'nelstrom/vim-visual-star-search'
