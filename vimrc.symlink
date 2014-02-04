@@ -41,7 +41,7 @@ if exists(':Bundle')
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'airblade/vim-gitgutter'
   Bundle 'scrooloose/nerdcommenter'
-  "Bundle 'scrooloose/nerdtree'
+  Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
   Bundle 'nelstrom/vim-visual-star-search'
@@ -274,6 +274,7 @@ cnoremap w!! w !sudo tee > /dev/null %
 
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw=0
 
 " UndoTree
 nmap <leader>u :UndotreeToggle<CR>
