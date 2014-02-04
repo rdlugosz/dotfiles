@@ -41,10 +41,10 @@ bind | split-window -h
 bind - split-window -v
 
 # Vim-style movement between panes
-bind -r h select-pane -L
-bind -r j select-pane -D
-bind -r k select-pane -U
-bind -r l select-pane -R
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # ...and windows (note: `-r` means "repeatable")
 bind -r C-h select-window -t :-
