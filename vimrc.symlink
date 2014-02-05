@@ -24,6 +24,9 @@ if exists(':Bundle')
   " required!
   Bundle 'gmarik/vundle'
 
+  " Activate the built-in matchit.vim
+  runtime macros/matchit.vim
+
   " The Tim Pope all-star collection
   Bundle 'tpope/vim-cucumber'
   Bundle 'tpope/vim-fugitive'
@@ -40,7 +43,6 @@ if exists(':Bundle')
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
   Bundle 'airblade/vim-gitgutter'
-  Bundle 'scrooloose/nerdcommenter'
   Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
@@ -61,6 +63,7 @@ if exists(':Bundle')
   Bundle 'junegunn/seoul256.vim'
 
   " Language support
+  Bundle 'tpope/vim-commentary'
   Bundle 'kchmck/vim-coffee-script'
   Bundle 'guns/vim-clojure-static'
   Bundle 'elixir-lang/vim-elixir'
@@ -85,6 +88,12 @@ if exists(':Bundle')
   Bundle 't9md/vim-ruby-xmpfilter'
   Bundle 'rizzatti/funcoo.vim'
   Bundle 'rizzatti/dash.vim'
+  Bundle 'AndrewRadev/splitjoin.vim'
+  Bundle 'ecomba/vim-ruby-refactoring'
+
+  " Add a text object for Ruby blocks (ar / ir)
+  Bundle 'kana/vim-textobj-user'
+  Bundle 'nelstrom/vim-textobj-rubyblock'
 
   " Snippets are kind of languagey, but in own section
   " to make it clear snipmate depends on tlib and mw-utils.
@@ -130,6 +139,8 @@ if exists('+relativenumber')
 end
 set number       " set after rnu creates 'hybrid' line numbering mode
 
+
+set lbr          " wrap at word boundaries
 set nowrap       " don't wrap lines
 set tabstop=2    " a tab is two spaces
 set shiftwidth=2 " an autoindent (with <<) is two spaces
@@ -195,6 +206,10 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_full_redraws = 1
 
+if &diff
+  set wrap
+endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -219,6 +234,9 @@ nmap <leader>s :set invspell<CR>:set spell?<CR>
 
 " Toggle wrap
 nmap <leader>W :set invwrap<CR>:set wrap?<CR>
+
+" Toggle Cursor Column
+nmap <leader>c :set invcursorcolumn<CR>
 
 " Toggle paste mode
 nmap <leader>p :set invpaste<CR>:set paste?<CR>
