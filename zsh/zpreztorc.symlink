@@ -36,7 +36,8 @@ zstyle ':prezto:load' pmodule \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'prompt'
+  'prompt' \
+  'osx'
 
 #
 # Editor
@@ -130,7 +131,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 #
 
 # Auto set the tab and window titles.
-zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'no'
 
 #
 # Tmux
