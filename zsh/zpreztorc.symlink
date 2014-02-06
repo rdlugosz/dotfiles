@@ -25,19 +25,17 @@ zstyle ':prezto:*:*' color 'yes'
 # The order matters.
 zstyle ':prezto:load' pmodule \
   'environment' \
-  'terminal' \
   'editor' \
   'history' \
   'directory' \
-  'git' \
   'spectrum' \
+  'osx' \
   'utility' \
   'completion' \
   'fasd' \
   'syntax-highlighting' \
   'history-substring-search' \
-  'prompt' \
-  'osx'
+  'prompt'
 
 #
 # Editor
@@ -45,6 +43,7 @@ zstyle ':prezto:load' pmodule \
 
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':prezto:module:editor' keymap 'vi'
+zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -112,12 +111,12 @@ zstyle ':prezto:module:prompt' theme 'peepcode'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
 #
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
