@@ -61,6 +61,7 @@ if exists(':Bundle')
   Bundle 'chriskempson/base16-vim'
   Bundle 'nanotech/jellybeans.vim'
   Bundle 'junegunn/seoul256.vim'
+  Bundle 'tomasr/molokai'
 
   " Language support
   Bundle 'tpope/vim-commentary'
@@ -184,9 +185,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Set colorscheme
-set t_Co=256
+if $TERM =~ "-256color"
+  set t_Co=256
+endif
 set background=dark
-silent! colorscheme jellybeans
+silent! colorscheme solarized
 
 " The Silver Searcher
 if executable('ag')
