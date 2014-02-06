@@ -29,7 +29,9 @@ alias server='ruby -run -e httpd . -p5000'
 
 # override alias in the git module (old habits die hard)
 alias gs='git status'
+alias gc='git commit'
 alias gd='git diff'
+alias gp='git push'
 
 alias lol='lolcat'
 
