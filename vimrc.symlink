@@ -201,6 +201,9 @@ if executable('ag')
   " Skip caching since ag is so fast
   let g:ctrlp_use_caching = 0
 
+  " Use ag in ack.vim
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+
   " Expose Ag as a vim command
   command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
