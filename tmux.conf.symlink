@@ -26,6 +26,11 @@ set -g history-limit 10000
 # Prevent the shell from renaming our windows
 set -g allow-rename off
 
+# On OS X, use the reattach-to-user-namespace wrapper in order to retain
+# access to the system clipboard within tmux sessions...
+# https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
+set-option -g default-command 'command -v reattach-to-user-namespace >/dev/null && exec reattach-to-user-namespace -l "$SHELL" || exec "$SHELL"'
+
 
 ################################################################################
 # CUSTOM BINDINGS
