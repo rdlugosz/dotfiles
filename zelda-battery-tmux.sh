@@ -3,6 +3,8 @@
 # Works best with blinking text: the last heart will blink when you have less
 # than 25% of your battery life remaining.
 #
+# adapted from: https://gist.github.com/4324139
+#
 # Add the following to your `~/.tmux.conf`;
 #
 #     set -g status-right "#[fg=red]#(path/to/zelda-battery-tmux.sh) "
