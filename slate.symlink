@@ -51,4 +51,4 @@ bind esc:cmd hint
 bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
 
 # Divvy style grid
-bind g:cmd grid padding:5 0:6,2 1:8,3
+bind g:cmd grid padding:5 0:8,5 1:10,6
