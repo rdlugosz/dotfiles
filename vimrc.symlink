@@ -216,6 +216,13 @@ if &diff
   set wrap
 endif
 
+" Use par to reflow text
+" see: http://vimcasts.org/episodes/formatting-text-with-par/
+if executable('par')
+  set formatprg=par\ -w80
+endif
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
