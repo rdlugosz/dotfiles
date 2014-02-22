@@ -402,8 +402,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 "====[ Make the 81st column stand out ]====================
 
 " just the 81st column of wide lines...
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+" highlight ColorColumn ctermbg=magenta
+" call matchadd('ColorColumn', '\%81v', 100)
 
 "=====[ Highlight matches when jumping to next ]=============
 
