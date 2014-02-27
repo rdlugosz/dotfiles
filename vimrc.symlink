@@ -327,12 +327,14 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Mappings for vim-ruby-xmpfilter
-autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
-autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
-autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
+if executable('xmpfilter')
+  autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+  autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+  autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
+endif
 
 " enable spell checking on certain files
 autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
