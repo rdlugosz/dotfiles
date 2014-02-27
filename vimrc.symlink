@@ -203,9 +203,6 @@ if executable('ag')
 
   " Use ag in ack.vim
   let g:ackprg = 'ag --nogroup --nocolor --column'
-
-  " Expose Ag as a vim command
-  command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 endif
 
 let g:syntastic_error_symbol = '✗'
