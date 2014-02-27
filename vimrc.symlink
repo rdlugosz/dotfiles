@@ -189,7 +189,7 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
-silent! colorscheme solarized
+silent! colorscheme zenburn
 
 " The Silver Searcher
 if executable('ag')
