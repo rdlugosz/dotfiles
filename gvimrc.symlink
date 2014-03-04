@@ -2,6 +2,9 @@ set transparency=0
 set guioptions=aAce "hide the toolbar
 
 silent! set guifont=Menlo:h12
+if has("gui_macvim")
+  set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
+endif
 
 " Automatically resize splits
 " when resizing MacVim window

@@ -119,6 +119,14 @@ endif
 " Note: most typical defaults handled by tpope/vim-sensible
 " see https://github.com/tpope/vim-sensible
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set colorscheme
+if $TERM =~ "-256color"
+  set t_Co=256
+endif
+set background=dark
+silent! colorscheme zenburn
+
 set swapfile
 set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 
@@ -182,15 +190,17 @@ else
 endif
 
 " vim-airline customizations
+set noshowmode " Hide mode line text since it's already in Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Set colorscheme
-if $TERM =~ "-256color"
-  set t_Co=256
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    " Assume that if we are on OS X then we have the powerline fonts
+    " (because it is probably our own system).
+    let g:airline_powerline_fonts = 1
+  endif
 endif
-set background=dark
-silent! colorscheme zenburn
 
 " The Silver Searcher
 if executable('ag')
