@@ -91,6 +91,7 @@ if exists(':Bundle')
   Bundle 'rizzatti/dash.vim'
   Bundle 'AndrewRadev/splitjoin.vim'
   Bundle 'ecomba/vim-ruby-refactoring'
+  Bundle 'chrisbra/csv.vim'
 
   " Add a text object for Ruby blocks (ar / ir)
   Bundle 'kana/vim-textobj-user'
