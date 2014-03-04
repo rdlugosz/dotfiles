@@ -192,7 +192,6 @@ endif
 " vim-airline customizations
 set noshowmode " Hide mode line text since it's already in Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
