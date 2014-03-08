@@ -35,6 +35,8 @@ alias gp='git push'
 
 alias lol='lolcat'
 
+alias how='howdoi'
+
 # execute local rc if it exists
 if [[ -e $HOME/.zshrc.local ]]; then
   source $HOME/.zshrc.local
