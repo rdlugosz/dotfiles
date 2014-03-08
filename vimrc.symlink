@@ -42,7 +42,9 @@ if exists(':Bundle')
   Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
   Bundle 'Lokaltog/vim-easymotion'
-  Bundle 'airblade/vim-gitgutter'
+  if exists("*gettabvar")
+    Bundle 'airblade/vim-gitgutter'
+  endif
   Bundle 'scrooloose/nerdtree'
   Bundle 'ervandew/supertab'
   Bundle 'godlygeek/tabular'
