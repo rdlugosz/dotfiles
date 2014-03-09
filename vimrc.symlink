@@ -55,6 +55,7 @@ if exists(':Bundle')
   Bundle 'bling/vim-airline'
   Bundle 'rdlugosz/vim-dragvisuals'
   Bundle 'mbbill/undotree'
+  Bundle 'justinmk/vim-sneak'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
