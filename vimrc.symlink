@@ -333,22 +333,23 @@ nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gp :Git push<cr>
 
-" Search for word under cursor in Dash.app
+" Mac OS X-only mappings
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
+    " Search for word under cursor in Dash.app
     nmap <leader>d <Plug>DashSearch
     nmap <leader>D <Plug>DashGlobalSearch
+
+    " Use Marked.app to preview Markdown files...
+    " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
+    function! s:setupMarkup()
+      nnoremap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
+    endfunction
+
+    au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
   endif
 endif
-
-" Use Marked.app to preview Markdown files...
-" http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
-function! s:setupMarkup()
-  nnoremap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
-endfunction
-
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 " Mappings for vim-ruby-xmpfilter
 if executable('xmpfilter')
