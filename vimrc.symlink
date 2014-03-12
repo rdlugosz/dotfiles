@@ -153,7 +153,6 @@ if exists('+relativenumber')
 end
 set number       " set after rnu creates 'hybrid' line numbering mode
 
-
 set lbr          " wrap at word boundaries
 set nowrap       " don't wrap lines
 set tabstop=2    " a tab is two spaces
@@ -333,6 +332,15 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gp :Git push<cr>
+
+" Search for word under cursor in Dash.app
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin\n"
+    nmap <leader>d <Plug>DashSearch
+    nmap <leader>D <Plug>DashGlobalSearch
+  endif
+endif
 
 " Use Marked.app to preview Markdown files...
 " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
