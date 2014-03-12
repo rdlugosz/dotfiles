@@ -56,6 +56,7 @@ if exists(':Bundle')
   Bundle 'rdlugosz/vim-dragvisuals'
   Bundle 'mbbill/undotree'
   Bundle 'justinmk/vim-sneak'
+  Bundle 'nathanaelkane/vim-indent-guides'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
@@ -236,6 +237,10 @@ endif
 " Enable vim-sneak Streak mode (like EasyMotion)
 let g:sneak#streak = 1
 
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -336,10 +341,6 @@ function! s:setupMarkup()
 endfunction
 
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
-" Remember last location in file, but not for commit messages.
-" see :help last-position-jump
-au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Mappings for vim-ruby-xmpfilter
 if executable('xmpfilter')
