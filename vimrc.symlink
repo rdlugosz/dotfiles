@@ -422,8 +422,8 @@ au BufNewFile,BufRead *.json set ft=javascript
 "=====[ Highlight matches when jumping to next ]=============
 
 " This rewires n and N to do the highlighing...
-nnoremap <silent> n   n:call HLNext(0.2)<cr>
-nnoremap <silent> N   N:call HLNext(0.2)<cr>
+nnoremap <silent> n   nzz:call HLNext(0.2)<cr>
+nnoremap <silent> N   Nzz:call HLNext(0.2)<cr>
 
 function! HLNext (blinktime)
   highlight WhiteOnRed ctermfg=white ctermbg=red
