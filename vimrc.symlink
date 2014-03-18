@@ -302,10 +302,23 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 " Navigate splits more easily
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <c-k> <C-w>k
-map <C-l> <C-w>l
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Key repeat hack for resizing splits, i.e., <C-w>+++- vs <C-w>+<C-w>+<C-w>-
+" see: http://www.vim.org/scripts/script.php?script_id=2223
+nmap <C-w>+ <C-w>+<SID>ws
+nmap <C-w>- <C-w>-<SID>ws
+nmap <C-w>> <C-w>><SID>ws
+nmap <C-w>< <C-w><<SID>ws
+nn <script> <SID>ws+ <C-w>+<SID>ws
+nn <script> <SID>ws- <C-w>-<SID>ws
+nn <script> <SID>ws> <C-w>><SID>ws
+nn <script> <SID>ws< <C-w><<SID>ws
+nmap <SID>ws <Nop>
+
 
 " Toggle match highlight
 map <leader>l :set invhlsearch<CR>
