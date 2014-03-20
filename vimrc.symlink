@@ -101,8 +101,11 @@ if exists(':Bundle')
   Bundle 'kana/vim-textobj-user'
   Bundle 'nelstrom/vim-textobj-rubyblock'
 
-  " Misc snippet support
-  Bundle 'SirVer/ultisnips'
+  " Snippets are kind of languagey, but in own section
+  " to make it clear snipmate depends on tlib and mw-utils.
+  Bundle "MarcWeber/vim-addon-mw-utils"
+  Bundle "tomtom/tlib_vim"
+  Bundle 'garbas/vim-snipmate'
   Bundle 'honza/vim-snippets'
 
   " Lols
@@ -236,11 +239,6 @@ let g:sneak#streak = 1
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Ultisnips configuration
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
