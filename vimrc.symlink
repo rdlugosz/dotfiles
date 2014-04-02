@@ -55,7 +55,6 @@ if exists(':Bundle')
   Bundle 'bling/vim-airline'
   Bundle 'rdlugosz/vim-dragvisuals'
   Bundle 'mbbill/undotree'
-  Bundle 'justinmk/vim-sneak'
   Bundle 'nathanaelkane/vim-indent-guides'
 
   " Colorschemes
@@ -232,9 +231,6 @@ endif
 if executable('par')
   set formatprg="par -h -w78 -B=.,\?_A_a "
 endif
-
-" Enable vim-sneak Streak mode (like EasyMotion)
-let g:sneak#streak = 1
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
