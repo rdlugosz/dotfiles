@@ -7,7 +7,7 @@ if has("gui_macvim")
 endif
 
 colorscheme solarized
-set background=light
+" set background=light
 
 " Automatically resize splits
 " when resizing MacVim window

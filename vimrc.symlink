@@ -128,7 +128,7 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
-silent! colorscheme zenburn
+silent! colorscheme solarized
 
 set swapfile
 set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
