@@ -6727,7 +6727,7 @@
 	<key>Default Arrangement Name</key>
 	<string>Rails Dev</string>
 	<key>Default Bookmark Guid</key>
-	<string>61FD231B-F521-40B2-9504-7CDAB8B2A48E</string>
+	<string>5E1CB228-31D9-4C46-A38D-66967919318B</string>
 	<key>DimBackgroundWindows</key>
 	<true/>
 	<key>DimInactiveSplitPanes</key>
@@ -6816,9 +6816,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>2619 934 924 485 1440 51 2560 1418 </string>
+	<string>372 372 605 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 612 985 746 1440 51 2560 1418 </string>
+	<string>0 0 1440 900 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -9336,7 +9336,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-04-09T19:25:44Z</date>
+	<date>2014-04-26T02:21:08Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -9392,6 +9392,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140112</string>
+	<string>1.0.0.20140421</string>
 </dict>
 </plist>
