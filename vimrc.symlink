@@ -56,6 +56,7 @@ if exists(':Bundle')
   Bundle 'rdlugosz/vim-dragvisuals'
   Bundle 'mbbill/undotree'
   Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'wellle/targets.vim'
 
   " Colorschemes
   Bundle 'altercation/vim-colors-solarized.git'
