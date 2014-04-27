@@ -159,6 +159,10 @@ set tabstop=2    " a tab is two spaces
 set shiftwidth=2 " an autoindent (with <<) is two spaces
 set expandtab    " use spaces, not tabs
 
+" When on first/last char in a line, allow left/right to navigate
+" through to the prev/next line.
+set whichwrap+=<,>,h,l
+
 set list         " Show invisible characters
 let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
 set sidescroll=1
