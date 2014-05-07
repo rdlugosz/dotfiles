@@ -93,7 +93,7 @@ set -g window-status-fg black
 set -g window-status-bg blue
 set -g window-status-attr dim
 
-set -g window-status-current-fg white
+set -g window-status-current-fg black
 set -g window-status-current-bg blue
 set -g window-status-current-attr bright
 
