@@ -6,7 +6,7 @@ if has("gui_macvim")
   set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
 endif
 
-colorscheme solarized
+" colorscheme solarized
 " set background=light
 
 " Automatically resize splits
