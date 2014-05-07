@@ -146,7 +146,6 @@ set undolevels=10000
 
 set spelllang=en
 set spellfile=$HOME/.vim/en.utf-8.add
-set spell
 
 if exists('+relativenumber')
   set relativenumber
