@@ -42,3 +42,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
 # see: http://golang.org/doc/code.html#GOPATH
 export GOPATH="$HOME/workspace/go"
 export PATH="$PATH:$GOPATH/bin"
+
+# Add ruby Binstubs to our path (must have priority over the rbenv shims!)
+export PATH="./bin:$PATH"
