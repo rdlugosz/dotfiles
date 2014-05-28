@@ -10664,7 +10664,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-07T02:12:12Z</date>
+	<date>2014-05-22T05:02:46Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -10706,7 +10706,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Lucida Grande UI</string>
 	<key>Window Arrangements</key>
 	<dict/>
 	<key>WindowNumber</key>
