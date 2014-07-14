@@ -7328,9 +7328,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>372 372 924 485 0 0 1440 878 </string>
+	<string>372 372 605 485 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 6 1433 872 0 0 1440 878 </string>
+	<string>0 121 985 746 0 0 1440 878 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -10417,7 +10417,7 @@
 			<key>Mouse Reporting</key>
 			<false/>
 			<key>Name</key>
-			<string>Copy of Base16 Light</string>
+			<string>Base16 Dark</string>
 			<key>Non Ascii Font</key>
 			<string>MesloLGS-RegularForPowerline 14</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -10664,7 +10664,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-22T05:02:46Z</date>
+	<date>2014-07-08T08:41:35Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -10706,7 +10706,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>.Lucida Grande UI</string>
+	<string>Lucida Grande</string>
 	<key>Window Arrangements</key>
 	<dict/>
 	<key>WindowNumber</key>
@@ -10720,6 +10720,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140421</string>
+	<string>1.0.0.20140518</string>
 </dict>
 </plist>
