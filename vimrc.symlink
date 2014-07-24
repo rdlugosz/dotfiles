@@ -195,18 +195,6 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" vim-airline customizations
-" set noshowmode " Hide mode line text since it's already in Airline
-" let g:airline#extensions#tabline#enabled = 1
-" if has("unix")
-"   let s:uname = system("uname -s")
-"   if s:uname == "Darwin\n"
-"     " Assume that if we are on OS X then we have the powerline fonts
-"     " (because it is probably our own system).
-"     let g:airline_powerline_fonts = 1
-"   endif
-" endif
-
 " The Silver Searcher
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
