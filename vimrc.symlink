@@ -41,7 +41,6 @@ if exists(':Bundle')
   Bundle 'jeetsukumaran/vim-buffergator'
   Bundle 'tpope/vim-characterize'
   Bundle 'kien/ctrlp.vim'
-  Bundle 'Lokaltog/vim-easymotion'
   if exists("*gettabvar")
     Bundle 'airblade/vim-gitgutter'
   endif
