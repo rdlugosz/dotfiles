@@ -185,6 +185,10 @@ set wildignore+=*/tmp/*
 " mouse works in most terminal software we use...
 set mouse=a
 
+" Tabline and Vim-CtrlSpace config
+set showtabline=1
+let g:ctrlspace_use_tabline = 1
+
 " change the cursor shape depending on mode
 " see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 if exists('$TMUX')
@@ -227,6 +231,10 @@ endif
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
 au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Buffergator config
+let g:buffergator_show_full_directory_path = 0
+let g:buffergator_viewport_split_policy = 'B'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
