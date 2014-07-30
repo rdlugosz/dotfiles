@@ -234,7 +234,7 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
-let g:buffergator_viewport_split_policy = 'B'
+let g:buffergator_viewport_split_policy = 'T'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
