@@ -21,7 +21,7 @@ set -g repeat-time 750
 set -g default-terminal "screen-256color"
 
 # Up the pane history from 2000
-set -g history-limit 10000
+set -g history-limit 100000
 
 # Prevent the shell from renaming our windows
 set -g allow-rename off
