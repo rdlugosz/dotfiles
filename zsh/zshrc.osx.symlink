@@ -36,7 +36,7 @@ alias vi="vim"
 # export RUBY_HEAP_FREE_MIN=20000
 
 # Set JAVA_HOME on OS X
-export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+# export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
 
 # Go path requirements
 # see: http://golang.org/doc/code.html#GOPATH
