@@ -1,114 +1,101 @@
 set nocompatible               " be iMproved
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SETUP VUNDLE PACKAGE MANAGER
-" # !> possibly useless use of a literal in void context
-" if Vundle is not installed, see: https://github.com/gmarik/vundle
-" or just: git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-if exists(':Bundle')
+if exists(':Plugin')
   " let Vundle manage Vundle
   " required!
-  Bundle 'gmarik/vundle'
+  Plugin 'gmarik/vundle'
 
   " Activate the built-in matchit.vim
   runtime macros/matchit.vim
 
   " The Tim Pope all-star collection
-  Bundle 'tpope/vim-cucumber'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'tpope/vim-repeat'
-  Bundle 'tpope/vim-sensible'
-  Bundle 'tpope/vim-speeddating'
-  Bundle 'tpope/vim-surround'
-  Bundle 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-cucumber'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-sensible'
+  Plugin 'tpope/vim-speeddating'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-unimpaired'
+  Plugin 'tpope/vim-eunuch'
+  Plugin 'tpope/vim-commentary'
 
-  "" Interface enhancements
-  Bundle 'jeetsukumaran/vim-buffergator'
-  Bundle 'tpope/vim-characterize'
-  Bundle 'kien/ctrlp.vim'
+  " Interface enhancements
+  Plugin 'jeetsukumaran/vim-buffergator'
+  Plugin 'tpope/vim-characterize'
+  Plugin 'kien/ctrlp.vim'
   if exists("*gettabvar")
-    Bundle 'airblade/vim-gitgutter'
+    Plugin 'airblade/vim-gitgutter'
   endif
-  Bundle 'scrooloose/nerdtree'
-  Bundle 'godlygeek/tabular'
-  Bundle 'nelstrom/vim-visual-star-search'
-  Bundle 'vim-scripts/ZoomWin'
-  Bundle 'mileszs/ack.vim'
-  Bundle 'michaeljsmith/vim-indent-object'
-  " Bundle 'bling/vim-airline'
-  Bundle 'rdlugosz/vim-dragvisuals'
-  Bundle 'mbbill/undotree'
-  Bundle 'nathanaelkane/vim-indent-guides'
-  Bundle 'wellle/targets.vim'
-  Bundle 'szw/vim-ctrlspace'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'godlygeek/tabular'
+  Plugin 'nelstrom/vim-visual-star-search'
+  Plugin 'vim-scripts/ZoomWin'
+  Plugin 'mileszs/ack.vim'
+  Plugin 'michaeljsmith/vim-indent-object'
+  " Plugin 'bling/vim-airline'
+  Plugin 'rdlugosz/vim-dragvisuals'
+  Plugin 'mbbill/undotree'
+  Plugin 'nathanaelkane/vim-indent-guides'
+  Plugin 'wellle/targets.vim'
+  Plugin 'szw/vim-ctrlspace'
 
   " Colorschemes
-  Bundle 'altercation/vim-colors-solarized.git'
-  Bundle 'tpope/vim-vividchalk'
-  Bundle 'vim-scripts/Zenburn'
-  Bundle 'chriskempson/base16-vim'
-  Bundle 'nanotech/jellybeans.vim'
-  Bundle 'junegunn/seoul256.vim'
-  Bundle 'tomasr/molokai'
+  Plugin 'altercation/vim-colors-solarized.git'
+  Plugin 'tpope/vim-vividchalk'
+  Plugin 'vim-scripts/Zenburn'
+  Plugin 'chriskempson/base16-vim'
+  Plugin 'nanotech/jellybeans.vim'
+  Plugin 'junegunn/seoul256.vim'
+  Plugin 'tomasr/molokai'
 
   " Language support
-  Bundle 'tpope/vim-commentary'
-  Bundle 'kchmck/vim-coffee-script'
-  Bundle 'guns/vim-clojure-static'
-  Bundle 'elixir-lang/vim-elixir'
-  Bundle 'tpope/vim-endwise'
-  Bundle 'tpope/vim-git'
-  Bundle 'jnwhiteh/vim-golang'
-  Bundle 'tpope/vim-haml'
-  Bundle 'pangloss/vim-javascript'
-  Bundle 'groenewege/vim-less'
-  Bundle 'tpope/vim-markdown'
-  Bundle 'mmalecki/vim-node.js'
-  Bundle 'ajf/puppet-vim'
-  Bundle 'tpope/vim-rails'
-  Bundle 'tpope/vim-rake'
-  Bundle 'skwp/vim-rspec'
-  Bundle 'skalnik/vim-vroom'
-  Bundle 'vim-ruby/vim-ruby'
-  Bundle 'rosstimson/scala-vim-support'
-  Bundle 'cakebaker/scss-syntax.vim'
-  Bundle 'scrooloose/syntastic'
-  Bundle 'tpope/vim-rbenv'
-  Bundle 't9md/vim-ruby-xmpfilter'
-  Bundle 'rizzatti/funcoo.vim'
-  Bundle 'rizzatti/dash.vim'
-  Bundle 'AndrewRadev/splitjoin.vim'
-  Bundle 'ecomba/vim-ruby-refactoring'
-  Bundle 'chrisbra/csv.vim'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'guns/vim-clojure-static'
+  Plugin 'elixir-lang/vim-elixir'
+  Plugin 'tpope/vim-endwise'
+  Plugin 'tpope/vim-git'
+  Plugin 'jnwhiteh/vim-golang'
+  Plugin 'tpope/vim-haml'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'groenewege/vim-less'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'mmalecki/vim-node.js'
+  Plugin 'ajf/puppet-vim'
+  Plugin 'tpope/vim-rails'
+  Plugin 'tpope/vim-rake'
+  Plugin 'skwp/vim-rspec'
+  Plugin 'skalnik/vim-vroom'
+  Plugin 'vim-ruby/vim-ruby'
+  Plugin 'rosstimson/scala-vim-support'
+  Plugin 'cakebaker/scss-syntax.vim'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'tpope/vim-rbenv'
+  Plugin 't9md/vim-ruby-xmpfilter'
+  Plugin 'rizzatti/funcoo.vim'
+  Plugin 'rizzatti/dash.vim'
+  Plugin 'AndrewRadev/splitjoin.vim'
+  Plugin 'ecomba/vim-ruby-refactoring'
+  Plugin 'chrisbra/csv.vim'
 
   " Add a text object for Ruby blocks (ar / ir)
-  Bundle 'kana/vim-textobj-user'
-  Bundle 'nelstrom/vim-textobj-rubyblock'
+  Plugin 'kana/vim-textobj-user'
+  Plugin 'nelstrom/vim-textobj-rubyblock'
 
   " Snippets are kind of languagey, but in own section
   " to make it clear snipmate depends on tlib and mw-utils.
-  Bundle "MarcWeber/vim-addon-mw-utils"
-  Bundle "tomtom/tlib_vim"
-  Bundle 'garbas/vim-snipmate'
-  Bundle 'honza/vim-snippets'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'tomtom/tlib_vim'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'honza/vim-snippets'
 
   " Lols
-  Bundle 'koron/nyancat-vim'
+  Plugin 'koron/nyancat-vim'
 
+  call vundle#end()
   filetype plugin indent on     " required!
 endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
