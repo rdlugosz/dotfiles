@@ -41,7 +41,6 @@ if exists(':Plugin')
   Plugin 'mbbill/undotree'
   Plugin 'nathanaelkane/vim-indent-guides'
   Plugin 'wellle/targets.vim'
-  Plugin 'szw/vim-ctrlspace'
 
   " Colorschemes
   Plugin 'altercation/vim-colors-solarized.git'
