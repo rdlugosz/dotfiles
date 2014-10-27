@@ -270,8 +270,10 @@ imap <c-l> <space>=><space>
 nmap <leader>= gg=G``:echo "reindent global"<CR>
 
 " map j to gj and k to gk, so line navigation ignores line wrap
-nmap j gj
-nmap k gk
+" ...but only if the count is undefined (otherwise, things like 4j
+" break if wrapped lines are present)
+nmap <expr> j (v:count == 0 ? 'gj' : 'j')
+nmap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " make Y behave similarly to D and C
 nnoremap Y y$
