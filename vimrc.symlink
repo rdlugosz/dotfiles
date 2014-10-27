@@ -138,6 +138,12 @@ set number       " set after rnu creates 'hybrid' line numbering mode
 
 set lbr          " wrap at word boundaries
 set nowrap       " don't wrap lines
+if exists('+breakindent')
+  set breakindent " preserves the indent level of wrapped lines
+  set showbreak=↪ " illustrate wrapped lines
+  set wrap        " wrapping with breakindent is tolerable
+endif
+
 set tabstop=2    " a tab is two spaces
 set shiftwidth=2 " an autoindent (with <<) is two spaces
 set expandtab    " use spaces, not tabs
