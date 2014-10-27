@@ -136,8 +136,8 @@ if exists('+relativenumber')
 end
 set number       " set after rnu creates 'hybrid' line numbering mode
 
-set lbr          " wrap at word boundaries
-set nowrap       " don't wrap lines
+set lbr          " wrap at word boundaries (vs last char that fits)
+set nowrap       " don't wrap lines (we map leader-W to toggle)
 if exists('+breakindent')
   set breakindent " preserves the indent level of wrapped lines
   set showbreak=↪ " illustrate wrapped lines
