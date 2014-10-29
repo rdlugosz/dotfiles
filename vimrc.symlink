@@ -393,9 +393,11 @@ function! s:setupWrapping()
   set nolist
 endfunction
 
-" Make sure all mardown files have the correct filetype set and setup wrapping
+" Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown call s:setupWrapping()
+au FileType markdown setlocal ts=4 sts=4 sw=4
+
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
