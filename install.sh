@@ -112,7 +112,7 @@ install_vundle () {
     case "$action" in
       y )
         echo ""
-        info "Installing Vundle. Be sure to run :BundleInstall next time you run Vim."
+        info "Installing Vundle. Be sure to run :PluginInstall next time you run Vim."
         echo ""
         git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;;
       * )
