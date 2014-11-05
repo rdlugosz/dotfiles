@@ -7241,9 +7241,9 @@
 	<key>Default Bookmark Guid</key>
 	<string>F25070E9-EC04-46C6-B3E5-4FDA71AB1FD6</string>
 	<key>DimBackgroundWindows</key>
-	<true/>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
@@ -7341,9 +7341,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>812 362 445 270 0 0 1440 878 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>372 372 924 485 0 0 1440 878 </string>
+	<string>372 371 924 485 0 0 1440 877 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 2 1433 876 0 0 1440 878 </string>
+	<string>4 1 1418 876 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -11493,7 +11495,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-10-17T11:04:15Z</date>
+	<date>2014-11-04T07:53:38Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -11522,6 +11524,8 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1414616576</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>Use background pattern indicator</key>
@@ -11549,6 +11553,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140629</string>
+	<string>2.0.0.20141022</string>
 </dict>
 </plist>
