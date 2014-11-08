@@ -5,18 +5,26 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 if exists(':Plugin')
-  " let Vundle manage Vundle
-  " required!
+  " let Vundle manage Vundle - must be first!
+  " use commands PluginInstall, PluginUpdate, PluginClean
   Plugin 'gmarik/vundle'
 
-  " Activate the built-in matchit.vim
+  " Activate the built-in matchit.vim. Makes the % command jump to matching
+  " HTML tags, if/else/endif in Vim scripts, etc.
   runtime macros/matchit.vim
 
-  " The Tim Pope all-star collection
-  Plugin 'tpope/vim-cucumber'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-sensible'
+
+  " Repeat.vim sets up bindings other plugins can use to make their commands
+  " repeatable with the . command.
+  " https://github.com/tpope/vim-repeat
+  Plugin 'tpope/vim-repeat'
+
+  " Fugitive is a highly-capable Git wrapper for Vim.
+  " see :h fugitive
+  " https://github.com/tpope/vim-fugitive
+  Plugin 'tpope/vim-fugitive'
+
   Plugin 'tpope/vim-speeddating'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
@@ -52,6 +60,7 @@ if exists(':Plugin')
   Plugin 'tomasr/molokai'
 
   " Language support
+  Plugin 'tpope/vim-cucumber'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'guns/vim-clojure-static'
   Plugin 'elixir-lang/vim-elixir'
