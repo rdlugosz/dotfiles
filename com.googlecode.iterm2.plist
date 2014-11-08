@@ -7345,7 +7345,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 1 1418 876 0 0 1440 877 </string>
+	<string>232 107 970 706 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -11495,7 +11495,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-11-04T07:53:38Z</date>
+	<date>2014-11-07T14:14:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -11539,7 +11539,7 @@
 	<key>WebKitDefaultFontSize</key>
 	<integer>11</integer>
 	<key>WebKitStandardFont</key>
-	<string>Lucida Grande</string>
+	<string>.Helvetica Neue DeskInterface</string>
 	<key>Window Arrangements</key>
 	<dict/>
 	<key>WindowNumber</key>
