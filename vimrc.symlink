@@ -74,7 +74,11 @@ if exists(':Plugin')
   Plugin 'vim-ruby/vim-ruby'
   Plugin 'rosstimson/scala-vim-support'
   Plugin 'cakebaker/scss-syntax.vim'
+
+  " Syntax checker for many languages
+  " https://github.com/scrooloose/syntastic
   Plugin 'scrooloose/syntastic'
+
   Plugin 'tpope/vim-rbenv'
   Plugin 't9md/vim-ruby-xmpfilter'
   Plugin 'rizzatti/funcoo.vim'
@@ -142,6 +146,7 @@ set smartcase    " ... unless they contain at least one capital letter
 set laststatus=2 " always show the status line
 set ruler        " show cursor position (overridden by statusline)
 set showcmd      " show partial command in bottom-right
+set showtabline=1 " Show tabline only when more than one tab exists
 
 set wildmenu     " use tab completion on command line
 
@@ -255,8 +260,6 @@ set wildignore+=*/tmp/*
 " mouse works in most terminal software we use...
 set mouse=a
 
-set showtabline=1 " Show tabline only when more than one tab exists
-
 " change the cursor shape depending on mode
 " see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
 if exists('$TMUX')
@@ -267,7 +270,29 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" The Silver Searcher
+" Syntastic config
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_full_redraws = 1    " can prob remove - this is the default
+let g:syntastic_auto_jump = 2         " Jump to syntax errors
+let g:syntastic_auto_loc_list = 1     " Auto-open the error list
+
+" Buffergator config
+let g:buffergator_show_full_directory_path = 0
+let g:buffergator_viewport_split_policy = 'T'
+
+" Use par to reflow text
+" see: http://vimcasts.org/episodes/formatting-text-with-par/
+" Using `gw` will reflow with Vim's built-in algorithm.
+if executable('par')
+  set formatprg="par -h -w78 -B=.,\?_A_a "
+endif
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" Use The Silver Searcher if available
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
@@ -281,84 +306,24 @@ if executable('ag')
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_full_redraws = 1
-
-if &diff
-  set wrap
-endif
-
-" Use par to reflow text
-" see: http://vimcasts.org/episodes/formatting-text-with-par/
-" Using `gw` will reflow with Vim's built-in algorithm.
-if executable('par')
-  set formatprg="par -h -w78 -B=.,\?_A_a "
-endif
-
-" Remember last location in file, but not for commit messages.
-" see :help last-position-jump
-au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Buffergator config
-let g:buffergator_show_full_directory_path = 0
-let g:buffergator_viewport_split_policy = 'T'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let spacebar double as our leader, for great justice
-map <space> <leader>
-map <space><space> <leader><leader>
-
 " Quick ESC
+" Some people map jk for this, but it makes Dijkstra sad.
 imap kj <ESC>
-
-" Reload our config
-nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
-
-" Write file
-nmap <leader>w :w<CR>
-
-" Close buffer
-nmap <leader>q :bd<CR>
-
-" Toggle spelling
-nmap <leader>s :set invspell<CR>:set spell?<CR>
-
-" Toggle wrap
-nmap <leader>W :set invwrap<CR>:set wrap?<CR>
-
-" Toggle Cursor Column
-nmap <leader>c :set invcursorcolumn<CR>
-
-" Toggle paste mode
-nmap <leader>p :set invpaste<CR>:set paste?<CR>
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
-
-" upper/lower word
-nmap <leader>U mQviwU`Q
-nmap <leader>L mQviwu`Q
-
-" Insert the Ruby hashrocket with <c-l>
-imap <c-l> <space>=><space>
-
-" Reindent the entire file
-nmap <leader>= gg=G``:echo "reindent global"<CR>
-
-" map j to gj and k to gk, so line navigation ignores line wrap
-" ...but only if the count is undefined (otherwise, things like 4j
-" break if wrapped lines are present)
-nmap <expr> j (v:count == 0 ? 'gj' : 'j')
-nmap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " make Y behave similarly to D and C
 nnoremap Y y$
 
-" delete trailing whitespace with F5
-" http://vim.wikia.com/wiki/Remove_unwanted_spaces
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+" Insert the Ruby hashrocket with CTRL+l
+imap <c-l> <space>=><space>
+
+" map j to gj and k to gk, so line navigation ignores line wrap
+" ...but only if the count is undefined (otherwise, things like 4j
+" break if wrapped LINES are present)
+nmap <expr> j (v:count == 0 ? 'gj' : 'j')
+nmap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Expand %% into the directory of the current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -385,19 +350,62 @@ nn <script> <SID>ws> <C-w>><SID>ws
 nn <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
 
+" Allow writing via sudo
+cnoremap w!! w !sudo tee > /dev/null %
+
+" Allow for some common typos
+command! Q q " Bind :Q to :q
+command! W w " Bind :W to :w
+command! Qall qall
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LEADER MAPPINGS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let spacebar double as our leader, for great justice
+map <space> <leader>
+map <space><space> <leader><leader>
+
+" Reload our .vimrc
+nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
+
+" Write file
+nmap <leader>w :w<CR>
+
+" Delete buffer
+nmap <leader>q :bd<CR>
+
+" Toggle spelling
+nmap <leader>s :set invspell<CR>:set spell?<CR>
+
+" Toggle wrap
+nmap <leader>W :set invwrap<CR>:set wrap?<CR>
+
+" Toggle Cursor Column
+nmap <leader>c :set invcursorcolumn<CR>
+
+" Toggle paste mode
+nmap <leader>p :set invpaste<CR>:set paste?<CR>
+nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
+imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
+
+" upper/lower word
+" (set a mark, visually select inner word, u/U, return to mark)
+nmap <leader>U m`viwU``
+nmap <leader>L m`viwu``
+
+" Reindent the entire file
+nmap <leader>= gg=G``:echo "reindent global"<CR>
+
+" delete trailing whitespace
+" http://vim.wikia.com/wiki/Remove_unwanted_spaces
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+nnoremap <silent> <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Toggle match highlight
 map <leader>l :set invhlsearch<CR>
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-command! Q q " Bind :Q to :q
-command! W w " Bind :W to :w
-command! Qall qall
-
-" Allow writing via sudo
-cnoremap w!! w !sudo tee > /dev/null %
 
 " NERDTree stuff
 map <leader>n :NERDTreeToggle<CR>
