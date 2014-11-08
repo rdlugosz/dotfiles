@@ -146,12 +146,9 @@ set showcmd      " show partial command in bottom-right
 set wildmenu     " use tab completion on command line
 
 " Controls the number of lines/chars to keep visible before scrolling
-if !&scrolloff
-  set scrolloff=1
-endif
-if !&sidescrolloff
-  set sidescrolloff=5
-endif
+set scrolloff=1
+set sidescrolloff=5
+set sidescroll=1
 set display+=lastline " show the last line that fits in window (vs '@@@@')
 
 if &encoding ==# 'latin1' && has('gui_running')
@@ -162,9 +159,7 @@ endif
 set list " Show invisible characters
 let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
 
-" unsure why this is set. Seems like it would remove and readd what is already
-" the default value of tags. I asked tpope about it:
-" https://github.com/tpope/vim-sensible/commit/64aa12b07b0be90a8e98bc7be1b5faac4ac873a4
+" The semicolon will cause Vim to search back (up) in the directory tree
 if has('path_extra')
   setglobal tags-=./tags tags^=./tags;
 endif
@@ -190,11 +185,6 @@ set viminfo=!,'100,<1000,s100,h
 
 set sessionoptions-=options " exclude options from the :mksession command
 
-" Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
-
 " Load matchit.vim, but only if the user hasn't installed a newer version.
 " Makes the % command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
@@ -204,22 +194,24 @@ endif
 " During insert, ctrl+u will break undo sequence then delete all entered chars
 inoremap <C-U> <C-G>u<C-U>
 
-
-
-
 " Set colorscheme
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
 if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
 silent! colorscheme base16-default
 
+" Write swap and backup files in the event of a crash or accident
 set swapfile
 set directory=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
-
 set backup
 set backupdir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
 
+" Extend our undoable steps and preserve over restart (if available)
 if has('persistent_undo')
   set undodir=$TMPDIR,~/tmp,~/.vim/tmp,/tmp,/var/tmp
   set undofile
@@ -227,32 +219,31 @@ if has('persistent_undo')
 end
 set undolevels=10000
 
+" Keep our custom dictionary on Dropbox to sync across systems
 set spelllang=en
-set spellfile=$HOME/.vim/en.utf-8.add
+set spellfile=$HOME/Dropbox/vim/en.utf-8.add,$HOME/.vim/en.utf-8.add
 
+" Line numbering
+" Relativenumber treats the current line as line 0 and is helpful for motions
+" Setting number after Relativenumber replaces the '0' with the true number
 if exists('+relativenumber')
   set relativenumber
 end
-set number       " set after rnu creates 'hybrid' line numbering mode
+set number
 
-set lbr          " wrap at word boundaries (vs last char that fits)
-set nowrap       " don't wrap lines (we map leader-W to toggle)
+set nowrap        " don't wrap lines (we map leader-W to toggle)
+set linebreak     " when wrapping, wrap at word boundaries (vs last char)
 if exists('+breakindent')
   set breakindent " preserves the indent level of wrapped lines
   set showbreak=↪ " illustrate wrapped lines
   set wrap        " wrapping with breakindent is tolerable
 endif
-
-
 " When on first/last char in a line, allow left/right to navigate
 " through to the prev/next line.
 set whichwrap+=<,>,h,l
 
-set sidescroll=1
-
-
-
-" show $ marker at the boundary of cw
+" cpoptions is a sequence of single-char flags that make Vim do different
+" things. The $ flag enables showing a $ marker at the end boundary of cw
 set cpoptions+=$
 
 " allow modified buffers to be hidden
@@ -264,9 +255,7 @@ set wildignore+=*/tmp/*
 " mouse works in most terminal software we use...
 set mouse=a
 
-" Tabline and Vim-CtrlSpace config
-set showtabline=1
-let g:ctrlspace_use_tabline = 1
+set showtabline=1 " Show tabline only when more than one tab exists
 
 " change the cursor shape depending on mode
 " see: http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
