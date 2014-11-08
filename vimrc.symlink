@@ -9,12 +9,6 @@ if exists(':Plugin')
   " use commands PluginInstall, PluginUpdate, PluginClean
   Plugin 'gmarik/vundle'
 
-  " Activate the built-in matchit.vim. Makes the % command jump to matching
-  " HTML tags, if/else/endif in Vim scripts, etc.
-  runtime macros/matchit.vim
-
-  Plugin 'tpope/vim-sensible'
-
   " Repeat.vim sets up bindings other plugins can use to make their commands
   " repeatable with the . command.
   " https://github.com/tpope/vim-repeat
@@ -106,16 +100,112 @@ if exists(':Plugin')
   call vundle#end()
   filetype plugin indent on     " required!
 endif
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " END VUNDLE CONFIG
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS
-"
-" Note: most typical defaults handled by tpope/vim-sensible
-" see https://github.com/tpope/vim-sensible
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tpope/vim-sensible is inlined here & used as a baseline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has('autocmd')
+  filetype plugin indent on
+endif
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
+
+set autoindent   " preserve indent level on newlines
+set tabstop=2    " a tab is two spaces
+set shiftwidth=2 " an autoindent (with <<) is two spaces
+set expandtab    " use spaces, not tabs
+
+set backspace=indent,eol,start
+
+" By default, complete is set to: complete=.,w,b,u,t,i
+" The 'i' means 'included files' and can result in major slowdowns
+set complete-=i
+
+set smarttab
+
+" Don't assume numbers starting with zero are octal
+set nrformats-=octal
+
+set ttimeout
+set ttimeoutlen=100
+
+set incsearch    " incremental searching
+set nohlsearch   " don't highlight matches
+set ignorecase   " searches are case insensitive...
+set smartcase    " ... unless they contain at least one capital letter
+
+set laststatus=2 " always show the status line
+set ruler        " show cursor position (overridden by statusline)
+set showcmd      " show partial command in bottom-right
+
+set wildmenu     " use tab completion on command line
+
+" Controls the number of lines/chars to keep visible before scrolling
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline " show the last line that fits in window (vs '@@@@')
+
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+" Changes what Vim displays for special chars like trailing space & tabs
+set list " Show invisible characters
+let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
+
+" unsure why this is set. Seems like it would remove and readd what is already
+" the default value of tags. I asked tpope about it:
+" https://github.com/tpope/vim-sensible/commit/64aa12b07b0be90a8e98bc7be1b5faac4ac873a4
+if has('path_extra')
+  setglobal tags-=./tags tags^=./tags;
+endif
+
+set autoread           " reload unchanged buffers when file changed outside vim
+set fileformats+=mac   " should already be the default when compiled on mac
+
+set history=1000       " remember more than 20 previous searches/commands
+
+set tabpagemax=50      " max number of tab pages that can be opened
+
+" Control what is preserved in the viminfo file
+"   ! save and restore all-caps-named GLOBAL variables
+"   ' number of files for which we should remember marks
+"   < maximum line count of a register that is saved
+"   s maximum byte count of a register that is saved
+"   h disable the hlsearch when loading viminfo
+"   no '/' specified means use value of 'history' for saving searches
+"   no ':' specified means use value of 'history' for command line history
+"   no '%' specified means don't save/reload the buffer list
+"   no 'n<file>' specified means use default location for .viminfo
+set viminfo=!,'100,<1000,s100,h
+
+set sessionoptions-=options " exclude options from the :mksession command
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+" Makes the % command jump to matching HTML tags, if/else/endif in Vim scripts, etc.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
+" During insert, ctrl+u will break undo sequence then delete all entered chars
+inoremap <C-U> <C-G>u<C-U>
+
+
+
 
 " Set colorscheme
 if $TERM =~ "-256color"
@@ -153,24 +243,14 @@ if exists('+breakindent')
   set wrap        " wrapping with breakindent is tolerable
 endif
 
-set tabstop=2    " a tab is two spaces
-set shiftwidth=2 " an autoindent (with <<) is two spaces
-set expandtab    " use spaces, not tabs
 
 " When on first/last char in a line, allow left/right to navigate
 " through to the prev/next line.
 set whichwrap+=<,>,h,l
 
-set list         " Show invisible characters
-let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
 set sidescroll=1
 
-set nohlsearch   " don't highlight matches
-set incsearch    " incremental searching
-set ignorecase   " searches are case insensitive...
-set smartcase    " ... unless they contain at least one capital letter
 
-set showcmd      " show commands as they are typed
 
 " show $ marker at the boundary of cw
 set cpoptions+=$
@@ -451,9 +531,11 @@ set statusline+=%<      "cut from here if line is too long
 set statusline+=./%f    "relative path of the filename
 set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
 set statusline+=%{&ff}\| "file format
-set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file encoding
+set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file type
 set statusline+=%=      "left/right separator
 set statusline+=%{fugitive#statusline()}\  "git branch
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ (%P)  "escaped space, percent through file
+
+" vim:set ft=vim et sw=2:
