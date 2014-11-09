@@ -344,10 +344,10 @@ nmap <C-w>+ <C-w>+<SID>ws
 nmap <C-w>- <C-w>-<SID>ws
 nmap <C-w>> <C-w>><SID>ws
 nmap <C-w>< <C-w><<SID>ws
-nn <script> <SID>ws+ <C-w>+<SID>ws
-nn <script> <SID>ws- <C-w>-<SID>ws
-nn <script> <SID>ws> <C-w>><SID>ws
-nn <script> <SID>ws< <C-w><<SID>ws
+nnoremap <script> <SID>ws+ <C-w>+<SID>ws
+nnoremap <script> <SID>ws- <C-w>-<SID>ws
+nnoremap <script> <SID>ws> <C-w>><SID>ws
+nnoremap <script> <SID>ws< <C-w><<SID>ws
 nmap <SID>ws <Nop>
 
 " Allow writing via sudo
@@ -362,8 +362,8 @@ command! Qall qall
 " LEADER MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let spacebar double as our leader, for great justice
-map <space> <leader>
-map <space><space> <leader><leader>
+nmap <space> <leader>
+nmap <space><space> <leader><leader>
 
 " Reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
@@ -385,7 +385,6 @@ nmap <leader>c :set invcursorcolumn<CR>
 
 " Toggle paste mode
 nmap <leader>p :set invpaste<CR>:set paste?<CR>
-nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " upper/lower word
@@ -398,17 +397,30 @@ nmap <leader>= gg=G``:echo "reindent global"<CR>
 
 " delete trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-nnoremap <silent> <leader>tw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+function! RD_RemoveTrailingSpaces()
+  " set a mark to return to later
+  normal m`
+  " save the user's search register
+  let _lastsearch=@/
+  " find any space/tab at ends of lines & remove
+  " the 'e' suppresses error if none found
+  %s/\s\+$//e
+  " restore the search register
+  let @/=_lastsearch
+  " jump back to the mark we set
+  normal ``
+  echo "removed trailing spaces (if any)"
+endfunction
+nmap <leader>tw :call RD_RemoveTrailingSpaces()<CR>
 
 " Toggle match highlight
-map <leader>l :set invhlsearch<CR>
+nmap <leader>l :set invhlsearch<CR>
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " NERDTree stuff
-map <leader>n :NERDTreeToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1
 
 " UndoTree
@@ -419,6 +431,32 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gp :Git push<cr>
+
+" Mappings for vim-ruby-xmpfilter
+if executable('xmpfilter')
+  autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
+  autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
+  autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
+  autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
+endif
+
+" Key mappings for vim-dragvisuals
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+
+" ---------------
+" Tabular
+" ---------------
+nnoremap <Leader>t= :Tabularize assignment<CR>
+vnoremap <Leader>t= :Tabularize assignment<CR>
+nnoremap <Leader>t: :Tabularize symbol<CR>
+vnoremap <Leader>t: :Tabularize symbol<CR>
+nnoremap <Leader>t, :Tabularize comma<CR>
+vnoremap <Leader>t, :Tabularize comma<CR>
 
 " Mac OS X-only mappings
 if has("unix")
@@ -438,36 +476,6 @@ if has("unix")
   endif
 endif
 
-" Mappings for vim-ruby-xmpfilter
-if executable('xmpfilter')
-  autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
-  autocmd FileType ruby nmap <buffer> <leader>x <Plug>(xmpfilter-run)
-  autocmd FileType ruby xmap <buffer> <leader>x <Plug>(xmpfilter-run)
-  autocmd FileType ruby imap <buffer> <leader>x <Plug>(xmpfilter-run)
-endif
-
-" enable spell checking on certain files
-autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
-
-" Key mappings for vim-dragvisuals
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-
-" ---------------
-" Tabular
-" ---------------
-nnoremap <Leader>t= :Tabularize assignment<CR>
-vnoremap <Leader>t= :Tabularize assignment<CR>
-nnoremap <Leader>t: :Tabularize symbol<CR>
-vnoremap <Leader>t: :Tabularize symbol<CR>
-nnoremap <Leader>t, :Tabularize comma<CR>
-vnoremap <Leader>t, :Tabularize comma<CR>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILE TYPES
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -484,6 +492,8 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
 au FileType markdown call s:setupWrapping()
 au FileType markdown setlocal ts=4 sts=4 sw=4
 
+" enable spell checking on certain files
+autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
