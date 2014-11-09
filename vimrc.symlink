@@ -15,17 +15,53 @@ if exists(':Plugin')
   Plugin 'tpope/vim-repeat'
 
   " Fugitive is a highly-capable Git wrapper for Vim.
-  " see :h fugitive
   " https://github.com/tpope/vim-fugitive
   Plugin 'tpope/vim-fugitive'
 
+  " Make CTRL-A / CTRL-X work on dates like 2000-03-26
+  " https://github.com/tpope/vim-speeddating
   Plugin 'tpope/vim-speeddating'
+
+  " Surround.vim lets you add/change/remove surrounding chars and tags
+  " https://github.com/tpope/vim-surround
   Plugin 'tpope/vim-surround'
+
+  " Unimpaired.vim provides shortcuts for various paired activities:
+  "
+  " ex cmds: ]q is :cnext, [q is :cprevious. ]b is :bnext, [b is :bprev.
+  " See the documentation for the full set of 20 mappings and mnemonics.
+  " All of them take a count.
+  "
+  " lines: [<Space> and ]<Space> add newlines before and after the
+  " cursor line. [e and ]e exchange the current line with the one above
+  " or below it.
+  "
+  " toggling options: [os, ]os, and cos perform :set spell, :set
+  " nospell, and :set invspell, respectively. There's also l (list), n
+  " (number), w (wrap), x (cursorline cursorcolumn), and several others,
+  " plus mappings to help alleviate the set paste dance. Consult the
+  " documentation.
+  "
+  " misc: [f and ]f to go to the next/previous file in the directory,
+  " and [n and ]n to jump between SCM conflict markers.
+  "
+  " https://github.com/tpope/vim-unimpaired
   Plugin 'tpope/vim-unimpaired'
+
+  " Eunuch.vim adds wrappers for various Unix commands
+  " e.g., :Remove will rm the current file & delete the buffer
+  "       :Move will rename both the buffer and file simultaneously
+  " https://github.com/tpope/vim-eunuch
   Plugin 'tpope/vim-eunuch'
+
+  " Commentary.vim provides commenting for many languages
+  " Use gcc to comment out a line (takes a count), gc to comment out the
+  " target of a motion (for example, gcap to comment out a paragraph),
+  " gc in visual mode to comment out the selection, and gc in operator
+  " pending mode to target a comment.
+  " https://github.com/tpope/vim-commentary
   Plugin 'tpope/vim-commentary'
 
-  " Interface enhancements
   Plugin 'jeetsukumaran/vim-buffergator'
   Plugin 'tpope/vim-characterize'
   Plugin 'kien/ctrlp.vim'
