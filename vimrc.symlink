@@ -138,17 +138,17 @@ set nrformats-=octal
 set ttimeout
 set ttimeoutlen=100
 
-set incsearch    " incremental searching
-set nohlsearch   " don't highlight matches
-set ignorecase   " searches are case insensitive...
-set smartcase    " ... unless they contain at least one capital letter
+set incsearch     " incremental searching
+set nohlsearch    " don't highlight matches
+set ignorecase    " searches are case insensitive...
+set smartcase     " ... unless they contain at least one capital letter
 
-set laststatus=2 " always show the status line
-set ruler        " show cursor position (overridden by statusline)
-set showcmd      " show partial command in bottom-right
+set laststatus=2  " always show the status line
+set ruler         " show cursor position (overridden by statusline)
+set showcmd       " show partial command in bottom-right
 set showtabline=1 " Show tabline only when more than one tab exists
 
-set wildmenu     " use tab completion on command line
+set wildmenu      " use tab completion on command line
 
 " Controls the number of lines/chars to keep visible before scrolling
 set scrolloff=1
@@ -230,10 +230,10 @@ set spellfile=$HOME/Dropbox/vim/en.utf-8.add,$HOME/.vim/en.utf-8.add
 
 " Line numbering
 " Relativenumber treats the current line as line 0 and is helpful for motions
-" Setting number after Relativenumber replaces the '0' with the true number
 if exists('+relativenumber')
   set relativenumber
 end
+" Setting number after Relativenumber replaces the '0' with the true number
 set number
 
 set nowrap        " don't wrap lines (we map leader-W to toggle)
@@ -273,7 +273,7 @@ endif
 " Syntastic config
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
-" let g:syntastic_full_redraws = 1    " can prob remove - this is the default
+let g:syntastic_full_redraws = 1
 let g:syntastic_auto_jump = 2         " Jump to syntax errors
 let g:syntastic_auto_loc_list = 1     " Auto-open the error list
 
@@ -305,6 +305,29 @@ if executable('ag')
   " Use ag in ack.vim
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
+" see: :help 'statusline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=         "reset
+set statusline+=%#todo# "set color
+set statusline+=[       "open bracket char
+set statusline+=%n      "buffer number
+set statusline+=%M      "modifiable/modified flag
+set statusline+=%R      "Readonly flag
+set statusline+=%W      "Preview window flag
+set statusline+=]%*     "close bracket & reset color
+set statusline+=%<      "cut from here if line is too long
+set statusline+=./%f    "relative path of the filename
+set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
+set statusline+=%{&ff}\| "file format
+set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file type
+set statusline+=%=      "left/right separator
+set statusline+=%{fugitive#statusline()}\  "git branch
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ (%P)  "escaped space, percent through file
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -353,7 +376,7 @@ nmap <SID>ws <Nop>
 " Allow writing via sudo
 cnoremap w!! w !sudo tee > /dev/null %
 
-" Allow for some common typos
+" Allow for some common quit/write cmd typos
 command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
 command! Qall qall
@@ -416,6 +439,22 @@ nmap <leader>tw :call RD_RemoveTrailingSpaces()<CR>
 " Toggle match highlight
 nmap <leader>l :set invhlsearch<CR>
 
+" Highlight matches when jumping to next
+function! HLNext (blinktime)
+  highlight WhiteOnRed ctermfg=white ctermbg=red
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat = '\c\%#'.@/
+  let ring = matchadd('WhiteOnRed', target_pat, 101)
+  redraw
+  exec 'sleep ' . a:blinktime . 'm'
+  call matchdelete(ring)
+  redraw
+endfunction
+" Now, remap n/N so they call themselves, center screen & call HLNext
+nnoremap <silent> n nzz:call HLNext(300)<cr>
+nnoremap <silent> N Nzz:call HLNext(300)<cr>
+
 " bind K to grep word under cursor
 nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -448,9 +487,7 @@ vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 
-" ---------------
-" Tabular
-" ---------------
+" Tabular.vim
 nnoremap <Leader>t= :Tabularize assignment<CR>
 vnoremap <Leader>t= :Tabularize assignment<CR>
 nnoremap <Leader>t: :Tabularize symbol<CR>
@@ -462,6 +499,7 @@ vnoremap <Leader>t, :Tabularize comma<CR>
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
+
     " Search for word under cursor in Dash.app
     nmap <leader>d <Plug>DashSearch
     nmap <leader>D <Plug>DashGlobalSearch
@@ -469,10 +507,10 @@ if has("unix")
     " Use Marked.app to preview Markdown files...
     " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
     function! s:setupMarkup()
-      nnoremap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
+      nmap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
     endfunction
-
     au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
   endif
 endif
 
@@ -483,7 +521,7 @@ endif
 function! s:setupWrapping()
   set wrap
   set linebreak
-  set textwidth=72
+  set textwidth=78
   set nolist
 endfunction
 
@@ -497,52 +535,5 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
 
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
-
-"====[ Make the 81st column stand out ]====================
-
-" just the 81st column of wide lines...
-" highlight ColorColumn ctermbg=magenta
-" call matchadd('ColorColumn', '\%81v', 100)
-
-"=====[ Highlight matches when jumping to next ]=============
-
-" This rewires n and N to do the highlighing...
-nnoremap <silent> n   nzz:call HLNext(0.2)<cr>
-nnoremap <silent> N   Nzz:call HLNext(0.2)<cr>
-
-function! HLNext (blinktime)
-  highlight WhiteOnRed ctermfg=white ctermbg=red
-  let [bufnum, lnum, col, off] = getpos('.')
-  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-  let target_pat = '\c\%#'.@/
-  let ring = matchadd('WhiteOnRed', target_pat, 101)
-  redraw
-  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-  call matchdelete(ring)
-  redraw
-endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE
-" see: :help 'statusline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=         "reset
-set statusline+=%#todo# "set color
-set statusline+=[       "open bracket char
-set statusline+=%n      "buffer number
-set statusline+=%M      "modifiable/modified flag
-set statusline+=%R      "Readonly flag
-set statusline+=%W      "Preview window flag
-set statusline+=]%*     "close bracket & reset color
-set statusline+=%<      "cut from here if line is too long
-set statusline+=./%f    "relative path of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'wtf-enc'}\| "file encoding
-set statusline+=%{&ff}\| "file format
-set statusline+=%{strlen(&ft)?&ft:'zomg'}] "file type
-set statusline+=%=      "left/right separator
-set statusline+=%{fugitive#statusline()}\  "git branch
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ (%P)  "escaped space, percent through file
 
 " vim:set ft=vim et sw=2:
