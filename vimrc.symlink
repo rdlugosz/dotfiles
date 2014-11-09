@@ -62,8 +62,12 @@ if exists(':Plugin')
   " https://github.com/tpope/vim-commentary
   Plugin 'tpope/vim-commentary'
 
-  Plugin 'jeetsukumaran/vim-buffergator'
+  " Improves output of ga, which shows character codes for the char
+  " under the cursor. Supports HTML entities & emoji...
+  " https://github.com/tpope/vim-characterize
   Plugin 'tpope/vim-characterize'
+
+  Plugin 'jeetsukumaran/vim-buffergator'
   Plugin 'kien/ctrlp.vim'
   if exists("*gettabvar")
     Plugin 'airblade/vim-gitgutter'
