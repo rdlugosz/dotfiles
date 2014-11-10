@@ -86,55 +86,109 @@ if exists(':Plugin')
   " https://github.com/kien/ctrlp.vim
   Plugin 'kien/ctrlp.vim'
 
-
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
   " https://github.com/airblade/vim-gitgutter
   Plugin 'airblade/vim-gitgutter'
 
-
-
-
+  " NERDTree is a tree explorer plugin for vim.
+  " Open with <leader>n
+  " https://github.com/scrooloose/nerdtree
   Plugin 'scrooloose/nerdtree'
+
+  " Tabular.vim is a plugin that aligns text by some pattern, e.g.:
+  " :Tab /,
+  " will align lines by their commas. We have some mappings set up later, like
+  " <leader>t: to align on symbals and <leader>t= to align on assignment.
+  " https://github.com/godlygeek/tabular
   Plugin 'godlygeek/tabular'
+
+  " This allows you to select some text using Vim's visual mode and then hit *
+  " and # to search for it elsewhere in the file.  For example, hit V, select
+  " a strange sequence of characters like '$! $!', and hit star.  You'll find
+  " all other runs of '$! $!' in the file.
+  "
+  " If you hit <leader>* ('\*' unless you changed the mapleader), vim will
+  " recursively vimgrep for the word under the cursor or the visual selection.
+  "
+  " Vim's default behavior is to just extend the visual selection to the next
+  " word that matches the word under the cursor. Doesn't seem very useful.
+  " https://github.com/nelstrom/vim-visual-star-search
   Plugin 'nelstrom/vim-visual-star-search'
-  Plugin 'vim-scripts/ZoomWin'
+
+  " Wrapper to allow for running Ack in place of grep.
+  "   :Ack [options] {pattern} [{directories}]
+  " https://github.com/mileszs/ack.vim
   Plugin 'mileszs/ack.vim'
+
+  " Creates a new text object 'i' for indentation. E.g.,
+  "   vii will select block of text at current indent level
+  "   vai will select block of text at current indent level, plus line above
+  "   vaI selects block of text at current indent level, plus line above & below
+  " http://www.vim.org/scripts/script.php?script_id=3037
   Plugin 'michaeljsmith/vim-indent-object'
-  " Plugin 'bling/vim-airline'
+
+  " Vim global plugin for dragging virtual blocks. By Damien Conway.
+  " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
+  " https://github.com/rdlugosz/vim-dragvisuals
   Plugin 'rdlugosz/vim-dragvisuals'
+
+  " Display your undo history in a graph. Mapped to <leader>u.
+  " https://github.com/mbbill/undotree
   Plugin 'mbbill/undotree'
+
+  " Indent Guides is a plugin for visually displaying indent levels in Vim.
+  " Toggle with <leader>ig
+  " https://github.com/nathanaelkane/vim-indent-guides
   Plugin 'nathanaelkane/vim-indent-guides'
+
+  " Provides extra text objects for things like pairs, quotes, separators and
+  " arguments.
+  "   Pairs      i( i) ib i{ i} iB i[ i] i< i> it
+  "   Quotes     i' i" i`
+  "   Separators i, i. i; i: i+ i- i= i~ i_ i* i# i/ i| i\ i& i$
+  "   Argument   ia
+  "   All also work with 'a' instead of 'i' (An vs In). Can also insert an 'n'
+  "   or 'l' to target the 'next' object, e.g., vin]
+  " https://github.com/wellle/targets.vim
   Plugin 'wellle/targets.vim'
 
-  " Colorschemes
-  Plugin 'altercation/vim-colors-solarized.git'
-  Plugin 'tpope/vim-vividchalk'
-  Plugin 'vim-scripts/Zenburn'
-  Plugin 'chriskempson/base16-vim'
-  Plugin 'nanotech/jellybeans.vim'
-  Plugin 'junegunn/seoul256.vim'
-  Plugin 'tomasr/molokai'
-
-  " Language support
-  Plugin 'tpope/vim-cucumber'
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'guns/vim-clojure-static'
-  Plugin 'elixir-lang/vim-elixir'
-  Plugin 'tpope/vim-endwise'
-  Plugin 'tpope/vim-git'
-  Plugin 'jnwhiteh/vim-golang'
-  Plugin 'tpope/vim-haml'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'groenewege/vim-less'
-  Plugin 'tpope/vim-markdown'
-  Plugin 'mmalecki/vim-node.js'
-  Plugin 'ajf/puppet-vim'
-  Plugin 'tpope/vim-rails'
-  Plugin 'tpope/vim-rake'
-  Plugin 'skwp/vim-rspec'
-  Plugin 'skalnik/vim-vroom'
+  " Language syntax support
   Plugin 'vim-ruby/vim-ruby'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'tpope/vim-git'
+  Plugin 'tpope/vim-haml' "includes Haml, Sass and SCSS
+  Plugin 'elixir-lang/vim-elixir'
+  Plugin 'groenewege/vim-less'
+  Plugin 'ap/vim-css-color'
+
+  " Easy navigation of the Rails directory structure. gf considers context and
+  " knows about partials, fixtures, and much more. There are two commands, :A
+  " (alternate) and :R (related) for easy jumping between files, including
+  " favorites like model to schema, template to helper, and controller to
+  " functional test. Commands like :Emodel, :Eview, :Econtroller, are provided
+  " to :edit files by type, along with S, V, and T variants for :split,
+  " :vsplit, and :tabedit. Throw a bang on the end (:Emodel foo!) to
+  " automatically create the file with the standard boilerplate if it doesn't
+  " exist. :help rails-navigation
+  "
+  " Also provides an interface to Rake and Rails commands via :Rake and :Rails
+  "
+  " https://github.com/tpope/vim-rails
+  Plugin 'tpope/vim-rails'
+  " The Rake.vim plugin does the same thing for non-Rails projects.
+  Plugin 'tpope/vim-rake'
+
+  Plugin 'tpope/vim-endwise'
+
+  " Runs Ruby tests in a reasonably smart way.
+  "   Run current test file <leader>r
+  "   Run nearest test in file <leader>R
+  " https://github.com/skalnik/vim-vroom
+  Plugin 'skalnik/vim-vroom'
+
   Plugin 'rosstimson/scala-vim-support'
   Plugin 'cakebaker/scss-syntax.vim'
 
@@ -163,6 +217,15 @@ if exists(':Plugin')
 
   " Lols
   Plugin 'koron/nyancat-vim'
+
+  " Colorschemes
+  Plugin 'altercation/vim-colors-solarized.git'
+  Plugin 'tpope/vim-vividchalk'
+  Plugin 'vim-scripts/Zenburn'
+  Plugin 'chriskempson/base16-vim'
+  Plugin 'nanotech/jellybeans.vim'
+  Plugin 'junegunn/seoul256.vim'
+  Plugin 'tomasr/molokai'
 
   call vundle#end()
   filetype plugin indent on     " required!
