@@ -524,6 +524,10 @@ command! Qall qall
 " let spacebar double as our leader, for great justice
 nmap <space> <leader>
 nmap <space><space> <leader><leader>
+" xmap includes Visual mode but not Select mode (which we don't often use, but
+" if we did we'd expect hitting space to replace the selected text with a
+" space char).
+xmap <space> <leader>
 
 " Reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
@@ -549,8 +553,8 @@ imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " upper/lower word
 " (set a mark, visually select inner word, u/U, return to mark)
-nmap <leader>U m`viwU``
-nmap <leader>L m`viwu``
+nmap <leader>U m`gUiw``
+nmap <leader>L m`guiw``
 
 " Reindent the entire file
 nmap <leader>= gg=G``:echo "reindent global"<CR>
