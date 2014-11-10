@@ -275,7 +275,6 @@ set backspace=indent,eol,start
 " The 'i' means 'included files' and can result in major slowdowns
 set complete-=i
 
-
 " Don't assume numbers starting with zero are octal
 set nrformats-=octal
 
