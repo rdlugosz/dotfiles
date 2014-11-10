@@ -1,3 +1,13 @@
+" Vim configuration. Thoroughly annotated with comments for two reasons:
+"   1. Hopefully this is helpful to others
+"   2. I often can't remember why something is set is a certain way or what a
+"   specific plugin provides!
+"
+" Note to future self: Git history was lost during a rename; you can see it by
+" adding the `--follow` option to `git log`.
+"
+" Any questions, contact @lbwski
+
 set nocompatible               " be iMproved
 
 " Begin Vundle init
