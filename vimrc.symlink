@@ -232,7 +232,6 @@ if exists(':Plugin')
   Plugin 'tpope/vim-git'
   Plugin 'tpope/vim-haml' "includes Haml, Sass and SCSS
   Plugin 'elixir-lang/vim-elixir'
-  Plugin 'groenewege/vim-less'
   Plugin 'ap/vim-css-color'
   Plugin 'chrisbra/csv.vim'
 
@@ -593,8 +592,8 @@ endfunction
 nnoremap <silent> n nzz:call HLNext(300)<cr>
 nnoremap <silent> N Nzz:call HLNext(300)<cr>
 
-" bind K to grep word under cursor
-nmap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Grep for word under cursor with <leader>G
+nmap <leader>G <Plug>GreperBangWord
 
 " NERDTree stuff
 nmap <leader>n :NERDTreeToggle<CR>
