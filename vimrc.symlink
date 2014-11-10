@@ -121,13 +121,6 @@ if exists(':Plugin')
   " https://github.com/mileszs/ack.vim
   Plugin 'mileszs/ack.vim'
 
-  " Creates a new text object 'i' for indentation. E.g.,
-  "   vii will select block of text at current indent level
-  "   vai will select block of text at current indent level, plus line above
-  "   vaI selects block of text at current indent level, plus line above & below
-  " http://www.vim.org/scripts/script.php?script_id=3037
-  Plugin 'michaeljsmith/vim-indent-object'
-
   " Vim global plugin for dragging virtual blocks. By Damien Conway.
   " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
   " https://github.com/rdlugosz/vim-dragvisuals
@@ -153,16 +146,18 @@ if exists(':Plugin')
   " https://github.com/wellle/targets.vim
   Plugin 'wellle/targets.vim'
 
-  " Language syntax support
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'tpope/vim-markdown'
-  Plugin 'tpope/vim-git'
-  Plugin 'tpope/vim-haml' "includes Haml, Sass and SCSS
-  Plugin 'elixir-lang/vim-elixir'
-  Plugin 'groenewege/vim-less'
-  Plugin 'ap/vim-css-color'
+  " Creates a new text object 'i' for indentation. E.g.,
+  "   vii will select block of text at current indent level
+  "   vai will select block of text at current indent level, plus line above
+  "   vaI selects block of text at current indent level, plus line above & below
+  " http://www.vim.org/scripts/script.php?script_id=3037
+  Plugin 'michaeljsmith/vim-indent-object'
+
+  " Add a text object for Ruby blocks (ar / ir)
+  " Depends on vim-textobj-user
+  " https://github.com/nelstrom/vim-textobj-rubyblock
+  Plugin 'kana/vim-textobj-user'
+  Plugin 'nelstrom/vim-textobj-rubyblock'
 
   " Easy navigation of the Rails directory structure. gf considers context and
   " knows about partials, fixtures, and much more. There are two commands, :A
@@ -181,6 +176,9 @@ if exists(':Plugin')
   " The Rake.vim plugin does the same thing for non-Rails projects.
   Plugin 'tpope/vim-rake'
 
+  " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim
+  " script, etc.
+  " https://github.com/tpope/vim-endwise
   Plugin 'tpope/vim-endwise'
 
   " Runs Ruby tests in a reasonably smart way.
@@ -189,34 +187,59 @@ if exists(':Plugin')
   " https://github.com/skalnik/vim-vroom
   Plugin 'skalnik/vim-vroom'
 
-  Plugin 'rosstimson/scala-vim-support'
-  Plugin 'cakebaker/scss-syntax.vim'
-
   " Syntax checker for many languages
   " https://github.com/scrooloose/syntastic
   Plugin 'scrooloose/syntastic'
 
-  Plugin 'tpope/vim-rbenv'
+  " Execute ruby in-line with code; some mappings are set up below.
+  "   <leader>m to insert an 'execute' mark
+  "   <leader>x to execute
+  " Depends on gem rcodetools.
+  " https://github.com/t9md/vim-ruby-xmpfilter
   Plugin 't9md/vim-ruby-xmpfilter'
-  Plugin 'rizzatti/funcoo.vim'
+
+  " Searches Dash.app for the word under the cursor with <leader>d
+  " https://github.com/rizzatti/dash.vim
   Plugin 'rizzatti/dash.vim'
+
+  " Adds the :G family of commands for grepping. Automatically decides between
+  " Ag, Ack and Grep depending on what's available.
+  " https://github.com/rizzatti/greper.vim
+  Plugin 'rizzatti/grepper.vim'
+
+  " This is a dependency of Dash.vim and Grepper.vim
+  Plugin 'rizzatti/funcoo.vim'
+
+  " Simplifies the transition between multiline and single-line code
+  "   gS to split a one-liner into multiple lines
+  "   gJ (with the cursor on the first line of a block) to join a block into a
+  "   single-line statement.
+  " https://github.com/AndrewRadev/splitjoin.vim
   Plugin 'AndrewRadev/splitjoin.vim'
-  Plugin 'ecomba/vim-ruby-refactoring'
-  Plugin 'chrisbra/csv.vim'
 
-  " Add a text object for Ruby blocks (ar / ir)
-  Plugin 'kana/vim-textobj-user'
-  Plugin 'nelstrom/vim-textobj-rubyblock'
-
-  " Snippets are kind of languagey, but in own section
-  " to make it clear snipmate depends on tlib and mw-utils.
-  Plugin 'MarcWeber/vim-addon-mw-utils'
+  " SnipMate aims to provide support for textual snippets, similar to TextMate
+  " or other Vim plugins. Activate by typing some text and hitting <tab>.
+  " Snipmate depends on tlib and mw-utils.
+  " https://github.com/garbas/vim-snipmate
   Plugin 'tomtom/tlib_vim'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
 
   " Lols
   Plugin 'koron/nyancat-vim'
+
+  " Language syntax support
+  Plugin 'vim-ruby/vim-ruby'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'tpope/vim-git'
+  Plugin 'tpope/vim-haml' "includes Haml, Sass and SCSS
+  Plugin 'elixir-lang/vim-elixir'
+  Plugin 'groenewege/vim-less'
+  Plugin 'ap/vim-css-color'
+  Plugin 'chrisbra/csv.vim'
 
   " Colorschemes
   Plugin 'altercation/vim-colors-solarized.git'
