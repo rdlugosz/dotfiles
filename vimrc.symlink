@@ -267,6 +267,7 @@ set autoindent   " preserve indent level on newlines
 set tabstop=2    " a tab is two spaces
 set shiftwidth=2 " an autoindent (with <<) is two spaces
 set expandtab    " use spaces, not tabs
+set smarttab     " use shiftwidth/tabstop based on context
 
 set backspace=indent,eol,start
 
@@ -274,7 +275,6 @@ set backspace=indent,eol,start
 " The 'i' means 'included files' and can result in major slowdowns
 set complete-=i
 
-set smarttab
 
 " Don't assume numbers starting with zero are octal
 set nrformats-=octal
