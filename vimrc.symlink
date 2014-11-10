@@ -324,6 +324,9 @@ endif
 set list " Show invisible characters
 let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
 
+" Include guard-derived gem tags in tags search
+set tags+=gems.tags
+
 " The semicolon will cause Vim to search back (up) in the directory tree
 if has('path_extra')
   setglobal tags-=./tags tags^=./tags;
@@ -356,7 +359,9 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" During insert, ctrl+u will break undo sequence then delete all entered chars
+" During insert, ctrl-u will break undo sequence then delete all entered chars
+" Note that YouCompleteMe breaks this mapping
+" https://github.com/Valloric/YouCompleteMe#ctrl-u-in-insert-mode-does-not-work
 inoremap <C-U> <C-G>u<C-U>
 
 " Set colorscheme
