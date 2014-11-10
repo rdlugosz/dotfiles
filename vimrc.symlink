@@ -249,6 +249,19 @@ if exists(':Plugin')
   Plugin 'junegunn/seoul256.vim'
   Plugin 'tomasr/molokai'
 
+  " Plugins to only load on OS X
+  if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname == "Darwin\n"
+      " Suggestion and Tab completion
+      " Requires a locally-compiled library; see docs. Note this will work
+      " fine on Linux, but disabling there since we mostly code on OS X and it
+      " can be a hassle to compile the dependent libraries.
+      " https://github.com/Valloric/YouCompleteMe
+      Plugin 'valloric/youcompleteme'
+    endif
+  endif
+
   call vundle#end()
   filetype plugin indent on     " required!
 endif
