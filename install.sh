@@ -5,6 +5,25 @@
 
 DOTFILES_ROOT="`pwd`"
 
+DOTFILES_LIST=(
+    agignore.symlink
+    dotfiles.symlink
+    gemrc.symlink
+    gitconfig.symlink
+    githelpers.symlink
+    gitignore_global.symlink
+    gvimrc.symlink
+    htoprc.symlink
+    iftoprc.symlink
+    irbrc.symlink
+    powconfig.symlink
+    slate.symlink
+    tmux.conf.symlink
+    vimrc.symlink
+    dircolors-solarized.symlink
+    zprezto.symlink
+  )
+
 set -e
 
 echo ''
@@ -28,7 +47,7 @@ fail () {
 }
 
 link_files () {
-  ln -s $1 $2
+  ln -s $DOTFILES_ROOT/$1 $2
   success "linked $1 to $2"
 }
 
@@ -39,7 +58,7 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
-  for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
+  for source in "${DOTFILES_LIST[@]}"
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
 
