@@ -116,11 +116,6 @@ if exists(':Plugin')
   " https://github.com/nelstrom/vim-visual-star-search
   Plugin 'nelstrom/vim-visual-star-search'
 
-  " Wrapper to allow for running Ack in place of grep.
-  "   :Ack [options] {pattern} [{directories}]
-  " https://github.com/mileszs/ack.vim
-  Plugin 'mileszs/ack.vim'
-
   " Vim global plugin for dragging virtual blocks. By Damien Conway.
   " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
   " https://github.com/rdlugosz/vim-dragvisuals
@@ -443,16 +438,11 @@ au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= l
 
 " Use The Silver Searcher if available
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-
   " Use ag in CtrlP
   let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
   " Skip caching since ag is so fast
   let g:ctrlp_use_caching = 0
-
-  " Use ag in ack.vim
-  let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
