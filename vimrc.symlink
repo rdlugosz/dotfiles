@@ -221,6 +221,11 @@ if exists(':Plugin')
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
 
+  " Vim Airline improves the look & functionality of the statusline.
+  " It's so fancy!
+  " https://github.com/bling/vim-airline
+  Plugin 'bling/vim-airline'
+
   " Lols
   Plugin 'koron/nyancat-vim'
 
@@ -443,10 +448,10 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE (won't see much unless we disable Airline)
 " see: :help 'statusline
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=         "reset
 set statusline+=%#todo# "set color
 set statusline+=[       "open bracket char
@@ -465,6 +470,10 @@ set statusline+=%{fugitive#statusline()}\  "git branch
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ (%P)  "escaped space, percent through file
+
+" Airline.vim customizations
+set noshowmode " Hide mode line text since it's already in Airline
+let g:airline#extensions#tabline#enabled = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
@@ -530,7 +539,7 @@ nmap <space><space> <leader><leader>
 xmap <space> <leader>
 
 " Reload our .vimrc
-nmap <leader>~ :source ~/.vimrc<CR>:redraw<CR>:echo "~/.vimrc reloaded!"<CR>
+nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:AirlineRefresh<CR>:echo "~/.vimrc reloaded!"<CR>
 
 " Write file
 nmap <leader>w :w<CR>
@@ -640,6 +649,9 @@ vnoremap <Leader>t, :Tabularize comma<CR>
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
+
+    " Assume we have the Airline-patched font
+    let g:airline_powerline_fonts = 1
 
     " Search for word under cursor in Dash.app
     nmap <leader>d <Plug>DashSearch
