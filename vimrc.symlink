@@ -67,11 +67,34 @@ if exists(':Plugin')
   " https://github.com/tpope/vim-characterize
   Plugin 'tpope/vim-characterize'
 
+  " Buffergator lists, selects and switches buffers
+  " Use `<Leader>b` (typically: `\b`) to open a window listing all buffers. In this
+  " window, you can use normal movement keys to select a buffer and then:
+  "   - <ENTER> to edit the selected buffer in the previous window
+  "   - <C-V> to edit the selected buffer in a new vertical split
+  "   - <C-S> to edit the selected buffer in a new horizontal split
+  "   - <C-T> to edit the selected buffer in a new tab page
+  "
+  " https://github.com/jeetsukumaran/vim-buffergator
   Plugin 'jeetsukumaran/vim-buffergator'
+
+  " CtrlP.vim is a fuzzy file, buffer, mru, tag, etc finder.
+  " Open with CTRL-P, then:
+  "   Press <c-f> and <c-b> to cycle between modes.
+  "   Press <c-d> to switch to filename only search instead of full path.
+  "   Press <c-r> to switch to regexp mode.
+  " https://github.com/kien/ctrlp.vim
   Plugin 'kien/ctrlp.vim'
-  if exists("*gettabvar")
-    Plugin 'airblade/vim-gitgutter'
-  endif
+
+
+  " A Vim plugin which shows a git diff in the gutter (sign column) and
+  " stages/reverts hunks. Use [c and ]c to navigate changes.
+  " https://github.com/airblade/vim-gitgutter
+  Plugin 'airblade/vim-gitgutter'
+
+
+
+
   Plugin 'scrooloose/nerdtree'
   Plugin 'godlygeek/tabular'
   Plugin 'nelstrom/vim-visual-star-search'
