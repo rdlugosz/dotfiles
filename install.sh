@@ -6,22 +6,22 @@
 DOTFILES_ROOT="`pwd`"
 
 DOTFILES_LIST=(
-    agignore.symlink
-    dotfiles.symlink
-    gemrc.symlink
-    gitconfig.symlink
-    githelpers.symlink
-    gitignore_global.symlink
-    gvimrc.symlink
-    htoprc.symlink
-    iftoprc.symlink
-    irbrc.symlink
-    powconfig.symlink
-    slate.symlink
-    tmux.conf.symlink
-    vimrc.symlink
-    dircolors-solarized.symlink
-    zprezto.symlink
+    agignore
+    dotfiles
+    gemrc
+    gitconfig
+    githelpers
+    gitignore_global
+    gvimrc
+    htoprc
+    iftoprc
+    irbrc
+    powconfig
+    slate
+    tmux.conf
+    vimrc
+    dircolors-solarized
+    zprezto
   )
 
 set -e
@@ -60,7 +60,7 @@ install_dotfiles () {
 
   for source in "${DOTFILES_LIST[@]}"
   do
-    dest="$HOME/.`basename \"${source%.*}\"`"
+    dest="$HOME/.$source"
 
     if [ -f $dest ] || [ -d $dest ] || [ -L $dest ]
     then
