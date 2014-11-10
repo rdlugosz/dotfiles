@@ -1,4 +1,3 @@
-#!/usr/bin/env vim
 set nocompatible               " be iMproved
 
 filetype off                   " required!
