@@ -200,7 +200,7 @@ if exists(':Plugin')
   " Adds the :G family of commands for grepping. Automatically decides between
   " Ag, Ack and Grep depending on what's available.
   " https://github.com/rizzatti/greper.vim
-  Plugin 'rizzatti/grepper.vim'
+  Plugin 'rizzatti/greper.vim'
 
   " This is a dependency of Dash.vim and Grepper.vim
   Plugin 'rizzatti/funcoo.vim'
