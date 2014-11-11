@@ -694,6 +694,7 @@ if has("unix")
     au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
     " Attempt to toggle the Capslock LED on Insert mode, because why not?
+    " Thx to /u/jaxbotme (http://goo.gl/Mxgx2P)
     if executable('keyboard_leds')
       autocmd InsertEnter * let _caps=system('keyboard_leds -c1')
       autocmd InsertLeave * let _caps=system('keyboard_leds -c0')
