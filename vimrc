@@ -587,7 +587,6 @@ nmap <leader>c :set invcursorcolumn<CR>
 
 " Toggle paste mode
 nmap <leader>p :set invpaste<CR>:set paste?<CR>
-imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 " upper/lower word
 " (set a mark, visually select inner word, u/U, return to mark)
