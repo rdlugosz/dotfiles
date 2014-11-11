@@ -707,16 +707,16 @@ endif
 " FILE TYPES
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some file types should wrap their text
-function! s:setupWrapping()
-  set wrap
-  set linebreak
-  set textwidth=78
-  set nolist
+function! RD_SetupWrapping()
+  setlocal wrap
+  setlocal linebreak
+  setlocal textwidth=78
+  setlocal nolist
 endfunction
 
 " Make sure all markdown files have the correct filetype set and setup wrapping
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-au FileType markdown call s:setupWrapping()
+au FileType markdown call RD_SetupWrapping()
 au FileType markdown setlocal ts=4 sts=4 sw=4
 
 " enable spell checking on certain files
