@@ -569,7 +569,10 @@ command! Qall qall
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let spacebar double as our leader, for great justice
 nmap <space> <leader>
+xmap <space> <leader>
 nmap <space><space> <leader><leader>
+xmap <space><space> <leader><leader>
+
 " xmap includes Visual mode but not Select mode (which we don't often use, but
 " if we did we'd expect hitting space to replace the selected text with a
 " space char).
