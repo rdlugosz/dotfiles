@@ -259,6 +259,7 @@ if exists(':Plugin')
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'junegunn/seoul256.vim'
   Plugin 'tomasr/molokai'
+  Plugin 'sjl/badwolf'
 
   " Plugins to only load on OS X
   if has("unix")
