@@ -447,6 +447,13 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" YouCompleteMe Config
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+" Remove <TAB> because it conflicts with Snipmate
+" Note that it's easier to navigate the suggestions with C-n/C-p anyway
+let g:ycm_key_list_select_completion = ['<Down>']
+
 " Syntastic config
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
