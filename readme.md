@@ -22,8 +22,9 @@ Questions? [@lbwski](http://twitter.com/lbwski)
 
 
 ### OS X Extra Steps
-* Set some reasonable defaults: `sh ./osx`
-* Be sure homebrew is installed
+* Set some reasonable defaults by executing some of the commands in `osx`
+  (read what they do first - don't just blindly execute that as a script!)
+* Be sure [homebrew](http://brew.sh/) is installed
 
 ## Helpful Links
 
