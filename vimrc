@@ -463,6 +463,8 @@ let g:syntastic_auto_jump = 2         " Jump to syntax errors
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_viewport_split_policy = 'T'
+let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
+nmap <leader>b :BuffergatorOpen<CR>
 
 " Use par to reflow text
 " see: http://vimcasts.org/episodes/formatting-text-with-par/
@@ -593,6 +595,8 @@ nmap <leader>s :set invspell<CR>:set spell?<CR>
 nmap <leader>W :set invwrap<CR>:set wrap?<CR>
 
 " Toggle background dark/light
+" Note that this will conflict with a default mapping claimed by Buffergator
+" (unless you suppress it as we do above).
 nmap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>:AirlineRefresh<CR>
 
 " Toggle Cursor Column
