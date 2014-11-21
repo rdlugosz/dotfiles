@@ -594,10 +594,25 @@ nmap <leader>s :set invspell<CR>:set spell?<CR>
 " Toggle wrap
 nmap <leader>W :set invwrap<CR>:set wrap?<CR>
 
-" Toggle background dark/light
+" Toggle background dark/light with <leader>B
 " Note that this will conflict with a default mapping claimed by Buffergator
 " (unless you suppress it as we do above).
-nmap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>:AirlineRefresh<CR>
+function! RD_ToggleBackground()
+  if &background == "dark"
+    let &background = "light"
+    let _snark = "Hey, wake up!!"
+  else
+    let &background = "dark"
+    let _snark = "Who turned out the lights???"
+  endif
+
+  if exists(':Airline')
+    AirlineRefresh
+  endif
+  redraw
+  echo _snark
+endfunction
+nmap <silent> <leader>B :call RD_ToggleBackground()<CR>
 
 " Toggle Cursor Column
 nmap <leader>c :set invcursorcolumn<CR>
