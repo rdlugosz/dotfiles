@@ -459,7 +459,6 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_full_redraws = 1
 let g:syntastic_auto_jump = 2         " Jump to syntax errors
-let g:syntastic_auto_loc_list = 1     " Auto-open the error list
 
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
@@ -592,6 +591,9 @@ nmap <leader>s :set invspell<CR>:set spell?<CR>
 
 " Toggle wrap
 nmap <leader>W :set invwrap<CR>:set wrap?<CR>
+
+" Toggle background dark/light
+nmap <leader>B :let &background = ( &background == "dark"? "light" : "dark" )<CR>:AirlineRefresh<CR>
 
 " Toggle Cursor Column
 nmap <leader>c :set invcursorcolumn<CR>
