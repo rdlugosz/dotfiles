@@ -385,7 +385,7 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
-silent! colorscheme base16-default
+silent! colorscheme seoul256
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
