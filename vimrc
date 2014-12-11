@@ -529,8 +529,8 @@ imap <c-l> <space>=><space>
 " map j to gj and k to gk, so line navigation ignores line wrap
 " ...but only if the count is undefined (otherwise, things like 4j
 " break if wrapped LINES are present)
-nmap <expr> j (v:count == 0 ? 'gj' : 'j')
-nmap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Expand %% into the directory of the current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
@@ -569,15 +569,13 @@ command! Qall qall
 " LEADER MAPPINGS
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let spacebar double as our leader, for great justice
+" xmap includes Visual mode but not Select mode (which we don't often use, but
+" if we did we'd expect hitting space to replace the selected text with a
+" space char).
 nmap <space> <leader>
 xmap <space> <leader>
 nmap <space><space> <leader><leader>
 xmap <space><space> <leader><leader>
-
-" xmap includes Visual mode but not Select mode (which we don't often use, but
-" if we did we'd expect hitting space to replace the selected text with a
-" space char).
-xmap <space> <leader>
 
 " Reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:AirlineRefresh<CR>:echo "~/.vimrc reloaded!"<CR>
