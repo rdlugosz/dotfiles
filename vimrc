@@ -725,8 +725,12 @@ if has("unix")
     " Attempt to toggle the Capslock LED on Insert mode, because why not?
     " Thx to /u/jaxbotme (http://goo.gl/Mxgx2P)
     if executable('keyboard_leds')
-      autocmd InsertEnter * let _caps=system('keyboard_leds -c1')
-      autocmd InsertLeave * let _caps=system('keyboard_leds -c0')
+      augroup RD_Blinkenlights
+        " First, clear existing for this group (for safe reloads)
+        autocmd!
+        autocmd InsertEnter * let _caps=system('keyboard_leds -c1')
+        autocmd InsertLeave * let _caps=system('keyboard_leds -c0')
+      augroup END
     endif
 
   endif
