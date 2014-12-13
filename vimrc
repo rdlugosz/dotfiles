@@ -306,7 +306,7 @@ set ttimeout
 set ttimeoutlen=100
 
 set incsearch     " incremental searching
-set nohlsearch    " don't highlight matches
+set hlsearch      " highlight matches (later we map a toggle to <leader>l)
 set ignorecase    " searches are case insensitive...
 set smartcase     " ... unless they contain at least one capital letter
 
@@ -470,7 +470,10 @@ endif
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
-au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup RD_LastLocation
+  autocmd!
+  autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
 
 " Use The Silver Searcher if available
 if executable('ag')
@@ -483,71 +486,50 @@ endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
-" see: :help 'statusline
+" see: :help 'statusline'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=         "reset
-set statusline+=%#identifier# "set color
-set statusline+=[       "open bracket char
-set statusline+=%n      "buffer number
-set statusline+=%H      "help flag
-set statusline+=%M      "modifiable/modified flag
-set statusline+=%R      "Readonly flag
-set statusline+=%W      "Preview window flag
-set statusline+=%Y      "Filetype
-set statusline+=]%*     "close bracket & reset color
-set statusline+=./%f\   "relative path of the filename
+set statusline=                 " reset
+set statusline+=%#identifier#   " set color
+set statusline+=[               " open bracket char
+set statusline+=%n              " buffer number
+set statusline+=%H%M%R%W        " flags: Help, Modified, RO, Preview
+set statusline+=]%*             " close bracket & reset color
+set statusline+=./%f\           " relative path of the filename
+set statusline+=%<              " cut from here if line is too long
+set statusline+=%y              " Filetype flag (displays in brackets)
 
-set statusline+=%<      "cut from here if line is too long
-set statusline+=%=      "left/right separator
+set statusline+=%=              " left/right separator (everything from here is pulled right)
 
-" next several warnings courtesy of: https://github.com/scrooloose/vimfiles
-"display a warning if &et is wrong, or we have mixed-indenting
+" show various error states that may apply
 set statusline+=%#error#
 set statusline+=%{StatuslineTabWarning()}
-set statusline+=%*
-
-set statusline+=%#todo#
 set statusline+=%{StatuslineTrailingSpaceWarning()}
-set statusline+=%*
-
-set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"display a warning if &paste is set
-set statusline+=%#error#
 set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
-"display a warning if fileformat isn't unix
+" display a warning if fileformat isn't unix or encoding isn't utf-8
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'[ff:\ '.&ff.']':''}
-set statusline+=%*
-
-"display a warning if file encoding isn't utf-8
-set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'[enc:\ '.&fenc.']':''}
 set statusline+=%*
 
-                        "type and width of tabs
-set statusline+=[tab:\ %{&expandtab==1?'soft':'HARD'}\ %{&ts}]
+set statusline+=[tab:\ %{&expandtab==1?'soft':'HARD'}\ %{&ts}] " tab info
 
-                        "git branch
-set statusline+=\ %{fugitive#statusline()}
+set statusline+=%{fugitive#statusline()} " git info
 
-set statusline+=\ col\ %2c,      "cursor column
-set statusline+=\ line\ %3l/%L   "cursor line/total lines
-set statusline+=\ (%P)  "escaped space, percent through file
+set statusline+=\ col\ %2c,      " cursor column
+set statusline+=\ ln\ %3l/%L     " cursor line/total lines
+set statusline+=\ (%P)           " percent through file
 
-"recalculate the trailing whitespace & tab warning when idle and after saving
+" recalculate the trailing whitespace & tab warning when idle and after saving
 augroup RD_StatusUpdates
   autocmd!
   autocmd cursorhold,bufwritepost * unlet! b:statusline_trailing_space_warning
   autocmd cursorhold,bufwritepost * unlet! b:statusline_tab_warning
 augroup END
 
-"return '[\s]' if trailing white space is detected
-"return '' otherwise
+" via: https://github.com/scrooloose/vimfiles
 function! StatuslineTrailingSpaceWarning()
     if !exists("b:statusline_trailing_space_warning")
 
@@ -557,7 +539,7 @@ function! StatuslineTrailingSpaceWarning()
         endif
 
         if search('\s\+$', 'nw') != 0
-            let b:statusline_trailing_space_warning = '[\s]'
+            let b:statusline_trailing_space_warning = '[trailing spaces]'
         else
             let b:statusline_trailing_space_warning = ''
         endif
@@ -565,9 +547,7 @@ function! StatuslineTrailingSpaceWarning()
     return b:statusline_trailing_space_warning
 endfunction
 
-"return '[&et]' if &et is set wrong
-"return '[mixed-indenting]' if spaces and tabs are used to indent
-"return an empty string if everything is fine
+" via: https://github.com/scrooloose/vimfiles
 function! StatuslineTabWarning()
     if !exists("b:statusline_tab_warning")
         let b:statusline_tab_warning = ''
@@ -578,13 +558,13 @@ function! StatuslineTabWarning()
 
         let tabs = search('^\t', 'nw') != 0
 
-        "find spaces that arent used as alignment in the first indent column
+        " find spaces that arent used as alignment in the first indent column
         let spaces = search('^ \{' . &ts . ',}[^\t]', 'nw') != 0
 
         if tabs && spaces
             let b:statusline_tab_warning =  '[mixed-indenting]'
-        elseif (spaces && !&et) || (tabs && &et)
-            let b:statusline_tab_warning = '[&et]'
+        elseif (spaces && !&expandtab) || (tabs && &expandtab)
+            let b:statusline_tab_warning = '[&expandtab wrong?]'
         endif
     endif
     return b:statusline_tab_warning
@@ -738,8 +718,8 @@ function! HLNext (blinktime)
   redraw
 endfunction
 " Now, remap n/N so they call themselves, center screen & call HLNext
-nnoremap <silent> n nzz:call HLNext(300)<cr>
-nnoremap <silent> N Nzz:call HLNext(300)<cr>
+nnoremap <silent> n nzz:call HLNext(100)<cr>
+nnoremap <silent> N Nzz:call HLNext(100)<cr>
 
 " Grep for word under cursor with <leader>G
 nmap <leader>G <Plug>GreperBangWord
@@ -760,6 +740,7 @@ nmap <leader>gp :Git push<cr>
 " Mappings for vim-ruby-xmpfilter
 if executable('xmpfilter')
   augroup RD_XmpfilterCmds
+    autocmd!
     autocmd FileType ruby nmap <buffer> <leader>m <Plug>(xmpfilter-mark)
     autocmd FileType ruby xmap <buffer> <leader>m <Plug>(xmpfilter-mark)
     autocmd FileType ruby imap <buffer> <leader>m <Plug>(xmpfilter-mark)
@@ -797,10 +778,13 @@ if has("unix")
 
     " Use Marked.app to preview Markdown files...
     " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
-    function! s:setupMarkup()
+    function! s:setupMarkedAppLeaderMapping()
       nmap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
     endfunction
-    au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+    augroup RD_MarkedLauncher
+      autocmd!
+      autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkedAppLeaderMapping()
+    augroup END
 
     " Attempt to toggle the Capslock LED on Insert mode, because why not?
     " Thx to /u/jaxbotme (http://goo.gl/Mxgx2P)
@@ -812,7 +796,6 @@ if has("unix")
         autocmd InsertLeave * let _caps=system('keyboard_leds -c0')
       augroup END
     endif
-
   endif
 endif
 
@@ -827,15 +810,19 @@ function! RD_SetupWrapping()
   setlocal nolist
 endfunction
 
-" Make sure all markdown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-au FileType markdown call RD_SetupWrapping()
-au FileType markdown setlocal ts=4 sts=4 sw=4
+augroup RD_FileTypeCommands
+  autocmd!
 
-" enable spell checking on certain files
-autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
+  " Make sure all markdown files have the correct filetype set and setup wrapping
+  autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+  autocmd FileType markdown call RD_SetupWrapping()
+  autocmd FileType markdown setlocal ts=4 sts=4 sw=4
 
-" Treat JSON files like JavaScript
-au BufNewFile,BufRead *.json set ft=javascript
+  " enable spell checking on certain files
+  autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
+
+  " Treat JSON files like JavaScript
+  autocmd BufNewFile,BufRead *.json set ft=javascript
+augroup END
 
 " vim:set ft=vim et sw=2:
