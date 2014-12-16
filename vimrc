@@ -671,7 +671,7 @@ endfunction
 nmap <silent> <leader>B :call RD_ToggleBackground()<CR>
 
 " Toggle Cursor Column
-nmap <leader>c :set invcursorcolumn<CR>
+nmap <leader>c :set invcursorcolumn<CR>:echo "try \<leader\>ig to show indent guides!"<CR>
 
 " Toggle paste mode
 nmap <leader>p :set invpaste<CR>:set paste?<CR>
