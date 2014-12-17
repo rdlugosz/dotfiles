@@ -591,6 +591,8 @@ imap <c-l> <space>=><space>
 " break if wrapped LINES are present)
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+xnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+xnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 
 " Expand %% into the directory of the current file
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
