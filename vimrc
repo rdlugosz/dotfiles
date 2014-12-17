@@ -194,6 +194,7 @@ if exists(':Plugin')
   Plugin 'skalnik/vim-vroom'
 
   " Syntax checker for many languages
+  " You can populate the location-list and see all errors via :Errors
   " https://github.com/scrooloose/syntastic
   Plugin 'scrooloose/syntastic'
 
@@ -450,10 +451,11 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_key_list_select_completion = ['<Down>']
 
 " Syntastic config
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_error_symbol = '✗'    " Oh... Fancy!
+let g:syntastic_warning_symbol = '⚠'  " Such unicode!
 let g:syntastic_full_redraws = 1
-let g:syntastic_auto_jump = 2         " Jump to syntax errors
+let g:syntastic_auto_jump = 2         " Jump to syntax errors (but not warnings)
+let g:syntastic_check_on_wq = 0       " Don't syntax check if window is going to close
 
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
