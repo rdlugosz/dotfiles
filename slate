@@ -7,26 +7,26 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
 
 # Resize Bindings
-#bind right:alt       resize +10% +0
-#bind left:alt        resize -10% +0
-#bind up:alt          resize +0   -10%
-#bind down:alt        resize +0   +10%
+bind right:alt       resize +10% +0
+bind left:alt        resize -10% +0
+bind up:alt          resize +0   -10%
+bind down:alt        resize +0   +10%
 #bind right:ctrl;alt  resize -10% +0 bottom-right
 #bind left:ctrl;alt   resize +10% +0 bottom-right
 #bind up:ctrl;alt     resize +0   +10% bottom-right
 #bind down:ctrl;alt   resize +0   -10% bottom-right
 
 # Push Bindings
-#bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
-#bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
-#bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
-#bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+bind right:ctrl;alt  push right # bar-resize:screenSizeX/3
+bind left:ctrl;alt   push left  # bar-resize:screenSizeX/3
+bind up:ctrl;alt     push up    # bar-resize:screenSizeY/2
+bind down:ctrl;alt   push down  # bar-resize:screenSizeY/2
 
 # Nudge Bindings
-#bind right:shift;alt nudge +10% +0
-#bind left:shift;alt  nudge -10% +0
-#bind up:shift;alt    nudge +0   -10%
-#bind down:shift;alt  nudge +0   +10%
+bind right:shift;alt nudge +10% +0
+bind left:shift;alt  nudge -10% +0
+bind up:shift;alt    nudge +0   -10%
+bind down:shift;alt  nudge +0   +10%
 
 # Throw Bindings
 #bind 1:ctrl;alt         throw 0 resize
@@ -46,10 +46,11 @@ config windowHintsSpread true
 #bind down:cmd;alt focus behind
 
 # Window Hints
-bind esc:cmd hint
+# bind esc:alt hint
 
 # window switcher
-bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
+bind e:alt;shift hint ASDFGHJKLQWERTYUIOPCVBN
+bind tab:alt switch
 
 # Divvy style grid
-bind g:cmd grid padding:5 0:8,5 1:10,6
+bind g:alt;shift grid padding:5 0:10,8 1:10,6
