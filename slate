@@ -53,4 +53,4 @@ bind e:alt;shift hint ASDFGHJKLQWERTYUIOPCVBN
 bind tab:alt switch
 
 # Divvy style grid
-bind g:alt;shift grid padding:5 0:10,8 1:10,6
+bind g:alt;shift grid padding:5 0:10,8 1:16,12
