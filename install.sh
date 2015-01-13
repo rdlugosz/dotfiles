@@ -22,6 +22,14 @@ DOTFILES_LIST=(
     vimrc
     dircolors-solarized
     zprezto
+    zlogin
+    zlogout
+    zpreztorc
+    zprofile
+    zshenv
+    zshrc
+    zshrc.linux
+    zshrc.osx
   )
 
 set -e
