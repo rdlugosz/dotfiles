@@ -12,3 +12,9 @@ then
   eval "$(rbenv init -)"
   export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 fi
+
+#init autojump if available
+if [[ -f /usr/share/autojump/autojump.sh ]]
+then
+  . /usr/share/autojump/autojump.sh
+fi
