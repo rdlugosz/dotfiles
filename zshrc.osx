@@ -45,3 +45,6 @@ export PATH="$PATH:$GOPATH/bin"
 
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
+
+# Init autojump
+[[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
