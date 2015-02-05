@@ -827,6 +827,9 @@ augroup RD_FileTypeCommands
 
   " Treat JSON files like JavaScript
   autocmd BufNewFile,BufRead *.json set ft=javascript
+
+  " Support for ES6
+  autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 augroup END
 
 " vim:set ft=vim et sw=2:
