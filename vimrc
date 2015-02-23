@@ -107,6 +107,10 @@ if exists(':Plugin')
   " https://github.com/scrooloose/nerdtree
   Plugin 'scrooloose/nerdtree'
 
+  " Vim-vinegar allows access to netrw via -
+  " https://github.com/tpope/vim-vinegar
+  Plugin 'tpope/vim-vinegar'
+
   " Tabular.vim is a plugin that aligns text by some pattern, e.g.:
   " :Tab /,
   " will align lines by their commas. We have some mappings set up later, like
@@ -730,7 +734,7 @@ nmap <leader>G <Plug>GreperBangWord
 
 " NERDTree stuff
 nmap <leader>n :NERDTreeToggle<CR>
-let NERDTreeHijackNetrw=1
+let NERDTreeHijackNetrw=0
 
 " UndoTree
 nmap <leader>u :UndotreeToggle<CR>
