@@ -29,10 +29,6 @@ if exists(':Plugin')
   " https://github.com/tpope/vim-fugitive
   Plugin 'tpope/vim-fugitive'
 
-  " Make CTRL-A / CTRL-X work on dates like 2000-03-26
-  " https://github.com/tpope/vim-speeddating
-  Plugin 'tpope/vim-speeddating'
-
   " Surround.vim lets you add/change/remove surrounding chars and tags
   " https://github.com/tpope/vim-surround
   Plugin 'tpope/vim-surround'
