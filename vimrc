@@ -818,6 +818,8 @@ augroup RD_FileTypeCommands
   autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
   autocmd FileType markdown call RD_SetupWrapping()
   autocmd FileType markdown setlocal ts=4 sts=4 sw=4
+  " Syntax highlight fenced code blocks (e.g., ```ruby...)
+  let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
   " enable spell checking on certain files
   autocmd BufNewFile,BufRead COMMIT_EDITMSG set spell
