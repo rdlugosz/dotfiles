@@ -230,6 +230,12 @@ if exists(':Plugin')
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
 
+  " Scratch.vim provides shortcuts to editing in a scratch buffer
+  " Activate with gs in normal mode
+  " gs in visual mode pastes in selected text
+  " https://github.com/mtth/scratch.vim
+  Plugin 'mtth/scratch.vim'
+
   " Lols
   Plugin 'koron/nyancat-vim'
 
@@ -459,6 +465,9 @@ let g:buffergator_show_full_directory_path = 0
 let g:buffergator_viewport_split_policy = 'T'
 let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
 nmap <leader>b :BuffergatorOpen<CR>
+
+" Remap Scratch.vim command
+nnoremap gs :Scratch<CR>
 
 " Use par to reflow text
 " see: http://vimcasts.org/episodes/formatting-text-with-par/
