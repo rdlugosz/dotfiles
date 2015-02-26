@@ -6,6 +6,8 @@
 " Note to future self: Git history was lost during a rename; you can see it by
 " adding the `--follow` option to `git log`.
 "
+" Nice catalog of plugins lives at: http://vimawesome.com/
+"
 " Any questions, contact @lbwski
 
 set nocompatible               " be iMproved
