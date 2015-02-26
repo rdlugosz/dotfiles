@@ -55,12 +55,6 @@ if exists(':Plugin')
   " https://github.com/tpope/vim-unimpaired
   Plugin 'tpope/vim-unimpaired'
 
-  " Eunuch.vim adds wrappers for various Unix commands
-  " e.g., :Remove will rm the current file & delete the buffer
-  "       :Move will rename both the buffer and file simultaneously
-  " https://github.com/tpope/vim-eunuch
-  Plugin 'tpope/vim-eunuch'
-
   " Commentary.vim provides commenting for many languages
   " Use gcc to comment out a line (takes a count), gc to comment out the
   " target of a motion (for example, gcap to comment out a paragraph),
@@ -129,6 +123,7 @@ if exists(':Plugin')
 
   " Vim global plugin for dragging virtual blocks. By Damien Conway.
   " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
+  " This isn't terribly useful; more of a fun hack to show off
   " https://github.com/rdlugosz/vim-dragvisuals
   Plugin 'rdlugosz/vim-dragvisuals'
 
