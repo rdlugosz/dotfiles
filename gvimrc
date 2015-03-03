@@ -7,7 +7,7 @@ if has("unix")
   if s:uname == "Darwin\n"
     silent! set guifont=Menlo:h12
     if has("gui_macvim")
-      set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
+      set guifont=Menlo:h12
     endif
 
     " Automatically resize splits
