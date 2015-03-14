@@ -474,14 +474,14 @@ augroup RD_LastLocation
   autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-" Use The Silver Searcher if available
-if executable('ag')
-  " Use ag in CtrlP
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-  " Skip caching since ag is so fast
-  let g:ctrlp_use_caching = 0
-endif
+"
+" CtrlP config
+"
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
