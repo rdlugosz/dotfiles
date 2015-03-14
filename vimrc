@@ -425,7 +425,7 @@ set cpoptions+=$
 set hidden
 
 " exclusions from the autocomplete menu
-set wildignore+=*/tmp/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " mouse works in most terminal software we use...
 set mouse=a
