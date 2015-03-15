@@ -86,8 +86,8 @@ if exists(':Plugin')
   "   Press <c-f> and <c-b> to cycle between modes.
   "   Press <c-d> to switch to filename only search instead of full path.
   "   Press <c-r> to switch to regexp mode.
-  " https://github.com/kien/ctrlp.vim
-  Plugin 'kien/ctrlp.vim'
+  " https://github.com/ctrlpvim/ctrlp.vim
+  Plugin 'ctrlpvim/ctrlp.vim'
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
@@ -483,6 +483,9 @@ augroup END
 "
 " CtrlP config
 "
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
