@@ -487,14 +487,9 @@ augroup END
 "
 
 " CtrlP config
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+let g:ctrlp_map = '<c-p>'       " activate with c-p
+let g:ctrlp_cmd = 'CtrlPMixed'  " start in the file + mru + buffers mode
+let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directory
 
 " YouCompleteMe Config
 let g:ycm_collect_identifiers_from_tags_files = 1
