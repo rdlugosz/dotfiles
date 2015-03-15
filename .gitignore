@@ -1,3 +1,4 @@
 *.last-run
 sublime_text/User/Package\ Control.cache/*
 sublime_text/User/Package\ Control.system-ca-bundle
+tags
