@@ -294,10 +294,14 @@ endif
 set autoindent   " preserve indent level on newlines
 set tabstop=2    " a tab is two spaces
 set shiftwidth=2 " an autoindent (with <<) is two spaces
+set shiftround   " when indenting with >, round to nearest multiple of shiftwidth
 set expandtab    " use spaces, not tabs
 set smarttab     " use shiftwidth/tabstop based on context
 
 set backspace=indent,eol,start
+
+set ttyfast      " assume we are on a fast terminal
+set lazyredraw   " don't echo non-typed characters (e.g., macro execution)
 
 " By default, complete is set to: complete=.,w,b,u,t,i
 " The 'i' means 'included files' and can result in major slowdowns
@@ -431,7 +435,15 @@ set cpoptions+=$
 set hidden
 
 " exclusions from the autocomplete menu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*.so
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+set wildignore+=*.gif,*.jpg,*.png,*.log
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+set wildignore+=*/public/assets/*
+set wildignore+=*.swp,*~,._*
+set wildignore+=.DS_Store
 
 " mouse works in most terminal software we use...
 set mouse=a
@@ -445,6 +457,44 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+" Use par to reflow text
+" see: http://vimcasts.org/episodes/formatting-text-with-par/
+" Using `gw` will reflow with Vim's built-in algorithm.
+if executable('par')
+  set formatprg="par -h -w78 -B=.,\?_A_a "
+endif
+
+" Folding
+set foldmethod=indent   " fold based on indent level
+"   Sets the fold level: Folds with a higher level will be closed.  Setting
+"   this option to zero will close all folds.  Higher numbers will close fewer
+"   folds.
+set foldlevel=1
+set foldnestmax=10
+set nofoldenable        " start with all folds open
+
+" Remember last location in file, but not for commit messages.
+" see :help last-position-jump
+augroup RD_LastLocation
+  autocmd!
+  autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+augroup END
+
+
+"
+" Plugin-related config
+"
+
+" CtrlP config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 " YouCompleteMe Config
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -466,31 +516,6 @@ let g:buffergator_viewport_split_policy = 'T'
 let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
 nmap <leader>b :BuffergatorOpen<CR>
 
-" Use par to reflow text
-" see: http://vimcasts.org/episodes/formatting-text-with-par/
-" Using `gw` will reflow with Vim's built-in algorithm.
-if executable('par')
-  set formatprg="par -h -w78 -B=.,\?_A_a "
-endif
-
-" Remember last location in file, but not for commit messages.
-" see :help last-position-jump
-augroup RD_LastLocation
-  autocmd!
-  autocmd BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-augroup END
-
-"
-" CtrlP config
-"
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -640,12 +665,16 @@ command! Qall qall
 " xmap includes Visual mode but not Select mode (which we don't often use, but
 " if we did we'd expect hitting space to replace the selected text with a
 " space char).
-nmap <space> <leader>
-xmap <space> <leader>
-nmap <space><space> <leader><leader>
-xmap <space><space> <leader><leader>
+" nmap <space> <leader>
+" xmap <space> <leader>
+" nmap <space><space> <leader><leader>
+" xmap <space><space> <leader><leader>
+"
+" ...on second thought, let's just map space directly to <leader> for a while
+" and see how it goes.
+let mapleader=" "
 
-" Reload our .vimrc
+" reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
 
 " Write file
@@ -693,6 +722,9 @@ nmap <leader>L m`guiw``
 
 " Reindent the entire file
 nmap <leader>= gg=G``:echo "reindent global"<CR>
+
+" Toggle buffer with <leader><leader>
+nnoremap <leader><leader> <C-^>
 
 " delete trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
