@@ -482,9 +482,9 @@ augroup RD_LastLocation
 augroup END
 
 
-"
-" Plugin-related config
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN-RELATED CONFIG
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " CtrlP config
 let g:ctrlp_map = '<c-p>'       " activate with c-p
@@ -649,8 +649,8 @@ nmap <SID>ws <Nop>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Allow for some common quit/write cmd typos
-command! Q q " Bind :Q to :q
-command! W w " Bind :W to :w
+command! Q q        " Bind :Q to :q
+command! W w        " Bind :W to :w
 command! Qall qall
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
