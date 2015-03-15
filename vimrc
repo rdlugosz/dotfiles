@@ -667,7 +667,9 @@ command! Qall qall
 "
 " ...on second thought, let's just map space directly to <leader> for a while
 " and see how it goes.
+nmap <space> <nop>
 let mapleader=" "
+
 
 " reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
