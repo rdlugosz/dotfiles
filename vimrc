@@ -503,7 +503,6 @@ let g:syntastic_check_on_wq = 0       " Don't syntax check if window is going to
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_viewport_split_policy = 'T'
 let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
-nmap <leader>b :BuffergatorOpen<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -755,6 +754,9 @@ nnoremap <silent> N Nzz:call HLNext(100)<cr>
 
 " Grep for word under cursor with <leader>G
 nmap <leader>G <Plug>GreperBangWord
+
+" BufferGator
+nmap <leader>b :BuffergatorOpen<CR>
 
 " NERDTree stuff
 nmap <leader>n :NERDTreeToggle<CR>
