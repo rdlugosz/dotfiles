@@ -230,12 +230,6 @@ if exists(':Plugin')
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
 
-  " Vim-Gutentags automatically updates tags files in the background. Cross
-  " platform and no external deps. Triggered when saving a file that lives in
-  " a Git repo.
-  " https://github.com/ludovicchabant/vim-gutentags
-  Plugin 'ludovicchabant/vim-gutentags'
-
   " Lols
   Plugin 'koron/nyancat-vim'
 
@@ -669,7 +663,6 @@ command! Qall qall
 " and see how it goes.
 nmap <space> <nop>
 let mapleader=" "
-
 
 " reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
