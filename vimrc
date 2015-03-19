@@ -653,15 +653,10 @@ command! Qall qall
 " xmap includes Visual mode but not Select mode (which we don't often use, but
 " if we did we'd expect hitting space to replace the selected text with a
 " space char).
-" nmap <space> <leader>
-" xmap <space> <leader>
-" nmap <space><space> <leader><leader>
-" xmap <space><space> <leader><leader>
-"
-" ...on second thought, let's just map space directly to <leader> for a while
-" and see how it goes.
-nmap <space> <nop>
-let mapleader=" "
+nmap <space> <leader>
+xmap <space> <leader>
+nmap <space><space> <leader><leader>
+xmap <space><space> <leader><leader>
 
 " reload our .vimrc
 nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
