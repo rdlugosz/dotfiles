@@ -13,9 +13,14 @@
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrap(true)
 
-# Used by vim-mode keymappings to allow for multi-char mappings, e.g., jj = ESC
-atom.commands.add 'atom-text-editor', 'insert-incomplete-binding', (e) ->
-  if oe = e.originalEvent && e.originalEvent.originalEvent
-    char = String.fromCharCode(oe.which)
-    char = char.toLowerCase() unless oe.shift
-    atom.workspace.activePaneItem.insertText(char)
+# Allows for a vim-mode keymapping of "kj" to be used as ESC
+atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-proceeded-by-k': (e) ->
+  editor = @getModel()
+  pos = editor.getCursorBufferPosition()
+  range = [pos.traverse([0,-1]), pos]
+  lastChar = editor.getTextInBufferRange(range)
+  if lastChar != "k"
+    e.abortKeyBinding()
+  else
+    editor.backspace()
+    atom.commands.dispatch(e.currentTarget, 'vim-mode:activate-command-mode')

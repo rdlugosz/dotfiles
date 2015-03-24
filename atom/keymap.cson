@@ -18,7 +18,4 @@
 #
 
 '.editor.vim-mode.insert-mode':
-  'k': 'insert-incomplete-keybinding'
-
-'.vim-mode.insert-mode:not(.mini)':
-  'k j': 'vim-mode:activate-command-mode'
+  'j': 'exit-insert-mode-if-proceeded-by-k'
