@@ -7,6 +7,7 @@ DOTFILES_ROOT="`pwd`"
 
 DOTFILES_LIST=(
     agignore
+    atom
     dotfiles
     gemrc
     gitconfig

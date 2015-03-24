@@ -2,3 +2,10 @@
 sublime_text/User/Package\ Control.cache/*
 sublime_text/User/Package\ Control.system-ca-bundle
 tags
+atom/packages
+atom/storage
+atom/compile-cache
+atom/dev
+atom/.apm
+atom/.npm
+atom/.node-gyp

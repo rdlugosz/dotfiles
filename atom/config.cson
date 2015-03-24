@@ -1,0 +1,30 @@
+"*":
+  "exception-reporting":
+    userId: "75370157-1133-97db-728f-5aee91d582ff"
+  "release-notes":
+    viewedVersion: "0.95.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
+  core:
+    themes: [
+      "unity-ui"
+      "zenburn"
+    ]
+    projectHome: "/Users/ryan/workspace"
+  "git-diff":
+    showIconsInEditorGutter: true
+  editor:
+    invisibles: {}
+    scrollPastEnd: true
+    fontFamily: "Menlo"
+    fontSize: 14
+  linter: {}
+  "tree-view": {}
+  "vim-mode":
+    useSmartcaseForSearch: true
+    wrapLeftRightMotion: true
+  "unity-ui":
+    showIcons: true
+    colorStatusIndicatorsInTreeView: true
