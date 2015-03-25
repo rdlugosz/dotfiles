@@ -18,6 +18,7 @@ DOTFILES_LIST=(
     iftoprc
     irbrc
     powconfig
+    psqlrc
     slate
     tmux.conf
     vimrc
