@@ -28,3 +28,5 @@
   "unity-ui":
     showIcons: true
     colorStatusIndicatorsInTreeView: true
+  "atom-beautify":
+    _analyticsUserId: "6ddec82d-42b4-4264-8a8c-d4ca49aad43a"
