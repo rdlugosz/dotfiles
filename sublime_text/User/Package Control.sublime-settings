@@ -1,0 +1,26 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"BeautifyRuby",
+		"Better CoffeeScript",
+		"CTags",
+		"DashDoc",
+		"Git",
+		"GitGutter",
+		"Github Tools",
+		"HTMLBeautify",
+		"Javascript Beautify",
+		"jQuery Snippets for Coffeescript",
+		"MarkdownEditing",
+		"Oceanic Next Color Scheme",
+		"Package Control",
+		"Sass",
+		"SASS Snippets",
+		"SassBeautify",
+		"Vintage Surround",
+		"Vintageous"
+	]
+}

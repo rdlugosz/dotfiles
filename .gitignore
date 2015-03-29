@@ -1,6 +1,8 @@
 *.last-run
-sublime_text/User/Package\ Control.cache/*
-sublime_text/User/Package\ Control.system-ca-bundle
+sublime_text/User/Package Control.cache/*
+sublime_text/User/Package Control.system-ca-bundle
+sublime_text/User/Package Control.user-ca-bundle
+sublime_text/User/Package Control.merged-ca-bundle
 tags
 atom/packages
 atom/storage
