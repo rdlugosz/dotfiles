@@ -459,13 +459,13 @@ if executable('par')
 endif
 
 " Folding
-set foldmethod=indent   " fold based on indent level
-"   Sets the fold level: Folds with a higher level will be closed.  Setting
-"   this option to zero will close all folds.  Higher numbers will close fewer
-"   folds.
+set foldmethod=syntax
+" Sets the fold level: Folds with a higher level will be closed.  Setting
+" this option to zero will close all folds.  Higher numbers will close fewer
+" folds.
 set foldlevel=1
 set foldnestmax=10
-set nofoldenable        " start with all folds open
+set nofoldenable   " start with all folds open (toggle via zi)
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
