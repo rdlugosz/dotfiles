@@ -1,0 +1,5 @@
+{
+  "command": "ctags_for_ruby",
+  "extra_tag_files": [".gemtags", "tags", ".tags"],
+  "select_searched_symbol": false
+}
