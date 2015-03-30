@@ -12,7 +12,9 @@
 
 set nocompatible               " be iMproved
 
-" Begin Vundle init
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins and vundle config {{{1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
@@ -270,12 +272,9 @@ if exists(':Plugin')
   call vundle#end()
   filetype plugin indent on     " required!
 endif
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" END VUNDLE CONFIG
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SETTINGS
+" SETTINGS {{{1
 " tpope/vim-sensible is inlined here & used as a baseline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('autocmd')
@@ -477,7 +476,7 @@ augroup END
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGIN-RELATED CONFIG
+" PLUGIN-RELATED CONFIG {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " CtrlP config
@@ -506,7 +505,7 @@ let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim th
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE
+" STATUS LINE {{{1
 " see: :help 'statusline'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline=                 " reset
@@ -593,7 +592,7 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPPINGS
+" MAPPINGS {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quick ESC
 " Some people map jk for this, but it makes Dijkstra sad.
@@ -647,7 +646,7 @@ command! W w        " Bind :W to :w
 command! Qall qall
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" LEADER MAPPINGS
+" LEADER MAPPINGS {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let spacebar double as our leader, for great justice
 " xmap includes Visual mode but not Select mode (which we don't often use, but
@@ -709,6 +708,9 @@ nmap <leader>= gg=G``:echo "reindent global"<CR>
 
 " Toggle buffer with <leader><leader>
 nnoremap <leader><leader> <C-^>
+
+" Toggle folds with <leader>z
+nnoremap <leader>z za
 
 " delete trailing whitespace
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces
@@ -831,7 +833,7 @@ if has("unix")
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" FILE TYPES
+" FILE TYPES {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some file types should wrap their text
 function! RD_SetupWrapping()
@@ -861,4 +863,4 @@ augroup RD_FileTypeCommands
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
 augroup END
 
-" vim:set ft=vim et sw=2:
+" vim:set ft=vim et sw=2 foldmethod=marker:
