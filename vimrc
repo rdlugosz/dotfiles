@@ -255,6 +255,7 @@ if exists(':Plugin')
   Plugin 'junegunn/seoul256.vim'
   Plugin 'tomasr/molokai'
   Plugin 'sjl/badwolf'
+  Plugin 'morhetz/gruvbox'
 
   " Plugins to only load on OS X
   if has("unix")
@@ -459,7 +460,7 @@ if executable('par')
 endif
 
 " Folding
-set foldmethod=syntax
+set foldmethod=indent
 " Sets the fold level: Folds with a higher level will be closed.  Setting
 " this option to zero will close all folds.  Higher numbers will close fewer
 " folds.
@@ -483,6 +484,7 @@ augroup END
 let g:ctrlp_map = '<c-p>'       " activate with c-p
 let g:ctrlp_cmd = 'CtrlPMixed'  " start in the file + mru + buffers mode
 let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directory
+nnoremap <c-b> :CtrlPBuffer<CR> " open a Buffer search via c-b
 
 " YouCompleteMe Config
 let g:ycm_collect_identifiers_from_tags_files = 1
