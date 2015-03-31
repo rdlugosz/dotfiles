@@ -246,6 +246,11 @@ if exists(':Plugin')
   Plugin 'ap/vim-css-color'
   Plugin 'chrisbra/csv.vim'
 
+  " Hooks a variety of language-specific code formatters onto the
+  " gq command (via formatprog).
+  " see: https://github.com/Chiel92/vim-autoformat
+  Plugin 'Chiel92/vim-autoformat'
+
   " Colorschemes
   Plugin 'altercation/vim-colors-solarized.git'
   Plugin 'tpope/vim-vividchalk'
