@@ -868,6 +868,9 @@ augroup RD_FileTypeCommands
 
   " Support for ES6
   autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+  " Avoid syntax highlight issue on hyphenated CSS keywords
+  autocmd FileType scss set iskeyword+=-
 augroup END
 
 " vim:set ft=vim et sw=2 foldmethod=marker:
