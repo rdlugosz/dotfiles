@@ -241,10 +241,10 @@ if exists(':Plugin')
   Plugin 'pangloss/vim-javascript'
   Plugin 'tpope/vim-markdown'
   Plugin 'tpope/vim-git'
-  Plugin 'tpope/vim-haml' "includes Haml, Sass and SCSS
   Plugin 'elixir-lang/vim-elixir'
-  Plugin 'ap/vim-css-color'
   Plugin 'chrisbra/csv.vim'
+  Plugin 'hail2u/vim-css3-syntax'
+  Plugin 'othree/html5.vim'
 
   " Hooks a variety of language-specific code formatters onto the
   " gq command (via formatprog).
