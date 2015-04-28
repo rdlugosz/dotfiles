@@ -504,6 +504,8 @@ let g:syntastic_warning_symbol = '⚠'  " Such unicode!
 let g:syntastic_full_redraws = 1
 let g:syntastic_auto_jump = 2         " Jump to syntax errors (but not warnings)
 let g:syntastic_check_on_wq = 0       " Don't syntax check if window is going to close
+" silence a frequently-seen false positive
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
