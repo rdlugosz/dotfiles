@@ -8063,11 +8063,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>576 124 826 463 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>138 338 605 485 0 0 1440 877 </string>
+	<string>138 338 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 11 1424 866 0 0 1440 877 </string>
+	<string>25 11 1410 866 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -14602,7 +14602,7 @@
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>OnlyWhenMoreTabs</key>
-	<true/>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -14665,7 +14665,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-04-09T00:10:02Z</date>
+	<date>2015-04-16T17:38:18Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -14723,6 +14723,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.0.0.20141103</string>
+	<string>2.0.0.20150412</string>
 </dict>
 </plist>
