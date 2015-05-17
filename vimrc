@@ -1,4 +1,4 @@
-" Vim configuration. Thoroughly annotated with comments for two reasons:
+" Vim configuration. Thoroughly annotated for two reasons:
 "   1. Hopefully this is helpful to others
 "   2. I often can't remember why something is set is a certain way or what a
 "   specific plugin provides!
