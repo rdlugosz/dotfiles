@@ -16,11 +16,10 @@
 "   zR - open all folds
 "   zM - close all folds
 
-set nocompatible               " be iMproved
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins and vundle config {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
