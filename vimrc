@@ -10,7 +10,7 @@
 "
 " Any questions, contact @lbwski
 "
-" FOLDING:
+" FOLDING TIPS:
 "   zo - open a fold
 "   zc - close a fold
 "   zR - open all folds
