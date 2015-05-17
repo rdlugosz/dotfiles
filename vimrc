@@ -9,6 +9,12 @@
 " Nice catalog of plugins lives at: http://vimawesome.com/
 "
 " Any questions, contact @lbwski
+"
+" FOLDING:
+"   zo - open a fold
+"   zc - close a fold
+"   zR - open all folds
+"   zM - close all folds
 
 set nocompatible               " be iMproved
 
