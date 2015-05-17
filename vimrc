@@ -754,6 +754,9 @@ nmap <leader>tw :call RD_RemoveTrailingSpaces()<CR>
 " Toggle match highlight
 nmap <leader>l :set invhlsearch<CR>
 
+" Ensure match highlight enabled on new search
+nnoremap / :set hlsearch<CR>/
+
 " Highlight matches when jumping to next
 function! HLNext (blinktime)
   highlight WhiteOnRed ctermfg=white ctermbg=red
