@@ -13,4 +13,4 @@ if has("unix")
   endif
 endif
 
-colorscheme base16-ocean
+colorscheme gruvbox

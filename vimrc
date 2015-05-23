@@ -392,7 +392,7 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
-silent! colorscheme seoul256
+silent! colorscheme gruvbox
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
@@ -470,12 +470,12 @@ if executable('par')
 endif
 
 " Folding
-set foldmethod=indent
+" set foldmethod=indent
 " Sets the fold level: Folds with a higher level will be closed.  Setting
 " this option to zero will close all folds.  Higher numbers will close fewer
 " folds.
-set foldlevel=1
-set foldnestmax=10
+" set foldlevel=1
+" set foldnestmax=10
 set nofoldenable   " start with all folds open (toggle via zi)
 
 " Remember last location in file, but not for commit messages.
