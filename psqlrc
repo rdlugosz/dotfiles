@@ -32,7 +32,7 @@
 -- show how long it took a query to execute
 \timing
 
-\set PROMPT1 '(%[%033[31;5m%]%x%[%033[0m%]%[%033[31;1m%]%n%[%033[33;1m%]@%[%033[32;1m%m%[%033[0m%])[%[%033[34;1m%]%/%[%033[0m%]]%R%# '
+\set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
 \set PROMPT2 '[more] %R > '
 
 -- Some Helpful queries (run via: `:cmd`)
