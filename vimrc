@@ -266,6 +266,7 @@ if exists(':Plugin')
   Plugin 'tomasr/molokai'
   Plugin 'sjl/badwolf'
   Plugin 'morhetz/gruvbox'
+  Plugin 'reedes/vim-colors-pencil'
 
   " Plugins to only load on OS X
   if has("unix")
@@ -476,7 +477,7 @@ endif
 " folds.
 " set foldlevel=1
 " set foldnestmax=10
-set nofoldenable   " start with all folds open (toggle via zi)
+" set nofoldenable   " start with all folds open (toggle via zi)
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
