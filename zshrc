@@ -41,6 +41,20 @@ alias how='howdoi'
 # cannot directly use an alias because zsh doesn't support arguments
 psg () { ps axo pid,ppid,user,command | grep -i "$*" }
 
+# use ctrl-z to toggle suspension (great with Vim!)
+# http://goo.gl/UVOlgo
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
 # execute local rc if it exists
 if [[ -e $HOME/.zshrc.local ]]; then
   source $HOME/.zshrc.local
