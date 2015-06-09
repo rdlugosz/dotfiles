@@ -13,6 +13,7 @@
 " FOLDING TIPS:
 "   zo - open a fold
 "   zc - close a fold
+"   za - toggle a fold (we nmap this to <enter>!)
 "   zR - open all folds
 "   zM - close all folds
 
