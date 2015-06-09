@@ -18,7 +18,7 @@
 "   zM - close all folds
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins and vundle config {{{1
+" PLUGINS AND VUNDLE CONFIG {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -510,7 +510,10 @@ augroup END
 let g:ctrlp_map = '<c-p>'       " activate with c-p
 let g:ctrlp_cmd = 'CtrlPMixed'  " start in the file + mru + buffers mode
 let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directory
-nnoremap <c-b> :CtrlPBuffer<CR> " open a Buffer search via c-b
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' " don't search in version control dirs
+ " open a Buffer search via c-b
+nnoremap <c-b> :CtrlPBuffer<CR>
+
 
 " YouCompleteMe Config
 let g:ycm_collect_identifiers_from_tags_files = 1
@@ -542,6 +545,10 @@ call expand_region#custom_text_objects('ruby', {
       \ 'am' :0,
       \ 'ir' :0,
       \ 'ar' :0,
+      \ })
+call expand_region#custom_text_objects('eruby', {
+      \ 'it' :0,
+      \ 'at' :0,
       \ })
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
