@@ -283,12 +283,16 @@ if exists(':Plugin')
   if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
-      " Suggestion and Tab completion
-      " Requires a locally-compiled library; see docs. Note this will work
-      " fine on Linux, but disabling there since we mostly code on OS X and it
-      " can be a hassle to compile the dependent libraries.
-      " https://github.com/Valloric/YouCompleteMe
-      Plugin 'valloric/youcompleteme'
+      " don't load if we were invoked via vim-anywhere
+      " see: https://goo.gl/v1xZFc
+      if match(argv(0), "vim-anywhere") == -1
+        " Suggestion and Tab completion
+        " Requires a locally-compiled library; see docs. Note this will work
+        " fine on Linux, but disabling there since we mostly code on OS X and it
+        " can be a hassle to compile the dependent libraries.
+        " https://github.com/Valloric/YouCompleteMe
+        Plugin 'valloric/youcompleteme'
+      endif
     endif
   endif
 
