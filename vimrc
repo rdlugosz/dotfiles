@@ -137,10 +137,6 @@ if exists(':Plugin')
   " https://github.com/rdlugosz/vim-dragvisuals
   Plugin 'rdlugosz/vim-dragvisuals'
 
-  " Display your undo history in a graph. Mapped to <leader>u.
-  " https://github.com/mbbill/undotree
-  Plugin 'mbbill/undotree'
-
   " Indent Guides is a plugin for visually displaying indent levels in Vim.
   " Toggle with <leader>ig
   " https://github.com/nathanaelkane/vim-indent-guides
@@ -818,9 +814,6 @@ nmap <leader>b :BuffergatorOpen<CR>
 " NERDTree stuff
 nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=0
-
-" UndoTree
-nmap <leader>u :UndotreeToggle<CR>
 
 " Fugitive mappings
 nmap <leader>gs :Gstatus<cr>
