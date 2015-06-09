@@ -163,11 +163,21 @@ if exists(':Plugin')
   " http://www.vim.org/scripts/script.php?script_id=3037
   Plugin 'michaeljsmith/vim-indent-object'
 
+  " Text objects for: lines (l) and entire file (e)
+  " https://github.com/kana/vim-textobj-line
+  Plugin 'kana/vim-textobj-line'
+  Plugin 'kana/vim-textobj-entire'
+
   " Add a text object for Ruby blocks (ar / ir)
   " Depends on vim-textobj-user
   " https://github.com/nelstrom/vim-textobj-rubyblock
   Plugin 'kana/vim-textobj-user'
   Plugin 'nelstrom/vim-textobj-rubyblock'
+
+  " Repeated `v` keystrokes will expand the selected region. Supports language
+  " specific text objects; see configuration below in this file or the docs.
+  " https://github.com/terryma/vim-expand-region
+  Plugin 'terryma/vim-expand-region'
 
   " Easy navigation of the Rails directory structure. gf considers context and
   " knows about partials, fixtures, and much more. There are two commands, :A
@@ -518,6 +528,16 @@ let g:buffergator_show_full_directory_path = 0
 let g:buffergator_viewport_split_policy = 'T'
 let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
 
+" vim-expand-region config
+vmap v <plug>(expand_region_expand)
+vmap u <plug>(expand_region_shrink)
+" Use the global default + the following for ruby
+call expand_region#custom_text_objects('ruby', {
+      \ 'im' :0,
+      \ 'am' :0,
+      \ 'ir' :0,
+      \ 'ar' :0,
+      \ })
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE {{{1
