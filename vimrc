@@ -481,7 +481,7 @@ if executable('par')
 endif
 
 " Folding
-" set foldmethod=indent
+set foldmethod=syntax
 " Sets the fold level: Folds with a higher level will be closed.  Setting
 " this option to zero will close all folds.  Higher numbers will close fewer
 " folds.
@@ -686,6 +686,9 @@ cnoremap w!! w !sudo tee > /dev/null %
 command! Q q        " Bind :Q to :q
 command! W w        " Bind :W to :w
 command! Qall qall
+
+" Toggle folds with <enter>
+nnoremap <CR> za
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LEADER MAPPINGS {{{1
@@ -910,5 +913,7 @@ augroup RD_FileTypeCommands
   " Avoid syntax highlight issue on hyphenated CSS keywords
   autocmd FileType css,scss setlocal iskeyword+=-
 augroup END
+
+"}}}
 
 " vim:set ft=vim et sw=2 foldmethod=marker:
