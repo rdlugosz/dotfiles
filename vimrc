@@ -131,6 +131,10 @@ if exists(':Plugin')
   " https://github.com/nelstrom/vim-visual-star-search
   Plugin 'nelstrom/vim-visual-star-search'
 
+  " Make working with Vim within TMUX more consistent
+  " https://github.com/christoomey/vim-tmux-navigator
+  Plugin 'christoomey/vim-tmux-navigator'
+
   " Vim global plugin for dragging virtual blocks. By Damien Conway.
   " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
   " This isn't terribly useful; more of a fun hack to show off
@@ -663,13 +667,16 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 " Navigate splits more easily
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+" NOTE: disabled in lieu of vim-tmux-navigator, which
+"       handles this both in and out of TMUX
+" nmap <C-h> <C-w>h
+" nmap <C-j> <C-w>j
+" nmap <C-k> <C-w>k
+" nmap <C-l> <C-w>l
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
   " Hack to get C-h working in neovim
+  " (still required, even with vim-tmux-navigator)
   " see: https://goo.gl/wtBu2F
   nmap <BS> <C-W>h
   tnoremap <Esc> <C-\><C-n>
