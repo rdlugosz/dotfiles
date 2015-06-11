@@ -13,7 +13,7 @@
 " FOLDING TIPS:
 "   zo - open a fold
 "   zc - close a fold
-"   za - toggle a fold (we nmap this to <enter>!)
+"   za - toggle a fold
 "   zR - open all folds
 "   zM - close all folds
 
@@ -493,6 +493,7 @@ set foldmethod=syntax
 " set foldlevel=1
 " set foldnestmax=10
 " set nofoldenable   " start with all folds open (toggle via zi)
+set foldlevel=9 " Start with all folds open
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
@@ -701,9 +702,6 @@ cnoremap w!! w !sudo tee > /dev/null %
 command! Q q        " Bind :Q to :q
 command! W w        " Bind :W to :w
 command! Qall qall
-
-" Toggle folds with <enter>
-nnoremap <CR> za
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " LEADER MAPPINGS {{{1
