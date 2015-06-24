@@ -317,7 +317,7 @@ set lazyredraw   " don't echo non-typed characters (e.g., macro execution)
 " By default, complete is set to: complete=.,w,b,u,t,i
 " The 'i' means 'included files' and can result in major slowdowns
 " set complete-=i
-set complete+=kspell
+set complete+=kspell "Autocomplete with dictionary when spell is set
 
 " Don't assume numbers starting with zero are octal
 set nrformats-=octal
