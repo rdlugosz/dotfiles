@@ -19,7 +19,6 @@
     invisibles: {}
     scrollPastEnd: true
     fontFamily: "Menlo"
-    fontSize: 14
   linter: {}
   "tree-view": {}
   "vim-mode":

@@ -283,16 +283,7 @@ if exists(':Plugin')
   if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
-      " don't load if we were invoked via vim-anywhere
-      " see: https://goo.gl/v1xZFc
-      if match(argv(0), "vim-anywhere") == -1
-        " Suggestion and Tab completion
-        " Requires a locally-compiled library; see docs. Note this will work
-        " fine on Linux, but disabling there since we mostly code on OS X and it
-        " can be a hassle to compile the dependent libraries.
-        " https://github.com/Valloric/YouCompleteMe
-        Plugin 'valloric/youcompleteme'
-      endif
+      " none of these enabled right now!
     endif
   endif
 
@@ -325,7 +316,8 @@ set lazyredraw   " don't echo non-typed characters (e.g., macro execution)
 
 " By default, complete is set to: complete=.,w,b,u,t,i
 " The 'i' means 'included files' and can result in major slowdowns
-set complete-=i
+" set complete-=i
+set complete+=kspell
 
 " Don't assume numbers starting with zero are octal
 set nrformats-=octal
@@ -393,11 +385,6 @@ set sessionoptions-=options " exclude options from the :mksession command
 if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
-
-" During insert, ctrl-u will break undo sequence then delete all entered chars
-" Note that YouCompleteMe breaks this mapping
-" https://github.com/Valloric/YouCompleteMe#ctrl-u-in-insert-mode-does-not-work
-inoremap <C-U> <C-G>u<C-U>
 
 " Set colorscheme
 " Allow color schemes to do bright colors without forcing bold.
@@ -514,14 +501,6 @@ let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directo
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' " don't search in version control dirs
  " open a Buffer search via c-b
 nnoremap <c-b> :CtrlPBuffer<CR>
-
-
-" YouCompleteMe Config
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-" Remove <TAB> because it conflicts with Snipmate
-" Note that it's easier to navigate the suggestions with C-n/C-p anyway
-let g:ycm_key_list_select_completion = ['<Down>']
 
 " Syntastic config
 let g:syntastic_error_symbol = '✗'    " Oh... Fancy!
