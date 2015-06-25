@@ -14,7 +14,7 @@
 #     editor.setSoftWrap(true)
 
 # Allows for a vim-mode keymapping of "kj" to be used as ESC
-atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-proceeded-by-k': (e) ->
+atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-preceded-by-k': (e) ->
   editor = @getModel()
   pos = editor.getCursorBufferPosition()
   range = [pos.traverse([0,-1]), pos]

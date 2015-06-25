@@ -18,4 +18,4 @@
 #
 
 '.editor.vim-mode.insert-mode':
-  'j': 'exit-insert-mode-if-proceeded-by-k'
+  'j': 'exit-insert-mode-if-preceded-by-k'
