@@ -17,5 +17,5 @@
 #   'ctrl-p': 'core:move-down'
 #
 
-'.editor.vim-mode.insert-mode':
+'atom-text-editor.vim-mode.insert-mode':
   'j': 'exit-insert-mode-if-preceded-by-k'

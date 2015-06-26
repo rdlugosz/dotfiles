@@ -13,6 +13,9 @@
       "zenburn"
     ]
     projectHome: "/Users/ryan/workspace"
+    disabledPackages: [
+      "ex-mode"
+    ]
   "git-diff":
     showIconsInEditorGutter: true
   editor:
