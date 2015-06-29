@@ -20,6 +20,7 @@ DOTFILES_LIST=(
     powconfig
     psqlrc
     slate
+    spacemacs
     tmux.conf
     vimrc
     dircolors-solarized
