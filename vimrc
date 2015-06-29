@@ -700,8 +700,7 @@ nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
 " Write file
 nmap <leader>w :w<CR>
 
-" Delete buffer
-nmap <leader>q :bd<CR>
+nmap <leader>q :q<CR>
 
 " Toggle spelling
 nmap <leader>s :set invspell<CR>:set spell?<CR>
