@@ -24,25 +24,29 @@
      emacs-lisp
      emoji
      games
-     (git :variables git-gutter-use-fringe t)
+     git
      github
      html
      javascript
      markdown
      osx
      ruby
-     ;; org
+     org
      shell
      sql
      syntax-checking
      themes-megapack
      xkcd
+     version-control
      )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     vimrc-mode
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -125,7 +129,7 @@ before layers configuration."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'.
@@ -156,7 +160,7 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  (setq-default evil-escape-key-sequence "kj")
+  (setq-default evil-escape-key-sequence "fd")
   )
 
 (defun dotspacemacs/config ()
@@ -164,7 +168,6 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (global-linum-mode t)
-  (toggle-frame-maximized)
   (setq-default ruby-version-manager 'rbenv)
   (setq-default ruby-enable-ruby-on-rails-support t)
   (setq magit-repo-dirs '("~/workspace/"))
@@ -185,10 +188,12 @@ layers configuration."
  '(custom-safe-themes
    (quote
     ("eafda598b275a9d68cc1fbe1689925f503cab719ee16be23b10a9f2cc5872069" default)))
+ '(large-file-warning-threshold 100000000)
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
