@@ -96,6 +96,7 @@ if exists(':Plugin')
   "   Press <c-r> to switch to regexp mode.
   " https://github.com/ctrlpvim/ctrlp.vim
   Plugin 'ctrlpvim/ctrlp.vim'
+  Plugin 'felikz/ctrlp-py-matcher'
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
@@ -498,8 +499,33 @@ augroup END
 let g:ctrlp_map = '<c-p>'       " activate with c-p
 let g:ctrlp_cmd = 'CtrlPMixed'  " start in the file + mru + buffers mode
 let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directory
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$' " don't search in version control dirs
- " open a Buffer search via c-b
+let g:ctrlp_working_path_mode = 'wa'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" Do not clear filenames cache, to improve CtrlP startup
+" You can manualy clear it by <F5>
+let g:ctrlp_clear_cache_on_exit = 0
+
+if executable('ag')
+  " Use The Silver Searcher if available
+  " Note: must specify own ignores when using custom search command
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ --ignore "**/*.pyc"
+        \ -g ""'
+endif
+
+" PyMatcher for CtrlP (faster than the Vimscript native matcher)
+if !has('python')
+  echo 'In order to use pymatcher plugin, you need +python compiled vim'
+else
+  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+endif
+
+ " open a CtrlP Buffer search via c-b
 nnoremap <c-b> :CtrlPBuffer<CR>
 
 " Syntastic config
