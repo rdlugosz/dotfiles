@@ -213,6 +213,7 @@ if exists(':Plugin')
   " You can populate the location-list and see all errors via :Errors
   " https://github.com/scrooloose/syntastic
   Plugin 'scrooloose/syntastic'
+  Plugin 'myint/syntastic-extras'
 
   " Execute ruby in-line with code; some mappings are set up below.
   "   <leader>m to insert an 'execute' mark
@@ -533,7 +534,17 @@ let g:syntastic_error_symbol = '✗'    " Oh... Fancy!
 let g:syntastic_warning_symbol = '⚠'  " Such unicode!
 let g:syntastic_full_redraws = 1
 let g:syntastic_auto_jump = 2         " Jump to syntax errors (but not warnings)
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0       " Don't syntax check if window is going to close
+let g:syntastic_html_tidy_exec = 'tidy5'
+
+" From the syntastic-extras package
+let g:syntastic_gitcommit_checkers = ['language_check']
+let g:syntastic_svn_checkers = ['language_check']
+let g:syntastic_javascript_checkers = ['json_tool']
+
 " silence a frequently-seen false positive
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
