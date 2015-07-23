@@ -8375,7 +8375,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>302</string>
+		<string>319</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -8395,13 +8395,13 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>596 126 826 329 0 0 1440 877 </string>
+	<string>437 470 826 195 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>138 338 605 485 0 0 1440 877 </string>
+	<string>553 305 605 485 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>42 11 1382 866 0 0 1440 877 </string>
+	<string>39 11 1396 866 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -9042,11 +9042,11 @@
 			<key>Name</key>
 			<string>Solarized</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -9858,11 +9858,11 @@
 			<key>Name</key>
 			<string>Zenburn</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -10674,11 +10674,11 @@
 			<key>Name</key>
 			<string>Base16 Ocean 256 Light</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -11490,11 +11490,11 @@
 			<key>Name</key>
 			<string>Base16 Ocean 256 Dark</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -12306,11 +12306,11 @@
 			<key>Name</key>
 			<string>tmux</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -13122,11 +13122,11 @@
 			<key>Name</key>
 			<string>Github</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -13938,11 +13938,11 @@
 			<key>Name</key>
 			<string>Seoul256 Light</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -14754,11 +14754,11 @@
 			<key>Name</key>
 			<string>Seoul256</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -15570,11 +15570,11 @@
 			<key>Name</key>
 			<string>Gruvbox Dark</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -16386,11 +16386,11 @@
 			<key>Name</key>
 			<string>Gruvbox Light</string>
 			<key>Non Ascii Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 12</string>
+			<string>SauceCodePowerlinePlusNerdFileTypesMonoPlusPomicons 12</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -16570,7 +16570,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453219684.079777</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>454081771.29586202</real>
+	<real>459293915.99351197</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -16635,7 +16635,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-23T12:00:24Z</date>
+	<date>2015-07-22T21:38:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
