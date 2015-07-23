@@ -23,4 +23,4 @@ atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-preceded-by-k': (e) -
     e.abortKeyBinding()
   else
     editor.backspace()
-    atom.commands.dispatch(e.currentTarget, 'vim-mode:activate-command-mode')
+    atom.commands.dispatch(e.currentTarget, 'vim-mode:activate-normal-mode')
