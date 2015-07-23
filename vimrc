@@ -103,10 +103,16 @@ if exists(':Plugin')
   " https://github.com/airblade/vim-gitgutter
   Plugin 'airblade/vim-gitgutter'
 
+  " Flagship adds API hooks that can be used to set things in the statusline
+  " https://github.com/tpope/vim-flagship
+  " Plugin 'tpope/vim-flagship'
+
   " NERDTree is a tree explorer plugin for vim.
   " Open with <leader>n
   " https://github.com/scrooloose/nerdtree
   Plugin 'scrooloose/nerdtree'
+  " Add some Git hotness...
+  Plugin 'Xuyuanp/nerdtree-git-plugin'
 
   " Vim-vinegar allows access to netrw via -
   " https://github.com/tpope/vim-vinegar
@@ -285,7 +291,10 @@ if exists(':Plugin')
   if has("unix")
     let s:uname = system("uname -s")
     if s:uname == "Darwin\n"
-      " none of these enabled right now!
+      " Add some icon flair to your vest!
+      " NOTE: Requires a patched font
+      " https://github.com/ryanoasis/vim-devicons
+      Plugin 'ryanoasis/vim-devicons'
     endif
   endif
 
