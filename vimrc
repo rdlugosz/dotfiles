@@ -690,13 +690,18 @@ imap <c-a> <c-o>^
 " nmap <C-j> <C-w>j
 " nmap <C-k> <C-w>k
 " nmap <C-l> <C-w>l
+
+" NEOVIM Mappings
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
   " Hack to get C-h working in neovim
   " (still required, even with vim-tmux-navigator)
   " see: https://goo.gl/wtBu2F
   nmap <BS> <C-W>h
-  tnoremap <Esc> <C-\><C-n>
+
+  " Retain escape functionality in Terminal mode
+  tnoremap <ESC> <C-\><C-n>
+  tnoremap kj <C-\><C-n>
 endif
 
 " Key repeat hack for resizing splits, i.e., <C-w>+++- vs <C-w>+<C-w>+<C-w>-
