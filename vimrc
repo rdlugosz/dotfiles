@@ -294,7 +294,7 @@ if exists(':Plugin')
       " Add some icon flair to your vest!
       " NOTE: Requires a patched font
       " https://github.com/ryanoasis/vim-devicons
-      Plugin 'ryanoasis/vim-devicons'
+      " Plugin 'ryanoasis/vim-devicons'
     endif
   endif
 
@@ -704,9 +704,10 @@ imap <c-a> <c-o>^
 if has('nvim')
   let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
   " Hack to get C-h working in neovim
-  " (still required, even with vim-tmux-navigator)
   " see: https://goo.gl/wtBu2F
-  nmap <BS> <C-W>h
+  " nmap <BS> <C-W>h
+  " alternate mapping for vim-tmux-navigator
+  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
   " Retain escape functionality in Terminal mode
   tnoremap <ESC> <C-\><C-n>
