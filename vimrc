@@ -294,7 +294,7 @@ if exists(':Plugin')
       " Add some icon flair to your vest!
       " NOTE: Requires a patched font
       " https://github.com/ryanoasis/vim-devicons
-      " Plugin 'ryanoasis/vim-devicons'
+      Plugin 'ryanoasis/vim-devicons'
     endif
   endif
 
@@ -360,7 +360,8 @@ endif
 
 " Changes what Vim displays for special chars like trailing space & tabs
 set list " Show invisible characters
-let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<,nbsp:\u00b7"
+let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<"
+
 
 " Include guard-derived gem tags in tags search
 set tags+=gems.tags
