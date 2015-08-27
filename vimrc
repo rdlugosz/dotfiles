@@ -22,13 +22,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
 if exists(':Plugin')
   " let Vundle manage Vundle - must be first!
   " use commands PluginInstall, PluginUpdate, PluginClean
-  Plugin 'gmarik/vundle'
+  Plugin 'VundleVim/Vundle.vim'
 
   " Repeat.vim sets up bindings other plugins can use to make their commands
   " repeatable with the . command.
@@ -756,33 +756,16 @@ nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 
 " Toggle spelling
-nmap <leader>s :set invspell<CR>:set spell?<CR>
+nmap <leader>s :echo "use `c o s` from vim-unimpaired" <CR>
 
 " Toggle wrap
-nmap <leader>W :set invwrap<CR>:set wrap?<CR>
+nmap <leader>W :echo "use `c o w` from vim-unimpaired" <CR>
 
-" Toggle background dark/light with <leader>B
-" Note that this will conflict with a default mapping claimed by Buffergator
-" (unless you suppress it as we do above).
-function! RD_ToggleBackground()
-  if &background == "dark"
-    let &background = "light"
-    let _snark = "Hey, wake up!!"
-  else
-    let &background = "dark"
-    let _snark = "Who turned out the lights???"
-  endif
-
-  if exists(':Airline')
-    AirlineRefresh
-  endif
-  redraw
-  echo _snark
-endfunction
-nmap <silent> <leader>B :call RD_ToggleBackground()<CR>
+" Toggle background light/dark
+nmap <leader>B :echo "use `c o b` from vim-unimpaired" <CR>
 
 " Toggle Cursor Column
-nmap <leader>c :set invcursorcolumn<CR>:echo "try \<leader\>ig to show indent guides!"<CR>
+nmap <leader>c :echo "use `c o x` from vim-unimpaired" <CR>
 
 " Toggle paste mode
 nmap <leader>p :set invpaste<CR>:set paste?<CR>
