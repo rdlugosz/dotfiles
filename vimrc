@@ -803,7 +803,7 @@ endfunction
 nmap <leader>tw :call RD_RemoveTrailingSpaces()<CR>
 
 " Toggle match highlight
-nmap <leader>l :set invhlsearch<CR>
+nmap <leader>l :echo "use `c o h` from vim-unimpaired" <CR>
 
 " Ensure match highlight enabled on new search
 nnoremap / :set hlsearch<CR>/
