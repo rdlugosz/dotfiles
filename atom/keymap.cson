@@ -19,3 +19,4 @@
 
 'atom-text-editor.vim-mode.insert-mode':
   'j': 'exit-insert-mode-if-preceded-by-k'
+  'f f': 'vim-mode:activate-normal-mode'
