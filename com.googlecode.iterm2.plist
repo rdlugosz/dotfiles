@@ -8401,7 +8401,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>39 11 1396 866 0 0 1440 877 </string>
+	<string>2 6 1676 1018 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -16570,7 +16570,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453219684.079777</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>459293915.99351197</real>
+	<real>461093892.85840201</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -16635,8 +16635,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-07-22T21:38:20Z</date>
+	<date>2015-08-13T18:55:41Z</date>
 	<key>SavePasteHistory</key>
+	<false/>
+	<key>Secure Input</key>
 	<false/>
 	<key>Show Toolbelt</key>
 	<false/>

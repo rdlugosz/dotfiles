@@ -161,7 +161,7 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  (setq-default evil-escape-key-sequence "fd")
+   (setq-default evil-escape-key-sequence "kj")
   )
 
 (defun dotspacemacs/config ()
@@ -172,6 +172,15 @@ layers configuration."
   (setq-default ruby-version-manager 'rbenv)
   (setq-default ruby-enable-ruby-on-rails-support t)
   (setq magit-repo-dirs '("~/workspace/"))
+
+  ;; The following mapping doesn't let you type ''.
+  ;;(define-key evil-insert-state-map (kbd "kj") 'evil-escape)
+
+  (define-key evil-normal-state-map (kbd "C-h") (kbd "C-w h"))
+  (define-key evil-normal-state-map (kbd "C-j") (kbd "C-w j"))
+  (define-key evil-normal-state-map (kbd "C-k") (kbd "C-w k"))
+  (define-key evil-normal-state-map (kbd "C-l") (kbd "C-w l"))
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
