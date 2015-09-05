@@ -132,7 +132,7 @@ install_dotfiles () {
 install_vundle () {
   echo ""
   info "checking for Vundle installation..."
-  if [ -e ~/.vim/bundle/vundle ]
+  if [ -e ~/.vim/bundle/Vundle.vim ]
   then
     success "looks like Vundle is installed!"
   else
@@ -144,7 +144,7 @@ install_vundle () {
         echo ""
         info "Installing Vundle. Be sure to run :PluginInstall next time you run Vim."
         echo ""
-        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;;
+        git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim;;
       * )
         ;;
     esac
