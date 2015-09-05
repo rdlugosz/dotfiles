@@ -294,7 +294,7 @@ if exists(':Plugin')
       " Add some icon flair to your vest!
       " NOTE: Requires a patched font
       " https://github.com/ryanoasis/vim-devicons
-      Plugin 'ryanoasis/vim-devicons'
+      " Plugin 'ryanoasis/vim-devicons'
     endif
   endif
 
