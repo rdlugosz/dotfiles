@@ -172,6 +172,7 @@ layers configuration."
   (setq-default ruby-version-manager 'rbenv)
   (setq-default ruby-enable-ruby-on-rails-support t)
   (setq magit-repo-dirs '("~/workspace/"))
+  (golden-ratio-mode t)
 
   ;; The following mapping doesn't let you type ''.
   ;;(define-key evil-insert-state-map (kbd "kj") 'evil-escape)
