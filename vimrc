@@ -209,6 +209,11 @@ if exists(':Plugin')
   " https://github.com/tpope/vim-endwise
   Plugin 'tpope/vim-endwise'
 
+  " Ragtag is a plugin that provides a variety of tag-completion mappings
+  " rooted on C-x.
+  " https://github.com/tpope/vim-ragtag
+  Plugin 'tpope/vim-ragtag'
+
   " Runs Ruby tests in a reasonably smart way.
   "   Run current test file <leader>r
   "   Run nearest test in file <leader>R
@@ -407,7 +412,7 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 set background=dark
-silent! colorscheme gruvbox
+silent! colorscheme seoul256
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
