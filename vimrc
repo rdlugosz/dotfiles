@@ -261,6 +261,10 @@ if exists(':Plugin')
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
 
+  " GoldenView - attempt to auto-resize splits in a reasonable way
+  " https://github.com/zhaocai/GoldenView.Vim
+  Plugin 'zhaocai/GoldenView.Vim'
+
   " Lols
   Plugin 'koron/nyancat-vim'
 
@@ -582,6 +586,12 @@ call expand_region#custom_text_objects('eruby', {
       \ 'it' :0,
       \ 'at' :0,
       \ })
+
+" GoldenView config
+"
+" don't map C-l by default; we use that!
+let g:goldenview__enable_default_mapping = 0
+nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE {{{1
