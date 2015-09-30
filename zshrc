@@ -33,6 +33,10 @@ alias gc='git commit'
 alias gd='git diff'
 alias gp='git push'
 
+alias gsv='nvim `git status --porcelain | sed -ne ''s/^ M //p''`'
+alias gsgv='mvim `git status --porcelain | sed -ne ''s/^ M //p''`'
+alias gsmv='mvim `git status --porcelain | sed -ne ''s/^ M //p''`'
+
 alias lol='lolcat'
 
 alias how='howdoi'
