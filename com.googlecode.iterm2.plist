@@ -8291,7 +8291,7 @@
 	<key>Default Arrangement Name</key>
 	<string>Rails Dev</string>
 	<key>Default Bookmark Guid</key>
-	<string>75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1</string>
+	<string>BB0079A3-5298-4B73-8DA2-3DE1478A5897</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -8395,13 +8395,13 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>307 274 214 309 0 0 1440 878 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>437 470 826 195 0 0 1440 877 </string>
+	<string>437 354 636 323 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>553 305 605 485 0 0 1440 877 </string>
+	<string>620 97 605 485 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 6 1676 1018 0 0 1680 1027 </string>
+	<string>1 11 1438 866 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -8581,7 +8581,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -9198,7 +9198,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -9397,7 +9397,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -10014,7 +10014,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -10213,7 +10213,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -10830,7 +10830,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -11029,7 +11029,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -11646,7 +11646,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -11845,7 +11845,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -12462,7 +12462,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -12661,7 +12661,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -13278,7 +13278,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -13477,7 +13477,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -14094,7 +14094,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -14293,7 +14293,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -14910,7 +14910,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -15109,7 +15109,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -15726,7 +15726,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -15925,7 +15925,7 @@
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
-			<real>13.743294715881348</real>
+			<real>2.2648806571960449</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -16542,7 +16542,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.31453403830528259</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -16570,7 +16570,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453219684.079777</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>461093892.85840201</real>
+	<real>464851327.473342</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -16635,7 +16635,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-13T18:55:41Z</date>
+	<date>2015-09-25T01:21:48Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
