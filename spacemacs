@@ -31,6 +31,7 @@
      markdown
      osx
      ruby
+     ruby-on-rails
      org
      shell
      sql
