@@ -568,7 +568,7 @@ let g:syntastic_svn_checkers = ['language_check']
 let g:syntastic_javascript_checkers = ['json_tool']
 
 " silence a frequently-seen false positive
-let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a \(variable\|constant\) in void context'}
 
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
