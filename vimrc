@@ -442,7 +442,11 @@ set spellfile=$HOME/Dropbox/vim/en.utf-8.add,$HOME/.vim/en.utf-8.add
 " Line numbering
 " Relativenumber treats the current line as line 0 and is helpful for motions
 if exists('+relativenumber')
-  set relativenumber
+  if !has('gui_running')
+    " Disabling because syntax + relnum on MacVim is slow
+    " see: https://github.com/vim/vim/issues/282
+    set relativenumber
+  end
 end
 " Setting number after Relativenumber replaces the '0' with the true number
 set number
