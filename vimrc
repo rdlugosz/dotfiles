@@ -323,6 +323,8 @@ if has('autocmd')
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
+  set synmaxcol=200
+  autocmd BufWinEnter * if line2byte(line("$") + 1) > 100000 | syntax clear | endif
 endif
 
 set autoindent   " preserve indent level on newlines
@@ -599,6 +601,10 @@ call expand_region#custom_text_objects('eruby', {
 " don't map C-l by default; we use that!
 let g:goldenview__enable_default_mapping = 0
 nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
+
+" GitGutter config
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE {{{1
