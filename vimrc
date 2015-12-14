@@ -749,6 +749,9 @@ if has('nvim')
   tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
   tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
   tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+
+  " Assume that we want to enter Terminal Mode if we press UP in a terminal window
+  au TermOpen * if &buftype == 'terminal' | nnoremap <buffer> <UP> i<UP> | endif
 endif
 
 " Key repeat hack for resizing splits, i.e., <C-w>+++- vs <C-w>+<C-w>+<C-w>-
