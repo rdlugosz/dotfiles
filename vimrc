@@ -743,6 +743,12 @@ if has('nvim')
   " Retain escape functionality in Terminal mode
   tnoremap <ESC> <C-\><C-n>
   tnoremap kj <C-\><C-n>
+
+  " Retain TMUX-navigator keys in terminal
+  tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+  tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
+  tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
+  tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
 endif
 
 " Key repeat hack for resizing splits, i.e., <C-w>+++- vs <C-w>+<C-w>+<C-w>-
