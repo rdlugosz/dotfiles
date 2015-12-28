@@ -8397,11 +8397,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>437 354 636 323 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>620 97 605 485 0 0 1440 877 </string>
+	<string>357 204 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 11 1438 866 0 0 1440 877 </string>
+	<string>1728 182 1438 873 1440 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -16570,7 +16570,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453219684.079777</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>464851327.473342</real>
+	<real>471968284.51459402</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -16631,11 +16631,11 @@
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>http://iterm2.com/appcasts/testing.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-09-25T01:21:48Z</date>
+	<date>2015-12-15T15:36:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -16695,6 +16695,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.1.1</string>
+	<string>2.1.4</string>
 </dict>
 </plist>
