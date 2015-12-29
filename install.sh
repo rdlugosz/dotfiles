@@ -18,6 +18,7 @@ DOTFILES_LIST=(
     iftoprc
     irbrc
     liquidprompt
+    liquidpromptrc
     powconfig
     psqlrc
     slate

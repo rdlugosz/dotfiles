@@ -60,7 +60,10 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 # Set up Liquidprompt, only on interactive shells
-[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
+if [[ $- = *i* ]]; then
+  source ~/.liquidpromptrc
+  source ~/.liquidprompt/liquidprompt
+fi
 
 # execute local rc if it exists
 if [[ -e $HOME/.zshrc.local ]]; then
