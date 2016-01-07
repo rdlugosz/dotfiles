@@ -4,6 +4,7 @@ sublime_text/User/Package Control.system-ca-bundle
 sublime_text/User/Package Control.user-ca-bundle
 sublime_text/User/Package Control.merged-ca-bundle
 tags
+atom/blob-store
 atom/packages
 atom/storage
 atom/compile-cache

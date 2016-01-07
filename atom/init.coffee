@@ -14,13 +14,14 @@
 #     editor.setSoftWrap(true)
 
 # Allows for a vim-mode keymapping of "kj" to be used as ESC
-atom.commands.add 'atom-text-editor', 'exit-insert-mode-if-preceded-by-k': (e) ->
+atom.commands.add 'atom-text-editor', 'activate-normal-mode-if-preceded-by-k': (e) ->
+  targetChar = 'k' # This should be the FIRST char in your desired mapping
   editor = @getModel()
   pos = editor.getCursorBufferPosition()
   range = [pos.traverse([0,-1]), pos]
   lastChar = editor.getTextInBufferRange(range)
-  if lastChar != "k"
-    e.abortKeyBinding()
-  else
-    editor.backspace()
+  if lastChar is targetChar
+    editor.backspace() # remove the 'k' character from the buffer
     atom.commands.dispatch(e.currentTarget, 'vim-mode:activate-normal-mode')
+  else
+    e.abortKeyBinding()

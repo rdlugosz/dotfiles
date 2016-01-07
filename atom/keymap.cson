@@ -16,7 +16,15 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+# ON EXITING VIM INSERT MODE...
+# This approach makes you wait if you have 'k' at the end of a line
+# 'atom-text-editor.vim-mode.insert-mode':
+#   'k j': 'vim-mode:activate-normal-mode'
+#
+# This way a 'k' is immediately displayed and is subsequently removed
+# if you type a 'j'.
+# 'atom-text-editor.vim-mode.insert-mode':
+#   'j': 'exit-insert-mode-if-preceded-by-k'
 
 'atom-text-editor.vim-mode.insert-mode':
-  'j': 'exit-insert-mode-if-preceded-by-k'
-  'f f': 'vim-mode:activate-normal-mode'
+  'j': 'activate-normal-mode-if-preceded-by-k'
