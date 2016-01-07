@@ -2,10 +2,11 @@
   name = Ryan Dlugosz
   email = ryan@dlugosz.net
 [color]
-  status = true
-  grep = true
-  diff = true
-  ui = true
+  status = auto
+  grep = auto
+  diff = auto
+  ui = auto
+  interactive = auto
 [include]
   path = ~/.gitconfig.github
 [alias]
@@ -34,6 +35,8 @@
   ra = !git r --all
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 [push]
   default = current
 [core]
