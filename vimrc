@@ -414,14 +414,14 @@ endif
 
 " Set colorscheme
 " Allow color schemes to do bright colors without forcing bold.
-if &t_Co == 8 && $TERM !~# '^linux'
-  set t_Co=16
-endif
-if $TERM =~ "-256color"
-  set t_Co=256
-endif
+" if &t_Co == 8 && $TERM !~# '^linux'
+"   set t_Co=16
+" endif
+" if $TERM =~ "-256color"
+"   set t_Co=256
+" endif
 set background=dark
-silent! colorscheme seoul256
+silent! colorscheme base16-ocean
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
