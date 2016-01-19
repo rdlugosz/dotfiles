@@ -291,6 +291,7 @@ if exists(':Plugin')
   Plugin 'sjl/badwolf'
   Plugin 'morhetz/gruvbox'
   Plugin 'reedes/vim-colors-pencil'
+  Plugin 'whatyouhide/vim-gotham'
 
   " Plugins to only load on OS X
   if has("unix")
@@ -603,8 +604,8 @@ let g:goldenview__enable_default_mapping = 0
 nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
 
 " GitGutter config
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+" let g:gitgutter_realtime = 0
+" let g:gitgutter_eager = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE {{{1
