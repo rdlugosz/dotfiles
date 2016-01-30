@@ -292,6 +292,7 @@ if exists(':Plugin')
   Plugin 'morhetz/gruvbox'
   Plugin 'reedes/vim-colors-pencil'
   Plugin 'whatyouhide/vim-gotham'
+  Plugin 'mhartington/oceanic-next'
 
   " Plugins to only load on OS X
   if has("unix")

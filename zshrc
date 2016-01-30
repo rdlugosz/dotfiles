@@ -41,6 +41,8 @@ alias lol='lolcat'
 
 alias how='howdoi'
 
+alias dm='docker-machine'
+
 # find procs
 # cannot directly use an alias because zsh doesn't support arguments
 psg () { ps axo pid,ppid,user,command | grep -i "$*" }
