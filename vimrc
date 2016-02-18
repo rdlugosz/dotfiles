@@ -794,7 +794,7 @@ nmap <leader>~ :source ~/.vimrc<CR>:redraw!<CR>:echo "~/.vimrc reloaded!"<CR>
 " Write file
 nmap <leader>w :w<CR>
 
-nmap <leader>q :q<CR>
+nmap <leader>q :bd<CR>
 
 " Toggle spelling
 nmap <leader>s :echo "use `c o s` from vim-unimpaired" <CR>
