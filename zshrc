@@ -61,6 +61,9 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+# Set up alias for uploading files via https://transfer.sh
+source ~/.dotfiles/transfer.sh
+
 # Set up Liquidprompt, only on interactive shells
 if [[ $- = *i* ]]; then
   source ~/.liquidpromptrc
