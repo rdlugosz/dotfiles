@@ -1,32 +1,37 @@
 "*":
-  "exception-reporting":
-    userId: "75370157-1133-97db-728f-5aee91d582ff"
-  "release-notes":
-    viewedVersion: "0.95.0"
-  welcome:
-    showOnStartup: false
-  metrics:
-    userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
+  "atom-beautify":
+    _analyticsUserId: "6ddec82d-42b4-4264-8a8c-d4ca49aad43a"
   core:
-    themes: [
-      "unity-ui"
-      "duotone-dark-syntax"
-    ]
     projectHome: "/Users/ryan/workspace"
-  "git-diff":
-    showIconsInEditorGutter: true
+    themes: [
+      "one-dark-ui"
+      "oceanic-next"
+    ]
   editor:
+    backUpBeforeSaving: true
+    fontFamily: "Menlo"
+    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
-    fontFamily: "Menlo"
+    showIndentGuide: true
+    softWrap: true
+  "exception-reporting":
+    userId: "75370157-1133-97db-728f-5aee91d582ff"
+  "git-diff":
+    showIconsInEditorGutter: true
   linter: {}
-  "tree-view": {}
+  metrics:
+    userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
+  pigments: {}
+  "release-notes":
+    viewedVersion: "0.95.0"
+  "tree-view":
+    hideIgnoredNames: true
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
   "vim-mode":
     useSmartcaseForSearch: true
     wrapLeftRightMotion: true
-  "unity-ui":
-    showIcons: true
-    colorStatusIndicatorsInTreeView: true
-  "atom-beautify":
-    _analyticsUserId: "6ddec82d-42b4-4264-8a8c-d4ca49aad43a"
-  pigments: {}
+  welcome:
+    showOnStartup: false
