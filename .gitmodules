@@ -12,7 +12,7 @@
 	url = https://github.com/chriskempson/base16-gnome-terminal.git
 [submodule "zprezto"]
 	path = zprezto
-	url = git@github.com:rdlugosz/prezto.git
+	url = https://github.com/rdlugosz/prezto.git
 [submodule "liquidprompt"]
 	path = liquidprompt
 	url = https://github.com/nojhan/liquidprompt
