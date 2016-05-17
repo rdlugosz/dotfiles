@@ -459,7 +459,6 @@ set nowrap        " don't wrap lines (we map leader-W to toggle)
 set linebreak     " when wrapping, wrap at word boundaries (vs last char)
 if exists('+breakindent')
   set breakindent " preserves the indent level of wrapped lines
-  set showbreak=↪ " illustrate wrapped lines
   set wrap        " wrapping with breakindent is tolerable
 endif
 " When on first/last char in a line, allow left/right to navigate
