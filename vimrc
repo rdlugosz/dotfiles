@@ -549,9 +549,7 @@ if executable('ag')
 endif
 
 " PyMatcher for CtrlP (faster than the Vimscript native matcher)
-if !has('python')
-  echo 'In order to use pymatcher plugin, you need +python compiled vim'
-else
+if has('python')
   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 endif
 
