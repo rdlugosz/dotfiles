@@ -124,9 +124,9 @@ values."
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
                                :size 13
-                               :weight regular
+                               :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -236,7 +236,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("pt" "ag" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
@@ -280,7 +280,12 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "C-k") (kbd "C-w k"))
   (define-key evil-normal-state-map (kbd "C-l") (kbd "C-w l"))
 
+  ;; Use alternate sep character for powerline until color issue fixed.
+  ;; see: https://github.com/syl20bnr/spacemacs/issues/4955
+  (setq powerline-default-separator 'alternate)
+  (spaceline-compile)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+;;
