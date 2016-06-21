@@ -96,7 +96,9 @@ if exists(':Plugin')
   "   Press <c-r> to switch to regexp mode.
   " https://github.com/ctrlpvim/ctrlp.vim
   Plugin 'ctrlpvim/ctrlp.vim'
-  Plugin 'felikz/ctrlp-py-matcher'
+  " The following improves speed but seems to be broken with neovim
+  " see: https://github.com/FelikZ/ctrlp-py-matcher/issues/30
+  " Plugin 'felikz/ctrlp-py-matcher'
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
@@ -548,10 +550,11 @@ if executable('ag')
         \ -g ""'
 endif
 
+" Disabled because of Neovim incompatibility
 " PyMatcher for CtrlP (faster than the Vimscript native matcher)
-if has('python')
-  let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-endif
+" if has('python')
+"   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" endif
 
  " open a CtrlP Buffer search via c-b
 nnoremap <c-b> :CtrlPBuffer<CR>
