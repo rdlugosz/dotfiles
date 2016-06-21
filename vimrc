@@ -291,7 +291,12 @@ if exists(':Plugin')
   Plugin 'junegunn/seoul256.vim'
   Plugin 'tomasr/molokai'
   Plugin 'sjl/badwolf'
+
+  let g:gruvbox_italic=1
+  " let g:gruvbox_improved_strings=1
+  " let g:gruvbox_improved_warnings=1
   Plugin 'morhetz/gruvbox'
+
   Plugin 'reedes/vim-colors-pencil'
   Plugin 'whatyouhide/vim-gotham'
   Plugin 'mhartington/oceanic-next'
@@ -424,8 +429,14 @@ endif
 " if $TERM =~ "-256color"
 "   set t_Co=256
 " endif
+
+" Enable Neovim 24-bit color support
+if has('nvim')
+  set termguicolors
+end
+
 set background=dark
-silent! colorscheme OceanicNext
+silent! colorscheme gruvbox
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile

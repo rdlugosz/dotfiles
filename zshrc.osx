@@ -49,8 +49,6 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
 
-# Enable Neovim 24-bit color support
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
 # Use Neovim
 export EDITOR='nvim'
 export VISUAL='nvim'
