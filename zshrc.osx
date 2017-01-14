@@ -44,7 +44,7 @@ export GOPATH="$HOME/workspace/go"
 export PATH="$PATH:$GOPATH/bin"
 
 # add the postgres.app CLI tools
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
