@@ -1,16 +1,34 @@
 "*":
+  "activate-power-mode":
+    autoToggle: false
+    comboMode:
+      enabled: false
   "atom-beautify":
-    _analyticsUserId: "6ddec82d-42b4-4264-8a8c-d4ca49aad43a"
+    erb:
+      default_beautifier: "HTML Beautifier"
+      indent_size: 2
+      wrap_line_length: 120
+    general:
+      _analyticsUserId: "6ddec82d-42b4-4264-8a8c-d4ca49aad43a"
+    html:
+      indent_size: 2
+      wrap_line_length: 120
+    js:
+      wrap_line_length: 80
   core:
-    projectHome: "/Users/ryan/workspace"
-    themes: [
-      "one-dark-ui"
-      "oceanic-next"
+    packagesWithKeymapsDisabled: [
+      "activate-power-mode"
     ]
+    projectHome: "/Users/ryan/workspace"
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "duotone-light-syntax"
+    ]
+    useCustomTitleBar: true
   editor:
     backUpBeforeSaving: true
     fontFamily: "Menlo"
-    fontSize: 13
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
@@ -19,6 +37,9 @@
     userId: "75370157-1133-97db-728f-5aee91d582ff"
   "git-diff":
     showIconsInEditorGutter: true
+  "git-plus":
+    general:
+      _analyticsUserId: "356c709b-01c3-46f0-9bf4-51935544bd35"
   linter: {}
   metrics:
     userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
@@ -33,5 +54,7 @@
   "vim-mode":
     useSmartcaseForSearch: true
     wrapLeftRightMotion: true
+  "vim-surround":
+    surroundCommand: "S"
   welcome:
     showOnStartup: false

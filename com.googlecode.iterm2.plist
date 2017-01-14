@@ -8670,13 +8670,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 382 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>417 274 606 456 0 0 1440 877 </string>
+	<string>417 176 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>338 382 918 495 0 0 1440 877 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>0 4 1434 873 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -18014,6 +18014,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/ryan/workspace/dotfiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -18033,7 +18035,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-16T17:43:11Z</date>
+	<date>2016-08-31T16:34:36Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -18093,6 +18095,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.7</string>
+	<string>3.0.8</string>
 </dict>
 </plist>
