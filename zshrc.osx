@@ -20,6 +20,10 @@ alias mysql_unload="mysql.server stop"
 alias postgres_load="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
 
+# Open deluge-console on the nas
+alias deluge='ssh -L 58846:10.10.0.104:58846 -t nas.dlugosz.net "lxc exec deluge deluge-console"'
+
+
 # set up shims and autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
