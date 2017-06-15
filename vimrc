@@ -417,12 +417,12 @@ endif
 
 " Set colorscheme
 " Allow color schemes to do bright colors without forcing bold.
-" if &t_Co == 8 && $TERM !~# '^linux'
-"   set t_Co=16
-" endif
-" if $TERM =~ "-256color"
-"   set t_Co=256
-" endif
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+if $TERM =~ "-256color"
+  set t_Co=256
+endif
 
 " Enable Neovim 24-bit color support
 if has('nvim')
@@ -430,7 +430,7 @@ if has('nvim')
 end
 
 set background=dark
-silent! colorscheme gruvbox
+silent! colorscheme zenburn
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
