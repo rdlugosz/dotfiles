@@ -22,13 +22,14 @@
     projectHome: "/Users/ryan/workspace"
     telemetryConsent: "limited"
     themes: [
-      "one-light-ui"
-      "duotone-light-syntax"
+      "atom-dark-ui"
+      "oceanic-next"
     ]
-    useCustomTitleBar: true
+    titleBar: "custom"
   editor:
     backUpBeforeSaving: true
     fontFamily: "Menlo"
+    fontSize: 12
     invisibles: {}
     scrollPastEnd: true
     showIndentGuide: true
