@@ -57,8 +57,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="./bin:$PATH"
 
 # Use Neovim
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 
 # Init autojump
 [[ -s $(brew --prefix)/etc/autojump.sh ]] && . $(brew --prefix)/etc/autojump.sh
