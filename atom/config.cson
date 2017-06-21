@@ -42,6 +42,8 @@
     general:
       _analyticsUserId: "356c709b-01c3-46f0-9bf4-51935544bd35"
   linter: {}
+  "linter-ui-default":
+    showPanel: true
   metrics:
     userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
   pigments: {}
@@ -55,6 +57,9 @@
   "vim-mode":
     useSmartcaseForSearch: true
     wrapLeftRightMotion: true
+  "vim-mode-plus":
+    incrementalSearch: true
+    useSmartcaseForSearch: true
   "vim-surround":
     surroundCommand: "S"
   welcome:

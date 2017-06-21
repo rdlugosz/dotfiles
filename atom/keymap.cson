@@ -28,3 +28,15 @@
 
 'atom-text-editor.vim-mode.insert-mode':
   'j': 'activate-normal-mode-if-preceded-by-k'
+
+'atom-workspace':
+  'ctrl-i':     'cursor-history:next'
+  'ctrl-o':     'cursor-history:prev'
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  'g f':      'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'
+  
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'k j': 'vim-mode-plus:activate-normal-mode' # kj to escape
