@@ -3,6 +3,7 @@ sublime_text/User/Package Control.cache/*
 sublime_text/User/Package Control.system-ca-bundle
 sublime_text/User/Package Control.user-ca-bundle
 sublime_text/User/Package Control.merged-ca-bundle
+sublime_text/User/oscrypto-ca-bundle.crt
 tags
 atom/blob-store
 atom/packages
