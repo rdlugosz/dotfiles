@@ -42,7 +42,7 @@ set -e
 echo ''
 
 info () {
-  printf "  [ \033[00;34m..\033[0m ] $1"
+  printf "  [ \033[00;34m..\033[0m ] $1\n"
 }
 
 user () {
@@ -64,12 +64,37 @@ link_files () {
   success "linked $1 to $2"
 }
 
+setup_nvim_dir () {
+  nvim_config_dir=~/.config/nvim
+  nvim_vimrc_link="$nvim_config_dir/init.vim"
+
+  info "checking for neovim config link: $nvim_vimrc_link"
+
+  if [[ ! -d $nvim_config_dir ]]; then
+    info "creating neovim config directory"
+    mkdir -p $nvim_config_dir
+  fi
+
+  if [[ ! -e $nvim_vimrc_link ]]; then
+    info "linking .vimrc for neovim"
+    ln -s $DOTFILES_ROOT/vimrc $nvim_vimrc_link
+    if [[ -h $nvim_vimrc_link ]]; then
+      success "link created"
+    fi
+  elif [[ ! -h $nvim_vimrc_link ]]; then
+    fail "neovim config is a real file, not a link to the vimrc!"
+  else
+    success "neovim config link exists"
+  fi
+}
+
 install_dotfiles () {
-  info 'installing dotfiles'
+  info "installing dotfiles"
 
   overwrite_all=false
   backup_all=false
   skip_all=false
+
 
   for source in "${DOTFILES_LIST[@]}"
   do
@@ -155,6 +180,7 @@ install_vundle () {
 
 install_dotfiles
 install_vundle
+setup_nvim_dir
 
 echo ''
 echo '  All installed!'
