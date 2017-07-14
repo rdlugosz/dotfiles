@@ -16,14 +16,17 @@
     js:
       wrap_line_length: 80
   core:
+    disabledPackages: [
+      "git-plus"
+    ]
     packagesWithKeymapsDisabled: [
       "activate-power-mode"
     ]
     projectHome: "/Users/ryan/workspace"
     telemetryConsent: "limited"
     themes: [
-      "atom-dark-ui"
-      "oceanic-next"
+      "atom-light-ui"
+      "one-light-syntax"
     ]
     titleBar: "custom"
   editor:
@@ -46,6 +49,7 @@
     showPanel: true
   metrics:
     userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
+  minimap: {}
   pigments: {}
   "release-notes":
     viewedVersion: "0.95.0"
