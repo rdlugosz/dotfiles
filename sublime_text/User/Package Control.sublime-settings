@@ -2,6 +2,11 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"GitGutter",
+		"Javascript Beautify",
+		"MarkdownEditing",
+		"TrailingSpaces",
+		"Vintageous"
 	],
 	"installed_packages":
 	[

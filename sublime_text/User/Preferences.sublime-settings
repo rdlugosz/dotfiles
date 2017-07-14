@@ -1,11 +1,16 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
+	"color_scheme": "Packages/Oceanic Next Color Scheme/Oceanic Next.tmTheme",
 	"font_face": "Menlo",
 	"font_size": 14,
 	"ignored_packages":
 	[
+		"GitGutter",
+		"Javascript Beautify",
 		"Markdown",
-		"Vintage"
+		"MarkdownEditing",
+		"TrailingSpaces",
+		"Vintage",
+		"Vintageous"
 	],
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
