@@ -8573,7 +8573,7 @@
 	<key>HideActivityIndicator</key>
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
-	<true/>
+	<false/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -8655,11 +8655,15 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 76 599 519 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>256 148 796 473 0 0 1440 877 </string>
+	<string>256 280 770 429 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>74 236 850 547 0 0 1440 877 </string>
+	<string>10 5 1396 859 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
+	<key>NeverWarnAboutShortLivedSessions_75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -18005,7 +18009,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-13T14:49:10Z</date>
+	<date>2017-07-17T17:31:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -18019,7 +18023,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.34780899439102564</real>
+	<real>0.16355168269230769</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
