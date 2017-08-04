@@ -160,7 +160,7 @@ if exists(':Plugin')
   "   All also work with 'a' instead of 'i' (An vs In). Can also insert an 'n'
   "   or 'l' to target the 'next' object, e.g., vin]
   " https://github.com/wellle/targets.vim
-  Plugin 'wellle/targets.vim'
+  "Plugin 'wellle/targets.vim'
 
   " Creates a new text object 'i' for indentation. E.g.,
   "   vii will select block of text at current indent level
@@ -425,7 +425,7 @@ if $TERM =~ "-256color"
 endif
 
 " Enable Neovim 24-bit color support
-if has('nvim')
+if has('nvim') && $COLORTERM == 'truecolor'
   set termguicolors
 end
 
