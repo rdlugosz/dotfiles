@@ -5,7 +5,7 @@ set guioptions=aAce "hide the toolbar
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname == "Darwin\n"
-    silent! set guifont=Hack:h12
+    silent! set guifont=Menlo:h12
 
     " Automatically resize splits
     " when resizing MacVim window
