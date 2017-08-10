@@ -354,7 +354,7 @@ set ttimeout
 set ttimeoutlen=100
 
 set incsearch     " incremental searching
-set hlsearch      " highlight matches (later we map a toggle to <leader>l)
+set hlsearch      " highlight matches
 set ignorecase    " searches are case insensitive...
 set smartcase     " ... unless they contain at least one capital letter
 
