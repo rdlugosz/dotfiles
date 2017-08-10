@@ -729,13 +729,6 @@ if has('nvim')
   " au VimLeave * highlight Cursor cterm=NONE gui=NONE
   " au VimLeave * highlight Cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 
-
-  " Hack to get C-h working in neovim
-  " see: https://goo.gl/wtBu2F
-  " nmap <BS> <C-W>h
-  " alternate mapping for vim-tmux-navigator
-  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
   " Retain escape functionality in Terminal mode
   tnoremap <ESC> <C-\><C-n>
   tnoremap kj <C-\><C-n>
