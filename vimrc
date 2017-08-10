@@ -724,6 +724,12 @@ if has('nvim')
       \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
       \,sm:block-blinkwait175-blinkoff150-blinkon175
 
+  " Reset the cursor color when leaving vim
+  " (this is commented out because it doesn't seem to work)
+  " au VimLeave * highlight Cursor cterm=NONE gui=NONE
+  " au VimLeave * highlight Cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
+
+
   " Hack to get C-h working in neovim
   " see: https://goo.gl/wtBu2F
   " nmap <BS> <C-W>h
