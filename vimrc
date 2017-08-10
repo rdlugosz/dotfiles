@@ -448,7 +448,7 @@ set undolevels=10000
 
 " Keep our custom dictionary on Dropbox to sync across systems
 set spelllang=en
-set spellfile=$HOME/Dropbox/vim/en.utf-8.add,$HOME/.vim/en.utf-8.add
+set spellfile=$HOME/Dropbox/vim/en.utf-8.add
 
 " Line numbering
 " Relativenumber treats the current line as line 0 and is helpful for motions
