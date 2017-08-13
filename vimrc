@@ -285,6 +285,7 @@ if exists(':Plugin')
   Plugin 'junegunn/seoul256.vim'
   Plugin 'tomasr/molokai'
   Plugin 'sjl/badwolf'
+  Plugin 'noahfrederick/vim-noctu'
 
   let g:gruvbox_italic=1
   " let g:gruvbox_improved_strings=1
@@ -424,13 +425,16 @@ if $TERM =~ "-256color"
   set t_Co=256
 endif
 
+set background=dark
+
+" Noctu inherits the terminal pallette so should look good in most situations.
+silent! colorscheme noctu
+
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
   set termguicolors
+  silent! colorscheme zenburn
 end
-
-set background=dark
-silent! colorscheme zenburn
 
 " Write swap and backup files in the event of a crash or accident
 set swapfile
