@@ -23,6 +23,9 @@ alias postgres_unload="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.
 # Open deluge-console on the nas
 alias deluge='ssh -L 58846:10.10.0.104:58846 -t nas.dlugosz.net "lxc exec deluge deluge-console"'
 
+# Headless Chrome
+# https://developers.google.com/web/updates/2017/04/headless-chrome
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
 # set up shims and autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
