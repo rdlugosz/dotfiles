@@ -286,6 +286,7 @@ if exists(':Plugin')
   Plugin 'tomasr/molokai'
   Plugin 'sjl/badwolf'
   Plugin 'noahfrederick/vim-noctu'
+  Plugin 'lifepillar/vim-solarized8'
 
   let g:gruvbox_italic=1
   " let g:gruvbox_improved_strings=1
