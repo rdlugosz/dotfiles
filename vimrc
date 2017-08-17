@@ -469,8 +469,8 @@ silent! colorscheme noctu
 
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
-  set termguicolors
-  silent! colorscheme zenburn
+  " set termguicolors
+  " silent! colorscheme zenburn
 end
 
 " Write swap and backup files in the event of a crash or accident
