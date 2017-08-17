@@ -157,6 +157,7 @@ install_dotfiles () {
 }
 
 install_vundle () {
+  # TODO: UPDATE TO vim-plug!
   echo ""
   info "checking for Vundle installation..."
   if [ -e ~/.vim/bundle/Vundle.vim ]
