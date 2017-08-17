@@ -18,30 +18,65 @@
 "   zM - close all folds
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGINS AND VUNDLE CONFIG {{{1
+" PLUGINS {{{1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
 
-if exists(':Plugin')
-  " let Vundle manage Vundle - must be first!
-  " use commands PluginInstall, PluginUpdate, PluginClean
-  Plugin 'VundleVim/Vundle.vim'
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
 
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+"Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Multiple Plug commands can be written in a single line using | separators
+"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+"Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+"Plug '~/my-prototype-plugin'
+
+
+
+if exists(':Plug')
   " Repeat.vim sets up bindings other plugins can use to make their commands
   " repeatable with the . command.
   " https://github.com/tpope/vim-repeat
-  Plugin 'tpope/vim-repeat'
+  Plug 'tpope/vim-repeat'
 
   " Fugitive is a highly-capable Git wrapper for Vim.
   " https://github.com/tpope/vim-fugitive
-  Plugin 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
 
   " Surround.vim lets you add/change/remove surrounding chars and tags
   " https://github.com/tpope/vim-surround
-  Plugin 'tpope/vim-surround'
+  Plug 'tpope/vim-surround'
 
   " Unimpaired.vim provides shortcuts for various paired activities:
   "
@@ -63,7 +98,7 @@ if exists(':Plugin')
   " and [n and ]n to jump between SCM conflict markers.
   "
   " https://github.com/tpope/vim-unimpaired
-  Plugin 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-unimpaired'
 
   " Commentary.vim provides commenting for many languages
   " Use gcc to comment out a line (takes a count), gc to comment out the
@@ -71,12 +106,12 @@ if exists(':Plugin')
   " gc in visual mode to comment out the selection, and gc in operator
   " pending mode to target a comment.
   " https://github.com/tpope/vim-commentary
-  Plugin 'tpope/vim-commentary'
+  Plug 'tpope/vim-commentary'
 
   " Improves output of ga, which shows character codes for the char
   " under the cursor. Supports HTML entities & emoji...
   " https://github.com/tpope/vim-characterize
-  Plugin 'tpope/vim-characterize'
+  Plug 'tpope/vim-characterize'
 
   " Buffergator lists, selects and switches buffers
   " Use `<Leader>b` (typically: `\b`) to open a window listing all buffers. In this
@@ -87,7 +122,7 @@ if exists(':Plugin')
   "   - <C-T> to edit the selected buffer in a new tab page
   "
   " https://github.com/jeetsukumaran/vim-buffergator
-  Plugin 'jeetsukumaran/vim-buffergator'
+  "Plug 'jeetsukumaran/vim-buffergator'
 
   " CtrlP.vim is a fuzzy file, buffer, mru, tag, etc finder.
   " Open with CTRL-P, then:
@@ -95,37 +130,37 @@ if exists(':Plugin')
   "   Press <c-d> to switch to filename only search instead of full path.
   "   Press <c-r> to switch to regexp mode.
   " https://github.com/ctrlpvim/ctrlp.vim
-  Plugin 'ctrlpvim/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   " The following improves speed but seems to be broken with neovim
   " see: https://github.com/FelikZ/ctrlp-py-matcher/issues/30
-  " Plugin 'felikz/ctrlp-py-matcher'
+  " "Plug 'felikz/ctrlp-py-matcher'
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
   " https://github.com/airblade/vim-gitgutter
-  Plugin 'airblade/vim-gitgutter'
+  "Plug 'airblade/vim-gitgutter'
 
   " Flagship adds API hooks that can be used to set things in the statusline
   " https://github.com/tpope/vim-flagship
-  " Plugin 'tpope/vim-flagship'
+  " "Plug 'tpope/vim-flagship'
 
   " NERDTree is a tree explorer plugin for vim.
   " Open with <leader>n
   " https://github.com/scrooloose/nerdtree
-  Plugin 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   " Add some Git hotness...
-  Plugin 'Xuyuanp/nerdtree-git-plugin'
+  "Plug 'Xuyuanp/nerdtree-git-plugin'
 
   " Vim-vinegar allows access to netrw via -
   " https://github.com/tpope/vim-vinegar
-  Plugin 'tpope/vim-vinegar'
+  "Plug 'tpope/vim-vinegar'
 
   " Tabular.vim is a plugin that aligns text by some pattern, e.g.:
   " :Tab /,
   " will align lines by their commas. We have some mappings set up later, like
   " <leader>t: to align on symbals and <leader>t= to align on assignment.
   " https://github.com/godlygeek/tabular
-  Plugin 'godlygeek/tabular'
+  "Plug 'godlygeek/tabular'
 
   " This allows you to select some text using Vim's visual mode and then hit *
   " and # to search for it elsewhere in the file.  For example, hit V, select
@@ -138,18 +173,18 @@ if exists(':Plugin')
   " Vim's default behavior is to just extend the visual selection to the next
   " word that matches the word under the cursor. Doesn't seem very useful.
   " https://github.com/nelstrom/vim-visual-star-search
-  Plugin 'nelstrom/vim-visual-star-search'
+  "Plug 'nelstrom/vim-visual-star-search'
 
   " Vim global plugin for dragging virtual blocks. By Damien Conway.
   " Select text in Visual Block mode (ctrl-v), use arrow keys to move it around!
   " This isn't terribly useful; more of a fun hack to show off
   " https://github.com/rdlugosz/vim-dragvisuals
-  Plugin 'rdlugosz/vim-dragvisuals'
+  "Plug 'rdlugosz/vim-dragvisuals'
 
   " Indent Guides is a plugin for visually displaying indent levels in Vim.
   " Toggle with <leader>ig
   " https://github.com/nathanaelkane/vim-indent-guides
-  Plugin 'nathanaelkane/vim-indent-guides'
+  "Plug 'nathanaelkane/vim-indent-guides'
 
   " Provides extra text objects for things like pairs, quotes, separators and
   " arguments.
@@ -160,30 +195,30 @@ if exists(':Plugin')
   "   All also work with 'a' instead of 'i' (An vs In). Can also insert an 'n'
   "   or 'l' to target the 'next' object, e.g., vin]
   " https://github.com/wellle/targets.vim
-  "Plugin 'wellle/targets.vim'
+  ""Plug 'wellle/targets.vim'
 
   " Creates a new text object 'i' for indentation. E.g.,
   "   vii will select block of text at current indent level
   "   vai will select block of text at current indent level, plus line above
   "   vaI selects block of text at current indent level, plus line above & below
   " http://www.vim.org/scripts/script.php?script_id=3037
-  Plugin 'michaeljsmith/vim-indent-object'
+  "Plug 'michaeljsmith/vim-indent-object'
 
   " Text objects for: lines (l) and entire file (e)
   " https://github.com/kana/vim-textobj-line
-  Plugin 'kana/vim-textobj-line'
-  Plugin 'kana/vim-textobj-entire'
+  "Plug 'kana/vim-textobj-line'
+  "Plug 'kana/vim-textobj-entire'
 
   " Add a text object for Ruby blocks (ar / ir)
   " Depends on vim-textobj-user
   " https://github.com/nelstrom/vim-textobj-rubyblock
-  Plugin 'kana/vim-textobj-user'
-  Plugin 'nelstrom/vim-textobj-rubyblock'
+  "Plug 'kana/vim-textobj-user'
+  "Plug 'nelstrom/vim-textobj-rubyblock'
 
   " Repeated `v` keystrokes will expand the selected region. Supports language
   " specific text objects; see configuration below in this file or the docs.
   " https://github.com/terryma/vim-expand-region
-  Plugin 'terryma/vim-expand-region'
+  "Plug 'terryma/vim-expand-region'
 
   " Easy navigation of the Rails directory structure. gf considers context and
   " knows about partials, fixtures, and much more. There are two commands, :A
@@ -198,104 +233,104 @@ if exists(':Plugin')
   " Also provides an interface to Rake and Rails commands via :Rake and :Rails
   "
   " https://github.com/tpope/vim-rails
-  Plugin 'tpope/vim-rails'
+  Plug 'tpope/vim-rails'
   " The Rake.vim plugin does the same thing for non-Rails projects.
-  Plugin 'tpope/vim-rake'
+  "Plug 'tpope/vim-rake'
 
   " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim
   " script, etc.
   " https://github.com/tpope/vim-endwise
-  Plugin 'tpope/vim-endwise'
+  Plug 'tpope/vim-endwise'
 
   " Ragtag is a plugin that provides a variety of tag-completion mappings
   " rooted on C-x.
   " https://github.com/tpope/vim-ragtag
-  Plugin 'tpope/vim-ragtag'
+  "Plug 'tpope/vim-ragtag'
 
   " Runs Ruby tests in a reasonably smart way.
   "   Run current test file <leader>r
   "   Run nearest test in file <leader>R
   " https://github.com/skalnik/vim-vroom
-  Plugin 'skalnik/vim-vroom'
+  "Plug 'skalnik/vim-vroom'
 
   " Execute ruby in-line with code; some mappings are set up below.
   "   <leader>m to insert an 'execute' mark
   "   <leader>x to execute
   " Depends on gem rcodetools.
   " https://github.com/t9md/vim-ruby-xmpfilter
-  Plugin 't9md/vim-ruby-xmpfilter'
+  "Plug 't9md/vim-ruby-xmpfilter'
 
   " Searches Dash.app for the word under the cursor with <leader>d
   " https://github.com/rizzatti/dash.vim
-  Plugin 'rizzatti/dash.vim'
+  Plug 'rizzatti/dash.vim'
 
   " Adds the :G family of commands for grepping. Automatically decides between
   " Ag, Ack and Grep depending on what's available.
   " https://github.com/rizzatti/greper.vim
-  Plugin 'rizzatti/greper.vim'
+  Plug 'rizzatti/greper.vim'
 
   " This is a dependency of Dash.vim and Grepper.vim
-  Plugin 'rizzatti/funcoo.vim'
+  Plug 'rizzatti/funcoo.vim'
 
   " Simplifies the transition between multiline and single-line code
   "   gS to split a one-liner into multiple lines
   "   gJ (with the cursor on the first line of a block) to join a block into a
   "   single-line statement.
   " https://github.com/AndrewRadev/splitjoin.vim
-  Plugin 'AndrewRadev/splitjoin.vim'
+  "Plug 'AndrewRadev/splitjoin.vim'
 
   " SnipMate aims to provide support for textual snippets, similar to TextMate
   " or other Vim plugins. Activate by typing some text and hitting <tab>.
   " Snipmate depends on tlib and mw-utils.
   " https://github.com/garbas/vim-snipmate
-  Plugin 'tomtom/tlib_vim'
-  Plugin 'MarcWeber/vim-addon-mw-utils'
-  Plugin 'garbas/vim-snipmate'
-  Plugin 'honza/vim-snippets'
+  "Plug 'tomtom/tlib_vim'
+  "Plug 'MarcWeber/vim-addon-mw-utils'
+  "Plug 'garbas/vim-snipmate'
+  "Plug 'honza/vim-snippets'
 
   " GoldenView - attempt to auto-resize splits in a reasonable way
   " https://github.com/zhaocai/GoldenView.Vim
-  Plugin 'zhaocai/GoldenView.Vim'
+  "Plug 'zhaocai/GoldenView.Vim'
 
   " Lols
-  Plugin 'koron/nyancat-vim'
+  "Plug 'koron/nyancat-vim'
 
   " Language syntax support
-  Plugin 'vim-ruby/vim-ruby'
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'tpope/vim-markdown'
-  Plugin 'tpope/vim-git'
-  Plugin 'elixir-lang/vim-elixir'
-  Plugin 'chrisbra/csv.vim'
-  Plugin 'hail2u/vim-css3-syntax'
-  Plugin 'othree/html5.vim'
+  Plug 'vim-ruby/vim-ruby'
+  Plug 'kchmck/vim-coffee-script'
+  Plug 'pangloss/vim-javascript'
+  Plug 'tpope/vim-markdown'
+  Plug 'tpope/vim-git'
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'chrisbra/csv.vim'
+  Plug 'hail2u/vim-css3-syntax'
+  Plug 'othree/html5.vim'
 
   " Hooks a variety of language-specific code formatters onto the
   " gq command (via formatprog).
   " see: https://github.com/Chiel92/vim-autoformat
-  Plugin 'Chiel92/vim-autoformat'
+  "Plug 'Chiel92/vim-autoformat'
 
   " Colorschemes
-  Plugin 'altercation/vim-colors-solarized.git'
-  Plugin 'tpope/vim-vividchalk'
-  Plugin 'vim-scripts/Zenburn'
-  Plugin 'chriskempson/base16-vim'
-  Plugin 'nanotech/jellybeans.vim'
-  Plugin 'junegunn/seoul256.vim'
-  Plugin 'tomasr/molokai'
-  Plugin 'sjl/badwolf'
-  Plugin 'noahfrederick/vim-noctu'
-  Plugin 'lifepillar/vim-solarized8'
+  "Plug 'altercation/vim-colors-solarized.git'
+  "Plug 'tpope/vim-vividchalk'
+  "Plug 'vim-scripts/Zenburn'
+  "Plug 'chriskempson/base16-vim'
+  "Plug 'nanotech/jellybeans.vim'
+  Plug 'junegunn/seoul256.vim'
+  "Plug 'tomasr/molokai'
+  "Plug 'sjl/badwolf'
+  Plug 'noahfrederick/vim-noctu'
+  Plug 'lifepillar/vim-solarized8'
 
   let g:gruvbox_italic=1
   " let g:gruvbox_improved_strings=1
   " let g:gruvbox_improved_warnings=1
-  Plugin 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
 
-  Plugin 'reedes/vim-colors-pencil'
-  Plugin 'whatyouhide/vim-gotham'
-  Plugin 'mhartington/oceanic-next'
+  "Plug 'reedes/vim-colors-pencil'
+  "Plug 'whatyouhide/vim-gotham'
+  Plug 'mhartington/oceanic-next'
 
   " Plugins to only load on OS X
   if has("unix")
@@ -304,7 +339,7 @@ if exists(':Plugin')
       " Add some icon flair to your vest!
       " NOTE: Requires a patched font
       " https://github.com/ryanoasis/vim-devicons
-      " Plugin 'ryanoasis/vim-devicons'
+      " Plug 'ryanoasis/vim-devicons'
     endif
   endif
 
@@ -312,12 +347,13 @@ if exists(':Plugin')
   if !has('gui_running')
     " Make working with Vim within TMUX more consistent
     " https://github.com/christoomey/vim-tmux-navigator
-    Plugin 'christoomey/vim-tmux-navigator'
+    Plug 'christoomey/vim-tmux-navigator'
   endif
-
-  call vundle#end()
-  filetype plugin indent on     " required!
 endif
+
+" Initialize plugin system
+call plug#end()
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETTINGS {{{1
@@ -544,6 +580,9 @@ let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directo
 let g:ctrlp_working_path_mode = 'wa'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
+ " open a CtrlP Buffer search via c-b
+nnoremap <c-b> :CtrlPBuffer<CR>
+
 " Do not clear filenames cache, to improve CtrlP startup
 " You can manualy clear it by <F5>
 let g:ctrlp_clear_cache_on_exit = 0
@@ -566,34 +605,31 @@ endif
 "   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " endif
 
- " open a CtrlP Buffer search via c-b
-nnoremap <c-b> :CtrlPBuffer<CR>
-
 " Buffergator config
 let g:buffergator_show_full_directory_path = 0
 let g:buffergator_viewport_split_policy = 'T'
 let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
 
 " vim-expand-region config
-vmap v <plug>(expand_region_expand)
-vmap u <plug>(expand_region_shrink)
+" vmap v <plug>(expand_region_expand)
+" vmap u <plug>(expand_region_shrink)
 " Use the global default + the following for ruby
-call expand_region#custom_text_objects('ruby', {
-      \ 'im' :0,
-      \ 'am' :0,
-      \ 'ir' :0,
-      \ 'ar' :0,
-      \ })
-call expand_region#custom_text_objects('eruby', {
-      \ 'it' :0,
-      \ 'at' :0,
-      \ })
+" call expand_region#custom_text_objects('ruby', {
+"       \ 'im' :0,
+"       \ 'am' :0,
+"       \ 'ir' :0,
+"       \ 'ar' :0,
+"       \ })
+" call expand_region#custom_text_objects('eruby', {
+"       \ 'it' :0,
+"       \ 'at' :0,
+"       \ })
 
 " GoldenView config
 "
 " don't map C-l by default; we use that!
-let g:goldenview__enable_default_mapping = 0
-nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
+" let g:goldenview__enable_default_mapping = 0
+" nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
 
 " GitGutter config
 " let g:gitgutter_realtime = 0
