@@ -95,4 +95,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
 
+# configure autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+
 # vim:set ft=sh et sw=2 foldmethod=marker:
