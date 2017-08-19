@@ -150,31 +150,8 @@ install_dotfiles () {
   done
 }
 
-install_vundle () {
-  # TODO: UPDATE TO vim-plug!
-  echo ""
-  info "checking for Vundle installation..."
-  if [ -e ~/.vim/bundle/Vundle.vim ]
-  then
-    success "looks like Vundle is installed!"
-  else
-    user "Vundle seems to be missing... Install it? [y/n]"
-    read -n 1 action
-
-    case "$action" in
-      y )
-        echo ""
-        info "Installing Vundle. Be sure to run :PluginInstall next time you run Vim."
-        echo ""
-        git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim;;
-      * )
-        ;;
-    esac
-  fi
-}
 
 install_dotfiles
-# install_vundle
 setup_nvim_dir
 
 echo ''
