@@ -8,6 +8,8 @@ DOTFILES_ROOT="`pwd`"
 DOTFILES_LIST=(
     agignore
     atom
+    bash_profile
+    bashrc
     dotfiles
     gemrc
     gitconfig
@@ -180,7 +182,7 @@ install_vundle () {
 }
 
 install_dotfiles
-install_vundle
+# install_vundle
 setup_nvim_dir
 
 echo ''
