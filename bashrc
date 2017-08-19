@@ -18,12 +18,16 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+# some other completion-related stuff lives in .inputrc
+bind 'TAB:menu-complete'
+
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
 [[ -s /usr/local/bin/gdircolors ]] && eval `gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`
 
 alias lt='ls -ltrah'
 alias la='ls -a'
+alias ll='ls -la'
 alias be='bundle exec'
 
 alias grep='grep --color=auto'

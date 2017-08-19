@@ -11,6 +11,7 @@ DOTFILES_LIST=(
     bash_profile
     bashrc
     dotfiles
+    inputrc
     gemrc
     gitconfig
     githelpers
