@@ -25,6 +25,9 @@ bind 'TAB:menu-complete'
 
 [[ -s /usr/local/bin/gdircolors ]] && eval `gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`
 
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 alias lt='ls -ltrah'
 alias la='ls -a'
 alias ll='ls -la'
