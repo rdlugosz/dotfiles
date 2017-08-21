@@ -317,10 +317,10 @@ if exists(':Plug')
   "Plug 'Chiel92/vim-autoformat'
 
   " Colorschemes
-  "Plug 'altercation/vim-colors-solarized.git'
-  "Plug 'tpope/vim-vividchalk'
-  "Plug 'vim-scripts/Zenburn'
-  "Plug 'chriskempson/base16-vim'
+  Plug 'altercation/vim-colors-solarized'
+  Plug 'tpope/vim-vividchalk'
+  Plug 'vim-scripts/Zenburn'
+  Plug 'chriskempson/base16-vim'
   "Plug 'nanotech/jellybeans.vim'
   Plug 'junegunn/seoul256.vim'
   "Plug 'tomasr/molokai'
@@ -471,6 +471,10 @@ set background=dark
 
 " Noctu inherits the terminal pallette so should look good in most situations.
 silent! colorscheme noctu
+
+if $TERM_PROFILE =~ "solarized"
+  colorscheme solarized
+endif
 
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
