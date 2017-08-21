@@ -472,8 +472,11 @@ set background=dark
 " Noctu inherits the terminal pallette so should look good in most situations.
 silent! colorscheme noctu
 
-if $TERM_PROFILE =~ "solarized"
+if $TERM_PROFILE =~ "solarized_dark"
   colorscheme solarized
+elseif $TERM_PROFILE == "solarized_light"
+  colorscheme solarized
+  set background=light
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
 endif
