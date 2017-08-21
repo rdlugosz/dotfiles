@@ -143,7 +143,7 @@ if exists(':Plug')
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
   " https://github.com/airblade/vim-gitgutter
-  "Plug 'airblade/vim-gitgutter'
+  Plug 'airblade/vim-gitgutter'
 
   " Flagship adds API hooks that can be used to set things in the statusline
   " https://github.com/tpope/vim-flagship
@@ -474,6 +474,8 @@ silent! colorscheme noctu
 
 if $TERM_PROFILE =~ "solarized"
   colorscheme solarized
+elseif $TERM_PROFILE == "gruvbox"
+  colorscheme gruvbox
 endif
 
 " Enable Neovim 24-bit color support
@@ -639,10 +641,6 @@ let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim th
 " don't map C-l by default; we use that!
 " let g:goldenview__enable_default_mapping = 0
 " nnoremap <leader>v :ToggleGoldenViewAutoResize<CR>
-
-" GitGutter config
-" let g:gitgutter_realtime = 0
-" let g:gitgutter_eager = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE {{{1
