@@ -250,7 +250,7 @@ if exists(':Plug')
   " Ragtag is a plugin that provides a variety of tag-completion mappings
   " rooted on C-x.
   " https://github.com/tpope/vim-ragtag
-  "Plug 'tpope/vim-ragtag'
+  Plug 'tpope/vim-ragtag'
 
   " Runs Ruby tests in a reasonably smart way.
   "   Run current test file <leader>r
