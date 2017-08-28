@@ -160,13 +160,6 @@ if exists(':Plug')
   " https://github.com/tpope/vim-vinegar
   "Plug 'tpope/vim-vinegar'
 
-  " Tabular.vim is a plugin that aligns text by some pattern, e.g.:
-  " :Tab /,
-  " will align lines by their commas. We have some mappings set up later, like
-  " <leader>t: to align on symbals and <leader>t= to align on assignment.
-  " https://github.com/godlygeek/tabular
-  "Plug 'godlygeek/tabular'
-
   " EasyAlign makes it easy to align stuff...
   " https://github.com/junegunn/vim-easy-align
   Plug 'junegunn/vim-easy-align'
@@ -948,14 +941,6 @@ vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
-
-" Tabular.vim
-nnoremap <Leader>t= :Tabularize assignment<CR>
-vnoremap <Leader>t= :Tabularize assignment<CR>
-nnoremap <Leader>t: :Tabularize symbol<CR>
-vnoremap <Leader>t: :Tabularize symbol<CR>
-nnoremap <Leader>t, :Tabularize comma<CR>
-vnoremap <Leader>t, :Tabularize comma<CR>
 
 " Mac OS X-only mappings
 if has("unix")
