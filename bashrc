@@ -107,3 +107,5 @@ export PATH="./bin:$PATH"
 
 
 # vim:set ft=sh et sw=2 foldmethod=marker:
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
