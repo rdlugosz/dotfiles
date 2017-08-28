@@ -167,6 +167,10 @@ if exists(':Plug')
   " https://github.com/godlygeek/tabular
   "Plug 'godlygeek/tabular'
 
+  " EasyAlign makes it easy to align stuff...
+  " https://github.com/junegunn/vim-easy-align
+  Plug 'junegunn/vim-easy-align'
+
   " This allows you to select some text using Vim's visual mode and then hit *
   " and # to search for it elsewhere in the file.  For example, hit V, select
   " a strange sequence of characters like '$! $!', and hit star.  You'll find
@@ -588,11 +592,11 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " CtrlP config
-let g:ctrlp_map = '<c-p>'       " activate with c-p
-let g:ctrlp_cmd = 'CtrlPMixed'  " start in the file + mru + buffers mode
-let g:ctrlp_mruf_relative = 1   " only consider mru files in the working directory
+let g:ctrlp_map               = '<c-p>'      " activate with c-p
+let g:ctrlp_cmd               = 'CtrlPMixed' " start in the file + mru + buffers mode
+let g:ctrlp_mruf_relative     = 1            " only consider mru files in the working directory
 let g:ctrlp_working_path_mode = 'wa'
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
 
  " open a CtrlP Buffer search via c-b
 nnoremap <c-b> :CtrlPBuffer<CR>
@@ -620,9 +624,16 @@ endif
 " endif
 
 " Buffergator config
-let g:buffergator_show_full_directory_path = 0
-let g:buffergator_viewport_split_policy = 'T'
-let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
+" let g:buffergator_show_full_directory_path = 0
+" let g:buffergator_viewport_split_policy = 'T'
+" let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
+
+" Vim EasyAlign.
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <leader>a <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap <leader>a <Plug>(EasyAlign)
 
 " vim-expand-region config
 " vmap v <plug>(expand_region_expand)
