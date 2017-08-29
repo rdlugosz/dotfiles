@@ -19,8 +19,12 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
-# some other completion-related stuff lives in .inputrc
-bind 'TAB:menu-complete'
+# if this is an interactive terminal, set some completion config
+if [ -t 1 ]
+then
+  bind 'TAB:menu-complete'
+  # some other completion-related stuff lives in .inputrc
+fi
 
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
