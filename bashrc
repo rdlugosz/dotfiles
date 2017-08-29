@@ -105,7 +105,6 @@ export PATH="./bin:$PATH"
 # configure autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-
 # configure fzf hooks if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
