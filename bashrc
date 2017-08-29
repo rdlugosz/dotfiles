@@ -13,6 +13,7 @@ shopt -s dirspell
 
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=10000
+export HISTFILESIZE=100000
 
 export EDITOR='vim'
 export VISUAL='vim'
