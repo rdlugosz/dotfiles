@@ -106,6 +106,7 @@ export PATH="./bin:$PATH"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 
-# vim:set ft=sh et sw=2 foldmethod=marker:
-
+# configure fzf hooks if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# vim:set ft=sh et sw=2 foldmethod=marker:
