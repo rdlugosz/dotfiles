@@ -164,6 +164,10 @@ if exists(':Plug')
   " https://github.com/junegunn/vim-easy-align
   Plug 'junegunn/vim-easy-align'
 
+  if executable('fzf')
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+  endif
+
   " This allows you to select some text using Vim's visual mode and then hit *
   " and # to search for it elsewhere in the file.  For example, hit V, select
   " a strange sequence of characters like '$! $!', and hit star.  You'll find
@@ -266,13 +270,12 @@ if exists(':Plug')
   " https://github.com/rizzatti/dash.vim
   Plug 'rizzatti/dash.vim'
 
-  " Adds the :G family of commands for grepping. Automatically decides between
-  " Ag, Ack and Grep depending on what's available.
-  " https://github.com/rizzatti/greper.vim
-  Plug 'rizzatti/greper.vim'
-
-  " This is a dependency of Dash.vim and Grepper.vim
+  " This is a dependency of Dash.vim
   Plug 'rizzatti/funcoo.vim'
+
+  " Vim-Grepper
+  " https://github.com/mhinz/vim-grepper
+  Plug 'mhinz/vim-grepper', { 'on': ['Grepper', '<plug>(GrepperOperator)'] }
 
   " Simplifies the transition between multiline and single-line code
   "   gS to split a one-liner into multiple lines
