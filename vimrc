@@ -581,6 +581,13 @@ augroup END
 " PLUGIN-RELATED CONFIG {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" vim-ruby
+let ruby_operators = 1
+let ruby_space_errors = 1
+let ruby_fold = 1
+let ruby_spellcheck_strings = 1
+
+
 " Fuzzy finder stuff
 if !g:using_fzf
   let g:ctrlp_map               = '<c-p>'      " activate with c-p
