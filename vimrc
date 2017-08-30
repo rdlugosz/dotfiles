@@ -337,17 +337,6 @@ if exists(':Plug')
   "Plug 'whatyouhide/vim-gotham'
   Plug 'mhartington/oceanic-next'
 
-  " Plugins to only load on OS X
-  if has("unix")
-    let s:uname = system("uname -s")
-    if s:uname == "Darwin\n"
-      " Add some icon flair to your vest!
-      " NOTE: Requires a patched font
-      " https://github.com/ryanoasis/vim-devicons
-      " Plug 'ryanoasis/vim-devicons'
-    endif
-  endif
-
   " Plugins to only load on non-gui vims
   if !has('gui_running')
     " Make working with Vim within TMUX more consistent
@@ -955,40 +944,23 @@ vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 
 " Mac OS X-only mappings
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin\n"
+if has("mac")
+  " Assume we have the Airline-patched font
+  let g:airline_powerline_fonts = 1
 
-    " Assume we have the Airline-patched font
-    let g:airline_powerline_fonts = 1
+  " Search for word under cursor in Dash.app
+  nmap <leader>d <Plug>DashSearch
+  nmap <leader>D <Plug>DashGlobalSearch
 
-    " Search for word under cursor in Dash.app
-    nmap <leader>d <Plug>DashSearch
-    nmap <leader>D <Plug>DashGlobalSearch
-
-    " Use Marked.app to preview Markdown files...
-    " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
-    function! s:setupMarkedAppLeaderMapping()
-      nmap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
-    endfunction
-    augroup RD_MarkedLauncher
-      autocmd!
-      autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkedAppLeaderMapping()
-    augroup END
-
-    " Attempt to toggle the Capslock LED on Insert mode, because why not?
-    " Thx to /u/jaxbotme (http://goo.gl/Mxgx2P)
-    " 3Feb2015: 'Why not?' appears to be 'because occasionally weird things
-    "            happen when you do stuff like this.'
-    " if executable('keyboard_leds')
-    "   augroup RD_Blinkenlights
-    "     " First, clear existing for this group (for safe reloads)
-    "     autocmd!
-    "     autocmd InsertEnter * let _caps=system('keyboard_leds -c1')
-    "     autocmd InsertLeave * let _caps=system('keyboard_leds -c0')
-    "   augroup END
-    " endif
-  endif
+  " Use Marked.app to preview Markdown files...
+  " http://stackoverflow.com/questions/9212340/is-there-a-vim-plugin-for-preview-markdown-file
+  function! s:setupMarkedAppLeaderMapping()
+    nmap <leader>M :silent !open -a Marked.app '%:p'<CR>:redraw!<CR>
+  endfunction
+  augroup RD_MarkedLauncher
+    autocmd!
+    autocmd BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkedAppLeaderMapping()
+  augroup END
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
