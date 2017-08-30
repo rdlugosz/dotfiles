@@ -426,6 +426,10 @@ let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<"
 " Include guard-derived gem tags in tags search
 set tags+=gems.tags
 
+ " Open new split panes to right and bottom, which feels more natural
+ set splitbelow
+ set splitright
+
 " The semicolon will cause Vim to search back (up) in the directory tree
 if has('path_extra')
   setglobal tags-=./tags tags^=./tags;
