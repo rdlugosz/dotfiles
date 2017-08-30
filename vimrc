@@ -569,6 +569,11 @@ if executable('par')
   set formatprg="par -h -w78 -B=.,\?_A_a "
 endif
 
+" Use The Silver Searcher if available
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 " Folding
 set foldmethod=syntax
 " Sets the fold level: Folds with a higher level will be closed.  Setting
