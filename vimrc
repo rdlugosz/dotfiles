@@ -129,16 +129,20 @@ if exists(':Plug')
   " https://github.com/jeetsukumaran/vim-buffergator
   "Plug 'jeetsukumaran/vim-buffergator'
 
+  if executable('fzf')
+    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+    let g:using_fzf = 1
+  endif
+
   " CtrlP.vim is a fuzzy file, buffer, mru, tag, etc finder.
   " Open with CTRL-P, then:
   "   Press <c-f> and <c-b> to cycle between modes.
   "   Press <c-d> to switch to filename only search instead of full path.
   "   Press <c-r> to switch to regexp mode.
   " https://github.com/ctrlpvim/ctrlp.vim
-  Plug 'ctrlpvim/ctrlp.vim'
-  " The following improves speed but seems to be broken with neovim
-  " see: https://github.com/FelikZ/ctrlp-py-matcher/issues/30
-  " "Plug 'felikz/ctrlp-py-matcher'
+  if !g:using_fzf
+    Plug 'ctrlpvim/ctrlp.vim'
+  endif
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
@@ -163,10 +167,6 @@ if exists(':Plug')
   " EasyAlign makes it easy to align stuff...
   " https://github.com/junegunn/vim-easy-align
   Plug 'junegunn/vim-easy-align'
-
-  if executable('fzf')
-    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-  endif
 
   " This allows you to select some text using Vim's visual mode and then hit *
   " and # to search for it elsewhere in the file.  For example, hit V, select
@@ -585,37 +585,43 @@ augroup END
 " PLUGIN-RELATED CONFIG {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" CtrlP config
-let g:ctrlp_map               = '<c-p>'      " activate with c-p
-let g:ctrlp_cmd               = 'CtrlPMixed' " start in the file + mru + buffers mode
-let g:ctrlp_mruf_relative     = 1            " only consider mru files in the working directory
-let g:ctrlp_working_path_mode = 'wa'
-let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
+" Fuzzy finder stuff
+if !g:using_fzf
+  let g:ctrlp_map               = '<c-p>'      " activate with c-p
+  let g:ctrlp_cmd               = 'CtrlPMixed' " start in the file + mru + buffers mode
+  let g:ctrlp_mruf_relative     = 1            " only consider mru files in the working directory
+  let g:ctrlp_working_path_mode = 'wa'
+  let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
 
- " open a CtrlP Buffer search via c-b
-nnoremap <c-b> :CtrlPBuffer<CR>
+  " open a CtrlP Buffer search via c-b
+  nnoremap <c-b> :CtrlPBuffer<CR>
 
-" Do not clear filenames cache, to improve CtrlP startup
-" You can manualy clear it by <F5>
-let g:ctrlp_clear_cache_on_exit = 0
+  " Do not clear filenames cache, to improve CtrlP startup
+  " You can manualy clear it by <F5>
+  let g:ctrlp_clear_cache_on_exit = 0
 
-if executable('ag')
-  " Use The Silver Searcher if available
-  " Note: must specify own ignores when using custom search command
-  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-        \ --ignore .git
-        \ --ignore .svn
-        \ --ignore .hg
-        \ --ignore .DS_Store
-        \ --ignore "**/*.pyc"
-        \ -g ""'
+  if executable('ag')
+    " Use The Silver Searcher if available
+    " Note: must specify own ignores when using custom search command
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+          \ --ignore .git
+          \ --ignore .svn
+          \ --ignore .hg
+          \ --ignore .DS_Store
+          \ --ignore "**/*.pyc"
+          \ -g ""'
+  endif
+else
+  " FZF config
+  nnoremap <C-P> :GFiles<CR>
+  nnoremap <C-O> :Files<CR>
+  nnoremap <C-B> :Buffers<CR>
+
+  imap <c-x><c-k> <plug>(fzf-complete-word)
+  imap <c-x><c-f> <plug>(fzf-complete-path)
+  imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+  imap <c-x><c-l> <plug>(fzf-complete-line)
 endif
-
-" Disabled because of Neovim incompatibility
-" PyMatcher for CtrlP (faster than the Vimscript native matcher)
-" if has('python')
-"   let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-" endif
 
 " Buffergator config
 " let g:buffergator_show_full_directory_path = 0
