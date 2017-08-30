@@ -415,10 +415,6 @@ let &listchars = "tab:>-,trail:\u2591,extends:>,precedes:<"
 " Include guard-derived gem tags in tags search
 set tags+=gems.tags
 
- " Open new split panes to right and bottom, which feels more natural
- set splitbelow
- set splitright
-
 " The semicolon will cause Vim to search back (up) in the directory tree
 if has('path_extra')
   setglobal tags-=./tags tags^=./tags;
@@ -614,8 +610,8 @@ if !g:using_fzf
 else
   " FZF config
   nnoremap <C-P> :GFiles<CR>
-  nnoremap <C-O> :Files<CR>
   nnoremap <C-B> :Buffers<CR>
+  nnoremap <C-T> :Tags<CR>
 
   imap <c-x><c-k> <plug>(fzf-complete-word)
   imap <c-x><c-f> <plug>(fzf-complete-path)
