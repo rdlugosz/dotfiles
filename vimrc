@@ -944,7 +944,7 @@ vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 
 " Mac OS X-only mappings
-if has("mac")
+if has('mac')
   " Assume we have the Airline-patched font
   let g:airline_powerline_fonts = 1
 
