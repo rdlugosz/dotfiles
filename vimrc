@@ -311,6 +311,10 @@ if exists(':Plug')
   Plug 'hail2u/vim-css3-syntax'
   Plug 'othree/html5.vim'
 
+  " In-line syntax testing
+  " https://github.com/vim-syntastic/syntastic
+  Plug 'vim-syntastic/syntastic'
+
   " Hooks a variety of language-specific code formatters onto the
   " gq command (via formatprog).
   " see: https://github.com/Chiel92/vim-autoformat
@@ -582,11 +586,12 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " vim-ruby
-let ruby_operators = 1
-let ruby_space_errors = 1
-let ruby_fold = 1
-let ruby_spellcheck_strings = 1
-
+let ruby_operators             = 1
+let ruby_space_errors          = 1
+let ruby_fold                  = 1
+let ruby_spellcheck_strings    = 1
+let g:rubycomplete_rails       = 1
+let g:rubycomplete_use_bundler = 1
 
 " Fuzzy finder stuff
 if !g:using_fzf
@@ -638,6 +643,14 @@ xmap <leader>a <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap <leader>a <Plug>(EasyAlign)
 
+" Syntastic config
+" See also in Statusline area
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
 " vim-expand-region config
 " vmap v <plug>(expand_region_expand)
 " vmap u <plug>(expand_region_shrink)
@@ -687,6 +700,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'[ff:\ '.&ff.']':''}
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'[enc:\ '.&fenc.']':''}
 set statusline+=%*
+
+if !empty("~/.local/share/nvim/plugged/syntastic") || !empty("~/.vim/plugged/syntastic")
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+endif
 
 set statusline+=[tab:\ %{&expandtab==1?'soft':'HARD'}\ %{&ts}] " tab info
 
