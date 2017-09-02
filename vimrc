@@ -621,7 +621,7 @@ if !g:using_fzf
   endif
 else
   " FZF config
-  nnoremap <C-P> :GFiles --exclude-standard --cached --others<CR>
+  nnoremap <C-P> :Files<CR>
   nnoremap <C-B> :Buffers<CR>
   nnoremap <C-T> :Tags<CR>
 
