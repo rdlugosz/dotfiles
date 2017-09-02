@@ -112,5 +112,9 @@ export PATH="./bin:$PATH"
 
 # configure fzf hooks if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f "$(command -v rg)" ]; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 # vim:set ft=sh et sw=2 foldmethod=marker:
