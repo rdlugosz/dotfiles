@@ -162,7 +162,7 @@ if exists(':Plug')
 
   " Vim-vinegar allows access to netrw via -
   " https://github.com/tpope/vim-vinegar
-  "Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-vinegar'
 
   " EasyAlign makes it easy to align stuff...
   " https://github.com/junegunn/vim-easy-align
@@ -296,6 +296,9 @@ if exists(':Plug')
   " GoldenView - attempt to auto-resize splits in a reasonable way
   " https://github.com/zhaocai/GoldenView.Vim
   "Plug 'zhaocai/GoldenView.Vim'
+
+  " Get a preview of register contents on " or @
+  Plug 'junegunn/vim-peekaboo'
 
   " Lols
   "Plug 'koron/nyancat-vim'
