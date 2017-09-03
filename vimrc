@@ -625,6 +625,11 @@ else
   nnoremap <C-B> :Buffers<CR>
   nnoremap <C-T> :Tags<CR>
 
+  " Files with preview
+  command! -bang -nargs=? -complete=dir FilesPreview
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+  nnoremap <C-V> :FilesPreview<CR>
+
   imap <c-x><c-k> <plug>(fzf-complete-word)
   imap <c-x><c-f> <plug>(fzf-complete-path)
   imap <c-x><c-j> <plug>(fzf-complete-file-ag)
