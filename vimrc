@@ -621,7 +621,8 @@ if !g:using_fzf
   endif
 else
   " FZF config
-  nnoremap <C-P> :Files<CR>
+  " nnoremap <C-P> :Files<CR>
+  nnoremap <C-P> :FilesPreview<CR>
   nnoremap <C-B> :Buffers<CR>
   nnoremap <C-T> :Tags<CR>
 
@@ -634,6 +635,24 @@ else
   imap <c-x><c-f> <plug>(fzf-complete-path)
   imap <c-x><c-j> <plug>(fzf-complete-file-ag)
   imap <c-x><c-l> <plug>(fzf-complete-line)
+
+  " Some useful commands from :help fzf
+  " :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+  " :Ag! - Start fzf in fullscreen and display the preview window above
+  command! -bang -nargs=* Ag
+    \ call fzf#vim#ag(<q-args>,
+    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \                 <bang>0)
+
+  " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+    \   <bang>0 ? fzf#vim#with_preview('up:60%')
+    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+    \   <bang>0)
+  nnoremap <leader>f :Rg!<space>
 endif
 
 " Buffergator config
