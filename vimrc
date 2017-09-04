@@ -332,7 +332,7 @@ if exists(':Plug')
   Plug 'junegunn/seoul256.vim'
   "Plug 'tomasr/molokai'
   "Plug 'sjl/badwolf'
-  Plug 'noahfrederick/vim-noctu'
+  Plug 'jsit/disco.vim'
   Plug 'lifepillar/vim-solarized8'
 
   let g:gruvbox_italic=1
@@ -465,9 +465,6 @@ endif
 
 set background=dark
 
-" Noctu inherits the terminal pallette so should look good in most situations.
-silent! colorscheme noctu
-
 if $TERM_PROFILE =~ "solarized_dark"
   colorscheme solarized
 elseif $TERM_PROFILE == "solarized_light"
@@ -475,6 +472,9 @@ elseif $TERM_PROFILE == "solarized_light"
   set background=light
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
+else
+  " Disco inherits the terminal pallette so should look good in most situations.
+  silent! colorscheme disco
 endif
 
 " Enable Neovim 24-bit color support
