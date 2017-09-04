@@ -677,6 +677,12 @@ let g:syntastic_check_on_open            = 1
 let g:syntastic_check_on_wq              = 0
 " let g:syntastic_quiet_messages = {'level': 'warnings'}
 
+" Peekaboo.vim
+" delay before opening; avoids flashes on screen when doing quick
+" things like @@.
+let g:peekaboo_delay = 200
+
+
 
 " vim-expand-region config
 " vmap v <plug>(expand_region_expand)
