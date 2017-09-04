@@ -632,7 +632,6 @@ else
   " Files with preview
   command! -bang -nargs=? -complete=dir FilesPreview
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-  nnoremap <C-V> :FilesPreview<CR>
 
   imap <c-x><c-k> <plug>(fzf-complete-word)
   imap <c-x><c-f> <plug>(fzf-complete-path)
