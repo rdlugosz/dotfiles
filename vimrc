@@ -140,7 +140,7 @@ if exists(':Plug')
   "   Press <c-d> to switch to filename only search instead of full path.
   "   Press <c-r> to switch to regexp mode.
   " https://github.com/ctrlpvim/ctrlp.vim
-  if !g:using_fzf
+  if !exists('g:using_fzf')
     Plug 'ctrlpvim/ctrlp.vim'
   endif
 
@@ -597,7 +597,7 @@ let g:rubycomplete_rails       = 1
 let g:rubycomplete_use_bundler = 1
 
 " Fuzzy finder stuff
-if !g:using_fzf
+if !exists('g:using_fzf')
   let g:ctrlp_map               = '<c-p>'      " activate with c-p
   let g:ctrlp_cmd               = 'CtrlPMixed' " start in the file + mru + buffers mode
   let g:ctrlp_mruf_relative     = 1            " only consider mru files in the working directory
