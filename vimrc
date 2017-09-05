@@ -734,7 +734,7 @@ set statusline+=%{&ff!='unix'?'[ff:\ '.&ff.']':''}
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'[enc:\ '.&fenc.']':''}
 set statusline+=%*
 
-if !empty("~/.local/share/nvim/plugged/syntastic") || !empty("~/.vim/plugged/syntastic")
+if (has('nvim') && !empty("~/.local/share/nvim/plugged/syntastic")) || (!has('nvim') && !empty("~/.vim/plugged/syntastic"))
   set statusline+=%{SyntasticStatuslineFlag()}
   set statusline+=%*
 endif
