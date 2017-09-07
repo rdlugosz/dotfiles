@@ -313,6 +313,7 @@ if exists(':Plug')
   Plug 'chrisbra/csv.vim'
   Plug 'hail2u/vim-css3-syntax'
   Plug 'othree/html5.vim'
+  Plug 'lifepillar/pgsql.vim'
 
   " In-line syntax testing
   " https://github.com/vim-syntastic/syntastic
@@ -682,6 +683,9 @@ let g:syntastic_check_on_wq              = 0
 " things like @@.
 let g:peekaboo_delay = 200
 
+" PGSql language config
+" Make default for all .SQL files
+let g:sql_type_default = 'pgsql'
 
 
 " vim-expand-region config
