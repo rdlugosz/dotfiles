@@ -109,6 +109,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
 
+# add Homebrew sbin to path
+export PATH="/usr/local/sbin:$PATH"
+
 # configure autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
