@@ -46,6 +46,7 @@
       _analyticsUserId: "356c709b-01c3-46f0-9bf4-51935544bd35"
   linter: {}
   "linter-ui-default":
+    panelHeight: 81
     showPanel: true
   metrics:
     userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
