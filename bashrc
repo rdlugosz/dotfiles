@@ -120,6 +120,8 @@ if [ -f "$(command -v rg)" ]; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
-
 # configure fzf hooks if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Each time we display the prompt, append to and load new history items
+PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
