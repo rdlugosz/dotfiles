@@ -8,7 +8,7 @@
 
 \encoding unicode
 -- Use a separate history file per-database and host.
-\set HISTFILE ~/.psql_history- :HOST - :DBNAME
+\set HISTFILE ~/.psql_history
 \set HISTSIZE 2000
 \set HISTCONTROL ignoredups
 
