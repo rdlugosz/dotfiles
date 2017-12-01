@@ -974,11 +974,12 @@ endfunction
 nnoremap <silent> n nzz:call HLNext(100)<cr>
 nnoremap <silent> N Nzz:call HLNext(100)<cr>
 
-" Grep for word under cursor with <leader>G
-nmap <leader>G <Plug>GreperBangWord
+" Grepper mappings
+nnoremap <leader>gg :Grepper<cr>
+nnoremap <leader>* :Grepper -cword -noprompt<cr>
 
 " BufferGator
-nmap <leader>b :BuffergatorOpen<CR>
+" nmap <leader>b :BuffergatorOpen<CR>
 
 " NERDTree stuff
 nmap <leader>n :NERDTreeToggle<CR>
