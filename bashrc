@@ -1,5 +1,3 @@
-# vim:set ft=sh et sw=2 foldmethod=marker:
-
 ### Append to the history file
 shopt -s histappend
 
@@ -7,8 +5,10 @@ shopt -s histappend
 shopt -s checkwinsize
 
 shopt -s cdspell
-shopt -s direxpand
-shopt -s dirspell
+if (( BASHVERSINFO[0] >= 4 )); then
+  shopt -s direxpand
+  shopt -s dirspell
+fi
 
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
@@ -88,14 +88,10 @@ then
   alias ls='/usr/local/bin/gls --color -F'
 fi
 
-# add the postgres.app CLI tools
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-# add the rust lang CLI tools
-export PATH="$HOME/.cargo/bin:$PATH"
-
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-  . /usr/local/share/bash-completion/bash_completion
+if (( BASHVERSINFO[0] >= 4 )); then
+  if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
+  fi
 fi
 
 # Set up Liquidprompt, only on interactive shells
@@ -106,12 +102,6 @@ fi
 
 # set up Ruby shims and autocomplete
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# Add ruby Binstubs to our path (must have priority over the rbenv shims!)
-export PATH="./bin:$PATH"
-
-# add Homebrew sbin to path
-export PATH="/usr/local/sbin:$PATH"
-
 # configure autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -125,3 +115,6 @@ fi
 
 # Each time we display the prompt, append to and load new history items
 PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
+
+
+# vim:set ft=sh et sw=2 foldmethod=marker:
