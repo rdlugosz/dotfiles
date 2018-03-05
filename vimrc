@@ -297,9 +297,6 @@ if exists(':Plug')
   " https://github.com/zhaocai/GoldenView.Vim
   "Plug 'zhaocai/GoldenView.Vim'
 
-  " Get a preview of register contents on " or @
-  Plug 'junegunn/vim-peekaboo'
-
   " Lols
   "Plug 'koron/nyancat-vim'
 
@@ -331,9 +328,10 @@ if exists(':Plug')
   Plug 'chriskempson/base16-vim'
   "Plug 'nanotech/jellybeans.vim'
   Plug 'junegunn/seoul256.vim'
-  "Plug 'tomasr/molokai'
+  Plug 'tomasr/molokai'
   "Plug 'sjl/badwolf'
   Plug 'jsit/disco.vim'
+  Plug 'romainl/flattened'
   Plug 'lifepillar/vim-solarized8'
 
   let g:gruvbox_italic=1
@@ -480,7 +478,7 @@ endif
 
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
-  " set termguicolors
+  set termguicolors
   " silent! colorscheme zenburn
 end
 
@@ -680,11 +678,6 @@ let g:syntastic_check_on_wq              = 0
 let g:syntastic_eruby_ruby_quiet_messages =
     \ {'regex': 'possibly useless use of a variable in void context'}
 
-" Peekaboo.vim
-" delay before opening; avoids flashes on screen when doing quick
-" things like @@.
-let g:peekaboo_delay = 200
-
 " PGSql language config
 " Make default for all .SQL files
 let g:sql_type_default = 'pgsql'
@@ -854,6 +847,9 @@ if has('nvim')
   " Retain escape functionality in Terminal mode
   tnoremap <ESC> <C-\><C-n>
   tnoremap kj <C-\><C-n>
+
+  " Escape and page up on C-u
+  tnoremap <C-u> <C-\><C-n><C-u>
 
   " Retain TMUX-navigator keys in terminal
   tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
