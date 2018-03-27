@@ -333,6 +333,7 @@ if exists(':Plug')
   Plug 'jsit/disco.vim'
   Plug 'romainl/flattened'
   Plug 'lifepillar/vim-solarized8'
+  Plug 'fenetikm/falcon'
 
   let g:gruvbox_italic=1
   " let g:gruvbox_improved_strings=1
@@ -470,6 +471,8 @@ elseif $TERM_PROFILE == "solarized_light"
   colorscheme solarized
   set background=light
 elseif $TERM_PROFILE == "gruvbox"
+  colorscheme gruvbox
+elseif has("gui_vimr")
   colorscheme gruvbox
 else
   " Disco inherits the terminal pallette so should look good in most situations.
