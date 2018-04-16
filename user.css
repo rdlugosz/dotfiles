@@ -1,0 +1,4 @@
+/* Halt the battery-killing animated snow on /r/drums */
+#header {
+  animation: none !important;
+}
