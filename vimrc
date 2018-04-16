@@ -472,11 +472,13 @@ elseif $TERM_PROFILE == "solarized_light"
   set background=light
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
-elseif has("gui_vimr")
-  colorscheme gruvbox
 else
   " Disco inherits the terminal pallette so should look good in most situations.
   silent! colorscheme disco
+endif
+
+if has("gui_vimr")
+  colorscheme gruvbox
 endif
 
 " Enable Neovim 24-bit color support
