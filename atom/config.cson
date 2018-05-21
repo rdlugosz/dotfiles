@@ -25,13 +25,13 @@
     projectHome: "/Users/ryan/workspace"
     telemetryConsent: "limited"
     themes: [
-      "atom-light-ui"
-      "one-light-syntax"
+      "pristine-ui"
+      "spacegray-atom-dark-syntax"
     ]
     titleBar: "custom"
   editor:
     backUpBeforeSaving: true
-    fontFamily: "Menlo"
+    fontFamily: "FiraCode-Retina"
     fontSize: 12
     invisibles: {}
     scrollPastEnd: true
@@ -47,7 +47,6 @@
   linter: {}
   "linter-ui-default":
     panelHeight: 81
-    showPanel: true
   metrics:
     userId: "eb6b1261e717d006f4bed64b8ad7e2d971c694cc"
   minimap: {}
