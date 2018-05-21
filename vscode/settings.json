@@ -1,0 +1,47 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+
+    "vim.enableNeovim": true,
+    "editor.fontFamily": "FiraCode-Retina,Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "vim.leader": "<Space>",
+    "vim.cmdLineInitialColon": true,
+    "vim.visualstar": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["k","j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["leader", "w"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": ["leader", "d"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "extension.dash.specific",
+                    "args": []
+                }
+            ]
+        }
+    ],
+    "workbench.colorTheme": "Solarized Light",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "extensions.ignoreRecommendations": false,
+    "gitlens.historyExplorer.enabled": true
+}
