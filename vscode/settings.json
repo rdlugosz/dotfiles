@@ -1,47 +1,58 @@
-// Place your settings in this file to overwrite the default settings
 {
+    "editor.fontFamily": "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "extensions.ignoreRecommendations": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
     "ruby.codeCompletion": "rcodetools",
     "ruby.format": "rubocop",
     "ruby.intellisense": "rubyLocate",
-
-    "vim.enableNeovim": true,
-    "editor.fontFamily": "FiraCode-Retina,Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "vim.leader": "<Space>",
     "vim.cmdLineInitialColon": true,
-    "vim.visualstar": true,
+    "vim.enableNeovim": true,
     "vim.insertModeKeyBindings": [
         {
-            "before": ["k","j"],
-            "after": ["<Esc>"]
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "k",
+                "j"
+            ]
         }
     ],
+    "vim.leader": "<Space>",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
-            "before": ["leader", "w"],
             "after": [],
+            "before": [
+                "leader",
+                "w"
+            ],
             "commands": [
                 {
-                    "command": "workbench.action.files.save",
-                    "args": []
+                    "args": [],
+                    "command": "workbench.action.files.save"
                 }
             ]
         },
         {
-            "before": ["leader", "d"],
             "after": [],
+            "before": [
+                "leader",
+                "d"
+            ],
             "commands": [
                 {
-                    "command": "extension.dash.specific",
-                    "args": []
+                    "args": [],
+                    "command": "extension.dash.specific"
                 }
             ]
         }
     ],
-    "workbench.colorTheme": "Solarized Light",
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "extensions.ignoreRecommendations": false,
-    "gitlens.historyExplorer.enabled": true
+    "vim.visualstar": true,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "workbench.iconTheme": "material-icon-theme"
 }
