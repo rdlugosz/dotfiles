@@ -2,6 +2,7 @@
     "editor.fontFamily": "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "extensions.ignoreRecommendations": false,
+    "git.autofetch": true,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
