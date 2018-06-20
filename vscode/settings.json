@@ -1,6 +1,11 @@
 {
     "editor.fontFamily": "FiraCode-Retina, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
+    "editor.lineNumbers": "relative",
+    "editor.tabSize": 2,
+    "emmet.includeLanguages": {
+        "html.erb": "html"
+    },
     "extensions.ignoreRecommendations": false,
     "git.autofetch": true,
     "gitlens.advanced.messages": {
@@ -24,7 +29,7 @@
         }
     ],
     "vim.leader": "<Space>",
-    "vim.otherModesKeyBindingsNonRecursive": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
             "after": [],
             "before": [
@@ -50,10 +55,28 @@
                     "command": "extension.dash.specific"
                 }
             ]
+        },
+        {
+            "after": [
+                "g",
+                "j"
+            ],
+            "before": [
+                "j"
+            ]
+        },
+        {
+            "after": [
+                "g",
+                "k"
+            ],
+            "before": [
+                "k"
+            ]
         }
     ],
     "vim.visualstar": true,
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Gruvbox Dark (Hard)",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.iconTheme": "material-icon-theme"
 }
