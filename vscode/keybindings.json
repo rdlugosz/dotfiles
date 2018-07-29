@@ -13,6 +13,10 @@
         "command": "workbench.action.navigateLeft"
     },
     {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen",
+        "when": "editorTextFocus"
+    },{
         "key": "ctrl+l",
         "command": "workbench.action.navigateRight"
     }

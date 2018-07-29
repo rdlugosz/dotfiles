@@ -77,6 +77,36 @@
     ],
     "vim.visualstar": true,
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Solarized Light",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.easymotion": true,
+    "vim.statusBarColorControl": true,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.settings.mode": "advanced",
+    "gitlens.menus": {
+        "editor": {
+            "blame": false,
+            "clipboard": true,
+            "compare": true,
+            "details": true,
+            "history": false,
+            "remote": true
+        },
+        "editorGroup": {
+            "blame": true,
+            "compare": true,
+            "history": false,
+            "remote": false
+        },
+        "editorTab": {
+            "compare": true,
+            "history": false,
+            "remote": true
+        },
+        "explorer": {
+            "compare": true,
+            "history": true,
+            "remote": true
+        }
+    },
+    "workbench.colorTheme": "Gruvbox Dark (Medium)"
 }
