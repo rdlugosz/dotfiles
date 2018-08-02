@@ -8660,8 +8660,8 @@
 		<array>
 			<string>iTermTouchBarIdentifierManPage</string>
 			<string>iTermTouchBarIdentifierFunctionKeys</string>
+			<string>iTermTouchBarIdentifierStatus</string>
 			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
-			<string>tab bar</string>
 			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
 			<string>iTermTouchBarIdentifierAddMark</string>
 			<string>iTermTouchBarIdentifierPreviousMark</string>
@@ -8709,13 +8709,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>845 183 557 330 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 220 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>255 373 796 486 0 0 1440 900 </string>
+	<string>255 412 1018 447 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1757 3 1445 1020 1440 -32 2560 1417 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1</key>
@@ -15482,7 +15482,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -18141,7 +18141,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-29T11:47:42Z</date>
+	<date>2018-08-01T15:14:11Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -18150,6 +18150,8 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowMetalFPSmeter</key>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -18200,11 +18202,15 @@
 	<integer>0</integer>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>disableMetalWhenUnplugged</key>
+	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.0beta6</string>
+	<string>3.2.0beta9</string>
+	<key>metalMaximizeThroughput</key>
+	<false/>
 </dict>
 </plist>
