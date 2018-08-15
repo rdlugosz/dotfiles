@@ -8711,11 +8711,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 220 606 469 0 0 1440 877 </string>
+	<string>269 288 597 401 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>255 412 1018 447 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>0 0 1440 877 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1</key>
@@ -18141,7 +18141,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-01T15:14:11Z</date>
+	<date>2018-08-14T18:35:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -18211,6 +18211,6 @@
 	<key>iTerm Version</key>
 	<string>3.2.0beta9</string>
 	<key>metalMaximizeThroughput</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
