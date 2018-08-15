@@ -35,6 +35,7 @@ fi
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+alias ls='ls --color=auto'
 alias lt='ls -ltrah'
 alias la='ls -a'
 alias ll='ls -la'
