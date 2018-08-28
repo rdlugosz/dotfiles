@@ -130,8 +130,13 @@ if exists(':Plug')
   "Plug 'jeetsukumaran/vim-buffergator'
 
   if executable('fzf')
-    Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-    let g:using_fzf = 1
+    if filereadable("/home/linuxbrew/.linuxbrew/opt/fzf/README.md")
+      Plug '/home/linuxbrew/.linuxbrew/opt/fzf' | Plug 'junegunn/fzf.vim'
+      let g:using_fzf = 1
+    elseif filereadable("/usr/local/opt/fzf/README.md")
+      Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+      let g:using_fzf = 1
+    endif
   endif
 
   " CtrlP.vim is a fuzzy file, buffer, mru, tag, etc finder.
@@ -330,7 +335,6 @@ if exists(':Plug')
   Plug 'junegunn/seoul256.vim'
   Plug 'tomasr/molokai'
   "Plug 'sjl/badwolf'
-  Plug 'jsit/disco.vim'
   Plug 'romainl/flattened'
   Plug 'lifepillar/vim-solarized8'
   Plug 'fenetikm/falcon'
@@ -473,8 +477,7 @@ elseif $TERM_PROFILE == "solarized_light"
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
 else
-  " Disco inherits the terminal pallette so should look good in most situations.
-  silent! colorscheme disco
+  " silent! colorscheme disco
 endif
 
 if has("gui_vimr")

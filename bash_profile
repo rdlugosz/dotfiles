@@ -7,6 +7,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # add Homebrew sbin to path
 export PATH="/usr/local/sbin:$PATH"
 
+# add Linuxbrew to path
+if [ -d /home/linuxbrew ]; then
+  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH="./bin:$PATH"
 
