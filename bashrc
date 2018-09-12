@@ -21,6 +21,8 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+export ANDROID_HOME=~/Library/Android
+
 # if this is an interactive terminal, set some completion config
 if [ -t 1 ]
 then
