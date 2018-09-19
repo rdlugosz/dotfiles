@@ -173,11 +173,6 @@ if exists(':Plug')
   " https://github.com/junegunn/vim-easy-align
   Plug 'junegunn/vim-easy-align'
 
-  " Adds some highlighting on f F t T that make it easier to see
-  " where you can quickly jump to on a line.
-  " https://github.com/unblevable/quick-scope
-  Plug 'unblevable/quick-scope'
-
   " This allows you to select some text using Vim's visual mode and then hit *
   " and # to search for it elsewhere in the file.  For example, hit V, select
   " a strange sequence of characters like '$! $!', and hit star.  You'll find
