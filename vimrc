@@ -1019,6 +1019,12 @@ vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 
+" Disable built-in v_u mapping
+" ...we have a tendency to hit 'u' to undo while stuff is selected,
+" which causes everything to become lowercase.
+vnoremap u :echo "press ESC to clear selection"<CR>
+
+
 " Mac OS X-only mappings
 if has('mac')
   " Assume we have the Airline-patched font
