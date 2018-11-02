@@ -594,6 +594,9 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN-RELATED CONFIG {{{1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" netrw
+" <Ctrl-^> should go to the last file, not to netrw.
+let g:netrw_altfile = 1
 
 " vim-ruby
 let ruby_operators             = 1
