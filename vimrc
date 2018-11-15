@@ -330,14 +330,9 @@ if exists(':Plug')
   Plug 'altercation/vim-colors-solarized'
   Plug 'tpope/vim-vividchalk'
   Plug 'vim-scripts/Zenburn'
-  Plug 'chriskempson/base16-vim'
-  "Plug 'nanotech/jellybeans.vim'
   Plug 'junegunn/seoul256.vim'
   Plug 'tomasr/molokai'
-  "Plug 'sjl/badwolf'
   Plug 'romainl/flattened'
-  Plug 'lifepillar/vim-solarized8'
-  Plug 'fenetikm/falcon'
 
   let g:gruvbox_italic=1
   " let g:gruvbox_improved_strings=1
