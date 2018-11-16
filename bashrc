@@ -1,6 +1,3 @@
-### Append to the history file
-shopt -s histappend
-
 ### Check the window size after each command ($LINES, $COLUMNS)
 shopt -s checkwinsize
 
@@ -12,10 +9,6 @@ fi
 
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
-
-export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=10000
-export HISTFILESIZE=100000
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -120,8 +113,13 @@ fi
 # configure fzf hooks if installed
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Each time we display the prompt, append to and load new history items
-PROMPT_COMMAND="history -a;history -n;$PROMPT_COMMAND"
+### Append to the history file
+# https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history
+shopt -s histappend
+HISTCONTROL=ignoredups:erasedups
+HISTSIZE=10000
+HISTFILESIZE=100000
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 
 # vim:set ft=sh et sw=2 foldmethod=marker:
