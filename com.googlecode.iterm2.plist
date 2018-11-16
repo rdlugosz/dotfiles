@@ -8709,13 +8709,13 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>845 183 557 330 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>410 363 620 392 0 0 1440 877 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 248 606 469 0 0 1440 877 </string>
+	<string>269 278 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>255 412 1018 447 0 0 1440 877 </string>
+	<string>255 455 916 404 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 877 0 0 1440 877 </string>
+	<string>0 0 1440 900 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>212 101 570 452 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_75FB8848-F7BA-4B4F-9AFE-737C0F3D74E1</key>
@@ -11267,6 +11267,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -19053,7 +19055,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-09-21T13:32:23Z</date>
+	<date>2018-10-01T19:08:40Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -19121,8 +19123,8 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.1beta5</string>
+	<string>3.2.1beta6</string>
 	<key>metalMaximizeThroughput</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
