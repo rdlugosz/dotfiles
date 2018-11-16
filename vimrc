@@ -317,6 +317,10 @@ if exists(':Plug')
   Plug 'othree/html5.vim'
   Plug 'lifepillar/pgsql.vim'
 
+  " TabNine is autocomplete + machine learning
+  " https://tabnine.com
+  Plug 'zxqfl/tabnine-vim'
+
   " In-line syntax testing
   " https://github.com/vim-syntastic/syntastic
   Plug 'vim-syntastic/syntastic'
@@ -660,6 +664,23 @@ else
     \           : fzf#vim#with_preview('right:50%:hidden', '?'),
     \   <bang>0)
   nnoremap <leader>f :Rg!<space>
+
+  " Customize fzf colors to match your color scheme
+  let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+
 endif
 
 " Buffergator config
