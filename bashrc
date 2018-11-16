@@ -116,7 +116,7 @@ fi
 ### Append to the history file
 # https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history
 shopt -s histappend
-HISTCONTROL=ignoredups:erasedups
+HISTCONTROL=ignoreboth:erasedups
 HISTSIZE=10000
 HISTFILESIZE=100000
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
