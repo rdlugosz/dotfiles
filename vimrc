@@ -317,10 +317,6 @@ if exists(':Plug')
   Plug 'othree/html5.vim'
   Plug 'lifepillar/pgsql.vim'
 
-  " TabNine is autocomplete + machine learning
-  " https://tabnine.com
-  Plug 'zxqfl/tabnine-vim'
-
   " In-line syntax testing
   " https://github.com/vim-syntastic/syntastic
   Plug 'vim-syntastic/syntastic'
