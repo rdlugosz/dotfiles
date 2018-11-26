@@ -1,3 +1,23 @@
+# add the postgres.app CLI tools
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+# add the rust lang CLI tools
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# add Homebrew to path
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
+
+# add Linuxbrew to path
+if [ -d /home/linuxbrew ]; then
+  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
+# Add ruby Binstubs to our path (must have priority over the rbenv shims!)
+export PATH="./bin:$PATH"
+
+# add personal bins to path
+export PATH="~/bin:$PATH"
+
 ### Check the window size after each command ($LINES, $COLUMNS)
 shopt -s checkwinsize
 
@@ -25,7 +45,7 @@ fi
 
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
-[[ -s /usr/local/bin/gdircolors ]] && eval `gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`
+[[ -s /usr/local/bin/gdircolors ]] && eval `/usr/local/bin/gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
