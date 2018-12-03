@@ -77,7 +77,6 @@
     ],
     "vim.visualstar": true,
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "material-icon-theme",
     "vim.easymotion": true,
     "vim.statusBarColorControl": true,
     "gitlens.codeLens.enabled": false,
@@ -108,10 +107,11 @@
             "remote": true
         }
     },
-    "workbench.colorTheme": "Quiet Light",
     "workbench.colorCustomizations": {
         "statusBar.background": "#005f5f",
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
-    }
+    },
+    "window.nativeFullScreen": false,
+    "workbench.editor.highlightModifiedTabs": true
 }
