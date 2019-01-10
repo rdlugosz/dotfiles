@@ -113,5 +113,6 @@
         "statusBar.debuggingBackground": "#005f5f"
     },
     "window.nativeFullScreen": false,
-    "workbench.editor.highlightModifiedTabs": true
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.colorTheme": "Default Light+"
 }
