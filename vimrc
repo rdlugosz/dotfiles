@@ -591,7 +591,11 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " netrw
 " <Ctrl-^> should go to the last file, not to netrw.
+" This also means that using vim-vinegar won't clobber the alt file.
 let g:netrw_altfile = 1
+
+" remap how we open Gstatus to prevent clobbering the alt file.
+nnoremap <leader>gs :keepalt Gstatus<cr>
 
 " vim-ruby
 let ruby_operators             = 1
