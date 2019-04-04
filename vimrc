@@ -475,14 +475,14 @@ if $TERM_PROFILE =~ "solarized_dark"
   if (has('termguicolors') && &termguicolors)
     colorscheme solarized8
   else
-    colorscheme solarized
+    colorscheme solarized8
   endif
 elseif $TERM_PROFILE == "solarized_light"
   set background=light
   if (has('termguicolors') && &termguicolors)
     colorscheme solarized8
   else
-    colorscheme solarized
+    colorscheme solarized8
   endif
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
