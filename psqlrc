@@ -20,13 +20,13 @@
 -- Use table format (with headers across the top) by default, but switch to
 -- expanded table format when there's a lot of data, which makes it much
 -- easier to read.
-\x auto
+-- \x auto
 \pset linestyle unicode
-\pset border 2
+\pset border 0
 \pset null '[NULL]'
 \pset expanded auto
-\pset pager on
-\pset format aligned
+\pset pager off
+-- \pset format aligned
 -- Show verbose error messages
 \set VERBOSITY verbose
 -- show how long it took a query to execute
