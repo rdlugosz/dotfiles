@@ -567,6 +567,7 @@ key_bindings:
   - { key: Q,      mods: Command,         action: Quit             }
   - { key: W,      mods: Command,         action: Quit             }
   - { key: Return, mods: Command,         action: ToggleFullscreen }
+  - { key: N,      mods: Command,         action: SpawnNewInstance }
 
   - { key: Paste,                   action: Paste                            }
   - { key: Copy,                    action: Copy                             }
