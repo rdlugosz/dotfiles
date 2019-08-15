@@ -5,6 +5,7 @@
 	"ignored_packages":
 	[
 		"Markdown",
+		"Package Control",
 		"Vintage"
 	],
 	"tab_size": 2,

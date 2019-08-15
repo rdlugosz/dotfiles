@@ -114,8 +114,9 @@
     },
     "window.nativeFullScreen": false,
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "One Dark Pro Bold",
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    "vim.neovimPath": "/usr/local/bin/nvim"
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "editor.fontSize": 14
 }
