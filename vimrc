@@ -473,16 +473,16 @@ set background=dark
 if $TERM_PROFILE =~ "solarized_dark"
   set background=dark
   if (has('termguicolors') && &termguicolors)
-    colorscheme solarized8
+    colorscheme solarized
   else
-    colorscheme solarized8
+    colorscheme solarized
   endif
 elseif $TERM_PROFILE == "solarized_light"
   set background=light
   if (has('termguicolors') && &termguicolors)
-    colorscheme solarized8
+    colorscheme solarized
   else
-    colorscheme solarized8
+    colorscheme solarized
   endif
 elseif $TERM_PROFILE == "gruvbox"
   colorscheme gruvbox
