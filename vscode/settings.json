@@ -79,7 +79,6 @@
     "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.statusBarColorControl": true,
-    "gitlens.codeLens.enabled": false,
     "gitlens.settings.mode": "advanced",
     "gitlens.menus": {
         "editor": {
@@ -118,5 +117,8 @@
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.format": "${agoOrDate} • ${message}"
 }
