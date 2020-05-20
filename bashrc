@@ -18,14 +18,6 @@ export PATH="./bin:$PATH"
 # add personal bins to path
 export PATH="~/bin:$PATH"
 
-### Check the window size after each command ($LINES, $COLUMNS)
-shopt -s checkwinsize
-
-shopt -s cdspell
-if (( BASHVERSINFO[0] >= 4 )); then
-  shopt -s direxpand
-  shopt -s dirspell
-fi
 
 ### Disable CTRL-S and CTRL-Q
 [[ $- =~ i ]] && stty -ixoff -ixon
