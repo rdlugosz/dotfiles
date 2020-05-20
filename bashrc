@@ -28,13 +28,6 @@ export PAGER='less'
 
 export ANDROID_HOME=~/Library/Android
 
-# if this is an interactive terminal, set some completion config
-if [ -t 1 ]
-then
-  bind 'TAB:menu-complete'
-  # some other completion-related stuff lives in .inputrc
-fi
-
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
 
 [[ -s /usr/local/bin/gdircolors ]] && eval `/usr/local/bin/gdircolors ~/.dircolors-solarized/dircolors.ansi-universal`

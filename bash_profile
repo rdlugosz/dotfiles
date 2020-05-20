@@ -14,4 +14,11 @@ if (( BASHVERSINFO[0] >= 4 )); then
   shopt -s dirspell
 fi
 
+# if this is an interactive terminal, set some completion config
+if [ -t 1 ]
+then
+  bind 'TAB:menu-complete'
+  # some other completion-related stuff lives in .inputrc
+fi
+
 # vim:set ft=sh et sw=2 foldmethod=marker:
