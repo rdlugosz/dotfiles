@@ -466,6 +466,7 @@ endif
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
   set termguicolors
+  colorscheme OceanicNext
 end
 
 set background=dark
