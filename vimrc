@@ -327,8 +327,7 @@ if exists(':Plug')
   "Plug 'Chiel92/vim-autoformat'
 
   " Colorschemes
-  Plug 'altercation/vim-colors-solarized'
-  Plug 'lifepillar/vim-solarized8'
+  Plug 'icymind/NeoSolarized'
   Plug 'tpope/vim-vividchalk'
   Plug 'vim-scripts/Zenburn'
   Plug 'junegunn/seoul256.vim'
@@ -454,46 +453,38 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
   runtime! macros/matchit.vim
 endif
 
-" Set colorscheme
-" Allow color schemes to do bright colors without forcing bold.
-" if &t_Co == 8 && $TERM !~# '^linux'
-"   set t_Co=16
-" endif
-" if $TERM =~ "-256color"
-"   set t_Co=256
-" endif
 
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
   set termguicolors
-  colorscheme OceanicNext
 end
 
 set background=dark
+colorscheme NeoSolarized
 
-if $TERM_PROFILE =~ "solarized_dark"
-  set background=dark
-  if (has('termguicolors') && &termguicolors)
-    colorscheme solarized
-  else
-    colorscheme solarized
-  endif
-elseif $TERM_PROFILE == "solarized_light"
-  set background=light
-  if (has('termguicolors') && &termguicolors)
-    colorscheme solarized
-  else
-    colorscheme solarized
-  endif
-elseif $TERM_PROFILE == "gruvbox"
-  colorscheme gruvbox
-else
-  " silent! colorscheme disco
-endif
+" if $TERM_PROFILE =~ "solarized_dark"
+"   set background=dark
+"   if (has('termguicolors') && &termguicolors)
+"     colorscheme solarized
+"   else
+"     colorscheme solarized
+"   endif
+" elseif $TERM_PROFILE == "solarized_light"
+"   set background=light
+"   if (has('termguicolors') && &termguicolors)
+"     colorscheme solarized
+"   else
+"     colorscheme solarized
+"   endif
+" elseif $TERM_PROFILE == "gruvbox"
+"   colorscheme gruvbox
+" else
+"   " silent! colorscheme disco
+" endif
 
-if has("gui_vimr")
-  colorscheme gruvbox
-endif
+" if has("gui_vimr")
+"   colorscheme gruvbox
+" endif
 
 
 " Write swap and backup files in the event of a crash or accident
