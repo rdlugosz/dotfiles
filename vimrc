@@ -457,10 +457,10 @@ endif
 " Enable Neovim 24-bit color support
 if has('nvim') && $COLORTERM == 'truecolor'
   set termguicolors
+  set background=dark
+  colorscheme NeoSolarized
 end
 
-set background=dark
-colorscheme NeoSolarized
 
 " if $TERM_PROFILE =~ "solarized_dark"
 "   set background=dark
