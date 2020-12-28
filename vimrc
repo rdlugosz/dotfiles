@@ -462,29 +462,21 @@ if has('nvim') && $COLORTERM == 'truecolor'
 end
 
 
-" if $TERM_PROFILE =~ "solarized_dark"
-"   set background=dark
-"   if (has('termguicolors') && &termguicolors)
-"     colorscheme solarized
-"   else
-"     colorscheme solarized
-"   endif
-" elseif $TERM_PROFILE == "solarized_light"
-"   set background=light
-"   if (has('termguicolors') && &termguicolors)
-"     colorscheme solarized
-"   else
-"     colorscheme solarized
-"   endif
-" elseif $TERM_PROFILE == "gruvbox"
-"   colorscheme gruvbox
+if $TERM_PROFILE =~ "solarized_dark"
+  set background=dark
+  colorscheme NeoSolarized
+elseif $TERM_PROFILE == "solarized_light"
+  set background=light
+  colorscheme NeoSolarized
+elseif $TERM_PROFILE == "gruvbox"
+  colorscheme gruvbox
 " else
-"   " silent! colorscheme disco
-" endif
+  " silent! colorscheme disco
+endif
 
-" if has("gui_vimr")
-"   colorscheme gruvbox
-" endif
+if has("gui_vimr")
+  colorscheme gruvbox
+endif
 
 
 " Write swap and backup files in the event of a crash or accident
