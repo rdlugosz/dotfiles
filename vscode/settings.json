@@ -112,7 +112,7 @@
     },
     "window.nativeFullScreen": false,
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Cobalt Next",
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
