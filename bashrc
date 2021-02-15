@@ -26,6 +26,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+# Merge tool for Rails
+export THOR_MERGE='code -d $1 $2'
+
 export ANDROID_HOME=~/Library/Android
 
 [ -z "$TMPDIR" ] && TMPDIR=/tmp
