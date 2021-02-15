@@ -19,5 +19,13 @@
     },{
         "key": "ctrl+l",
         "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.compareEditor.focusPrimarySide"
+    },
+    {
+        "key": "shift+space",
+        "command": "workbench.action.compareEditor.focusOtherSide"
     }
 ]
