@@ -287,7 +287,7 @@ if exists(':Plug')
   "   gJ (with the cursor on the first line of a block) to join a block into a
   "   single-line statement.
   " https://github.com/AndrewRadev/splitjoin.vim
-  "Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
 
   " SnipMate aims to provide support for textual snippets, similar to TextMate
   " or other Vim plugins. Activate by typing some text and hitting <tab>.
@@ -563,14 +563,13 @@ if executable('ag')
 endif
 
 " Folding
-set foldmethod=syntax
+set foldmethod=manual "note: some methods, esp 'syntax' cause major slowdowns
 " Sets the fold level: Folds with a higher level will be closed.  Setting
 " this option to zero will close all folds.  Higher numbers will close fewer
 " folds.
 " set foldlevel=1
 " set foldnestmax=10
-" set nofoldenable   " start with all folds open (toggle via zi)
-set foldlevel=9 " Start with all folds open
+" set foldlevel=9 " Start with all folds open
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
