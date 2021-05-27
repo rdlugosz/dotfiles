@@ -11,6 +11,7 @@
 " Any questions, contact @lbwski
 "
 " FOLDING TIPS:
+"   zi - toggle foldenable
 "   zo - open a fold
 "   zc - close a fold
 "   za - toggle a fold
@@ -569,7 +570,8 @@ set foldmethod=manual "note: some methods, esp 'syntax' cause major slowdowns
 " folds.
 " set foldlevel=1
 " set foldnestmax=10
-" set foldlevel=9 " Start with all folds open
+" set foldlevel=9
+set nofoldenable
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump
