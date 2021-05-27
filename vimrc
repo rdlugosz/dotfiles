@@ -455,8 +455,12 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 
-" Enable Neovim 24-bit color support
-if has('nvim') && $COLORTERM == 'truecolor'
+" Enable 24-bit color support
+if $COLORTERM == 'truecolor'
+  " next two lines a fix for Vim going black & white in tmux
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
   set termguicolors
   set background=dark
   colorscheme NeoSolarized
@@ -476,7 +480,7 @@ elseif $TERM_PROFILE == "gruvbox"
 endif
 
 if has("gui_vimr")
-  colorscheme gruvbox
+  colorscheme NeoSolarized
 endif
 
 
