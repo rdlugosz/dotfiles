@@ -7,9 +7,6 @@
     },
     "extensions.ignoreRecommendations": false,
     "git.autofetch": true,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
     "gitlens.historyExplorer.enabled": true,
     "ruby.codeCompletion": "rcodetools",
     "ruby.format": "rubocop",
@@ -114,7 +111,6 @@
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.colorTheme": "Cobalt Next",
     "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "editor.fontSize": 14,
     "gitlens.hovers.currentLine.over": "line",
@@ -126,5 +122,13 @@
     "[ruby]": {
         "editor.defaultFormatter": "misogi.ruby-rubocop"
     },
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "html.format.templating": true,
+    "workbench.editorAssociations": {
+        "*.erb": "erb"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "files.associations": {
+        "*.erb": "erb"
+      }
 }
