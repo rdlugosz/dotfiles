@@ -88,6 +88,10 @@ if [[ -s /usr/local/bin/gls ]]
 then
   alias ls='/usr/local/bin/gls --color -F'
 fi
+if [[ -s /opt/homebrew/bin/gls ]]
+then
+  alias ls='/opt/homebrew/bin/gls --color -F'
+fi
 
 if (( BASHVERSINFO[0] >= 4 )); then
   if [ -f /usr/local/share/bash-completion/bash_completion ]; then

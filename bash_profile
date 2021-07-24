@@ -21,4 +21,5 @@ then
   # some other completion-related stuff lives in .inputrc
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # vim:set ft=sh et sw=2 foldmethod=marker:
