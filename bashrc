@@ -113,6 +113,7 @@ HEROKU_AC_BASH_SETUP_PATH=/Users/ryan/Library/Caches/heroku/autocomplete/bash_se
 
 # configure autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 if [ -f "$(command -v rg)" ]; then
   export FZF_DEFAULT_COMMAND='rg --files --no-messages'

@@ -21,5 +21,9 @@ then
   # some other completion-related stuff lives in .inputrc
 fi
 
+PATH="~/.rbenv/shims:${PATH}"
+export PATH
+
+eval "$(rbenv init -)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # vim:set ft=sh et sw=2 foldmethod=marker:
