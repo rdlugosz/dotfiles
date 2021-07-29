@@ -8547,9 +8547,9 @@
 	<key>Default Bookmark Guid</key>
 	<string>5E1CB228-31D9-4C46-A38D-66967919318B</string>
 	<key>DimBackgroundWindows</key>
-	<true/>
+	<false/>
 	<key>DimInactiveSplitPanes</key>
-	<true/>
+	<false/>
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
