@@ -11,6 +11,7 @@
 " Any questions, contact @lbwski
 "
 " FOLDING TIPS:
+"   zi - toggle foldenable
 "   zo - open a fold
 "   zc - close a fold
 "   za - toggle a fold
@@ -287,7 +288,7 @@ if exists(':Plug')
   "   gJ (with the cursor on the first line of a block) to join a block into a
   "   single-line statement.
   " https://github.com/AndrewRadev/splitjoin.vim
-  "Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'AndrewRadev/splitjoin.vim'
 
   " SnipMate aims to provide support for textual snippets, similar to TextMate
   " or other Vim plugins. Activate by typing some text and hitting <tab>.
@@ -454,37 +455,33 @@ if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
 endif
 
 
-" Enable Neovim 24-bit color support
-if has('nvim') && $COLORTERM == 'truecolor'
+" Enable 24-bit color support
+if $COLORTERM == 'truecolor'
+  " next two lines a fix for Vim going black & white in tmux
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
   set termguicolors
   set background=dark
   colorscheme NeoSolarized
 end
 
 
-" if $TERM_PROFILE =~ "solarized_dark"
-"   set background=dark
-"   if (has('termguicolors') && &termguicolors)
-"     colorscheme solarized
-"   else
-"     colorscheme solarized
-"   endif
-" elseif $TERM_PROFILE == "solarized_light"
-"   set background=light
-"   if (has('termguicolors') && &termguicolors)
-"     colorscheme solarized
-"   else
-"     colorscheme solarized
-"   endif
-" elseif $TERM_PROFILE == "gruvbox"
-"   colorscheme gruvbox
+if $TERM_PROFILE =~ "solarized_dark"
+  set background=dark
+  colorscheme NeoSolarized
+elseif $TERM_PROFILE == "solarized_light"
+  set background=light
+  colorscheme NeoSolarized
+elseif $TERM_PROFILE == "gruvbox"
+  colorscheme gruvbox
 " else
-"   " silent! colorscheme disco
-" endif
+  " silent! colorscheme disco
+endif
 
-" if has("gui_vimr")
-"   colorscheme gruvbox
-" endif
+if has("gui_vimr")
+  colorscheme NeoSolarized
+endif
 
 
 " Write swap and backup files in the event of a crash or accident
@@ -571,14 +568,14 @@ if executable('ag')
 endif
 
 " Folding
-set foldmethod=syntax
+set foldmethod=manual "note: some methods, esp 'syntax' cause major slowdowns
 " Sets the fold level: Folds with a higher level will be closed.  Setting
 " this option to zero will close all folds.  Higher numbers will close fewer
 " folds.
 " set foldlevel=1
 " set foldnestmax=10
-" set nofoldenable   " start with all folds open (toggle via zi)
-set foldlevel=9 " Start with all folds open
+" set foldlevel=9
+set nofoldenable
 
 " Remember last location in file, but not for commit messages.
 " see :help last-position-jump

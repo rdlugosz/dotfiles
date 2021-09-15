@@ -7,8 +7,6 @@
   diff = auto
   ui = auto
   interactive = auto
-[include]
-  path = ~/.gitconfig.github
 [alias]
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   type = cat-file -t
@@ -45,3 +43,5 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[receive]
+	denyDeleteCurrent = warn

@@ -14,4 +14,4 @@ if has("unix")
   endif
 endif
 
-colorscheme gruvbox
+colorscheme NeoSolarized
