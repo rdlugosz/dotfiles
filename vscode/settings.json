@@ -1,5 +1,5 @@
 {
-    "editor.fontLigatures": true,
+    "editor.fontLigatures": false,
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
     "emmet.includeLanguages": {
@@ -72,7 +72,6 @@
         }
     ],
     "vim.visualstar": true,
-    "window.zoomLevel": 0,
     "vim.easymotion": true,
     "vim.statusBarColorControl": true,
     "gitlens.settings.mode": "advanced",
@@ -109,7 +108,7 @@
     },
     "window.nativeFullScreen": false,
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.colorTheme": "Cobalt Next",
+    "workbench.colorTheme": "Solarized Light",
     "gitlens.views.fileHistory.enabled": true,
     "vim.neovimPath": "/usr/local/bin/nvim",
     "editor.fontSize": 14,
@@ -130,5 +129,13 @@
     "editor.inlineSuggest.enabled": true,
     "files.associations": {
         "*.erb": "erb"
-      }
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": true
+    }
 }

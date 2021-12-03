@@ -25,7 +25,15 @@
         "command": "workbench.action.compareEditor.focusPrimarySide"
     },
     {
-        "key": "shift+space",
-        "command": "workbench.action.compareEditor.focusOtherSide"
+        "key": "cmd+r",
+        "command": "-extension.runAllSpecFiles"
+    },
+    {
+        "key": "cmd+r",
+        "command": "extension.runFileSpecs"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "-extension.runFileSpecs"
     }
 ]
