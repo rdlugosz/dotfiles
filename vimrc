@@ -593,9 +593,6 @@ augroup END
 " This also means that using vim-vinegar won't clobber the alt file.
 let g:netrw_altfile = 1
 
-" remap how we open Gstatus to prevent clobbering the alt file.
-nnoremap <leader>gs :keepalt Gstatus<cr>
-
 " vim-ruby
 let ruby_operators             = 1
 let ruby_space_errors          = 1
@@ -1008,9 +1005,9 @@ nmap <leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=0
 
 " Fugitive mappings
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>gc :Gcommit<cr>
-nmap <leader>gd :Gdiff<cr>
+nmap <leader>gs :Git<cr>
+nmap <leader>gc :Git commit<cr>
+nmap <leader>gd :Git diff<cr>
 nmap <leader>gp :Git push<cr>
 
 " Mappings for vim-ruby-xmpfilter
