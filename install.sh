@@ -29,6 +29,7 @@ DOTFILES_LIST=(
     tmux.conf
     vimrc
     dircolors-solarized
+    zshrc
   )
 
 set -e
