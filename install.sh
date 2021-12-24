@@ -30,6 +30,7 @@ DOTFILES_LIST=(
     vimrc
     dircolors-solarized
     zshrc
+    zprofile
   )
 
 set -e
