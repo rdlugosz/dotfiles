@@ -29,11 +29,40 @@ eval "$(rbenv init - zsh)"
 
 [[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
-alias ls="gls --color"
-alias lt="gls -ltrha --color"
-alias la="gls -a --color"
+alias ls='ls --color'
+alias lt='ls -ltrha --color'
+alias la='ls -a --color'
 
-alias gs="git status"
-alias gp="git push"
-alias gc="git commit"
+# do this stuff only if we have the GNU coreutils installed
+if [[ -s /opt/homebrew/bin/gls ]]
+then
+  alias ls='/opt/homebrew/bin/gls --color -F'
+fi
+
+alias gs='git status'
+alias gp='git push'
+alias gc='git commit'
+
+alias be='bundle exec'
+
+# start a web server in current directory
+alias server='ruby -run -e httpd . -p5000'
+
+# Get the expected md5sum output from the OS X tool...
+alias md5='md5 -r'
+alias md5sum='md5 -r'
+
+# find procs
+psg () {
+  ps axo pid,ppid,user,command | grep -i "$*"
+}
+
+# initialize zsh completions
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
 
