@@ -33,6 +33,11 @@ alias ls='ls --color'
 alias lt='ls -ltrha --color'
 alias la='ls -a --color'
 
+alias x='exa --long --grid'
+alias xl='exa --long --grid'
+alias xa='exa --long --grid -a'
+alias xt='exa --long --sort newest -a'
+
 # do this stuff only if we have the GNU coreutils installed
 if [[ -s /opt/homebrew/bin/gls ]]
 then
