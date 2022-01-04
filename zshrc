@@ -30,6 +30,7 @@ eval "$(rbenv init - zsh)"
 [[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
 alias ls='ls --color'
+alias ll='ls -lh --color'
 alias lt='ls -ltrha --color'
 alias la='ls -a --color'
 
@@ -47,6 +48,7 @@ fi
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
+alias gd='git diff'
 
 alias be='bundle exec'
 
