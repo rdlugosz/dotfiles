@@ -34,7 +34,7 @@ alias lt='ls -ltrha --color'
 alias la='ls -a --color'
 
 alias x='exa --long --grid'
-alias xl='exa --long --grid'
+alias xl='exa --long' # don't use the grid here as it hides link destination
 alias xa='exa --long --grid -a'
 alias xt='exa --long --sort newest -a'
 
