@@ -860,15 +860,6 @@ endif
 
 " NEOVIM Mappings
 if has('nvim')
-  set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-      \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-      \,sm:block-blinkwait175-blinkoff150-blinkon175
-
-  " Reset the cursor color when leaving vim
-  " (this is commented out because it doesn't seem to work)
-  " au VimLeave * highlight Cursor cterm=NONE gui=NONE
-  " au VimLeave * highlight Cursor ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
-
   " Retain escape functionality in Terminal mode
   tnoremap <ESC> <C-\><C-n>
   tnoremap kj <C-\><C-n>
