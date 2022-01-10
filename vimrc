@@ -858,21 +858,21 @@ if has('gui_running')
   nmap <C-l> <C-w>l
 endif
 
+" Retain escape functionality in Terminal mode
+tnoremap <ESC> <C-\><C-n>
+tnoremap kj <C-\><C-n>
+
+" Escape and page up on C-u
+tnoremap <C-u> <C-\><C-n><C-u>
+
+" Retain TMUX-navigator keys in terminal
+tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
+tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
+tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
+tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
+
 " NEOVIM Mappings
 if has('nvim')
-  " Retain escape functionality in Terminal mode
-  tnoremap <ESC> <C-\><C-n>
-  tnoremap kj <C-\><C-n>
-
-  " Escape and page up on C-u
-  tnoremap <C-u> <C-\><C-n><C-u>
-
-  " Retain TMUX-navigator keys in terminal
-  tnoremap <C-h> <C-\><C-n>:TmuxNavigateLeft<cr>
-  tnoremap <C-j> <C-\><C-n>:TmuxNavigateDown<cr>
-  tnoremap <C-k> <C-\><C-n>:TmuxNavigateUp<cr>
-  tnoremap <C-l> <C-\><C-n>:TmuxNavigateRight<cr>
-
   " Assume that we want to enter Terminal Mode if we press UP in a terminal window
   au TermOpen * if &buftype == 'terminal' | nnoremap <buffer> <UP> i<UP> | endif
 endif
