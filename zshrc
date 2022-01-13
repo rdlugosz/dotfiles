@@ -19,15 +19,23 @@ bindkey -M vicmd v edit-command-line
 export EDITOR=nvim
 export VISUAL=nvim
 
-source /opt/homebrew/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
 eval "$(rbenv init - zsh)"
 
+# FZF Stuff
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
-
-[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
+# FZF integration with autojump
+j() {
+    if [[ "$#" -ne 0 ]]; then
+        cd $(autojump $@)
+        return
+    fi
+    cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
+}
 
 alias ls='ls --color'
 alias ll='ls -lh --color'
@@ -73,4 +81,3 @@ then
   autoload -Uz compinit
   compinit
 fi
-
