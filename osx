@@ -4,7 +4,11 @@
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+# Disabled in favor of using the options in the Keyboard prefs pane. For some reason
+# when these are set the key repeat appears to "choke" - almost as if it's coming into
+# the buffer faster than the application can output the keys (that's almost certainly not
+# the case, but it looks that way).
 # Set a blazingly fast keyboard repeat rate, and make it happen more quickly.
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
-defaults write NSGlobalDomain KeyRepeat -int 1
+# defaults write NSGlobalDomain InitialKeyRepeat -int 20
+# defaults write NSGlobalDomain KeyRepeat -int 1
 
