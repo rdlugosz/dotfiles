@@ -121,36 +121,8 @@ if exists(':Plug')
   " https://github.com/tpope/vim-characterize
   Plug 'tpope/vim-characterize'
 
-  " Buffergator lists, selects and switches buffers
-  " Use `<Leader>b` (typically: `\b`) to open a window listing all buffers. In this
-  " window, you can use normal movement keys to select a buffer and then:
-  "   - <ENTER> to edit the selected buffer in the previous window
-  "   - <C-V> to edit the selected buffer in a new vertical split
-  "   - <C-S> to edit the selected buffer in a new horizontal split
-  "   - <C-T> to edit the selected buffer in a new tab page
-  "
-  " https://github.com/jeetsukumaran/vim-buffergator
-  "Plug 'jeetsukumaran/vim-buffergator'
-
-  if executable('fzf')
-    if filereadable("/home/linuxbrew/.linuxbrew/opt/fzf/README.md")
-      Plug '/home/linuxbrew/.linuxbrew/opt/fzf' | Plug 'junegunn/fzf.vim'
-      let g:using_fzf = 1
-    elseif filereadable("/usr/local/opt/fzf/README.md")
-      Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-      let g:using_fzf = 1
-    endif
-  endif
-
-  " CtrlP.vim is a fuzzy file, buffer, mru, tag, etc finder.
-  " Open with CTRL-P, then:
-  "   Press <c-f> and <c-b> to cycle between modes.
-  "   Press <c-d> to switch to filename only search instead of full path.
-  "   Press <c-r> to switch to regexp mode.
-  " https://github.com/ctrlpvim/ctrlp.vim
-  if !exists('g:using_fzf')
-    Plug 'ctrlpvim/ctrlp.vim'
-  endif
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 
   " A Vim plugin which shows a git diff in the gutter (sign column) and
   " stages/reverts hunks. Use [c and ]c to navigate changes.
@@ -603,88 +575,54 @@ let ruby_spellcheck_strings    = 1
 let g:rubycomplete_rails       = 1
 let g:rubycomplete_use_bundler = 1
 
-" Fuzzy finder stuff
-if !exists('g:using_fzf')
-  let g:ctrlp_map               = '<c-p>'      " activate with c-p
-  let g:ctrlp_cmd               = 'CtrlPMixed' " start in the file + mru + buffers mode
-  let g:ctrlp_mruf_relative     = 1            " only consider mru files in the working directory
-  let g:ctrlp_working_path_mode = 'wa'
-  let g:ctrlp_custom_ignore     = '\v[\/]\.(git|hg|svn)$'
+" FZF config
+" nnoremap <C-P> :Files<CR>
+nnoremap <C-P> :FilesPreview<CR>
+nnoremap <C-B> :Buffers<CR>
+nnoremap <C-T> :Tags<CR>
 
-  " open a CtrlP Buffer search via c-b
-  nnoremap <c-b> :CtrlPBuffer<CR>
+" Files with preview
+command! -bang -nargs=? -complete=dir FilesPreview
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-  " Do not clear filenames cache, to improve CtrlP startup
-  " You can manualy clear it by <F5>
-  let g:ctrlp_clear_cache_on_exit = 0
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
-  if executable('ag')
-    " Use The Silver Searcher if available
-    " Note: must specify own ignores when using custom search command
-    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-          \ --ignore .git
-          \ --ignore .svn
-          \ --ignore .hg
-          \ --ignore .DS_Store
-          \ --ignore "**/*.pyc"
-          \ -g ""'
-  endif
-else
-  " FZF config
-  " nnoremap <C-P> :Files<CR>
-  nnoremap <C-P> :FilesPreview<CR>
-  nnoremap <C-B> :Buffers<CR>
-  nnoremap <C-T> :Tags<CR>
+" Some useful commands from :help fzf
+" :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+" :Ag! - Start fzf in fullscreen and display the preview window above
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
 
-  " Files with preview
-  command! -bang -nargs=? -complete=dir FilesPreview
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+nnoremap <leader>f :Rg!<space>
 
-  imap <c-x><c-k> <plug>(fzf-complete-word)
-  imap <c-x><c-f> <plug>(fzf-complete-path)
-  imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-  imap <c-x><c-l> <plug>(fzf-complete-line)
-
-  " Some useful commands from :help fzf
-  " :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
-  " :Ag! - Start fzf in fullscreen and display the preview window above
-  command! -bang -nargs=* Ag
-    \ call fzf#vim#ag(<q-args>,
-    \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-    \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \                 <bang>0)
-
-  " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
-  command! -bang -nargs=* Rg
-    \ call fzf#vim#grep(
-    \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-    \   <bang>0 ? fzf#vim#with_preview('up:60%')
-    \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-    \   <bang>0)
-  nnoremap <leader>f :Rg!<space>
-
-  " Customize fzf colors to match your color scheme
-  let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
-    \ 'bg':      ['bg', 'Normal'],
-    \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-    \ 'hl+':     ['fg', 'Statement'],
-    \ 'info':    ['fg', 'PreProc'],
-    \ 'border':  ['fg', 'Ignore'],
-    \ 'prompt':  ['fg', 'Conditional'],
-    \ 'pointer': ['fg', 'Exception'],
-    \ 'marker':  ['fg', 'Keyword'],
-    \ 'spinner': ['fg', 'Label'],
-    \ 'header':  ['fg', 'Comment'] }
-
-endif
-
-" Buffergator config
-" let g:buffergator_show_full_directory_path = 0
-" let g:buffergator_viewport_split_policy = 'T'
-" let g:buffergator_suppress_keymaps = 1 " we only use <leader>b so don't claim the others
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " Vim EasyAlign.
 " Start interactive EasyAlign in visual mode (e.g. vipga)
