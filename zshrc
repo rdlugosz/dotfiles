@@ -73,11 +73,14 @@ psg () {
 }
 
 # initialize zsh completions
+# Allow for more flexibility with things like Case
+zstyle ':completion:*' matcher-list '' '+m:{a-zA-Z}={A-Za-z}' '+r:|[._-]=* r:|=*' '+l:|=* r:|=*'
+
 if type brew &>/dev/null
 then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
-
-  autoload -Uz compinit
-  compinit
 fi
+
+autoload -Uz compinit
+compinit
