@@ -46,6 +46,7 @@ alias x='exa --long --grid'
 alias xl='exa --long' # don't use the grid here as it hides link destination
 alias xa='exa --long --grid -a'
 alias xt='exa --long --sort newest -a'
+alias xg='exa --long --git'
 
 # do this stuff only if we have the GNU coreutils installed
 if [[ -s /opt/homebrew/bin/gls ]]
