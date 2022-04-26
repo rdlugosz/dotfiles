@@ -10,6 +10,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
