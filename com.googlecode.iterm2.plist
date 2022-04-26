@@ -10,6 +10,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlwaysOpenWindowAtStartup</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AutoHideTmuxClientSession</key>
@@ -8547,9 +8549,9 @@
 	<key>Default Bookmark Guid</key>
 	<string>5E1CB228-31D9-4C46-A38D-66967919318B</string>
 	<key>DimBackgroundWindows</key>
-	<false/>
+	<true/>
 	<key>DimInactiveSplitPanes</key>
-	<false/>
+	<true/>
 	<key>DimOnlyText</key>
 	<true/>
 	<key>DisableFullscreenTransparency</key>
@@ -8567,8 +8569,6 @@
 	<key>FsTabDelay</key>
 	<real>1</real>
 	<key>HapticFeedbackForEsc</key>
-	<false/>
-	<key>HdrCursor</key>
 	<false/>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
@@ -9261,7 +9261,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Regular 14</string>
+			<string>FiraCode-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -18979,7 +18979,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<false/>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -19105,11 +19105,11 @@
 	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
-	<key>findMode_iTerm</key>
-	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>metalMaximizeThroughput</key>
 	<false/>
+	<key>preferIntegratedGPU</key>
+	<true/>
 </dict>
 </plist>
