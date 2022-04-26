@@ -4,9 +4,6 @@
 [submodule "iTerm2-Color-Schemes"]
 	path = iTerm2-Color-Schemes
 	url = git://github.com/mbadolato/iTerm2-Color-Schemes.git
-[submodule "base16-iterm2"]
-	path = base16-iterm2
-	url = https://github.com/chriskempson/base16-iterm2.git
 [submodule "base16-gnome-terminal"]
 	path = base16-gnome-terminal
 	url = https://github.com/chriskempson/base16-gnome-terminal.git
