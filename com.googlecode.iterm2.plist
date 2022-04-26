@@ -8554,6 +8554,8 @@
 	<true/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EnableAPIServer</key>
+	<true/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>EnableProxyIcon</key>
@@ -8565,6 +8567,8 @@
 	<key>FsTabDelay</key>
 	<real>1</real>
 	<key>HapticFeedbackForEsc</key>
+	<false/>
+	<key>HdrCursor</key>
 	<false/>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
