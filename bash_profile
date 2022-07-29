@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/bash_profile.pre.bash"
+[[ -f "$HOME/.fig/shell/bash_profile.pre.bash" ]] && . "$HOME/.fig/shell/bash_profile.pre.bash"
 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
 
 # Setting PATH for Python 3.6
@@ -31,4 +31,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # vim:set ft=sh et sw=2 foldmethod=marker:
 
 # Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/bash_profile.post.bash"
+[[ -f "$HOME/.fig/shell/bash_profile.post.bash" ]] && . "$HOME/.fig/shell/bash_profile.post.bash"
