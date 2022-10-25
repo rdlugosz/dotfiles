@@ -9,6 +9,15 @@ export PATH=~/bin:$PATH
 # add the postgres.app CLI tools
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# history settings
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
+setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
 # Emacs style
