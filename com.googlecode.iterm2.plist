@@ -10,6 +10,8 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlwaysAcceptFirstMouse</key>
+	<false/>
 	<key>AlwaysOpenWindowAtStartup</key>
 	<true/>
 	<key>AnimateDimming</key>
