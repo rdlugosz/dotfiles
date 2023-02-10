@@ -8865,7 +8865,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>export TERM_PROFILE=solarized_dark; clear</string>
+			<string>export TERM_PROFILE=solarized_dark; clear; neofetch</string>
 			<key>Initial Use Transparency</key>
 			<false/>
 			<key>Jobs to Ignore</key>
