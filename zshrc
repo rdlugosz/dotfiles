@@ -10,6 +10,7 @@ export PATH=~/bin:$PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # history settings
+export HISTFILE=~/.zhistory
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 setopt INC_APPEND_HISTORY
@@ -32,7 +33,7 @@ export VISUAL=nvim
 
 [[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
 
-eval "$(rbenv init - zsh)"
+[[ -f /opt/homebrew/bin/rbenv ]] && eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
@@ -40,9 +41,16 @@ export NVM_DIR="$HOME/.nvm"
 
 # FZF Stuff
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# on linux
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+
+# on my mac...
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+[ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
 # FZF integration with autojump
 j() {
     if [[ "$#" -ne 0 ]]; then
