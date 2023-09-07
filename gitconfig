@@ -46,3 +46,5 @@
 	required = true
 [receive]
 	denyDeleteCurrent = warn
+[init]
+	defaultBranch = main
