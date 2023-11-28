@@ -18981,7 +18981,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<false/>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -19053,6 +19053,8 @@
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.22035959663120569</real>
+	<key>StartDebugLoggingAutomatically</key>
+	<false/>
 	<key>StatusBarPosition</key>
 	<integer>0</integer>
 	<key>SwitchTabModifier</key>
