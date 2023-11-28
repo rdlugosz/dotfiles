@@ -88,6 +88,12 @@
   #multiplier: 3
 
 # Font configuration
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+  size: 13
+
 #font:
   # Normal (roman) font face
   #normal:
