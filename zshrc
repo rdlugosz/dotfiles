@@ -31,8 +31,6 @@ bindkey -M vicmd v edit-command-line
 export EDITOR=nvim
 export VISUAL=nvim
 
-[[ $- = *i* ]] && source ~/.liquidprompt/liquidprompt
-
 [[ -f /opt/homebrew/bin/rbenv ]] && eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
@@ -105,6 +103,9 @@ then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
   FPATH="$(brew --prefix)/share/zsh-completions:$FPATH"
 fi
+
+# Set a fast prompt
+PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
 autoload -Uz compinit
 compinit
