@@ -1,6 +1,6 @@
 [user]
-	name = Ryan Dlugosz
-	email = ryan@dlugosz.net
+  name = Ryan Dlugosz
+  email = ryan@dlugosz.net
 [color]
   status = auto
   grep = auto
@@ -39,12 +39,14 @@
   default = current
 [core]
   excludesfile = ~/.gitignore_global
-	autocrlf = input
+  autocrlf = input
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [receive]
-	denyDeleteCurrent = warn
+  denyDeleteCurrent = warn
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[pull]
+  rebase = true
