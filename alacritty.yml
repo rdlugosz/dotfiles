@@ -40,8 +40,13 @@ env:
   #  x: 0
   #  y: 0
 
+window:
+  padding:
+    x: 4
+    y: 4
+
   # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
+  # dynamic_padding: false
 
   # Window decorations
   #
@@ -53,6 +58,7 @@ env:
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
   #decorations: full
+  # decorations: buttonless
 
   # Startup Mode (changes require restart)
   #
