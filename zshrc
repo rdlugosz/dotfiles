@@ -58,10 +58,9 @@ j() {
     cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
 }
 
-alias ls='ls --color'
-alias ll='ls -lh --color'
-alias lt='ls -ltrha --color'
-alias la='ls -a --color'
+alias ll='ls -lh'
+alias lt='ls -ltrha'
+alias la='ls -a'
 
 alias x='exa --long --grid'
 alias xl='exa --long' # don't use the grid here as it hides link destination
@@ -73,6 +72,12 @@ alias xg='exa --long --git'
 if [[ -s /opt/homebrew/bin/gls ]]
 then
   alias ls='/opt/homebrew/bin/gls --color -F'
+fi
+
+# if we have the fancy 'lsd' command installed
+if [[ -s /opt/homebrew/bin/lsd ]]
+then
+  alias ls='/opt/homebrew/bin/lsd'
 fi
 
 alias gs='git status'
