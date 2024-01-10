@@ -74,12 +74,6 @@ then
   alias ls='/opt/homebrew/bin/gls --color -F'
 fi
 
-# if we have the fancy 'lsd' command installed
-if [[ -s /opt/homebrew/bin/lsd ]]
-then
-  alias ls='/opt/homebrew/bin/lsd'
-fi
-
 alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
@@ -93,6 +87,12 @@ alias server='ruby -run -e httpd . -p5000'
 # Get the expected md5sum output from the OS X tool...
 alias md5='md5 -r'
 alias md5sum='md5 -r'
+
+# We use neovim if available
+if [[ -s /opt/homebrew/bin/nvim ]]
+then
+  alias vim='/opt/homebrew/bin/nvim'
+fi
 
 # find procs
 psg () {
