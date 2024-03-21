@@ -78,6 +78,7 @@ alias gs='git status'
 alias gp='git push'
 alias gc='git commit'
 alias gd='git diff'
+alias gl='git log --oneline --graph --parents -n 9'
 
 alias be='bundle exec'
 
