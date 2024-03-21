@@ -1,3 +1,8 @@
+#
+# NOTE: THIS CONFIG IS NO LONGER USED BY ALACRITTY. SEE alacritty.toml
+#
+#
+#
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
