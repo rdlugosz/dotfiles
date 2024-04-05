@@ -95,6 +95,12 @@ then
   alias vim='/opt/homebrew/bin/nvim'
 fi
 
+# Only on MacOS, set an alias for tailscale
+if [[ -f /Applications/Tailscale.app/Contents/MacOS/Tailscale ]]
+then
+  alias tailscale=/Applications/Tailscale.app/Contents/MacOS/Tailscale
+fi
+
 # find procs
 psg () {
   ps axo pid,ppid,user,command | grep -i "$*"
