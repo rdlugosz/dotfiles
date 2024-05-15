@@ -43,7 +43,7 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 # Use the pspg pager for psql, if installed
 if [[ -s /opt/homebrew/bin/pspg ]]
 then
-  export PAGER="pspg --style=17"
+  export PSQL_PAGER="pspg --style=17"
 fi
 
 # on linux
