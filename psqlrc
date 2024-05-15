@@ -25,7 +25,7 @@
 \pset border 0
 \pset null '[NULL]'
 \pset expanded auto
-\pset pager off
+\pset pager on
 -- \pset format aligned
 -- Show verbose error messages
 \set VERBOSITY verbose

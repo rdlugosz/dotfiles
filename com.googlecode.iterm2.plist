@@ -8865,7 +8865,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>export TERM_PROFILE=solarized_dark; clear; neofetch</string>
+			<string>export TERM_PROFILE=solarized_dark; clear</string>
 			<key>Initial Use Transparency</key>
 			<false/>
 			<key>Jobs to Ignore</key>
@@ -9530,7 +9530,9 @@
 			<key>Sync Title</key>
 			<false/>
 			<key>Tags</key>
-			<array/>
+			<array>
+				<string>dark bg</string>
+			</array>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>

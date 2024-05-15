@@ -1,5 +1,5 @@
-# CodeWhisperer pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
+# Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH=./bin:$PATH
 
@@ -39,6 +39,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # FZF Stuff
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# Use the pspg pager for psql, if installed
+if [[ -s /opt/homebrew/bin/pspg ]]
+then
+  export PAGER="pspg --style=17"
+fi
 
 # on linux
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
@@ -122,11 +128,10 @@ PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 autoload -Uz compinit
 compinit
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
-
 if [[ -f /home/linuxbrew/.linuxbrew/bin/brew ]]
 then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
