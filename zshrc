@@ -89,6 +89,8 @@ alias gsm='git switch main'
 
 alias be='bundle exec'
 
+alias dcew='docker compose exec -it web'
+
 # start a web server in current directory
 alias server='ruby -run -e httpd . -p5000'
 
