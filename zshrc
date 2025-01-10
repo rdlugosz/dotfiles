@@ -1,4 +1,6 @@
-zmodload zsh/zprof
+# To profile startup time, uncomment this line and the corresponding line at the bottom
+# zmodload zsh/zprof
+
 # Add ruby Binstubs to our path (must have priority over the rbenv shims!)
 export PATH=./bin:$PATH
 
@@ -139,4 +141,4 @@ then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-zprof
+# zprof
