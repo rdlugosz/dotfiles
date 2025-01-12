@@ -133,6 +133,9 @@ fi
 # Set a fast prompt
 PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
+# Set a more interesting prompt if available
+[[ -f /opt/homebrew/bin/starship ]] && eval "$(starship init zsh)"
+
 autoload -Uz compinit
 compinit
 
