@@ -69,6 +69,13 @@ j() {
     cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
 }
 
+# expand-and-accept-alias() {
+#     zle expand-word        # Expand the current word (alias)
+#     zle self-insert        # Insert a space
+# }
+# zle -N expand-and-accept-alias
+# bindkey ' ' expand-and-accept-alias
+
 alias ll='ls -lh'
 alias lt='ls -ltrha'
 alias la='ls -a'
