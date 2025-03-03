@@ -10,6 +10,11 @@ export PATH=~/bin:$PATH
 # add the postgres.app CLI tools
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# Android development stuff
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
+
 # history settings
 export HISTFILE=~/.zhistory
 export HISTFILESIZE=1000000000
