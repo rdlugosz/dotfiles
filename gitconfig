@@ -1,6 +1,6 @@
 [user]
   name = Ryan Dlugosz
-  email = ryan@dlugosz.net
+	email = ryan@backcovesoftware.com
 [color]
   status = auto
   grep = auto
@@ -41,9 +41,10 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [receive]
   denyDeleteCurrent = warn
 [init]
