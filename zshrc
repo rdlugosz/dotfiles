@@ -15,6 +15,14 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH
 
+# Required for some gems to build native extensions (like PG gem)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+export GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=1
+export GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1
+export GRPC_PYTHON_BUILD_SYSTEM_CARES=1
+
 # history settings
 export HISTFILE=~/.zhistory
 export HISTFILESIZE=1000000000
@@ -74,6 +82,19 @@ j() {
     cd "$(autojump -s | sort -k1gr | awk '$1 ~ /[0-9]:/ && $2 ~ /^\// { for (i=2; i<=NF; i++) { print $(i) } }' |  fzf --height 40% --reverse --inline-info)"
 }
 
+function alias_if_missing() {
+  if ! (whence -w "$1" >/dev/null 2>&1); then
+    alias "$1"="$2"
+  fi
+}
+
+#alias_if_missing bat 'cat'
+
+# MacOS doesn't have a built in watch command, so this is an approximation
+
+fakewatch () { while true; do DATE=$(date); RESULT=$(${@}); clear; echo "$DATE"; echo "$RESULT"; sleep 2; done; }
+alias_if_missing watch 'fakewatch'
+
 # expand-and-accept-alias() {
 #     zle expand-word        # Expand the current word (alias)
 #     zle self-insert        # Insert a space
@@ -81,7 +102,7 @@ j() {
 # zle -N expand-and-accept-alias
 # bindkey ' ' expand-and-accept-alias
 
-alias ll='ls -lh'
+alias ll='ls -lah'
 alias lt='ls -ltrha'
 alias la='ls -a'
 
