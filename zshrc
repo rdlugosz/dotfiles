@@ -102,6 +102,8 @@ alias_if_missing watch 'fakewatch'
 # zle -N expand-and-accept-alias
 # bindkey ' ' expand-and-accept-alias
 
+alias brwe='brew'
+
 alias ll='ls -lah'
 alias lt='ls -ltrha'
 alias la='ls -a'
