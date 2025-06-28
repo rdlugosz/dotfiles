@@ -49,6 +49,10 @@ bindkey -M vicmd v edit-command-line
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Just pretend our TERM is always a recognizable value so (some) apps don't immediately exit
+# as they do with something more specific, such as `xterm-ghostty`
+export TERM=xterm-256color
+
 [[ -f /opt/homebrew/bin/rbenv ]] && eval "$(rbenv init - zsh)"
 
 export NVM_DIR="$HOME/.nvm"
