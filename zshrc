@@ -25,17 +25,40 @@ export GRPC_PYTHON_BUILD_SYSTEM_CARES=1
 
 # history settings
 export HISTFILE=~/.zhistory
-export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
-setopt INC_APPEND_HISTORY
-export HISTTIMEFORMAT="[%F %T] "
+export SAVEHIST=1000000000
 setopt EXTENDED_HISTORY
-setopt HIST_FIND_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
+setopt INC_APPEND_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_SPACE
 setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt HIST_REDUCE_BLANKS
+
+# Filter out multi-line commands and overly long commands from history
+zshaddhistory() {
+  local line=${1%%$'\n'}
+  [[ ${#line} -le 256 && ${line} != *$'\n'* ]]
+}
+
+# Function to clean up existing history file
+cleanup_history() {
+  if [[ -f "$HISTFILE" ]]; then
+    echo "Cleaning up history file: $HISTFILE"
+    # Create a backup
+    cp "$HISTFILE" "${HISTFILE}.backup.$(date +%Y%m%d)"
+    # Remove entries longer than 256 chars and multi-line entries
+    awk 'length($0) <= 256 && !/\n/ && NF > 0' "$HISTFILE" > "${HISTFILE}.tmp" && mv "${HISTFILE}.tmp" "$HISTFILE"
+    echo "History cleaned up. Backup saved as ${HISTFILE}.backup.$(date +%Y%m%d)"
+    # Reload history
+    fc -R
+  else
+    echo "History file $HISTFILE not found"
+  fi
+}
 
 # Enable Ctrl-x-e to edit command line
 autoload -U edit-command-line
