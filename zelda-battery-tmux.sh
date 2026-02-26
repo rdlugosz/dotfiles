@@ -22,7 +22,7 @@ if [ -z "$battery" ]; then
 fi
 
 full="♥"
-empty="#[fg=colour240]♡#[fg=red]"
+empty="#[fg=colour240]♡#[fg=colour1]"
 
 if [ "$charging" -gt 0 ] && [ "$battery" -ge 99 ]; then
   echo "$full $full $full $full⚡"
