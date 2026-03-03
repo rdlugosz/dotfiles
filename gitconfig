@@ -35,6 +35,10 @@
   la = !git l --all
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  wl = worktree list
+  wa = worktree add
+  wr = worktree remove
+  wp = worktree prune
 [push]
   default = current
 [core]

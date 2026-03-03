@@ -154,6 +154,10 @@ alias gd='git diff'
 alias gl='git log --oneline --graph --parents -n 9'
 alias gsm='git switch main'
 
+alias gwl='git worktree list'
+alias gwa='git worktree add'
+alias gwr='git worktree remove'
+
 alias be='bundle exec'
 
 alias dcew='docker compose exec -it web'
