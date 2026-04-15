@@ -1,0 +1,8 @@
+
+[directory]
+# This config uses either fish style or the truncation_length option
+# Fish enabled will override the latter
+fish_style_pwd_dir_length = 1
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = '…/'
