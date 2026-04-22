@@ -159,6 +159,9 @@ alias gwl='git worktree list'
 alias gwa='git worktree add'
 alias gwr='git worktree remove'
 
+alias cl='claude'
+alias clw='claude --worktree'
+
 alias be='bundle exec'
 
 alias dcew='docker compose exec -it web'
