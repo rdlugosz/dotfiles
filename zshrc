@@ -10,6 +10,9 @@ export PATH=~/bin:$PATH
 # add the postgres.app CLI tools
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
+# add the ghostty CLI
+export PATH=$PATH:/Applications/Ghostty.app/Contents/MacOS
+
 # Android development stuff
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
