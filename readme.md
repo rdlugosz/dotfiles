@@ -8,17 +8,24 @@ Questions? [@lbwski](http://twitter.com/lbwski)
 
 ## Setup Notes
 
-0. The `install.sh` contains an array of files that should be linked. Be sure
-   to update that if you add/rename a file!
+0. `legacy-installer.sh` contains the list of files that get linked into the
+   home directory (`DOTFILES_LIST`), plus a separate list for links under
+   `~/.config` (`CONFIG_LINKS`). Be sure to update those if you add/rename a
+   file! (It's named "legacy" so Codespaces won't try to auto-run it, since it
+   prompts interactively.)
 
 1. Clone the dotfiles repo into a reasonable location on the new host, e.g.,
    `~/workspace/dotfiles`
 
 2. Pull in the submodules: `./update_submodules.sh`
 
-3. Install the links to files in the home directory: `./install.sh`.  This
-   command will also check to see if `Vundle` is installed. Note that it is
-   safe to re-run this when new files are added.
+3. From the repo directory, install the links: `./legacy-installer.sh`. It
+   asks before touching anything that already exists, so it is safe to re-run
+   when new files are added.
+
+4. Open vim/neovim once: the `vimrc` downloads
+   [vim-plug](https://github.com/junegunn/vim-plug) automatically if it's
+   missing and installs the plugins.
 
 
 ### OS X Extra Steps

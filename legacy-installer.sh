@@ -7,7 +7,6 @@ DOTFILES_ROOT="`pwd`"
 
 DOTFILES_LIST=(
     agignore
-    atom
     bash_profile
     bashrc
     dotfiles
@@ -20,10 +19,7 @@ DOTFILES_LIST=(
     htoprc
     iftoprc
     irbrc
-    powconfig
     psqlrc
-    slate
-    spacemacs
     tmux.conf
     vimrc
     dircolors-solarized
@@ -58,28 +54,31 @@ link_files () {
   success "linked $1 to $2"
 }
 
-setup_nvim_dir () {
-  nvim_config_dir=~/.config/nvim
-  nvim_vimrc_link="$nvim_config_dir/init.vim"
+# Links under ~/.config, as "source:destination" pairs
+CONFIG_LINKS=(
+    vimrc:.config/nvim/init.vim
+    starship.toml:.config/starship.toml
+    alacritty.toml:.config/alacritty/alacritty.toml
+  )
 
-  info "checking for neovim config link: $nvim_vimrc_link"
+install_config_links () {
+  info "installing ~/.config links"
 
-  if [[ ! -d $nvim_config_dir ]]; then
-    info "creating neovim config directory"
-    mkdir -p $nvim_config_dir
-  fi
+  for pair in "${CONFIG_LINKS[@]}"
+  do
+    source="${pair%%:*}"
+    dest="$HOME/${pair#*:}"
 
-  if [[ ! -e $nvim_vimrc_link ]]; then
-    info "linking .vimrc for neovim"
-    ln -s $DOTFILES_ROOT/vimrc $nvim_vimrc_link
-    if [[ -h $nvim_vimrc_link ]]; then
-      success "link created"
+    mkdir -p "$(dirname "$dest")"
+
+    if [[ -h $dest ]]; then
+      success "$dest link exists"
+    elif [[ -e $dest ]]; then
+      fail "$dest is a real file, not a link to $source!"
+    else
+      link_files $source $dest
     fi
-  elif [[ ! -h $nvim_vimrc_link ]]; then
-    fail "neovim config is a real file, not a link to the vimrc!"
-  else
-    success "neovim config link exists"
-  fi
+  done
 }
 
 install_dotfiles () {
@@ -152,7 +151,7 @@ install_dotfiles () {
 
 
 install_dotfiles
-setup_nvim_dir
+install_config_links
 
 echo ''
 echo '  All installed!'
