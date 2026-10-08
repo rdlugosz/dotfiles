@@ -28,6 +28,9 @@ filetype off                   " required!
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  " The autoload dir didn't exist at startup, so plug#begin can't be found
+  " via runtimepath on this first run; source it directly.
+  execute 'source ' . data_dir . '/autoload/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -437,24 +440,24 @@ if $COLORTERM == 'truecolor'
 
   set termguicolors
   set background=dark
-  colorscheme NeoSolarized
+  silent! colorscheme NeoSolarized
 end
 
 
 if $TERM_PROFILE =~ "solarized_dark"
   set background=dark
-  colorscheme NeoSolarized
+  silent! colorscheme NeoSolarized
 elseif $TERM_PROFILE == "solarized_light"
   set background=light
-  colorscheme NeoSolarized
+  silent! colorscheme NeoSolarized
 elseif $TERM_PROFILE == "gruvbox"
-  colorscheme gruvbox
+  silent! colorscheme gruvbox
 " else
   " silent! colorscheme disco
 endif
 
 if has("gui_vimr")
-  colorscheme NeoSolarized
+  silent! colorscheme NeoSolarized
 endif
 
 
@@ -697,13 +700,13 @@ set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'[enc:\ '.&fenc.']':''}
 set statusline+=%*
 
 if (has('nvim') && !empty("~/.local/share/nvim/plugged/syntastic")) || (!has('nvim') && !empty("~/.vim/plugged/syntastic"))
-  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}
   set statusline+=%*
 endif
 
 set statusline+=[tab:\ %{&expandtab==1?'soft':'HARD'}\ %{&ts}] " tab info
 
-set statusline+=%{fugitive#statusline()} " git info
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''} " git info
 
 set statusline+=\ col\ %2c,      " cursor column
 set statusline+=\ ln\ %3l/%L     " cursor line/total lines
