@@ -13,3 +13,6 @@ atom/dev
 atom/.apm
 atom/.npm
 atom/.node-gyp
+
+# Claude Code per-machine settings
+.claude/settings.local.json
