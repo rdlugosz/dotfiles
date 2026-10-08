@@ -219,3 +219,6 @@ fi
 
 # zprof
 export PATH="$HOME/.local/bin:$PATH"
+
+# Machine-local settings and secrets (not in dotfiles)
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
