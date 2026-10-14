@@ -94,12 +94,18 @@ then
   export PSQL_PAGER="pspg --style=17"
 fi
 
-# on linux
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
-[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
-
-# on my mac...
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf key bindings (ctrl-r history, ctrl-t files) and completion
+if command -v fzf >/dev/null && fzf --zsh >/dev/null 2>&1; then
+  # fzf 0.48+ generates its own shell integration
+  source <(fzf --zsh)
+elif [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]; then
+  # older fzf on linux
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+elif [ -f ~/.fzf.zsh ]; then
+  # older fzf installed via its install script
+  source ~/.fzf.zsh
+fi
 
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 [ -f /usr/share/autojump/autojump.sh ] && . /usr/share/autojump/autojump.sh
