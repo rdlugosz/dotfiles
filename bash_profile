@@ -25,7 +25,7 @@ then
   # some other completion-related stuff lives in .inputrc
 fi
 
-PATH="~/.rbenv/shims:${PATH}"
+PATH="${HOME}/.rbenv/shims:${PATH}"
 export PATH
 
 eval "$(rbenv init -)"

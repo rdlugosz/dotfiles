@@ -41,11 +41,12 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_VERIFY
 setopt HIST_REDUCE_BLANKS
 
-# Filter out multi-line commands and overly long commands from history
-zshaddhistory() {
-  local line=${1%%$'\n'}
-  [[ ${#line} -le 256 && ${line} != *$'\n'* ]]
-}
+# Blank/dedup filtering for history is done by the HIST_* options set above
+# (HIST_REDUCE_BLANKS, HIST_IGNORE_ALL_DUPS, HIST_EXPIRE_DUPS_FIRST).
+# Multi-line and over-length (<256 char) entries are pruned by cleanup_history,
+# which should be called at startup or run manually. NOTE: zsh has no per-line
+# "before-add-to-history" hook, so a zshaddhistory() function is never invoked
+# and was removed; don't re-add it expecting it to run.
 
 # Function to clean up existing history file
 cleanup_history() {
@@ -226,8 +227,8 @@ then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-# zprof
-export PATH="$HOME/.local/bin:$PATH"
+# ~/.local/bin is already added by zshenv (runs for every shell, before
+# interactive ones), so it is not re-added here.
 
 # Machine-local settings and secrets (not in dotfiles)
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
