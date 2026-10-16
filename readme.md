@@ -27,6 +27,11 @@ Questions? [@lbwski](http://twitter.com/lbwski)
    [vim-plug](https://github.com/junegunn/vim-plug) automatically if it's
    missing and installs the plugins.
 
+5. Note on shell startup files: `zshenv` is read by every zsh, including the
+   non-interactive shells sshd uses for remote commands (`mosh`, `scp`,
+   `rsync`). It only sets PATH (Homebrew, `~/.local/bin`). Interactive and
+   login-only setup belongs in `zprofile` / `zshrc`.
+
 
 ### OS X Extra Steps
 * Set some reasonable defaults by executing some of the commands in `osx`

@@ -25,6 +25,7 @@ DOTFILES_LIST=(
     dircolors-solarized
     zshrc
     zprofile
+    zshenv
   )
 
 set -e
