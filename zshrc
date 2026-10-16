@@ -215,6 +215,9 @@ PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 # Set a more interesting prompt if available
 [[ -f /opt/homebrew/bin/starship || -f /home/linuxbrew/.linuxbrew/bin/starship ]] && eval "$(starship init zsh)"
 
+# Docker Desktop CLI completions (mac)
+[[ -d ~/.docker/completions ]] && fpath=(~/.docker/completions $fpath)
+
 autoload -Uz compinit
 compinit
 
